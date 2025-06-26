@@ -470,36 +470,6 @@ Mills, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Purohit%
-, Bergram%
-, Barclay%
-, Bezen{\c{c}}on%
-\BCBL {}\ \BBA {} Holzer%
-}{%
-Purohit%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2023}}%
-}]{%
-purohit2023starving}
-\APACinsertmetastar {%
-purohit2023starving}%
-\begin{APACrefauthors}%
-Purohit, A\BPBI K.%
-, Bergram, K.%
-, Barclay, L.%
-, Bezen{\c{c}}on, V.%
-\BCBL {}\ \BBA {} Holzer, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2023}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Starving the Newsfeed for Social Media Detox: Effects of Strict and Self-regulated Facebook Newsfeed Diets} {Starving the newsfeed for social media detox: Effects of strict and self-regulated facebook newsfeed diets}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems} {Proceedings of the 2023 chi conference on human factors in computing systems}\ (\BPGS\ 1--16).
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Smith%
 , Goldstein%
 \BCBL {}\ \BBA {} Johnson%

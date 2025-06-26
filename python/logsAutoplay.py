@@ -10,17 +10,14 @@ Created on Thu Mar  9 11:05:19 2023
 import re
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy import stats
-from scipy.stats.mstats import winsorize
-from scipy.stats import mannwhitneyu
-from scipy.stats import ranksums
 
 # %%%
 # CHOOSE DATA
 # cleaned dataset from the final data collection
+
 df = pd.read_csv("autoplay.csv")
+
+# df = pd.read_csv("MPL.csv")
 
 # combined dataset with the last pretest
 # df = pd.read_csv("autoplay_final.csv")

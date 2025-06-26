@@ -1,18 +1,13 @@
 # %%% import packages & data
 import re
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy import stats
-from scipy.stats.mstats import winsorize
-from scipy.stats import mannwhitneyu
-from scipy.stats import ranksums
-import statsmodels.api as sm
-import statsmodels.formula.api as smf
 
 # cleaned dataset from the last data collection
 clean_data = pd.read_csv("clean-data.csv")
+clean_data.to_excel("clean-data.xlsx")
+
+clean_data = pd.read_csv("clean-MPL-data.csv")
+clean_data.to_excel("clean-MPL-data.xlsx")
 
 # %%%Step 1: Visualize the relationship
 plt.figure(figsize=(10, 6))
@@ -45,7 +40,6 @@ def categorize_time_choice(time):
 
 # Create the categorical variable
 clean_data['timeChoice_cat'] = clean_data['timeChoice'].apply(categorize_time_choice)
-
 # Dummy-encode the categorical variable (creates dummy variables for Low and Medium, with High as reference)
 df = pd.get_dummies(clean_data, columns=['timeChoice_cat'], drop_first=False)
 
@@ -76,7 +70,7 @@ model = smf.ols('deviation ~ timeChoice_cat_Low + timeChoice_cat_Medium + timeCh
 print(model.summary())
 # %%%
 clean_data['deviation'] = clean_data['typing_log'] - clean_data['timeChoice']
-model = smf.ols('deviation ~ timeChoice_cat_High:treatment + timeChoice_cat_High + treatment', data=df).fit()
+model = smf.ols('deviation ~ timeChoice_cat_High:income + timeChoice_cat_High + income', data=df).fit()
 print(model.summary())
 
 # %%%Step 2: Simple regression - typing_log predicted by timeChoice
@@ -91,6 +85,27 @@ print(model2.summary())
 model3 = smf.ols('typeCount ~ timeChoice', data=clean_data).fit()
 print("\nReg 3: Simple Linear Regression - typeCount predicted by Treatment")
 print(model3.summary())
-# %%%
-model = smf.ols('end_time_log ~ deviation + treatment', data=df).fit()
+# %%% no interaction for SES
+df['SES'] = np.where(df['income'].isin(["0-10"]), "Low", "High")
+def determine_work_choice(time):
+    if time == 0:
+        return "Low"
+    elif time == 1200:
+        return "High"
+    elif time == 600:
+        return "Medium"
+    else:
+        # For other values, use nearest category
+        if time < 300:
+            return "Low"
+        elif time > 900:
+            return "High"
+        else:
+            return "Medium"
+
+df['workChoice'] = df['timeChoice'].apply(determine_work_choice)
+model = smf.ols('deviation ~ workChoice*SES', data=df).fit()
+print(model.summary())
+# %%%Step 5: work choice predicted by SES
+model = smf.ols('timeChoice ~ SES', data=df).fit()
 print(model.summary())

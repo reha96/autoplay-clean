@@ -1,0 +1,99 @@
+/*******************************************************************************
+    Project: autoplay
+    Author: Reha Tuncer
+    Date: 28.06.2025
+    Description: descriptives and analysis on cleaned data
+*******************************************************************************/
+//# preamble
+version 18
+clear all
+macro drop _all
+set more off
+set scheme s2color, permanently
+set maxvar 32767
+global graph_opts ///
+    graphregion(fcolor(white) lcolor(white)) ///
+    bgcolor(white) ///
+    plotregion(lcolor(white))
+	
+global dpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/"
+// global fpath "/Users/reha.tuncer/Documents/GitHub/icfes-referrals/figures/"
+set scheme s2color, permanently	
+	
+// get a full dataset for standardizing
+clear all
+cls
+
+import excel "${dpath}clean-data.xlsx", firstrow clear
+capture rename A id
+
+describe
+
+drop treatment
+gen treatment = 1 if Treatment == "Control"
+replace treatment = 2 if Treatment == "Autoplay"
+destring treatment, replace force
+
+rename timeChoice typeChoice
+rename typing_log seconds_typing
+
+drop attention* speed browser os platform userTranscription watching* not* end_time_log_in* Treatment
+save "${dpath}cleaned_autoplay_data.dta", replace
+
+
+clear all
+use "${dpath}cleaned_autoplay_data.dta", replace
+// time spent as proportions
+gen prop_typing_choice = typeChoice/end_time_log
+hist prop_typing_choice
+
+xtile choice3 = prop_typing_choice, nq(3)
+xtile choice5 = prop_typing_choice, nq(5)
+xtile choice10 = prop_typing_choice, nq(10)
+
+twoway (kdensity prop_typing_choice if treatment == 1) (kdensity prop_typing_choice if treatment == 2)
+
+gen prop_typing = seconds_typing/end_time_log
+twoway (kdensity prop_typing if treatment == 1) (kdensity prop_typing if treatment == 2)
+
+gen prop_deviation = prop_typing - prop_typing_choice
+twoway (kdensity prop_deviation if treatment == 1) (kdensity prop_deviation if treatment == 2)
+
+sum prop*
+tabstat prop*, by(treatment) stat(mean semean)
+
+corr prop_deviation prop_typing_choice
+
+scatter prop_deviation prop_typing_choice
+scatter prop_deviation prop_typing_choice if prop_typing_choice < .25
+scatter prop_deviation prop_typing_choice if prop_typing_choice > .45 & prop_typing_choice < .55
+scatter prop_deviation prop_typing_choice if prop_typing_choice > .55
+
+reg prop_deviation ib(2).choice3 
+reg prop_deviation ib(2).choice3 treatment
+reg prop_deviation prop_typing_choice treatment
+
+// units of consumption or typing (std)
+sum watchedVideo
+gen z_vid = (watchedVideo - r(mean))/r(sd)
+kdensity z_vid
+tabstat z_vid, by(treatment) stat(mean semean)
+
+corr z_vid prop_typing_choice
+twoway lfitci z_vid prop_deviation || scatter z_vid prop_deviation
+reg z_vid ib(2).choice3 i.treatment
+reg z_vid ib(2).choice3##i.treatment
+
+sum typeCount
+gen z_type = (typeCount - r(mean))/r(sd)
+kdensity z_type
+tabstat z_type, by(treatment) stat(mean semean)
+
+corr z_type prop_typing_choice
+twoway lfitci z_type prop_deviation || scatter z_type prop_deviation
+
+reg z_type ib(2).choice3 i.treatment
+reg z_type ib(2).choice3 i.treatment content
+
+// content
+twoway (kdensity content if treatment == 1) (kdensity content if treatment == 2)

@@ -493,8 +493,7 @@ mpl_data = pd.read_csv("MPL.csv")
 
 # Dropping the specified columns from mpl_data
 columns_to_drop = ['ID', '__v', '_id', 'clikcedOkToSwitch.Practice', 'createdAt', 'laborTime', 'leisureTime', 
-                   'lottery', 'notTyping', 'notWatching', 'typing', 'videoPausedFor', 'watching', 
-                   'transcription', 'updatedAt']
+                   'lottery', 'videoPausedFor', 'transcription', 'updatedAt']
 
 clean_mpl_data = mpl_data.drop(columns=columns_to_drop)
 

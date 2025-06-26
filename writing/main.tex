@@ -1,13 +1,12 @@
 \documentclass[11pt,a4paper,oneside]{article}
 \linespread{1.5}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,adjustbox,bm}
+\usepackage{geometry}
+\usepackage{threeparttable}
 %\usepackage[dvipsnames]{xcolor}
 \usepackage{mathtools}
 \usepackage{refstyle}
-\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue,breaklinks]{hyperref}
 \usepackage{pdflscape}
-\usepackage[flushleft]{threeparttable}
-\usepackage{multirow}
 \usepackage{longtable}
 \usepackage{eurosym}
 \usepackage{enumerate}
@@ -15,12 +14,38 @@
 \usepackage{siunitx}
 \usepackage{rotating}
 \usepackage{graphicx}
+\usepackage{bbm}
 \usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{width=.8\textwidth}
 \usepackage[section]{placeins}
 \usepackage{xcolor}
 \usepackage{geometry}
 \usepackage{changepage}
+\usepackage{float}
 \usepackage[natbibapa]{apacite}
+\usepackage{threeparttable}
+\newcommand{\footremember}[2]{%
+   \footnote{#2}
+    \newcounter{#1}
+    \setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footrecall}[1]{%
+    \footnotemark[\value{#1}]%
+} 
+\usepackage{lineno}
+\makeatletter
+\def\makeLineNumberLeft{%
+  \linenumberfont\llap{\hb@xt@\linenumberwidth{\LineNumber\hss}\hskip\linenumbersep}% left line number
+  \hskip\columnwidth% skip over column of text
+  \rlap{\hskip\linenumbersep\hb@xt@\linenumberwidth{\hss\LineNumber}}\hss}% right line number
+\leftlinenumbers% Re-issue [left] option
+\makeatother
+
+\usepackage{blindtext}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, urlcolor=blue,breaklinks]{hyperref}
+
+\linenumbers 
 
 
 \title{Autoplay on Trial: An Online Experiment on the Suspect Behind Excessive Screen Time
@@ -59,8 +84,6 @@
 Interface design can be strategically employed to `nudge' consumers to take certain actions and is suspected of promoting addictive online behavior. A prevalent interface element across numerous popular social media and streaming platforms is the default autoplay feature. In this study, we present an incentivized online experiment to investigate whether the autoplay feature alone can cause an unwarranted increase in  desired viewing times. While controlling for content, we demonstrate that the autoplay feature, in isolation, does not override participants’ previously indicated preferences for media consumption. We discuss the our findings in terms of what actually renders online platforms addictive. Our results have direct policy implications for the proposed blanket ban on autoplay by the US Congress (SMART Act).
 
 \section{Introduction}
-
-
 The rise of social media and streaming platforms have generated discussion around potential societal benefits and concerns about harms such as addiction and self-control issues. A number of recent economic studies have found convincing evidence that people spend significantly more time than they would like to on their smartphones in general \citep{hoong2021self} and on social media \citep{allcott2022digital}, and social media use was associated with decreased subjective well being \citep{allcott2020welfare}. The reason behind such findings need not be elusive. Online content serving platforms, like Facebook or Netflix, monetize consumer attention and have the ability to control the setting in which consumption decisions occur (e.g., format of information, presentation of choices). Such firms are potentially incentivized to increase the `addictiveness' of their platforms by altering the content and design provided to users, as occupying more of consumers' free time can lead to higher revenues \citep{ichihashi2023addictive, kleinberg2022challenge}. Designing for addiction, in turn, would lead to increased content consumption but decreased utility from consumption, as implied by the extensive literature on present bias (see \citet{ericson2019intertemporal} for a review). Wary policymakers across both sides of the Atlantic have already made efforts to restrain the negative effects such incentives could have on consumer welfare (see \hyperlink{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text}{SMART Act} by US Congress and \hyperlink{https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package}{Digital Services Act} by EU). Both acts are attempts to regulate the increasingly relevant digital environments which contain effective ways to solicit consumers' attention and influence them to make transactional decisions that may go against their best interests \citep{lupianez2022behavioural}. Although both regulators and scientists alike successfully identify the problem, it remains to be seen what specific aspects of such online platforms are problematic, as a blanket regulation over the entire landscape of digital services could offset the many benefits users derive from them. Our study constitutes the first such attempt to our knowledge in disentangling the many interrelated features online platforms have and pinpoints to what specifically requires the attention of the regulators. Relevant to our experimental setting is the proposed ban on defaults regarding media player controls, where the platform serves content ``without an express, separate prompt by the user (such as pushing a button or clicking an icon)''. 
 
 Interface designers and computer scientists have already documented the many ways in which interface design can be instrumentalized to  `nudge' users in practice (see \citet{caraban201923} for a review). Nudge theory suggests knowledge about systematic biases in decision-making can be leveraged to support people in making better decisions for themselves \citep{thaler2009nudge}. Much of the existing literature is dedicated to improving decision-making in the context of benevolent government-sponsored nudges (see \citet{mertens2022effectiveness} for a review). More recently, however, discussions also extended to private sector interventions. This branch of the literature addresses the implications of changing behavior for `better' decisions from the firm’s point of view \citep{smith2013choice,beggs2016private, mills2023nudge}. When firms nudge, there should be a distinction between whether the firm or the recipient of the nudge benefits from it. In other words, nudges can become problematic if the objective of the intervention is to maximize the benefit received by the firm instead of the decision-maker. Media player defaults, such as autoplay, are potentially one such example that could be driving the concerning results attested by literature. If these defaults are conceived to increase welfare of consumers instead, they should be preferred to active decisions or other alternatives. \citet{carroll2009optimal} make a similar comparison between defaults and active decisions in the context of saving decisions, with a focus on modelling  decision cost attached to making explicit choices.
@@ -92,32 +115,63 @@ To determine whether autoplay alters viewers' past commitment choices, we design
 
 \section{Experimental Design}
 
-To explore the relationship between default video player settings and self control, we created a decision making task that is boring, offers limited learning opportunities, and does not allow performance based compensation. We also offer participants a second, less paying leisure task to which they can switch at any time. The experiment is conducted over 2 days, with a cooling off period of 24 hours (up to 48 hours) between the two dates. Participants are asked to hypothetically allocate time on the first day, and then realize their allocation on the next day. Hypothetical time allocation made on the first day is contrasted with the realized time allocated on the second day to identify potential self control issues. Participants who completed all required elements of the experiment were paid within seven days after the second day of the experiment.\footnote{Prolific policy gives researchers 21 days to transfer funds to participants. The typical delay between the study  completion and payment is however only a couple of days as indicated on \href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{the Prolific website}.} There was no completion bonus for completing the experiment and payment was dependent on the seconds participants actively spent on each task. If a participant failed to meet the quality criteria for the typing task they were not paid for the seconds spent on the task.
+\subsection{Core Experimental Logic}
 
-We present the design in four subsections. First, we describe the online decision environment and its built-in validity checks. Second, we describe tasks to be completed during the timed sessions. In the third subsection we present a timeline of the experiment. The fourth subsection addresses design details including recruitment, selection, attrition.
+To explore the relationship between default video player settings and self-control, we designed a choice environment that captures the tension between productive effort and immediate gratification. Our experimental setup features two competing tasks: a primary typing task that is tedious and offers limited learning opportunities, and a secondary video-watching task that provides immediate entertainment value. This design mirrors real-world situations where individuals must allocate time between effortful productive activities and readily available leisure alternatives.
 
+The key innovation in our design is the manipulation of autoplay features in the video interface. Participants can switch between tasks at any time, but the ease of continuing with the leisure activity varies systematically across treatment conditions. This allows us to isolate the causal effect of interface design on time allocation decisions while holding constant individual preferences and task characteristics.
 
-\subsection{Online Interface}
+\subsection{Timeline and Session Structure}
 
-% The experiment was hosted on a specialized website that controlled participant navigation. Upon accessing the website, participants were presented with an informed consent form. Participants could enter their Prolific identity only if they passed the initial filtering, which included internet speed, device operating system and browser type. Once through, participants were provided with instructions, two attention checks, and the two time-limited tasks, followed by a questionnaire. Importantly, the site was designed so that participants could only advance forward. Any attempt to use the back button reset their progress to the consent form. This design choice was clearly communicated to the participants at the outset. Furthermore, to maintain a consistent navigation flow, right-clicks and keyboard shortcuts were deactivated.
+We conducted a two-day online experiment to examine how autoplay features affect time allocation between productive and leisure tasks. The multi-day structure allowed us to measure the gap between stated preferences and actual behavior under different media interface conditions. Participants completed two separate data collection sessions with a cooling-off period of 24 hours (up to 48 hours) between sessions.
 
-The experiment was conducted on a specialized website designed to guide participant navigation. Upon entry, a description of the experiment was immediately presented to participants. Subsequent access to the informed consent form and providing their Prolific identity was contingent on passing certain criteria, including checks on internet speed, device operating system, and browser type. Once verified, participants received further  instructions, underwent attention checks, engaged in two time-limited tasks, and then completed a questionnaire. A key feature of the website was its linear navigation: participants could only move forward. To further maintain this flow, right-click functions and keyboard shortcuts were also disabled. Crucially, any attempt to navigate backward would reset the participant's progress to the landing page. This design feature was communicated to participants at the beginning of the experiment. 
+Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by preference elicitation measures. Day 2 featured the main 20-minute work session where participants made actual time allocation decisions. We conducted two waves of data collection to test different experimental components, as described in Table \ref{summary_table}.
 
-Time-limited tasks were presented within a single web page under two distinct tabs. Participants could switch between tasks at any time using these tabs while saving their progress from the previous task. During the Practice Session, when instructions did not allow switching between tasks, tabs were grayed out and unclickable. Above the tabs, a progress bar and timer helped participants monitor time, indicating how long they have already spent in a session. When participants began a session, the default task was always the Typing Task. When a participant wanted to switch to the Watching Task, they had to click the according tab. Critical interactions, i.e., (i) tab switches, (ii) key presses during the Typing Task, (iii) video play or pause clicks, (iv) mouse cursor movements out of the experimental website (e.g., switching to another browser tab), were precisely logged in real time.
+\begin{table}[H]
+\centering
+\begin{threeparttable}
+\caption{Summary of experimental design and timeline}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l c c c c c @{}}
+\toprule
+& \begin{tabular}[c]{@{}c@{}}Practice\\ Session\end{tabular} & \begin{tabular}[c]{@{}c@{}}Time\\ Choice\end{tabular} & \begin{tabular}[c]{@{}c@{}}Main\\ Session\end{tabular} & \begin{tabular}[c]{@{}c@{}}Multiple\\ Price List\end{tabular} & \begin{tabular}[c]{@{}c@{}}Decision\\ Horizon\end{tabular} \\
+\midrule
+Day 1 (May 10) & \checkmark & \checkmark &  &  & 24-hour \\
+Day 2 (May 11) &  &  & \checkmark &  & immediate \\ \midrule
+Day 1 (May 18) & \checkmark & \checkmark &  & \checkmark & 24-hour \\
+Day 2 (May 19) &  &  & \checkmark &  & immediate \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves. The first wave (May 10-11) established baseline treatment effects, while the second wave (May 18-19) incorporated the Multiple Price List treatment to measure demand for commitment devices. Decision horizon refers to the time between preference elicitation and the main experimental session.
+\end{tablenotes}
+\label{summary_table}
+\end{threeparttable}
+\end{table}
 
+\subsection{Payment Structure and Incentives}
 
+We implemented a performance-based payment system to ensure participants faced meaningful trade-offs between tasks. Payment depended directly on the seconds participants actively spent on each task, with different compensation rates for the typing and video-watching activities. This created clear opportunity costs for time allocation decisions while avoiding any completion bonuses that might distort behavior.
 
-% Time-limited tasks were presented within a single web page under two distinct tabs. Participants could switch between tasks at any time using these tabs while saving their progress from the previous task. During the Practice Session, when instructions did not allow switching between tasks, tabs were grayed out and unclickable. Above the tabs, a progress bar and timer helped participants monitor time, indicating how long they have already spent in a session. When participants began a session, the default task was always the Typing Task. When a participant wanted to switch to the Watching Task, they had to click the according tab. Every time (i) a tab was clicked to switch tasks, (ii) a key was pressed to type, (iii) a video is clicked to play or pause, (iv) a participant moved the mouse cursor out of the experimental website (e.g., switching to another browser tab), precise time-logs of the events were saved.
+Participants who completed all required elements of the experiment received payment within seven days after the second session.\footnote{Prolific policy gives researchers 21 days to transfer funds to participants. The typical delay between study completion and payment is however only a couple of days on average, as indicated on the Prolific website (\href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{link}).} To maintain data quality, participants who failed to meet specified quality criteria for the typing task were not compensated for time spent on that task.
 
-% The experiment runs on a website which restricts how participants can navigate through it. First, the website welcomes participants with the informed consent form, and then it advances with collecting the Prolific identity, instructions, attention checks, sessions of two time-limited tasks, and finally the questionnaire. Participants can only advance through the website. Using the back button brings them back to the informed consent form and resets their progress. Right-clicks and keyboard shortcuts are also disabled in the same spirit.
+\subsection{Technical Implementation and Interface Design}
 
+The experimental platform was designed to provide precise control over the testing environment while maintaining ecological validity. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between activities seamlessly while preserving progress. The typing task always served as the default upon session initiation, requiring an active choice to switch to the video-watching alternative.
 
-\subsubsection{Internal Validity}\label{int-val}
- 
-A major concern when running online experiments is the lack of control over the environment. Online experiments can be influenced by participants multitasking or engaging in other activities, technical glitches, manipulative behaviors to increase earnings, and varied  physical and temporal settings. To enhance the internal validity of our experiment, we have put in place several stringent measures. First, using browser-specific cookies, we selectively admit participants at the beginning of the experiment. This ensures that only individuals using stable internet connections (a minimum threshold of 30 Mbps on the first day and of 25 Mbps on the second day was ascertained through a speed-test on the first page) are included. Moreover, to standardize the user experience and minimize browser-specific variations, we confined our study to participants using Windows, Linux, or Mac operating systems exclusively with Chromium-based browsers. We purposefully excluded browsers such as Safari and Mozilla Firefox due to their restrictive autoplay and cookie configurations, and disallowed portable devices such as tablets and mobile phones. Second, after the completion of the experiment, participants were asked for any potential disruptions in their connectivity and their genuine engagement in the video watching task. Third, adopting a method previously implemented by \citet{purohit2023starving}, we used a JavaScript package to detect any obstructions in the interface's visibility.\footnote{For more information about the package, click  \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{here}.} Using this tool, we detected actions such as minimizing the browser, toggling between web pages, or launching other applications and logged it. These logs provided a granular, second-by-second account of participants' interactions, enabling us to filter out data that may have been compromised by distractions or divided attention.
+Our interface incorporated several key features to track behavior precisely. A progress bar and timer provided real-time feedback on session duration and task engagement. We logged all critical interactions including tab switches, keystrokes during typing, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
 
-% As a first line of defense to remedy these concerns we first employ browser based cookies to filter participants at the beginning. We limit the participation to devices with stable internet connection (speed-test was run at arrival at the first page, >40 Mbps), running only Windows, Linux or Mac operating systems (no mobile devices except for laptops), using only Chrome-based browsers (excluding Safari and Mozilla which have stricter autoplay and cookie settings). Second, one post-experiment question to find out whether participants had any connection issues and a honesty question on whether participants actually viewed the videos in the watching task. The third and the most stringent line of defense were the hidden   logs during timed-tasks, as used by \citet{purohit2023starving}. We used the same JavaScript package to detect whether any object blocks the visibility of the interface. For example, if a participant minimizes, or switches to another web page in their browser, or opens another app, we took second-by-second logs of the instances.
+\subsection{Internal Validity Controls}\label{int-val}
 
+Online experiments present unique challenges for maintaining experimental control, including participant multitasking, technical disruptions, and environmental variation. We implemented comprehensive measures to address these concerns and ensure data quality.
+
+\textbf{Participant and Technology Screening:} We selectively admitted participants using multiple screening criteria to ensure stable experimental conditions. Internet speed requirements (minimum 30 Mbps on day 1, 25 Mbps on day 2) filtered out participants with unstable connections. We restricted participation to users with Windows, Linux, or Mac operating systems using Chromium-based browsers exclusively, excluding Safari and Mozilla Firefox due to restrictive autoplay configurations. Mobile devices and tablets were prohibited to standardize the user experience.
+
+\textbf{Platform Controls:} The experimental website enforced linear navigation, preventing participants from moving backward through the experiment. We disabled right-click functions and keyboard shortcuts, and any attempt to navigate backward reset progress to the landing page. These restrictions were clearly communicated to participants at the experiment's outset.
+
+\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using JavaScript packages to detect interface visibility disruptions.\footnote{For more information about the package, see \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{here}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications, providing second-by-second accountability of participant engagement.
+
+\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the video-watching task. Combined with our objective tracking measures, these self-reports enabled us to identify and filter data potentially compromised by distractions or divided attention.
 
 \subsection{Tasks}
 \subsubsection{Typing Task} \label{typing-task}
@@ -236,27 +290,7 @@ Participants used a slider tool with 20-second steps to indicate their time allo
    \label{time-choice-screen}
 \end{figure}
 
-\begin{table}[htbp]
-\caption{Summary of experimental design and timeline}
-\label{summary_table}
-\centering
-\begin{tabular}{@{}ccccccc@{}}
-\toprule
- &
-  \begin{tabular}[c]{@{}c@{}}Practice\\ Session\end{tabular} &
-  % \begin{tabular}[c]{@{}c@{}}Minimum\\ Work\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Time\\ Choice\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Main\\ Session\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Multiple\\ Price List\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Decision\\ Horizon\end{tabular} \\ \midrule
-% Feb. 24 - April 1 & x & x & x & x &   & immediate \\
-Day 1 (May 10) & x    & x &   &   & 24-hour  \\
-Day 2 (May 11) &      &   & x &   & immediate \\
-Day 1 (May 18) & x    & x &   & x & 24-hour  \\
-Day 2 (May 19)&      &   & x &   & immediate  \\ \bottomrule
-\centering
-\end{tabular}
-\end{table}
+
 
 
 % \subsection{Procedure}
