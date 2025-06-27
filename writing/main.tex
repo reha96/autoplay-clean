@@ -113,19 +113,17 @@ To determine whether autoplay alters viewers' past commitment choices, we design
 % How do default Auto-(re)play features override participants’ previously indicated preferences for media consumption? 
 
 
-\section{Experimental Design}
+\section{Design}
 
-\subsection{Core Experimental Logic}
+\subsection{Overview}
+To explore the relationship between default video player settings and self-control, we designed a choice environment that captures the tension between productive effort and immediate gratification. Our experimental setup is centered around two competing tasks: A primary typing task that is tedious and offers limited learning opportunities, and a secondary video-watching task that provides immediate entertainment value. This design mirrors real-world situations where individuals must allocate time between effortful productive activities and readily available leisure alternatives.
 
-To explore the relationship between default video player settings and self-control, we designed a choice environment that captures the tension between productive effort and immediate gratification. Our experimental setup features two competing tasks: a primary typing task that is tedious and offers limited learning opportunities, and a secondary video-watching task that provides immediate entertainment value. This design mirrors real-world situations where individuals must allocate time between effortful productive activities and readily available leisure alternatives.
-
-The key innovation in our design is the manipulation of autoplay features in the video interface. Participants can switch between tasks at any time, but the ease of continuing with the leisure activity varies systematically across treatment conditions. This allows us to isolate the causal effect of interface design on time allocation decisions while holding constant individual preferences and task characteristics.
+The key feature in our design is the manipulation of autoplay setting in the video interface. Participants can switch between tasks at any time, but the ease of continuing with the leisure activity varies systematically across treatment conditions. This allows us to isolate the causal effect of interface design on time allocation decisions while holding constant individual time preferences and other task characteristics.
 
 \subsection{Timeline and Session Structure}
+We conducted a two-day online experiment to examine how autoplay features affect time allocation between productive and leisure tasks. The multi-day structure allowed us to measure the gap between stated preferences and actual behavior under two different video interface conditions. Participants completed two separate data collection sessions with a cooling-off period of 24 hours (up to 48 hours) between sessions.
 
-We conducted a two-day online experiment to examine how autoplay features affect time allocation between productive and leisure tasks. The multi-day structure allowed us to measure the gap between stated preferences and actual behavior under different media interface conditions. Participants completed two separate data collection sessions with a cooling-off period of 24 hours (up to 48 hours) between sessions.
-
-Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by preference elicitation measures. Day 2 featured the main 20-minute work session where participants made actual time allocation decisions. We conducted two waves of data collection to test different experimental components, as described in Table \ref{summary_table}.
+Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by preference elicitation measures. Day 2 featured the main 20-minute work session where participants made actual time allocation decisions. We conducted two waves of data collection during May 2023, as described in Table \ref{summary_table}.
 
 \begin{table}[H]
 \centering
@@ -143,7 +141,7 @@ Day 2 (May 19) &  &  & \checkmark &  & immediate \\
 \end{tabular*}
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves. The first wave (May 10-11) established baseline treatment effects, while the second wave (May 18-19) incorporated the Multiple Price List treatment to measure demand for commitment devices. Decision horizon refers to the time between preference elicitation and the main experimental session.
+\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves, with columns ordered chronologically within each day. The first wave (May 10-11) established baseline treatment effects, while the second wave (May 18-19) incorporated the Multiple Price List treatment to measure demand for commitment devices. Decision horizon refers to the time between preference elicitation and the main experimental session.
 \end{tablenotes}
 \label{summary_table}
 \end{threeparttable}
@@ -151,145 +149,134 @@ Day 2 (May 19) &  &  & \checkmark &  & immediate \\
 
 \subsection{Payment Structure and Incentives}
 
-We implemented a performance-based payment system to ensure participants faced meaningful trade-offs between tasks. Payment depended directly on the seconds participants actively spent on each task, with different compensation rates for the typing and video-watching activities. This created clear opportunity costs for time allocation decisions while avoiding any completion bonuses that might distort behavior.
+We implemented a performance-based payment system to ensure participants faced meaningful trade-offs between tasks. We based payment directly on the seconds participants actively spent on each task, with different compensation rates for the typing and video-watching activities. This created clear opportunity costs for time allocation decisions while avoiding any completion bonuses that might distort behavior.
 
 Participants who completed all required elements of the experiment received payment within seven days after the second session.\footnote{Prolific policy gives researchers 21 days to transfer funds to participants. The typical delay between study completion and payment is however only a couple of days on average, as indicated on the Prolific website (\href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{link}).} To maintain data quality, participants who failed to meet specified quality criteria for the typing task were not compensated for time spent on that task.
 
 \subsection{Technical Implementation and Interface Design}
 
-The experimental platform was designed to provide precise control over the testing environment while maintaining ecological validity. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between activities seamlessly while preserving progress. The typing task always served as the default upon session initiation, requiring an active choice to switch to the video-watching alternative.
+We designed the experimental platform to provide precise control over the testing environment while maintaining ecological validity. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between activities seamlessly while preserving progress. The typing task always served as the default upon session initiation, requiring an active choice to switch to the video-watching alternative.
 
-Our interface incorporated several key features to track behavior precisely. A progress bar and timer provided real-time feedback on session duration and task engagement. We logged all critical interactions including tab switches, keystrokes during typing, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
+Our interface incorporated several key features to track behavior precisely. A progress bar and timer provided real-time feedback on session duration. We logged all critical interactions including tab switches, keystrokes during typing, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
 
 \subsection{Internal Validity Controls}\label{int-val}
 
 Online experiments present unique challenges for maintaining experimental control, including participant multitasking, technical disruptions, and environmental variation. We implemented comprehensive measures to address these concerns and ensure data quality.
 
-\textbf{Participant and Technology Screening:} We selectively admitted participants using multiple screening criteria to ensure stable experimental conditions. Internet speed requirements (minimum 30 Mbps on day 1, 25 Mbps on day 2) filtered out participants with unstable connections. We restricted participation to users with Windows, Linux, or Mac operating systems using Chromium-based browsers exclusively, excluding Safari and Mozilla Firefox due to restrictive autoplay configurations. Mobile devices and tablets were prohibited to standardize the user experience.
+\textbf{Participant and Technology Screening:} We selectively admitted participants using multiple screening criteria to ensure stable experimental conditions. Internet speed requirements filtered out participants with unstable connections (minimum 30 Mbps on day 1, 25 Mbps on day 2). We restricted participation to users with Windows, Linux, or Mac operating systems using Chromium-based browsers exclusively. We excluded Safari and Mozilla Firefox due to restrictive autoplay configurations. Mobile devices and tablets were prohibited to standardize the user experience.
 
-\textbf{Platform Controls:} The experimental website enforced linear navigation, preventing participants from moving backward through the experiment. We disabled right-click functions and keyboard shortcuts, and any attempt to navigate backward reset progress to the landing page. These restrictions were clearly communicated to participants at the experiment's outset.
+\textbf{Platform Controls:} The experimental website enforced linear navigation, preventing participants from moving backward through the experiment. We disabled right-click functions and keyboard shortcuts. Any attempt to navigate backward reset progress to the landing page. We clearly communicated these restrictions to participants at the experiment's outset.
 
-\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using JavaScript packages to detect interface visibility disruptions.\footnote{For more information about the package, see \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{here}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications, providing second-by-second accountability of participant engagement.
+\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using JavaScript packages to detect interface visibility disruptions.\footnote{For more information about the package, see \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{here}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications. The tracking provided second-by-second accountability of participant engagement.
 
-\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the video-watching task. Combined with our objective tracking measures, these self-reports enabled us to identify and filter data potentially compromised by distractions or divided attention.
+\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the video-watching task. We combined these self-reports with our objective tracking measures to identify and filter data potentially compromised by distractions or divided attention.
 
 \subsection{Tasks}
+The experiment centers on participants' time allocation decisions between two distinct activities that differ substantially in their cognitive demands and entertainment value. Both the Typing and Watching Tasks were presented to participants twice: First during the Practice Session to familiarize participants with the interface and task mechanics, and second during the Main Session where performance determined compensation. In both sessions, depending on the randomized assignment to conditions, the key experimental manipulation occurs in the Watching Task.
+
 \subsubsection{Typing Task} \label{typing-task}
+The Typing Task requires retyping successive CAPTCHAs. CAPTCHAs are computer-generated images that contain random uppercase and lowercase letters as well as randomly placed white spaces.\footnote{White spaces were added to improve readability after pretests. The number of white spaces was limited to a maximum of 5 instances per CAPTCHA to control the typing time per image.} Each CAPTCHA has a total length of 35 characters, including the white spaces.
 
-Typing Task requires retyping successive CAPTCHA's. CAPTCHA's are computer generated images that contain random uppercase and lowercase letters as well as randomly placed white spaces.\footnote{White spaces were added to improve readability after pretests. Number of white spaces were  limited to maximum 5 instances per CAPTCHA in order to control the typing time per image.}  Each CAPTCHA has a total length of 35 characters, including the white spaces. The images are blurred and distorted by lines and dots added on top to increase comprehension difficulty.\footnote{The randomization procedure to generate CAPTCHA's is available \href{https://osf.io/2vqwf/?view_only=1ef589ec2e544db4ad9b6ab9c45ff849}{here}.} These CAPTCHA images are always presented in the interface with a text box and a submit button. When the submit button is clicked, the next CAPTCHA image comes and the text input for the previous one is stored. Typing Task is identical across all conditions.
+We designed the images to be blurred and distorted by lines and dots added on top to increase comprehension difficulty.\footnote{The randomization procedure to generate CAPTCHAs is available \href{https://osf.io/2vqwf/?view_only=1ef589ec2e544db4ad9b6ab9c45ff849}{here}.} The interface always presents these CAPTCHA images with a text box and a submit button. When the submit button is clicked, the next CAPTCHA image appears and the text input for the previous one is stored. The task is identical across all conditions, as illustrated in Figure \ref{typing-screen}.
 
-There are easy-to-attend quality requirements to make sure participants are active: (i) an overall typing accuracy of at least 70 percent in submitted CAPTCHA's,\footnote{We use Python's \href{https://docs.python.org/3/library/difflib.html}{\texttt{difflib}} string-matching algorithm to measure accuracy. It consists of finding the longest common substring and then finding recursively the number of matching characters in the non-matching regions on both sides of the longest common substring. Overall accuracy of 70 percent implies an average of 10.5 ($0.3*35$) mistakes across all submitted CAPTCHA's.} (ii) a minimum of one CAPTCHA submission per minute spent on task. Remuneration condition for the Typing Task is to meet these quality requirements. Typing Task is remunerated at 0.38 pennies per second participants work on it. A hidden timer records each second participants keep the Typing Task in the visible part of their screen. Participants in both conditions spent on average 41 seconds per CAPTCHA. 
+We established easy-to-meet quality requirements to ensure participants remained active. These requirements include an overall typing accuracy of at least 70 percent in submitted CAPTCHAs\footnote{We use Python's \href{https://docs.python.org/3/library/difflib.html}{\texttt{difflib}} string-matching algorithm to measure accuracy. It consists of finding the longest common substring and then finding recursively the number of matching characters in the non-matching regions on both sides of the longest common substring. Overall accuracy of 70 percent implies an average of 10.5 ($0.3*35$) mistakes across all submitted CAPTCHAs.} and a minimum of one CAPTCHA submission per minute spent on the task. 
 
-\begin{figure}[!htbp]
-   \centering
-       \includegraphics[scale=.3]{typing.png}
+Participants must meet these quality requirements to receive compensation for the Typing Task. We remunerated the Typing Task at 0.38 pennies per second participants worked on it. A hidden timer recorded each second participants kept the Typing Task in the visible part of their screen. Participants in both conditions spent on average 41 seconds per CAPTCHA.
+
+\begin{figure}[H]
    \caption{Typing Task tab}
+    \centering
+       \includegraphics[scale=.4]{typing.png}
    \label{typing-screen}
+   \begin{tablenotes}
+   \footnotesize
+\item[] \textit{Note:} This figure describes the typing interface tab. As participants always begin in the ``Type'' tab by default, there is a banner that reminds participants to click the tab buttons to switch tasks. This banner disappeared as soon as participants switched tasks once.
+\end{tablenotes}
 \end{figure}
-
-% Number of submissions per participant is recorded and compared with overall performance to implement strict control over incentives. For example, if on average one CAPTHCA can be completed in a duration of 10 seconds, a participant should at least complete 5 CAPTCHAs in a minute spent on the labor task. Participants are informed in instructions that they should provide the required amount of effort for the labor task, or risk losing payment. 
 
 \subsubsection{Watching Task} \label{watching-task}
+In this task, participants watch successive short videos in a customized media player. Since we are interested in isolating the media player's default settings, the video content and the order in which videos appear to participants are identical across conditions. We completely disabled the media player controls: Participants cannot skip videos (user scrolling is disabled) or use the media player's slider to advance or go back in a particular video. We remunerated the Watching Task at 0.33 pennies per second participants worked on it.
 
-In this task participants watch successive short videos in a customized media player. Since we are interested in isolating the media player's default settings, the video content and the order in which videos appear to participants are identical across treatments. The media player controls are completely disabled: Participants are not allowed to skip videos (user scrolling is disabled) or use the media player's slider to advance or go back in a particular video. Watching Task is remunerated at 0.33 pennies per second participants work on it. In the Autoplay treatment, videos play automatically when the Watching tab is visible and pause with a click anywhere on the video. While the Watching task is visible, the media player keeps scrolling on to next videos and keeps playing them unless it is interrupted. In the control treatment, participants need to have the Watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video but the new video only starts playing when the participant clicks on it. 
+The conditions differ in their autoplay functionality. In the \textbf{Autoplay} condition, videos play automatically when the Watching tab is visible and pause with a click anywhere on the video. While the Watching task is visible, the media player keeps scrolling to the next videos and continues playing them unless interrupted. In the \textbf{Control} condition, participants need to have the Watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video, but the new video only starts playing when the participant clicks on it. Figure \ref{watching-screen} illustrates the video tab in the \textbf{Control} condition.
 
-% There is a small delay between each video due to the reaction times of participants clicking and moving their cursors in the control treatment. We record this difference and derive a \textit{pure} watching time which allows for a better comparison with the Autoplay treatment. Note that alongside the Watching Task, participants also engage in the Typing Task. The Watching Task's design, particularly in the control condition, can influence the time allocation on the Typing Task, making the evaluation of the \textit{pure} watching time crucial. Watching the same number of videos in control condition would inflate time spent in the Watching Task because of the delay and reduce the available time for the Typing Task. For the median participant, the number of seconds of delay amounts to 32 seconds in the control and 0 seconds for watching in the Autoplay treatment. This difference in delay is statistically significant across conditions and implies we use \textit{pure} watching measure to compare across conditions. 
+We curated videos from YouTube and TikTok, using tags such as ``funny animal videos/short'' and ``cute animal videos/shorts''. We manually selected videos to isolate the difference in the media player design and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. We chose animal videos because of their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of.} 
 
-% \textcolor{red}{DESCRIPTIVE STATISTICS FOR VIDEOS. HOW MANY VIDEOS? AVERAGE LENGTH OF EACH VIDEO?} 
+We manually reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. We kept the videos short to maximize the frequency of experiencing the autoplay feature during the watching session.
 
-Videos are curated from YouTube and TikTok, using tags such as ``funny animal videos/short'' and ``cute animal videos/shorts''. Manual selection of videos isolates the difference in the media player design, and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. The reason for choosing animal videos was their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they have seen and suggest what types of videos they would have liked to see more of.} The selected videos were manually  reviewed to ensure that they did not contain any harmful or violent actions towards the animals involved. The videos are kept short to maximize the frequency of experiencing the Autoplay treatment during the watching session.  
-
-
-
-% In the Autoplay treatment, videos start playing whenever the Watching tab is visible and stop (i) when a participant pauses the  video by clicking anywhere on the video or (ii) when the Watching task tab is not in the visible part of the participant's screen.
-
-% In the Autoplay off treatment, a click (anywhere on the video) is required to start playing the content, both when it is (i) automatically scrolled on to or (ii) stopped because the media player was not in the visible part of the participant's screen. 
-%  and the hidden timer records each second spent on the tab. Videos stop playing if the Watching task is not visible to the participants. 
-
-% If the Autoplay is on, the next video starts playing 
-\begin{figure}[!htbp]
-   \centering
-       \includegraphics[scale=.3]{watching.png}
+\begin{figure}[H]
    \caption{Watching Task tab}
+    \centering
+       \includegraphics[scale=.4]{watching.png}
    \label{watching-screen}
+   \begin{tablenotes}
+\footnotesize
+\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textbf{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textbf{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' button seen up on the right.   
+\end{tablenotes}
 \end{figure}
-
-% \textcolor{red}{Content/resources explained pretest}
-
-
 
 
 
 % Of the three interfaces, the first one is the autoplay - at the end of each video, the next video automatically begins. The second interface is the click-to-play condition - at the end of each video, participants must click the "next video" button in order to view the next video. The third interface is Tiktok's auto-replay - at the end of each video, the same video automatically replays. The randomization in terms of the user interface for the leisure task is announced to participants in advance, i.e. participants are presented with dummy videos in all the interfaces to understand how they work (in case they did not know already). The content of the videos is exactly the same, and their length is tailored to the study: Videos are at most 15 seconds long and they have been manually scraped from TikTok to avoid algorithmic biases arising from interactions with the API, as implementing Tiktok API would mean losing control over the content participants see.
 
-\subsection{Experimental Procedure}
+\subsection{Practice Session}\label{practice}
 
-\subsubsection{Practice Session}\label{practice}
+The experiment consists of two sessions during which participants interact with the tasks described above. The first session is the Practice Session on day one. It comes right after the written descriptions of each task and serves to familiarize participants with the tasks and the interface. Participants are assigned to either \textbf{Autoplay} or \textbf{Control} condition before the Practice Session, so that they experience the same video interace on both the Practice and Main Sessions.
 
-There are two sessions during which participants interact with the tasks described above. First, the Practice Session in day one: It comes right after the written descriptions of each task and serves to familiarize participants with the tasks and the interface. Participants are not remunerated for the time they spend here because the purpose of the practice session is to understand the difficulty and the pacing of the tasks, as well as navigation within the interface. During the practice session, each task is available only for 60 seconds and participants are not allowed to switch between tasks. On the first tab participants are required to retype CAPTCHAs. The 60 second period is enough to submit one CAPTCHA and see the second CAPTCHA image. After 60 seconds, a pop-up appears on the screen blocking any other interaction and takes participants to the second page. Participants are required to close this pop-up to advance to the second task. The rationale behind the pop-up is to assure participants spend equal time on both tasks. Whether or not this pop-up is closed is verified to check participant activity, and serves as an additional attention check.\footnote{All participants closed this pop-up and switched to the Watching Task.} Once closed, the Watching Task begins for 60 seconds, enabling participants to watch 4 to 5 short videos depending on whether they were assigned to the Autoplay or the control treatment. Notice how in the Autoplay treatment videos played continuously and in the control treatment videos required manual start.
+During the practice session, each task was available for only 60 seconds and participants were not allowed to switch between tasks. On the first tab, participants were required to retype CAPTCHAs. The 60-second period was enough to submit one CAPTCHA and see the second CAPTCHA image. After 60 seconds, a pop-up appeared on the screen blocking any other interaction and taking participants to the second page.
 
-\subsubsection{Multiple Price List}\label{mpl}
+Participants were required to close this pop-up to advance to the second task. The rationale behind the pop-up was to ensure participants spent equal time on both tasks. Whether or not this pop-up was closed was verified to check participant activity and served as an additional attention check.\footnote{All participants closed this pop-up and switched to the Watching Task.} Once closed, the Watching Task began for 60 seconds, enabling participants to watch 4 to 5 short videos depending on whether they were assigned to the \textbf{Autoplay} or the \textbf{Control} condition. In the \textbf{Autoplay} condition, videos played continuously, while in the \textbf{Control} condition, videos required manual start.
 
-After the Practice Session on day one, participants in the Multiple Price List (MPL) condition made 9 binary decisions. They chose between their preferred media player setting (Autoplay off or on) and a bonus payment. The MPL condition was introduced after the initial data collection phase, and its bonuses were determined by the per-second earning differences across tasks, multiplied by the observed time differences between the Autoplay and control groups. Specifically, the average difference between the Autoplay and control treatments, in terms of time spent across tasks, as can be seen in Table \ref{table3}, was approximately 60 seconds. This resulted in an average earning difference of $60*(0.38-0.33)=3$ pennies. To capture this in the MPL choices offered, we set the symmetric bonuses accordingly: \textsterling $[0.05, 0.1, 0.25, 0.5]$.
+We did not remunerate participants for the time they spent here because the purpose of the practice session was to understand the difficulty and pacing of the tasks, as well as navigation within the interface.
 
+\subsection{Multiple Price List}\label{mpl}
 
-Once these decisions were completed, participants received information on the media player setting—specifically for day two, if Autoplay would be on or off—and the associated bonus. This information was displayed on the next page. Armed with this knowledge, they then decided on their Time Choice. Participants who were not in the MPL condition proceeded directly to the Time Choice page after their Practice Session. More details on the Time Choice can be found in the subsequent section.
+After the Practice Session on day one, participants in the Multiple Price List (\textbf{MPL}) condition made 9 binary decisions (see Figure \ref{mpl-screen}). They chose between their preferred media player setting (Autoplay off or on) and a bonus payment. We introduced the MPL condition after the initial data collection phase. We determined its bonuses by the per-second earning differences across tasks, multiplied by the observed time differences between the Autoplay and control groups. 
 
-\begin{figure}[!htbp]
+Specifically, the average difference between the Autoplay and control treatments, in terms of time spent across tasks, was approximately 60 seconds (as shown in Table \ref{table3}). This resulted in an average earning difference of $60*(0.38-0.33)=3$ pennies. To capture this in the MPL choices offered, we set the symmetric bonuses accordingly: \textsterling $[0.05, 0.1, 0.25, 0.5]$.
+
+Once these decisions were completed, participants received information on the media player setting for day two—specifically whether Autoplay would be on or off—and the associated bonus. This information was displayed on the next page. With this knowledge, they then decided on their Time Choice. Participants who were not in the MPL condition proceeded directly to the Time Choice page after their Practice Session. More details on the Time Choice can be found in the subsequent section.
+
+\begin{figure}[H]
+    \caption{Multiple Price List page}
    \centering
-       \includegraphics[scale=.3]{mpl.png}
-   \caption{Multiple Price List page}
+       \includegraphics[scale=.4]{mpl.png}
    \label{mpl-screen}
+      \begin{tablenotes}
+\footnotesize
+\item[] \textit{Note:} This figure describes the MPL page where participants made 9 binary choices between their preferred autoplay setting and bonus payments. Each row presents a choice between ``Autoplay'' (left) and ``No Autoplay'' (right) with associated bonus amounts ranging from £0.05 to £0.5. The interface required participants to select one option in each row before proceeding. One of these 9 decisions was randomly selected for implementation in the Main Session, determining both the autoplay setting and any bonus payment for day two.
+\end{tablenotes}
 \end{figure}
 
-% Once the Practice Session is over in day one, participants in the Multiple Price List (MPL) condition  make 9 binary decisions regarding their preferred media player setting (Autoplay off or on) and the bonus payment attached to that choice. Since MPL condition was run after the first round of data collection, prices in the binary list were based on the actual differences between the 2 conditions receiving Autoplay and control treatments. \textcolor{red}{RANGE OF 9 PRICES HERE}. Once all 9 decisions are made, participants are made aware of the second day's implemented media player setting, i.e., whether they will have Autoplay on or off and the attached bonus on the following webpage. With this information at hand, participants then make their Time Choice accordingly. Participants not in the MPL condition advance directly to the Time Choice page. The complete description of the Time Choice is in the next section.
+\subsection{Time Choice} \label{time-choice}
 
-% After concluding the Practice Session on day one, participants in the Multiple Price List (MPL) condition made 9 binary decisions, selecting between their preferred media player setting (Autoplay off or on) and the bonus payment associated with that choice. Introduced after the initial data collection phase, the MPL condition's bonuses were determined by the observed differences between the Autoplay and control treatment groups. This difference were calculated by the per second difference in earning across tasks times the observed differences in time spent across conditions. \textcolor{red}{RANGE OF 9 PRICES HERE}. Having made all 9 decisions, participants were then informed of the media player setting for the upcoming day on —specifically, whether Autoplay would be on or off—and the bonus that came with it. This information was presented on the subsequent page. With these details in mind, they then made their Time Choice. Those outside the MPL condition moved directly to the Time Choice page after the Practice Session. A more detailed description of the Time Choice is provided in the following section.
+Following the Practice Session, participants transitioned to the Time Choice section. This section required them to specify their preferred time allocation between the two tasks for the main 20-minute session scheduled for the following day. Participants knew the main session would be 20 minutes long and they were free to choose corner solutions, even if that meant focusing solely on one task.
 
+We designed a slider tool with 20-second steps for participants to indicate their time allocation preferences. Initially, the slider appeared grayed out and required a click to activate. This design aimed to ensure participants considered their choices in an active manner. The click-to-activate design had two benefits: It guaranteed participants interacted with the slider and helped participants understand the task-related payoff structure.
 
-% \textcolor{red}{SCREENSHOT MPL} 
+To emphasize the importance of this decision, we made the choices of 5 percent of participants binding in the main session. Binding choices led to payments based on the initial Time Choice, but only if participants met the quality standards described under Section \ref{typing-task}. We excluded data from these participants from the final dataset accordingly. We informed participants whether their allocation was binding with their Time Choice reminder on day two, right before the start of the main session.
 
-\subsubsection{Time Choice} \label{time-choice}
-% There are 2 versions of the same experiment with slight variations that we report in this subsection. Note that participants who are not in the MPL condition come directly to the Time Choice page after the practice session.  
+The Time Choice served as a benchmark for participants, and participants accordingly received a textual reminder of it on day two. The Time Choice section offers insights into participants' informed time preferences allows gauging their commitment to these choices after the 24-hour cooling period.
 
-% In the first version, all participants indicate how long they would spend on each task if (i) the paid session is 12 minutes long, (ii) is immediately after the Time Choice page, (iii) in the first 2 minutes they cannot switch between the tasks, and (iv) in the remaining 10 minutes they are free spend their time on the task they want.
-
-% Time Choice consists of a hypothetical choice participants make after seeing both tasks in the Practice Session. The rationale behind it is to provide a benchmark for both participants and the researchers as to their \textit{preferred} time allocation between the tasks under complete information. 
-
-% Participants indicate their Time Choice using a slider. To elicit active choices, the slider is grayed out at first. Participants click on it to be able to see their potential payoffs and adjust the slider according to their preferences. In order to make Time Choice incentive compatible, 1 out of 20 participants are bound by their choice on this page.
-
-% Participants indicate how long they would spend on each task if (i) the paid session is 20 minutes long, (ii) is due to be completed the next day, and (iii) they are free to spend their entire time on the task they want. 
-
-% Participants learn whether they are bound before beginning the paid session, \textcolor{red}{NEED TO SPECIFY WHICH?} either on the same or the next day. 
-
-% The Time Choice allowed participants to express their preferred time allocation between tasks after their familiarization in the Practice Session. This choice served as a benchmark, not just for the participants, but also for researchers, to understand preferred task allocations when participants possess complete information about both tasks.
-
-% Participants used a slider to indicate their Time Choice. Initially, the slider appeared grayed out to encourage active engagement. Only after clicking could participants see potential payoffs and adjusted according to their preference. To ensure that participants treated this choice seriously, 1 out of 20 was bound by their indicated preference.
-
-% This choice was made under the following conditions:
-% (i) the paid session has a duration of 20 minutes,
-% (ii) it's scheduled for completion the following day,
-% (iii) participants have the freedom to allocate all their time to their preferred task.
-
-% Before the start of the paid session, participants are informed if their indicated Time Choice will be enforced. This session occurs either on the same day or the next \textcolor{red}{NEED TO SPECIFY WHICH?}.
-
-% After the Practice Session, participants moved on to the Time Choice section. Here, they indicated how they would prefer to allocate their time for the next day's 20-minutes session  between the two tasks they have just familiarized themselves with. This choice acted as a personal benchmark for the participants for which they would be reminded on day two. The reminder was a text description of the Time Choice, with an additional sentence informing whether the participant would have their Time Choice upheld or whether they are free to allocate their time independent of their past Time Choice. Time Choice provided researchers with participants' preferred allocations when fully informed about the tasks. Time Choice constitutes an integral part of the design, as we are interested in how committed participants remain to their own choice after a cooling period, and whether they would deviate from their preferred allocation on the second day of the experiment under different video player defaults. 
-
-% To communicate their preferences, participants engaged with a slider. The slider was initially  grayed out and it required a click to activate, a design choice made to spur active consideration. By clicking on it, they could visualize potential earnings based on their time allocation and could then adjust the slider to reflect their desired split. If a participant did not click to activate the slider, they could not advance to the next page of the interface. This click-to-activate feature served a dual purpose: it ensured participants interacted with the tool and also granted them an opportunity to grasp the payoff structure given the challenges of the tasks. As a further incentive to take this choice seriously, 5 percent of participants would find their decision enforced in the subsequent paid session. Participants whose choices were enforced were paid according to their initial Time Choice if they met the quality criteria for their submissions in the Typing Task, and their choices were removed from the final dataset. It was clear to participants that the upcoming session would span 20 minutes on the following day, and they could choose to allocate this time as they saw fit, even if it meant dedicating it entirely to one task. Before the paid session began on day two, participants were informed if their indicated time allocation would be upheld. The timing of the paid session was the following day (24-hour delay).
-
-Following the Practice Session, participants transitioned to the Time Choice section. This section required them to specify their preferred time allocation between the two tasks for the main 20-minute session scheduled for the following day. Participants knew the main session would be 20 minutes long and they were free in choosing corner solutions, even if that meant focusing solely on one task. Time Choice served as a benchmark for participants, and, accordingly, participants received a textual reminder of it on day two. From a research perspective, the Time Choice section was crucial, offering insights into participants' informed preferences and gauging their commitment to these choices after the 24-hour cooling period.
-
-Participants used a slider tool with 20-second steps to indicate their time allocation preferences. Initially, the slider appeared grayed out. Requiring a click to activate, this design aimed to ensure participants considered their choices in an active manner. The click-to-activate design had two benefits: It guaranteed participants interacted with the slider and helped participants understand the task-related payoff structure. To emphasize the importance of this decision, the choices of 5 percent of participants were binding in the  main session. Binding choices led to payments based on the initial Time Choice, but only if participants met the quality standards described under the \hyperref[typing-task]{Typing Task}. Data from these participants were excluded from the final dataset accordingly. Participants were informed whether their allocation was binding with their Time Choice reminder on day two, right before the start of the main 20-minute session. 
-
-
-
-\begin{figure}[!htbp]
+\begin{figure}[H]
+    \caption{Time Choice page}
    \centering
-       \includegraphics[scale=.3]{time-choice.png}
-   \caption{Time Choice page}
+       \includegraphics[scale=.4]{time-choice.png}
    \label{time-choice-screen}
+   \begin{tablenotes}
+\footnotesize
+\item[] \textit{Note:} This figure shows the Time Choice interface with a slider tool allowing participants to allocate time between the two experimental tasks for the following day's 20-minute Main Session. The slider initially appears grayed out and requires a click to activate. Real-time feedback shows the selected allocation (here, 10 minutes each) and expected earnings (£4.25). The interface informs participants that 1 out of 20 (5 percent) will be bound by their choice and that they will learn whether their choice is binding on day two.
+\end{tablenotes}
 \end{figure}
 
+\subsection{Main Session} \label{main-session}
+
+The Main Session took place on day two, approximately 24 hours after the Time Choice. We began by reminding participants of their previous day's allocation and informing them whether their choice was binding or whether they were free to allocate their time as they preferred.
+
+The session lasted exactly 20 minutes. Participants could freely switch between the Typing and Watching Tasks at any time using the tab interface. Unlike the Practice Session, there were no time restrictions on individual tasks, and participants had complete autonomy over their time allocation decisions. The interface maintained real-time tracking of time spent on each task, and participants could monitor their progress and potential earnings through the progress bar and timer.
+
+We implemented the experimental treatment during this session through the media player's autoplay functionality. Participants assigned to the \textbf{Autoplay} condition experienced automatic video playback when the Watching tab was visible, while those in the \textbf{Control} condition required manual clicks to start each video. All other task mechanics remained identical to the Practice Session.
+
+Payment was calculated based on actual time spent on each task, with compensation rates of 0.38 pennies per second for Typing and 0.33 pennies per second for Watching. Participants needed to meet the established quality requirements for the Typing Task to receive compensation for time spent on that activity. The session concluded automatically after 20 minutes, and participants received their final payment calculation before completing the experiment.
 
 
 
@@ -299,7 +286,7 @@ Participants used a slider tool with 20-second steps to indicate their time allo
 
 % Once the timer runs out, participants are taken to the next page. They are asked to provide their best guess on their performance, i.e. how they actually divided their time between the two tasks. This question remains unannounced in the instructions to prevent strategic behavior. The closer participants are to their real performance, the higher their bonus. We take this measurement as an indication of how self-conscious participants are about their own behavior and the effects of Auto-(re)play features. We also collect standard demographic information (age, gender, education, socioeconomic status), whether participants recognized any of the interfaces we presented, and an open feedback question about what they thought of the interfaces and the experiment. We end the session by debriefing our participants about the true objectives of the study.
 
-\subsection{Behavioral Hypotheses}\label{hypotheses}
+\subsection{Hypotheses}\label{hypotheses}
 
 % We preregistered our main hypotheses prior to the data collection.\footnote{\url{https://doi.org/10.17605/OSF.IO/MFKBC}} We include a fourth hypothesis which was omitted in the preregistration. These are:
 
@@ -328,17 +315,17 @@ Participants used a slider tool with 20-second steps to indicate their time allo
 We preregistered our main hypotheses before beginning data collection.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Our preregistration included hypotheses 1 and 4. We have added hypotheses 2 and 3 regarding our expectations about the Time Choice section for the purpose of this report.
 
 \begin{itemize}
-    \item \textbf{Hypothesis 1}: The Autoplay treatment will lead to an increase in the time spent watching videos when compared to the control condition where participants actively need to click on each video to watch. This will be measured by:
+    \item \textbf{Hypothesis 1:}\label{hyp1} The Autoplay treatment will lead to an increase in the time spent watching videos when compared to the control condition where participants actively need to click on each video to watch. This will be measured by:
     \begin{itemize}
         \item[\textbf{1.1}] The total time participants dedicate to the Watching task.
         \item[\textbf{1.2}] The number of videos watched per condition.
     \end{itemize} 
 
-    \item \textbf{Hypothesis 2}: No significant difference is expected in the time allocation decisions made by participants between the two tasks, as detailed in the \hyperref[time-choice]{Time Choice} section. We test for this difference by comparing the initial Time Choice allocations across conditions.
+    \item \textbf{Hypothesis 2:} No significant difference is expected in the time allocation decisions made by participants between the two tasks, as detailed in Section \ref{time-choice}. We test for this difference by comparing the initial Time Choice allocations across conditions.
     
-    \item \textbf{Hypothesis 3}: Participants in the Autoplay condition will deviate more towards watching videos from their initial Time Choice, where they made their preferred time allocation between the two tasks at least 24 hours prior to the main session. We measure this difference by contrasting the initial Time Choice allocations to actualized allocations during the main session across conditions. 
+    \item \textbf{Hypothesis 3:} Participants in the Autoplay condition will deviate more towards watching videos from their initial Time Choice, where they made their preferred time allocation between the two tasks at least 24 hours prior to the main session. We measure this difference by contrasting the initial Time Choice allocations to actualized allocations during the main session across conditions. 
     
-    \item \textbf{Hypothesis 4}: There will be a positive demand for a commitment device. Specifically, when given a choice, participants will choose to have the autoplay feature turned off. This demand will be measured through the participant choices in the \hyperref[mpl]{MPL condition}, specifically looking at the decision where participants switch from one column to the other.
+    \item \textbf{Hypothesis 4:} There will be a positive demand for a commitment device. Specifically, when given a choice, participants will choose to have the autoplay feature turned off. This demand will be measured through the participant choices in Section \ref{mpl}, specifically looking at the decision where participants switch from one column to the other.
     
     % \item \textbf{Hypothesis 5}: Demand for the commitment device will not effectively counterbalance the potential decrease in payoffs that arises due to the additional time spent watching videos with Autoplay enabled. This will be measured by \textcolor{red}{ELABORATE ON HOW??}
     
@@ -356,15 +343,16 @@ We preregistered our main hypotheses before beginning data collection.\footnote{
 
 % \item Click-to-play condition does not violate the initial division of time between the two tasks in a statistically significant way. In their survey of the literature, \citet{brandts2011strategy} do not find any systematic differences between strategy and direct-response methods. We argue that Click-to-play is the closest to what one can call a "neutral" choice architecture (or neutral direct-response method) in the case of media consumption in our experimental leisure task. For this reason, the Click-to-play condition should not violate the initial time division of the participants.
 
-\section{Results}
+\section{Sample and Procedures}
 
-The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} The sampling was made from the Prolific participant pool, an online recruitment platform commonly used for academic research, targeting adult British residents. We further imposed the following criteria: fluency in English, balanced gender representation, having a stable internet connection ($>30$ Mbps on the first and $>25$ on the second day of the experiment). We did not allow  mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in detail \hyperref[int-val]{here}. Only participants that succeeded both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
+The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We drew the sample from the Prolific participant pool, an online recruitment platform commonly used for academic research, targeting adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection ($>30$ Mbps on the first and $>25$ Mbps on the second day of the experiment). We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
 
-For the first stage of data collection, that is to say excluding MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required  sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments are commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. 17 participants who self-reported having connection issues and 24 additional participants that stated having engaged in other activities were dropped. 11 participants who had their Time Choice enforced randomly were also removed and the final dataset on which we base the analysis consisted of 224 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals and Table \ref{table3} shows sample statistics for variables of interest.
+For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly, and the final dataset on which we base the analysis consisted of 224 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
-\begin{table}[!htbp]
+\begin{table}[H]
 \centering
-\resizebox{0.9\textwidth}{!}{%
+\caption{Descriptive statistics for the full sample - \textcolor{red}{UPDATE FROM STATA} }
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccc@{}}
 \toprule
  &
@@ -372,8 +360,7 @@ For the first stage of data collection, that is to say excluding MPL treatment, 
   \begin{tabular}[c]{@{}c@{}}\textbf{Control}  \\ N = 120\end{tabular} &
   \begin{tabular}[c]{@{}c@{}}\textbf{Overall}\\ N = 224\end{tabular} \\ \midrule
 \textit{\textbf{Gender}}         &               &               &               \\
-Female                           & 48 (46.15\%)  & 54 (45.00\%)  & 102 (45.54\%) \\
-Male                             & 56 (53.85\%)  & 66 (55.00\%)  & 122 (54.46\%) \\ \hline
+Female                           & 48 (46.15\%)  & 54 (45.00\%)  & 102 (45.54\%) \\ \hline
 \textit{\textbf{Age}}            &               &               &               \\
 Mean (SD)                        & 40.56 (11.66) & 40.24 (10.98) & 40.39 (11.27) \\
 Median {[}Min, Max{]} &
@@ -381,46 +368,33 @@ Median {[}Min, Max{]} &
   39.00 {[}20.00, 69.00{]} &
   38.50 {[}19.00, 70.00{]} \\ \hline
 \textit{\textbf{Employment}}     &               &               &               \\
-Unemployed looking for work      & 4 (3.85\%)    & 8 (6.67\%)    & 12 (5.36\%)   \\
-Homemaker                        & 4 (3.85\%)    & 4 (3.33\%)    & 8 (3.57\%)    \\
+Employed (full time)             & 62 (59.62\%)  & 67 (55.83\%)  & 129 (57.59\%) \\
+Employed (part time)             & 20 (19.23\%)  & 14 (11.67\%)  & 34 (15.18\%)  \\
 Self employed                    & 8 (7.69\%)    & 14 (11.67\%)  & 22 (9.82\%)   \\
-Retired                          & 3 (2.88\%)    & 3 (2.50\%)    & 6 (2.68\%)    \\
-Employed full time               & 62 (59.62\%)  & 67 (55.83\%)  & 129 (57.59\%) \\
-Employed part time               & 20 (19.23\%)  & 14 (11.67\%)  & 34 (15.18\%)  \\
-Unable to work                   & 1 (0.96\%)    & 2 (1.67\%)    & 3 (1.34\%)    \\
-Student                          & 2 (1.92\%)    & 7 (5.83\%)    & 9 (4.02\%)    \\
-Unemployed not looking for work  & 0 (0.00\%)    & 1 (0.83\%)    & 1 (0.45\%)    \\ \hline
-\textit{\textbf{Income}}         &               &               &               \\
-0-10                             & 14 (13.46\%)  & 23 (19.17\%)  & 37 (16.52\%)  \\
-12-15                            & 6 (5.77\%)    & 4 (3.33\%)    & 10 (4.46\%)   \\
-15-20                            & 8 (7.69\%)    & 10 (8.33\%)   & 18 (8.04\%)   \\
-20-30                            & 22 (21.15\%)  & 26 (21.67\%)  & 48 (21.43\%)  \\
-10-12                            & 8 (7.69\%)    & 7 (5.83\%)    & 15 (6.70\%)   \\
-50-70                            & 10 (9.62\%)   & 6 (5.00\%)    & 16 (7.14\%)   \\
-30-50                            & 31 (29.81\%)  & 37 (30.83\%)  & 68 (30.36\%)  \\
-70+                              & 5 (4.81\%)    & 7 (5.83\%)    & 12 (5.36\%)   \\ \hline
+Not employed                     & 11 (10.58\%)  & 18 (15.00\%)  & 29 (12.95\%)  \\
+Retired/Student/Other            & 3 (2.88\%)    & 7 (5.83\%)    & 10 (4.46\%)   \\ \hline
+\textit{\textbf{Income}} &               &               &               \\
+Low (0-15)                       & 28 (26.92\%)  & 34 (28.33\%)  & 62 (27.68\%)  \\
+Middle (15-30)                   & 30 (28.85\%)  & 36 (30.00\%)  & 66 (29.46\%)  \\
+Upper-middle (30-50)             & 31 (29.81\%)  & 37 (30.83\%)  & 68 (30.36\%)  \\
+High (50+)                       & 15 (14.42\%)  & 13 (10.83\%)  & 28 (12.50\%)  \\ \hline
 \textit{\textbf{Marital Status}} &               &               &               \\
-Married or domestic partnership &
-  56 (53.85\%) &
-  60 (50.00\%) &
-  116 (51.79\%) \\
-Divorced                         & 3 (2.88\%)    & 6 (5.00\%)    & 9 (4.02\%)    \\
-Widowed                          & 1 (0.96\%)    & 1 (0.83\%)    & 2 (0.89\%)    \\
-Separated                        & 2 (1.92\%)    & 1 (0.83\%)    & 3 (1.34\%)    \\
-Single                           & 42 (40.38\%)  & 52 (43.33\%)  & 94 (41.96\%)  \\ \bottomrule
+Married/Partnership              & 56 (53.85\%)  & 60 (50.00\%)  & 116 (51.79\%) \\
+Single                           & 42 (40.38\%)  & 52 (43.33\%)  & 94 (41.96\%)  \\
+Previously married               & 6 (5.77\%)    & 8 (6.67\%)    & 14 (6.25\%)   \\ \bottomrule
 \end{tabular}%
 }
-\caption{Descriptive Statistics for the full sample}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[] \textit{Note:} This table presents demographic characteristics for the final sample of 224 participants across treatment conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker; ``Retired/Student/Other'' includes retired, student, and unable to work. ``Previously married'' includes divorced, widowed, and separated. The sample demonstrates successful randomization with balanced demographic characteristics across the Autoplay and Control conditions.
+\end{tablenotes}
 \label{table2}
 \end{table}
 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-\begin{table}[]
+\begin{table}[H]
 \centering
-\resizebox{0.9\textwidth}{!}{%
+\caption{Sample statistics for variables of interest}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccc@{}}
 \toprule
  &
@@ -452,16 +426,20 @@ Median {[}Min, Max{]} & 36.00 {[}0.00, 80.00{]}    & 40.50 {[}0.00, 77.00{]}    
 \bottomrule
 \end{tabular}%
 }
-\caption{Sample statistics for variables of interest}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Allocated Type time'' refers to participants' stated preferences from the Time Choice task, while ``Type time'' and ``Watch time'' represent actual time spent on tasks during the 20-minute Main Session (measured in seconds). Content rating reflects participants' evaluation of video content on a 0-10 scale. Task switches count the number of times participants switched between the Typing and Watching tasks.
+\end{tablenotes}
 \label{table3}
 \end{table}
 
+For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 56 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 51 individuals in the final dataset.
 
-For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 56 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had put a higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 on the second day). 5 participants reported having engaged in other activities and were dropped. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 51 individuals in the final dataset.
+\section{Results}
 
-\subsection{Testing Behavioral Hypotheses}
- 
-\subsubsection{Effects of Autoplay on watching videos (H1)}
+We summarize our main variables of interest in Table \ref{table3}. 
+
+\subsection{Effects of Autoplay on watching videos (H1)}
 
 % Our initial hypothesis explores whether Autoplay leads to an increase in the time spent watching videos. We test this using two measures: First, the amount of time participants spent on the Watching Task. We collected second-by-second logs of how long participants spent on each task for 20-minute main session. However, a minor technical glitch related to the countdown timer resulted in most participants spending 30 to 60 seconds more on the main session.\footnote{Upon investigation, we noticed that the countdown timer \textit{slowed down} when there were no active clicks, typing, or movement of the cursor during the main session. In fact, the less activity there were, the slower each passing second became. We verified whether participants had noticed this technical issue during the experiment by looking at the text inputs they provided for feedback. Thankfully no participant mentioned the issue, and we take this as evidence that the glitch must have gone unnoticed.} To understand how participants were affected by the glitch, we look at the distribution of the total time spent across treatments in Figure \ref{graph1}, where the variable on the x-axis is the sum of the time spent across both tasks and y-axis is its frequency. Although visible in the histogram, we use the Mann-Whitney U test to test and reject that participants across conditions are affected differently from the glitch ($U=6331, p=0.85$).
 
@@ -502,7 +480,7 @@ To remedy for the differences in time spent across tasks resulting from the glit
 
 % We turn to verifying the second hypothesis, i.e., whether participants across treatments had different initial Time Choices. Figure \ref{graph3} shows the distribution of Time Choice across treatments. We test and reject this hypothesis using the Mann-Whitney U test ($U=6713.5, p=0.323$).
 
-\subsubsection{Effects of Autoplay on Time Choice (H2)}
+\subsection{Effects of Autoplay on Time Choice (H2)}
 
 We next examine \hyperref[hypotheses]{Hypothesis 2}, which posits there are no significant differences in the initial Time Choice made by participants across two treatments. For clarity, Time Choice refers to how much time participants preferred to spend on the Typing Task on day one. As depicted in Figure \ref{graph3}, the distribution of Time Choices across treatments appears roughly symmetrical for both treatments. To validate this observation, we employed the Mann-Whitney U test, where the null hypothesis suggests there is no statistically significant difference in Time Choice distributions across treatments. The outcome leads us to confirm our hypothesis ($U=6713.5, p=0.323$), suggesting that participants' initial Time Choice were statistically indistinguishable across treatments. Participants seem to have been uniformly affected by the two treatments, which is important ascertain before we delve further into the analysis of Time Choice.
 
@@ -513,7 +491,7 @@ We next examine \hyperref[hypotheses]{Hypothesis 2}, which posits there are no s
    \label{graph3}
 \end{figure}
 
-\subsubsection{Effects of Autoplay on deviations from Time Choice (H3)}
+\subsection{Effects of Autoplay on deviations from Time Choice (H3)}
 
 We then move on to the \hyperref[hypotheses]{Hypothesis 3}, which suggests participants in the Autoplay condition would deviate more towards watching videos from their initial Time Choice. To assess this hypothesis, we transformed the Time Choice variable by normalizing to percentages and calculated the deviation by subtracting the percentage of actual time spent on the Typing Task from it. Figure \ref{graph4} shows the distribution of deviations from Time Choice across treatments which appears left-skewed, suggesting increases in actual typing instead. Specifically, negative values in the figure represent increases in typing, whereas positive values are increases in watching. Applying the Mann-Whitney U test, our data ($U=6134, p=0.827$) did not support a significant deviation for the Autoplay condition towards watching. Further descriptive statistics reveal a mean deviation of $-11.73$, a median of $-8.46$, and a mode of $0$, emphasizing the observed left skew. To strengthen our findings, we used the Wilcoxon Signed-Rank test to compare the distribution of deviations to a $0$ median distribution, and rejected the null ($W=5152$, $p<0.001$). In summary, contrary to our hypothesis, participants generally spent more time on the Typing Task than they initially intended regardless of treatment.
 
@@ -578,6 +556,7 @@ Further, when a user is actively engaged and desires to consume more content, th
 % Participants should receive a minimum participation fee because of the time they spent on the experiment. This fee cannot be lower than the hourly minimum wage from the sampled country. The wage for the labor task should be in addition to this initial participation fee. If participants fail attention checks or provide a lower-than-minimum amount of required effort in the labor task, they should still part with the minimum participation fee for the experiment.
 
 \bibliographystyle{apacite}
-\bibliography{ref}
+
+\bibliography{ref}    
 
 \end{document}

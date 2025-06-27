@@ -41,9 +41,95 @@ drop attention* speed browser os platform userTranscription watching* not* end_t
 save "${dpath}cleaned_autoplay_data.dta", replace
 
 
+
+// descriptives
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
+
+gen employment_3cat = .
+replace employment_3cat = 1 if employment == "employed full time"
+replace employment_3cat = 2 if inlist(employment, "employed part time", "self employed")
+replace employment_3cat = 3 if inlist(employment, "unemployed looking for work", "unemployed not looking for work", "homemaker", "retired", "student", "unable to work")
+
+gen emp_fulltime = (employment_3cat == 1)
+gen emp_partself = (employment_3cat == 2) 
+gen emp_notemployed = (employment_3cat == 3)
+
+gen income_3cat = .
+replace income_3cat = 1 if inlist(income, "0-10", "10-12", "12-15")
+replace income_3cat = 2 if inlist(income, "15-20", "20-30", "30-50")
+replace income_3cat = 3 if inlist(income, "50-70", "70+")
+
+gen inc_low = (income_3cat == 1)
+gen inc_middle = (income_3cat == 2)
+gen inc_high = (income_3cat == 3)
+
+gen marital_3cat = .
+replace marital_3cat = 1 if marital == "married or domestic partnership"
+replace marital_3cat = 2 if marital == "single"
+replace marital_3cat = 3 if inlist(marital, "divorced", "widowed", "separated")
+
+gen mar_married = (marital_3cat == 1)
+gen mar_single = (marital_3cat == 2)
+gen mar_previous = (marital_3cat == 3)
+
+gen age = 2025 - birthyear
+gen gender_group = .
+replace gender_group = 0 if gender == "female"
+replace gender_group = 1 if gender == "male"
+
+display as text "=== BALANCE TABLE RESULTS ===" _newline
+
+display as text "=== Age (continuous) ===" 
+ttest age, by(treatment) unequal
+global age_mean = r(mu_1)
+global age_sd1 = r(sd_1)
+global age_sd2 = r(sd_2)
+global age_pvalue = r(p)
+display "Overall Mean: " r(mu_1) ", P-value: " ${age_pvalue}
+
+foreach v of varlist gender_group emp_fulltime emp_partself emp_notemployed inc_low inc_middle inc_high mar_married mar_single mar_previous {
+    display _newline
+    display as text "=== Proportion test for `v' ===" 
+    
+    quietly summarize `v'
+    local mean = r(mean)
+    local sd = r(sd)
+    
+    global `v'_mean = `mean'
+    global `v'_sd = `sd'
+    
+    prtest `v', by(treatment)
+    global `v'_pvalue = r(p)
+    
+    display "Proportion: " `mean' ", P-value: " ${`v'_pvalue}
+}
+
+display _newline
+display as text "=== SUMMARY OF P-VALUES ===" _newline
+display "Age: " ${age_pvalue}
+display "Gender (male): " ${gender_group_pvalue}
+display "Employment - Full time: " ${emp_fulltime_pvalue}
+display "Employment - Part time/Self: " ${emp_partself_pvalue}  
+display "Employment - Not employed: " ${emp_notemployed_pvalue}
+display "Income - Low: " ${inc_low_pvalue}
+display "Income - Middle: " ${inc_middle_pvalue}
+display "Income - High: " ${inc_high_pvalue}
+display "Marital - Married: " ${mar_married_pvalue}
+display "Marital - Single: " ${mar_single_pvalue}
+display "Marital - Previously married: " ${mar_previous_pvalue}
+
+/////
+
+
+
+
+
+
 // time spent as proportions
+clear all
+use "${dpath}cleaned_autoplay_data.dta", replace
+
 gen prop_typing_choice = typeChoice/end_time_log
 hist prop_typing_choice
 
@@ -82,7 +168,6 @@ tabstat z_vid, by(treatment) stat(mean semean)
 corr z_vid prop_typing_choice
 twoway lfitci z_vid prop_deviation || scatter z_vid prop_deviation
 reg z_vid ib(2).choice3 i.treatment
-reg z_vid ib(2).choice3##i.treatment
 
 sum typeCount
 gen z_type = (typeCount - r(mean))/r(sd)
