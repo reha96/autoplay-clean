@@ -286,7 +286,7 @@ Payment was calculated based on actual time spent on each task, with compensatio
 
 % Once the timer runs out, participants are taken to the next page. They are asked to provide their best guess on their performance, i.e. how they actually divided their time between the two tasks. This question remains unannounced in the instructions to prevent strategic behavior. The closer participants are to their real performance, the higher their bonus. We take this measurement as an indication of how self-conscious participants are about their own behavior and the effects of Auto-(re)play features. We also collect standard demographic information (age, gender, education, socioeconomic status), whether participants recognized any of the interfaces we presented, and an open feedback question about what they thought of the interfaces and the experiment. We end the session by debriefing our participants about the true objectives of the study.
 
-\subsection{Hypotheses}\label{hypotheses}
+\subsection{Theoretical Framework and Hypotheses}\label{hypotheses}
 
 % We preregistered our main hypotheses prior to the data collection.\footnote{\url{https://doi.org/10.17605/OSF.IO/MFKBC}} We include a fourth hypothesis which was omitted in the preregistration. These are:
 
@@ -312,10 +312,10 @@ Payment was calculated based on actual time spent on each task, with compensatio
 
 % Lastly, our added fourth hypothesis posits that there will not be a significant difference in participants' time allocation decisions between the two tasks as indicated in the Time Choice section.
 
-We preregistered our main hypotheses before beginning data collection.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Our preregistration included hypotheses 1 and 4. We have added hypotheses 2 and 3 regarding our expectations about the Time Choice section for the purpose of this report.
+We preregistered our main hypotheses before beginning data collection.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Our preregistration included hypotheses 1 and 4. We have added supporting hypotheses 2 and 3 regarding our expectations about the Time Choice section later.
 
 \begin{itemize}
-    \item \textbf{Hypothesis 1:}\label{hyp1} The Autoplay treatment will lead to an increase in the time spent watching videos when compared to the control condition where participants actively need to click on each video to watch. This will be measured by:
+    \item \textbf{Hypothesis 1:}\label{hyp1} The \textbf{Autoplay} condition will lead to an increase in the time spent watching videos when compared to the \textbf{Control} condition where participants actively need to click on each video to watch. This will be measured by:
     \begin{itemize}
         \item[\textbf{1.1}] The total time participants dedicate to the Watching task.
         \item[\textbf{1.2}] The number of videos watched per condition.
@@ -350,101 +350,95 @@ The experiment was run entirely online, using widely available open-source tools
 For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly, and the final dataset on which we base the analysis consisted of 224 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
 \begin{table}[H]
-\centering
-\caption{Descriptive statistics for the full sample - \textcolor{red}{UPDATE FROM STATA} }
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lccc@{}}
-\toprule
- &
-  \begin{tabular}[c]{@{}c@{}}\textbf{Autoplay}\\ N = 104\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}\textbf{Control}  \\ N = 120\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}\textbf{Overall}\\ N = 224\end{tabular} \\ \midrule
-\textit{\textbf{Gender}}         &               &               &               \\
-Female                           & 48 (46.15\%)  & 54 (45.00\%)  & 102 (45.54\%) \\ \hline
-\textit{\textbf{Age}}            &               &               &               \\
-Mean (SD)                        & 40.56 (11.66) & 40.24 (10.98) & 40.39 (11.27) \\
-Median {[}Min, Max{]} &
-  37.00 {[}19.00, 70.00{]} &
-  39.00 {[}20.00, 69.00{]} &
-  38.50 {[}19.00, 70.00{]} \\ \hline
-\textit{\textbf{Employment}}     &               &               &               \\
-Employed (full time)             & 62 (59.62\%)  & 67 (55.83\%)  & 129 (57.59\%) \\
-Employed (part time)             & 20 (19.23\%)  & 14 (11.67\%)  & 34 (15.18\%)  \\
-Self employed                    & 8 (7.69\%)    & 14 (11.67\%)  & 22 (9.82\%)   \\
-Not employed                     & 11 (10.58\%)  & 18 (15.00\%)  & 29 (12.95\%)  \\
-Retired/Student/Other            & 3 (2.88\%)    & 7 (5.83\%)    & 10 (4.46\%)   \\ \hline
-\textit{\textbf{Income}} &               &               &               \\
-Low (0-15)                       & 28 (26.92\%)  & 34 (28.33\%)  & 62 (27.68\%)  \\
-Middle (15-30)                   & 30 (28.85\%)  & 36 (30.00\%)  & 66 (29.46\%)  \\
-Upper-middle (30-50)             & 31 (29.81\%)  & 37 (30.83\%)  & 68 (30.36\%)  \\
-High (50+)                       & 15 (14.42\%)  & 13 (10.83\%)  & 28 (12.50\%)  \\ \hline
-\textit{\textbf{Marital Status}} &               &               &               \\
-Married/Partnership              & 56 (53.85\%)  & 60 (50.00\%)  & 116 (51.79\%) \\
-Single                           & 42 (40.38\%)  & 52 (43.33\%)  & 94 (41.96\%)  \\
-Previously married               & 6 (5.77\%)    & 8 (6.67\%)    & 14 (6.25\%)   \\ \bottomrule
-\end{tabular}%
-}
-\begin{tablenotes}[flushleft]
-\footnotesize
-\item[] \textit{Note:} This table presents demographic characteristics for the final sample of 224 participants across treatment conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker; ``Retired/Student/Other'' includes retired, student, and unable to work. ``Previously married'' includes divorced, widowed, and separated. The sample demonstrates successful randomization with balanced demographic characteristics across the Autoplay and Control conditions.
-\end{tablenotes}
-\label{table2}
+ \centering
+ \begin{threeparttable}
+ \caption{Descriptive statistics for the full sample}
+ \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc c@{}}
+ \toprule
+ & \multicolumn{1}{c}{\textbf{Autoplay}} & \multicolumn{1}{c}{\textbf{Control}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
+ & \multicolumn{1}{c}{N = 104} & \multicolumn{1}{c}{N = 120} & [A = C]\\
+ \midrule
+ \textit{\textbf{Gender}} & & & \\
+ Female & 48 (46.15\%) & 54 (45.00\%) & 0.863 \\ \midrule
+ \textit{\textbf{Age}} & & & \\
+ Mean (SD) & 40.56 (11.66) & 40.24 (10.98) & 0.836 \\ \midrule
+ \textit{\textbf{Employment}} & & & \\
+ Employed (full time) & 62 (59.62\%) & 67 (55.83\%) & 0.568 \\
+ Employed (part time/self) & 28 (26.92\%) & 28 (23.33\%) & 0.536 \\
+ Not employed & 11 (10.58\%) & 18 (15.00\%) & 0.147 \\ \midrule
+ \textit{\textbf{Income}} & & & \\
+ Low (0-15) & 28 (26.92\%) & 34 (28.33\%) & 0.814 \\
+ Middle (15-30) & 30 (28.85\%) & 36 (30.00\%) & 0.740 \\
+ High (50+) & 15 (14.42\%) & 13 (10.83\%) & 0.418 \\ \midrule
+ \textit{\textbf{Marital Status}} & & & \\ 
+ Married/Partnership & 56 (53.85\%) & 60 (50.00\%) & 0.566 \\
+ Single & 42 (40.38\%) & 52 (43.33\%) & 0.656 \\
+ Previously married & 6 (5.77\%) & 8 (6.67\%) & 0.782 \\
+ \bottomrule
+ \end{tabular*}
+ \begin{tablenotes}[flushleft]
+ \footnotesize
+ \item[] \textit{Note:} This table presents demographic characteristics for the final sample of 224 participants across treatment conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
+ \end{tablenotes}
+ \label{table2}
+ \end{threeparttable}
 \end{table}
 
-\begin{table}[H]
-\centering
-\caption{Sample statistics for variables of interest}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lccc@{}}
-\toprule
- &
-  \begin{tabular}[c]{@{}l@{}}\textbf{Autoplay}\\ N = 104\end{tabular} &
-  \begin{tabular}[c]{@{}l@{}}\textbf{Control}\\ N = 120\end{tabular} &
-  \begin{tabular}[c]{@{}l@{}}\textbf{Overall}\\ N = 224\end{tabular} \\ \midrule
 
-\textbf{\textit{Allocated Type time}}           &                            &                            &                            \\
-Mean (SD)             & 573.85 (388.30)            & 520.17 (400.76)            & 545.09 (395.05)            \\
-Median {[}Min, Max{]} & 600.00 {[}0.00, 1200.00{]} & 600.00 {[}0.00, 1200.00{]} & 600.00 {[}0.00, 1200.00{]} \\\hline
-\textbf{\textit{Type time}}             &                            &                            &                            \\
-Mean (SD)             & 718.24 (386.57)            & 657.84 (413.38)            & 685.88 (401.40)            \\
-Median {[}Min, Max{]} & 765.21 {[}3.04, 1200.00{]} & 608.71 {[}2.57, 1200.00{]} & 707.28 {[}2.57, 1200.00{]} \\\hline
-\textbf{\textit{Watch time}}            &                            &                            &                            \\
-Mean (SD)             & 466.67 (383.58)            & 524.78 (408.00)            & 497.80 (397.03)            \\
-Median {[}Min, Max{]} & 423.13 {[}0.00, 1196.96{]} & 562.03 {[}0.00, 1197.43{]} & 473.18 {[}0.00, 1197.43{]} \\ \hline
-\textbf{\textit{Content rating}}        &                            &                            &                            \\
-Mean (SD)             & 6.92 (2.29)                & 6.44 (2.53)                & 6.67 (2.43)                \\
-Median {[}Min, Max{]} & 7.00 {[}2.00, 10.00{]}     & 7.00 {[}0.00, 10.00{]}     & 7.00 {[}0.00, 10.00{]}     \\\hline
-\textbf{\textit{Nb. of task switches}}  &                            &                            &                            \\
-Mean (SD)             & 4.00 (4.50)                & 3.69 (5.03)                & 3.83 (4.78)                \\
-Median {[}Min, Max{]} & 2.00 {[}0.00, 16.00{]}     & 2.00 {[}0.00, 28.00{]}     & 2.00 {[}0.00, 28.00{]}     \\\hline
-\textbf{\textit{Nb. of retyped images}} &                            &                            &                            \\
-Mean (SD)             & 18.01 (11.97)              & 16.26 (11.59)              & 17.07 (11.78)              \\
-Median {[}Min, Max{]} & 17.00 {[}0.00, 53.00{]}    & 14.50 {[}0.00, 45.00{]}    & 15.50 {[}0.00, 53.00{]}    \\\hline
-\textbf{\textit{Nb. of videos watched}} &                            &                            &                            \\
-Mean (SD)             & 35.75 (27.21)              & 34.40 (26.35)              & 35.03 (26.70)              \\
-Median {[}Min, Max{]} & 36.00 {[}0.00, 80.00{]}    & 40.50 {[}0.00, 77.00{]}    & 37.50 {[}0.00, 80.00{]}    \\
-\bottomrule
-\end{tabular}%
-}
-\begin{tablenotes}[flushleft]
-\footnotesize
-\item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Allocated Type time'' refers to participants' stated preferences from the Time Choice task, while ``Type time'' and ``Watch time'' represent actual time spent on tasks during the 20-minute Main Session (measured in seconds). Content rating reflects participants' evaluation of video content on a 0-10 scale. Task switches count the number of times participants switched between the Typing and Watching tasks.
-\end{tablenotes}
-\label{table3}
-\end{table}
 
 For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 56 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 51 individuals in the final dataset.
 
 \section{Results}
 
-We summarize our main variables of interest in Table \ref{table3}. 
+We begin presenting the results of our hypotheses and summarize the variables of interest from the main 20-minute session in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. We find that participants spend more time typing when compared to their Time Choice on day 1, which indicates that there is negative present bias on average.   
 
-\subsection{Effects of Autoplay on watching videos (H1)}
+\begin{table}[H]
+  \centering
+  \caption{Sample statistics for variables of interest}
+%   \resizebox{\textwidth}{!}{%
+  \begin{threeparttable}
+  \begin{tabular}[\textwidth]{@{}lcc c@{}}
+  \toprule
+  & \multicolumn{1}{c}{\textbf{Autoplay}} & \multicolumn{1}{c}{\textbf{Control}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
+  & \multicolumn{1}{c}{N = 104} & \multicolumn{1}{c}{N = 120} & [A = C] \\
+  \midrule
+  \textbf{\textit{Allocated Type time}} & & & \\
+  Mean (SD) & 573.85 (388.30) & 520.17 (400.76) & 0.312 \\
+  Median [Min, Max] & 600.00 [0.00, 1200.00] & 600.00 [0.00, 1200.00] & \\ \midrule
+  \textbf{\textit{Type time}} & & & \\
+  Mean (SD) & 735.36 (389.68) & 676.67 (422.26) & 0.284 \\
+  Median [Min, Max] & 788.90 [3.20, 1266.40] & 637.40 [2.70, 1536.70] & \\ \midrule
+  \textbf{\textit{Content rating}} & & & \\
+  Mean (SD) & 6.92 (2.29) & 6.44 (2.53) & 0.139 \\
+  Median [Min, Max] & 7.00 [2.00, 10.00] & 7.00 [0.00, 10.00] & \\ \midrule
+  \textbf{\textit{Nb. of task switches}} & & & \\
+  Mean (SD) & 4.00 (4.50) & 3.69 (5.03) & 0.631 \\
+  Median [Min, Max] & 2.00 [0.00, 16.00] & 2.00 [0.00, 28.00] & \\ \midrule
+  \textbf{\textit{Nb. of retyped images}} & & & \\
+  Mean (SD) & 18.01 (11.97) & 16.26 (11.59) & 0.268 \\
+  Median [Min, Max] & 17.00 [0.00, 53.00] & 14.50 [0.00, 45.00] & \\ \midrule
+  \textbf{\textit{Nb. of videos watched}} & & & \\
+  Mean (SD) & 35.75 (27.21) & 34.40 (26.35) & 0.707 \\
+  Median [Min, Max] & 36.00 [0.00, 80.00] & 40.50 [0.00, 77.00] & \\
+  \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Allocated Type time'' refers to participants' stated preferences from the Time Choice task for typing, while ``Type time'' represents the actual time spent on typing task during the 20-minute Main Session (measured in seconds). Content rating reflects participants' evaluation of video content on a 0-10 scale. Task switches count the number of times participants switched between the Typing and Watching tasks. $p$-values are from two-sample $t$-tests comparing treatment groups.
+  \end{tablenotes}
+  \end{threeparttable}
+%   }
+  \label{table3}
+\end{table}
+
+
+\subsection{Does Autoplay increase time spent watcing videos? (H1)}
 
 % Our initial hypothesis explores whether Autoplay leads to an increase in the time spent watching videos. We test this using two measures: First, the amount of time participants spent on the Watching Task. We collected second-by-second logs of how long participants spent on each task for 20-minute main session. However, a minor technical glitch related to the countdown timer resulted in most participants spending 30 to 60 seconds more on the main session.\footnote{Upon investigation, we noticed that the countdown timer \textit{slowed down} when there were no active clicks, typing, or movement of the cursor during the main session. In fact, the less activity there were, the slower each passing second became. We verified whether participants had noticed this technical issue during the experiment by looking at the text inputs they provided for feedback. Thankfully no participant mentioned the issue, and we take this as evidence that the glitch must have gone unnoticed.} To understand how participants were affected by the glitch, we look at the distribution of the total time spent across treatments in Figure \ref{graph1}, where the variable on the x-axis is the sum of the time spent across both tasks and y-axis is its frequency. Although visible in the histogram, we use the Mann-Whitney U test to test and reject that participants across conditions are affected differently from the glitch ($U=6331, p=0.85$).
 
-Our primary hypothesis was investigating whether the Autoplay feature influences the time participants spend on watching videos. We scrutinized this using two distinct measures. The first one considered the time span participants allocated to the Watching Task, captured through second-by-second logs during the 20-minute main session. Unfortunately, a technical glitch with the countdown timer inadvertently caused most participants to spend an additional 30 to 60 seconds on the session. A deeper dive into this issue unveiled that the timer \textit{slowed down} in the absence of user interactions, such as clicks, cursor movements or typing. Nevertheless, post-experiment feedback reassured us that participants remained unaware of this anomaly. To understand the overall implications of this glitch on our experiment, we analyzed the distribution of the total time spent across the two treatments, visualized in Figure \ref{graph1}. Herein, the x-axis delineates the total time allocated to both tasks, while the y-axis depicts its frequency.  The distribution of ending times appears roughly symmetrical for both treatments on the histogram, and a Mann-Whitney U test confirms that the glitch affected both conditions uniformly ($U=6331, p=0.85$).
+Our primary hypothesis was investigating whether the Autoplay feature influences the time participants spend on watching videos. We scrutinized this using two distinct measures. 
 
+The first one considered the time span participants allocated to the Watching Task, captured through second-by-second logs during the 20-minute main session: A technical glitch with the countdown timer inadvertently caused most participants to spend an additional 30 to 60 seconds on the session. A deeper dive into this issue unveiled that the timer \textit{slowed down} in the absence of user interactions, such as clicks, cursor movements or typing. To understand the overall implications of this glitch on our experiment, we analyzed the distribution of the total time spent across the two treatments, visualized in Figure \ref{graph1}. Herein, the x-axis delineates the total time allocated to both tasks, while the y-axis depicts its frequency.  The distribution of ending times appears roughly symmetrical for both treatments on the histogram, and a Mann-Whitney U test confirms that the glitch affected both conditions uniformly ($U=6331, p=0.85$). Finally, post-experiment feedback reassures us that participants remained unaware of this anomaly.
 
 \begin{figure}[!htbp]
    \centering
@@ -453,8 +447,15 @@ Our primary hypothesis was investigating whether the Autoplay feature influences
    \label{graph1}
 \end{figure}
 
+To remedy for the differences in time spent across tasks resulting from the glitch and standardize our data, we calculated the observed time spent at task data using the logged ending time. We calculate first the proportion of time spent Typing and then standardize it for our sample:
 
-To remedy for the differences in time spent across tasks resulting from the glitch, we normalize observed task data to 1200 seconds. Figure \ref{graph2} shows the distribution of the normalized time spent on watching videos across treatments. We test and reject \hyperref[hypotheses]{ Hypothesis 1.1} using the Mann-Whitney U test ($U=5825, p=0.39$), meaning Autoplay treatment did not result in an increased time spent watching videos. We then proceed with \hyperref[hypotheses]{ Hypothesis 1.2}, focusing on the number of videos each participant watched across treatments.  Figure \ref{graph2b} shows the distribution of the number of videos watched per condition. Using a Mann-Whitney U test again, we reject that Autoplay treatment increased the number of videos watched ($U=6494, p=0.599$).
+\begin{align}
+x = \frac{type_time}{end_time}, z_{type} = (x - \bar{X}_{i}) / \sigma_{i}
+\end{align}
+
+where $\bar{X}_{i}$ and $\sigma_{i}$ are the average of network means and standard deviations for the sample.
+
+Figure \ref{graph2} shows the distribution of the standardized time spent on watching videos across treatments. We test and reject \hyperref[hypotheses]{ Hypothesis 1.1} using the Mann-Whitney U test ($U=5825, p=0.39$), meaning Autoplay treatment did not result in an increased time spent watching videos. We then proceed with \hyperref[hypotheses]{ Hypothesis 1.2}, focusing on the number of videos each participant watched across treatments.  Figure \ref{graph2b} shows the distribution of the number of videos watched per condition. Using a Mann-Whitney U test again, we reject that Autoplay treatment increased the number of videos watched ($U=6494, p=0.599$).
 
 
 

@@ -42,7 +42,7 @@ save "${dpath}cleaned_autoplay_data.dta", replace
 
 
 
-// descriptives
+// balance table 
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 
@@ -88,6 +88,7 @@ global age_sd2 = r(sd_2)
 global age_pvalue = r(p)
 display "Overall Mean: " r(mu_1) ", P-value: " ${age_pvalue}
 
+cls
 foreach v of varlist gender_group emp_fulltime emp_partself emp_notemployed inc_low inc_middle inc_high mar_married mar_single mar_previous {
     display _newline
     display as text "=== Proportion test for `v' ===" 
@@ -119,10 +120,48 @@ display "Marital - Married: " ${mar_married_pvalue}
 display "Marital - Single: " ${mar_single_pvalue}
 display "Marital - Previously married: " ${mar_previous_pvalue}
 
-/////
+// summary table
+cls
 
+foreach v of varlist typeChoice seconds_typing content tabCounter typeCount watchedVideo {
+   quietly summarize `v'
+   global `v'_mean = r(mean)
+   global `v'_sd = r(sd)
+   quietly summarize `v', detail
+   global `v'_median = r(p50)
+   global `v'_min = r(min)
+   global `v'_max = r(max)
+   
+   quietly summarize `v' if treatment == 2
+   global `v'_mean_t1 = r(mean)
+   global `v'_sd_t1 = r(sd)
+   quietly summarize `v' if treatment == 2, detail
+   global `v'_median_t1 = r(p50)
+   global `v'_min_t1 = r(min)
+   global `v'_max_t1 = r(max)
+   
+   quietly summarize `v' if treatment == 1
+   global `v'_mean_t0 = r(mean)
+   global `v'_sd_t0 = r(sd)
+   quietly summarize `v' if treatment == 1, detail
+   global `v'_median_t0 = r(p50)
+   global `v'_min_t0 = r(min)
+   global `v'_max_t0 = r(max)
+   
+   ttest `v', by(treatment)
+   global `v'_pvalue = r(p)
+}
 
+display "Variable Statistics Summary:"
+display _newline
 
+foreach v of varlist typeChoice seconds_typing content tabCounter typeCount watchedVideo {
+   display "`v' - Overall: Mean=" ${`v'_mean} " SD=" ${`v'_sd} " Median=" ${`v'_median} " Min=" ${`v'_min} " Max=" ${`v'_max}
+   display "`v' - Treatment: Mean=" ${`v'_mean_t1} " SD=" ${`v'_sd_t1} " Median=" ${`v'_median_t1} " Min=" ${`v'_min_t1} " Max=" ${`v'_max_t1}
+   display "`v' - Control: Mean=" ${`v'_mean_t0} " SD=" ${`v'_sd_t0} " Median=" ${`v'_median_t0} " Min=" ${`v'_min_t0} " Max=" ${`v'_max_t0}
+   display "`v' - P-value: " ${`v'_pvalue}
+   display _newline
+}
 
 
 
@@ -131,11 +170,16 @@ clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 
 gen prop_typing_choice = typeChoice/end_time_log
-hist prop_typing_choice
+hist prop_typing_choice, percent
 
 xtile choice3 = prop_typing_choice, nq(3)
 xtile choice5 = prop_typing_choice, nq(5)
 xtile choice10 = prop_typing_choice, nq(10)
+
+sum content 
+gen z_content = (content - r(mean))/r(sd)
+kdensity z_content
+tabstat z_content, by(treatment) stat(mean semean)
 
 twoway (kdensity prop_typing_choice if treatment == 1) (kdensity prop_typing_choice if treatment == 2)
 
@@ -166,8 +210,10 @@ kdensity z_vid
 tabstat z_vid, by(treatment) stat(mean semean)
 
 corr z_vid prop_typing_choice
-twoway lfitci z_vid prop_deviation || scatter z_vid prop_deviation
+twoway lfitci z_vid prop_typing_choice || scatter z_vid prop_typing_choice
+reg prop_typing_choice z_vid
 reg z_vid ib(2).choice3 i.treatment
+reg z_vid ib(2).choice3 i.treatment z_content
 
 sum typeCount
 gen z_type = (typeCount - r(mean))/r(sd)
@@ -178,7 +224,7 @@ corr z_type prop_typing_choice
 twoway lfitci z_type prop_deviation || scatter z_type prop_deviation
 
 reg z_type ib(2).choice3 i.treatment
-reg z_type ib(2).choice3 i.treatment content
+reg z_type ib(2).choice3 i.treatment z_content
 
 // content
 twoway (kdensity content if treatment == 1) (kdensity content if treatment == 2)
