@@ -288,51 +288,79 @@ Payment was calculated based on actual time spent on each task, with compensatio
 
 \subsection{Theoretical Framework and Hypotheses}\label{hypotheses}
 
-% We preregistered our main hypotheses prior to the data collection.\footnote{\url{https://doi.org/10.17605/OSF.IO/MFKBC}} We include a fourth hypothesis which was omitted in the preregistration. These are:
+\subsubsection{Basic Work-Leisure Allocation Model}
 
-% \begin{enumerate}
-% \item Autoplay treatment increases the time spent watching videos when compared to the control condition. 
-% \begin{enumerate}
-%     \item Measured by the number of videos watched per condition.
-%     \item Measured by the total time spent on the Watching task.
-% \end{enumerate}
-% \item There is positive demand for a commitment device, that is, when given a choice participants want to turn autoplay off.
-% \item Demand for the commitment device is not sufficient to offset the loss of payoffs due to the increase in the time spent watching videos in the autoplay condition.
-% \item  There are no differences in participants' decisions regarding how much time they want to spend between the two tasks.
+We begin with a standard time allocation framework where participants maximize utility over consumption and leisure. Each participant has a fixed time endowment $\bar{T} = 1200$ seconds that must be allocated between work (typing task) and leisure (watching task):
 
-% \end{enumerate}
+\begin{equation}
+\max_{a} U(wa/p, \bar{T} - a)
+\end{equation}
 
-% We preregistered our main hypotheses before beginning data  collection.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Although our preregistration included three hypotheses, we have added a fourth for the purpose of this report. The hypotheses are as follows:
+\noindent where $a$ represents time spent working (typing), $\bar{T} - a$ is leisure time (watching), $w$ is the wage rate per second, and $p$ is the price of consumption goods. In our experimental context, we set $w_{typing} = 0.38$ pennies/second and $w_{watching} = 0.33$ pennies/second, creating a clear opportunity cost structure favoring productive work.
 
-% First, we hypothesize that the Autoplay treatment will lead to an increase in the time spent watching videos when compared to the control condition where participants actively need to click on each video to watch. This will be measured in two ways: (i) the total time participants dedicate to the Watching task, and (ii) the number of videos watched per condition. As an extension, we expect that participants in the Autoplay condition will deviate more towards watching videos from their initial \hyperref[time-choice]{Time Choice}, where they made their preferred time allocation between the two tasks at least 24 hours prior to the main session. \label{hyp1}
+Under standard assumptions, the first-order condition yields the familiar result that the marginal rate of substitution between consumption and leisure equals the real wage. However, this framework assumes that all decisions reflect stable, consistent preferences—an assumption we relax through the introduction of dual-system decision-making.
 
-% Second, we anticipate a positive demand for a commitment device. In other words, when presented with a choice, participants would prefer to have the autoplay feature turned off. We measure this through the participant choices in the \hyperref[mpl]{MPL condition}.
+\subsubsection{Dual-System Framework with Content Characteristics}
 
-% Third, we propose that even though there's a demand for this commitment device, it will not be sufficient to counteract the potential decrease in payoffs due to the additional time spent watching videos when Autoplay is enabled.
+Following \citet{kleinberg2022challenge}, we model participants as having two decision-making systems that can conflict during leisure consumption. We decompose leisure utility to account for sequential content consumption with potential self-control failures:
 
-% Lastly, our added fourth hypothesis posits that there will not be a significant difference in participants' time allocation decisions between the two tasks as indicated in the Time Choice section.
+\begin{equation}
+\max_{a} U\left(\frac{wa}{p}, E[\text{Leisure Utility}]\right)
+\end{equation}
 
-We preregistered our main hypotheses before beginning data collection.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Our preregistration included hypotheses 1 and 4. We have added supporting hypotheses 2 and 3 regarding our expectations about the Time Choice section later.
+\noindent where expected leisure utility is characterized by three key parameters:
 
+\begin{equation}
+E[\text{Leisure Utility}] = \max\left(\frac{v - w}{1-q} - \frac{p \cdot w}{1-p}, 0\right)
+\end{equation}
+
+The parameters capture distinct aspects of content:
 \begin{itemize}
-    \item \textbf{Hypothesis 1:}\label{hyp1} The \textbf{Autoplay} condition will lead to an increase in the time spent watching videos when compared to the \textbf{Control} condition where participants actively need to click on each video to watch. This will be measured by:
-    \begin{itemize}
-        \item[\textbf{1.1}] The total time participants dedicate to the Watching task.
-        \item[\textbf{1.2}] The number of videos watched per condition.
-    \end{itemize} 
-
-    \item \textbf{Hypothesis 2:} No significant difference is expected in the time allocation decisions made by participants between the two tasks, as detailed in Section \ref{time-choice}. We test for this difference by comparing the initial Time Choice allocations across conditions.
-    
-    \item \textbf{Hypothesis 3:} Participants in the Autoplay condition will deviate more towards watching videos from their initial Time Choice, where they made their preferred time allocation between the two tasks at least 24 hours prior to the main session. We measure this difference by contrasting the initial Time Choice allocations to actualized allocations during the main session across conditions. 
-    
-    \item \textbf{Hypothesis 4:} There will be a positive demand for a commitment device. Specifically, when given a choice, participants will choose to have the autoplay feature turned off. This demand will be measured through the participant choices in Section \ref{mpl}, specifically looking at the decision where participants switch from one column to the other.
-    
-    % \item \textbf{Hypothesis 5}: Demand for the commitment device will not effectively counterbalance the potential decrease in payoffs that arises due to the additional time spent watching videos with Autoplay enabled. This will be measured by \textcolor{red}{ELABORATE ON HOW??}
-    
-
-
-    
+    \item $v$: \textbf{Value} — System 2's intrinsic utility per unit of leisure content
+    \item $q$: \textbf{Span} — Probability that System 2 wants to continue after consuming each content item
+    \item $p$: \textbf{Moreishness} — Probability that System 1 takes automatic control, continuing consumption regardless of System 2's preferences
 \end{itemize}
+
+The opportunity cost $w$ represents forgone earnings from not engaging in the typing task. System 2 derives utility $v - w$ during intended leisure consumption, but experiences disutility $-w$ during periods when System 1 maintains control beyond System 2's desired stopping point.
+
+\subsubsection{Autoplay Treatment Effect}
+
+Our experimental manipulation targets the moreishness parameter through interface design. We implement two conditions:
+
+\begin{align}
+\text{Control condition:} \quad &p = p_{\text{base}} \\
+\text{Autoplay condition:} \quad &p = p_{\text{base}} + \Delta p
+\end{align}
+
+The curated video content in our watching task—short, entertaining animal videos from YouTube and TikTok—likely represents content with elevated baseline moreishness $p_{\text{base}}$ due to its bite-sized, immediately gratifying nature. The autoplay feature further increases moreishness by reducing opportunities for System 2 to regain control between videos, as noted by \citet{kleinberg2022challenge}: autoplay "decreases the likelihood that system 2 will regain control."
+
+\subsubsection{Two-Period Decision Structure}
+
+Our experimental design separates planning from execution across two time periods:
+
+\textbf{Day 1 (System 2 Planning):} Participants make time allocation choices based on expected utility:
+\begin{equation}
+a^*_{\text{planned}} = \arg\max U\left(\frac{wa}{p}, E[\text{Leisure Utility} | E[p], E[q], E[v]]\right)
+\end{equation}
+
+\textbf{Day 2 (System 1 Interference):} Actual allocation deviates due to realized treatment effects:
+\begin{equation}
+a_{\text{actual}} = a^*_{\text{planned}} + \text{System 1 deviation}(p_{\text{realized}})
+\end{equation}
+
+\subsubsection{Hypotheses}
+
+Building on this theoretical framework, we formulate our preregistered hypotheses:
+
+\textbf{Hypothesis 1:} The autoplay condition will lead to increased time spent watching videos compared to the control condition. This follows directly from $\frac{\partial E[\text{Leisure Time}]}{\partial p} > 0$: higher moreishness increases the expected duration of leisure sessions through more frequent System 1 takeovers.
+
+\textbf{Hypothesis 2:} No significant difference is expected in initial time allocation decisions (Time Choice) between treatment groups. Since treatment assignment occurs after the Time Choice task, System 2's planning should be unaffected by the subsequent autoplay manipulation: $E[a^*_{\text{planned}}|\text{Autoplay}] = E[a^*_{\text{planned}}|\text{Control}]$.
+
+\textbf{Hypothesis 3:} Participants in the autoplay condition will show greater deviation from their initial Time Choice toward watching videos. The increased moreishness should amplify System 1 interference, leading to larger deviations from intended allocations: $E[|a_{\text{actual}} - a^*_{\text{planned}}||\text{Autoplay}] > E[|a_{\text{actual}} - a^*_{\text{planned}}||\text{Control}]$.
+
+\textbf{Hypothesis 4:} There will be positive demand for a commitment device to disable autoplay. Sophisticated System 2 agents should recognize the utility loss from excessive moreishness and be willing to pay to avoid it: $E[U|\text{Control}] - E[U|\text{Autoplay}] > 0$, generating positive willingness-to-pay for autoplay removal.
+
+These hypotheses collectively test whether interface design features can systematically distort optimal time allocation through their effect on the psychological parameters governing content consumption, even when participants face clear monetary incentives favoring productive work.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Our preregistration included hypotheses 1 and 4. We have added supporting hypotheses 2 and 3 regarding our expectations about the Time Choice section later.
 
 
 % Although technically Auto-replay should give control to users over whether they want to see the next video or not as users still must click in order to see the next video, in practice we suspect it has the same funneling effect as autoplay: Users are expected to move to the next video shortly after the first video begins replaying.

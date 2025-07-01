@@ -38,7 +38,7 @@ for i in range(len(sess)):
         sess[i][x] = sess[i][x].replace('"', "")
         sess[i][x] = sess[i][x].replace("[", "")
         sess[i][x] = sess[i][x].replace("]", "")
-
+# %%
 # separate time & activity
 time = []
 activity = []

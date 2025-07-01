@@ -173,6 +173,11 @@ gen prop_typing_choice = typeChoice/end_time_log
 hist prop_typing_choice, percent
 
 xtile choice3 = prop_typing_choice, nq(3)
+gen type3 = .
+replace type3 = 1 if prop_typing_choice < .1
+replace type3 = 2 if prop_typing_choice >= .1 & prop_typing_choice <= .9
+replace type3 = 3 if prop_typing_choice > .9
+
 xtile choice5 = prop_typing_choice, nq(5)
 xtile choice10 = prop_typing_choice, nq(10)
 
