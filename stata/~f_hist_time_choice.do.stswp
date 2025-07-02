@@ -1,0 +1,97 @@
+/*******************************************************************************
+    Project: autoplay
+    Author: Reha Tuncer
+    Date: 02.07.2025
+    Description: figure histogram time choice
+*******************************************************************************/
+
+//# preamble
+version 18
+clear all
+macro drop _all
+set more off
+set scheme s2color, permanently
+set maxvar 32767
+global graph_opts ///
+    graphregion(fcolor(white) lcolor(white)) ///
+    bgcolor(white) ///
+    plotregion(lcolor(white))
+	
+global dpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/"
+global fpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/"
+set scheme s2color, permanently	
+	
+use "${dpath}cleaned_autoplay_data.dta", replace
+
+desc
+
+preserve
+replace typeChoice = typeChoice/1200
+
+quietly sum typeChoice, detail
+scalar mean_tc = r(mean)
+scalar median_tc = r(p50)
+scalar sd_tc = r(sd)
+scalar min_tc = r(min)
+scalar max_tc = r(max)
+scalar p25_tc = r(p25)
+scalar p75_tc = r(p75)
+scalar iqr_tc = r(p75) - r(p25)
+scalar n_tc = r(N)
+
+egen med_tc = median(typeChoice)
+egen lqt_tc = pctile(typeChoice), p(25)
+egen uqt_tc = pctile(typeChoice), p(75)
+egen iqr_stat = iqr(typeChoice)
+egen mean_stat = mean(typeChoice)
+gen l_tc = typeChoice if(typeChoice >= lqt_tc - 1.5*iqr_stat)
+egen ls_tc = min(l_tc)
+gen u_tc = typeChoice if(typeChoice <= uqt_tc + 1.5*iqr_stat)
+egen us_tc = max(u_tc)
+
+gen ypos = -2
+
+sum typeChoice
+local min = r(min)
+local max = r(max)
+local n = r(N)
+local bins = 11
+local width = (`max'-`min')/`bins'
+
+twoway (histogram typeChoice, percent start(`min') width(`width') ///
+        fcolor(dknavy%60) lcolor(gs4) lwidth(thin)) ///
+       || rbar lqt_tc uqt_tc ypos, horiz fcolor(dknavy*.7) lcolor(gs4) barw(1.2) ///
+       || rbar med_tc uqt_tc ypos, horiz fcolor(dknavy*.7) lcolor(gs4) barw(1.2) ///
+       || rspike lqt_tc ls_tc ypos, horiz lcolor(gs4) ///
+       || rspike uqt_tc us_tc ypos, horiz lcolor(gs4) ///
+       || rcap ls_tc ls_tc ypos, horiz msize(*1) lcolor(gs4) ///
+       || rcap us_tc us_tc ypos, horiz msize(*1) lcolor(gs4) ///
+       || scatter ypos mean_stat, msymbol(o) msize(*.5) fcolor(gs4) mcolor(gs4) ///
+       , xlabel(0(.125)1, format(%9.0g)) ///
+         ylabel(0(5)30, gmax angle(0)) ///
+         ytitle("Percent") ///
+         xtitle("Type Choice") ///
+         legend(off) ///
+         title("Distribution of Type Choice") ///
+         graphregion(color(white)) bgcolor(white) ///
+         name(typechoice_hist, replace)
+
+graph export "${fpath}typechoice_hist.png", replace
+
+// Display descriptive statistics
+display ""
+display "DESCRIPTIVE STATISTICS - TYPE CHOICE"
+display "===================================="
+display ""
+display "N" _col(15) %8.0f n_tc
+display "Mean" _col(15) %8.2f mean_tc
+display "Median" _col(15) %8.2f median_tc
+display "Std Dev" _col(15) %8.2f sd_tc
+display "Min" _col(15) %8.2f min_tc
+display "Max" _col(15) %8.2f max_tc
+display "25th pct" _col(15) %8.2f p25_tc
+display "75th pct" _col(15) %8.2f p75_tc
+display "IQR" _col(15) %8.2f iqr_tc
+display ""
+
+restore

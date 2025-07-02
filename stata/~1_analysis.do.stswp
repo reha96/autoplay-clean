@@ -25,22 +25,26 @@ clear all
 cls
 
 import excel "${dpath}clean-data.xlsx", firstrow clear
-capture rename A id
-
-describe
 
 drop treatment
-gen treatment = 1 if Treatment == "Control"
-replace treatment = 2 if Treatment == "Autoplay"
+gen treatment = 0 if Treatment == "Control"
+replace treatment = 1 if Treatment == "Autoplay"
 destring treatment, replace force
 
 rename timeChoice typeChoice
 rename typing_log seconds_typing
 
-drop attention* speed browser os platform userTranscription watching* not* end_time_log_in* Treatment
+drop Treatment
+rename captchas_submitted_total submit_type
+
+sum mouseout*, det
+keep if mouseout_typing + mouseout_watching <= 20
+drop mouseout*
 save "${dpath}cleaned_autoplay_data.dta", replace
 
-
+describe
+tab treatment
+sum session_duration
 
 // balance table 
 clear all
@@ -73,10 +77,14 @@ gen mar_married = (marital_3cat == 1)
 gen mar_single = (marital_3cat == 2)
 gen mar_previous = (marital_3cat == 3)
 
+replace birthyear = 1972 if birthyear == 72 // 1ob
+replace birthyear = 1964 if birthyear == -1964 // 1ob
 gen age = 2025 - birthyear
 gen gender_group = .
-replace gender_group = 0 if gender == "female"
-replace gender_group = 1 if gender == "male"
+replace gender_group = 1 if gender == "female"
+replace gender_group = 0 if gender == "male"
+
+
 
 display as text "=== BALANCE TABLE RESULTS ===" _newline
 
@@ -88,7 +96,6 @@ global age_sd2 = r(sd_2)
 global age_pvalue = r(p)
 display "Overall Mean: " r(mu_1) ", P-value: " ${age_pvalue}
 
-cls
 foreach v of varlist gender_group emp_fulltime emp_partself emp_notemployed inc_low inc_middle inc_high mar_married mar_single mar_previous {
     display _newline
     display as text "=== Proportion test for `v' ===" 
@@ -109,7 +116,7 @@ foreach v of varlist gender_group emp_fulltime emp_partself emp_notemployed inc_
 display _newline
 display as text "=== SUMMARY OF P-VALUES ===" _newline
 display "Age: " ${age_pvalue}
-display "Gender (male): " ${gender_group_pvalue}
+display "Gender (female): " ${gender_group_pvalue}
 display "Employment - Full time: " ${emp_fulltime_pvalue}
 display "Employment - Part time/Self: " ${emp_partself_pvalue}  
 display "Employment - Not employed: " ${emp_notemployed_pvalue}
@@ -123,7 +130,7 @@ display "Marital - Previously married: " ${mar_previous_pvalue}
 // summary table
 cls
 
-foreach v of varlist typeChoice seconds_typing content tabCounter typeCount watchedVideo {
+foreach v of varlist typeChoice seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
    quietly summarize `v'
    global `v'_mean = r(mean)
    global `v'_sd = r(sd)
@@ -132,18 +139,18 @@ foreach v of varlist typeChoice seconds_typing content tabCounter typeCount watc
    global `v'_min = r(min)
    global `v'_max = r(max)
    
-   quietly summarize `v' if treatment == 2
+   quietly summarize `v' if treatment == 1
    global `v'_mean_t1 = r(mean)
    global `v'_sd_t1 = r(sd)
-   quietly summarize `v' if treatment == 2, detail
+   quietly summarize `v' if treatment == 1, detail
    global `v'_median_t1 = r(p50)
    global `v'_min_t1 = r(min)
    global `v'_max_t1 = r(max)
    
-   quietly summarize `v' if treatment == 1
+   quietly summarize `v' if treatment == 0
    global `v'_mean_t0 = r(mean)
    global `v'_sd_t0 = r(sd)
-   quietly summarize `v' if treatment == 1, detail
+   quietly summarize `v' if treatment == 0, detail
    global `v'_median_t0 = r(p50)
    global `v'_min_t0 = r(min)
    global `v'_max_t0 = r(max)
@@ -155,7 +162,7 @@ foreach v of varlist typeChoice seconds_typing content tabCounter typeCount watc
 display "Variable Statistics Summary:"
 display _newline
 
-foreach v of varlist typeChoice seconds_typing content tabCounter typeCount watchedVideo {
+foreach v of varlist typeChoice seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
    display "`v' - Overall: Mean=" ${`v'_mean} " SD=" ${`v'_sd} " Median=" ${`v'_median} " Min=" ${`v'_min} " Max=" ${`v'_max}
    display "`v' - Treatment: Mean=" ${`v'_mean_t1} " SD=" ${`v'_sd_t1} " Median=" ${`v'_median_t1} " Min=" ${`v'_min_t1} " Max=" ${`v'_max_t1}
    display "`v' - Control: Mean=" ${`v'_mean_t0} " SD=" ${`v'_sd_t0} " Median=" ${`v'_median_t0} " Min=" ${`v'_min_t0} " Max=" ${`v'_max_t0}

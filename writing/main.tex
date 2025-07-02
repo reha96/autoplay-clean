@@ -375,7 +375,7 @@ These hypotheses collectively test whether interface design features can systema
 
 The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We drew the sample from the Prolific participant pool, an online recruitment platform commonly used for academic research, targeting adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection ($>30$ Mbps on the first and $>25$ Mbps on the second day of the experiment). We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
 
-For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly, and the final dataset on which we base the analysis consisted of 224 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
+For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly. Finally, we removed 40 participants that were detected to spend more than 20 consequtive seconds away from our experimental platform and the final dataset on which we base the analysis consisted of 184 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
 \begin{table}[H]
  \centering
@@ -384,29 +384,29 @@ For the first stage of data collection, that is to say excluding the MPL treatme
  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc c@{}}
  \toprule
  & \multicolumn{1}{c}{\textbf{Autoplay}} & \multicolumn{1}{c}{\textbf{Control}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
- & \multicolumn{1}{c}{N = 104} & \multicolumn{1}{c}{N = 120} & [A = C]\\
+ & \multicolumn{1}{c}{N = 79} & \multicolumn{1}{c}{N = 105} & [A = C]\\
  \midrule
  \textit{\textbf{Gender}} & & & \\
- Female & 48 (46.15\%) & 54 (45.00\%) & 0.863 \\ \midrule
+ Female & 48 (46.15\%) & 54 (45.00\%) & 0.510 \\ \midrule
  \textit{\textbf{Age}} & & & \\
- Mean (SD) & 40.56 (11.66) & 40.24 (10.98) & 0.836 \\ \midrule
+ Mean (SD) & 40.56 (11.66) & 40.24 (10.98) & 0.725 \\ \midrule
  \textit{\textbf{Employment}} & & & \\
- Employed (full time) & 62 (59.62\%) & 67 (55.83\%) & 0.568 \\
- Employed (part time/self) & 28 (26.92\%) & 28 (23.33\%) & 0.536 \\
- Not employed & 11 (10.58\%) & 18 (15.00\%) & 0.147 \\ \midrule
+ Employed (full time) & 62 (59.62\%) & 67 (55.83\%) & 0.718 \\
+ Employed (part time/self) & 28 (26.92\%) & 28 (23.33\%) & 0.417 \\
+ Not employed & 11 (10.58\%) & 18 (15.00\%) & 0.167 \\ \midrule
  \textit{\textbf{Income}} & & & \\
- Low (0-15) & 28 (26.92\%) & 34 (28.33\%) & 0.814 \\
- Middle (15-30) & 30 (28.85\%) & 36 (30.00\%) & 0.740 \\
- High (50+) & 15 (14.42\%) & 13 (10.83\%) & 0.418 \\ \midrule
+ Low (0-15) & 28 (26.92\%) & 34 (28.33\%) & 0.989 \\
+ Middle (15-30) & 30 (28.85\%) & 36 (30.00\%) & 0.505 \\
+ High (50+) & 15 (14.42\%) & 13 (10.83\%) & 0.325 \\ \midrule
  \textit{\textbf{Marital Status}} & & & \\ 
- Married/Partnership & 56 (53.85\%) & 60 (50.00\%) & 0.566 \\
- Single & 42 (40.38\%) & 52 (43.33\%) & 0.656 \\
- Previously married & 6 (5.77\%) & 8 (6.67\%) & 0.782 \\
+ Married/Partnership & 56 (53.85\%) & 60 (50.00\%) & 0.510 \\
+ Single & 42 (40.38\%) & 52 (43.33\%) & 0.534 \\
+ Previously married & 6 (5.77\%) & 8 (6.67\%) & 0.927 \\
  \bottomrule
  \end{tabular*}
  \begin{tablenotes}[flushleft]
  \footnotesize
- \item[] \textit{Note:} This table presents demographic characteristics for the final sample of 224 participants across treatment conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
+ \item[] \textit{Note:} This table presents demographic characteristics for the final sample of 184 participants across treatment conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
  \end{tablenotes}
  \label{table2}
  \end{threeparttable}
@@ -418,46 +418,59 @@ For the MPL treatment, applying the same selection criteria as before, we invite
 
 \section{Results}
 
-We begin presenting the results of our hypotheses and summarize the variables of interest from the main 20-minute session in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. We find that participants spend more time typing when compared to their Time Choice on day 1, which indicates that there is negative present bias on average.   
+We begin summarizing variables of interest from the main 20-minute session in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. This suggests that \textbf{Autoplay} condition had no impact on the watching behavior observed in the experiment. Further, we find that participants spend more time typing when compared to their Time Choice on day 1 (206.8 seconds, $t$(183) = 8.92, $p < 0.001$), which indicates that this decision environment cannot be characterized by hyperbolic discounting and/or present biased individuals on average.
 
 \begin{table}[H]
   \centering
   \caption{Sample statistics for variables of interest}
-%   \resizebox{\textwidth}{!}{%
+  \resizebox{\textwidth}{!}{%
   \begin{threeparttable}
-  \begin{tabular}[\textwidth]{@{}lcc c@{}}
+  \begin{tabular}{@{}lcc c@{}}
   \toprule
   & \multicolumn{1}{c}{\textbf{Autoplay}} & \multicolumn{1}{c}{\textbf{Control}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
-  & \multicolumn{1}{c}{N = 104} & \multicolumn{1}{c}{N = 120} & [A = C] \\
+  & \multicolumn{1}{c}{N = 79} & \multicolumn{1}{c}{N = 105} & [A = C] \\
   \midrule
-  \textbf{\textit{Allocated Type time}} & & & \\
-  Mean (SD) & 573.85 (388.30) & 520.17 (400.76) & 0.312 \\
+  \textbf{\textit{Time Choice}} & & & \\
+  Mean (SD) & 572.41 (366.62) & 525.14 (396.87) & 0.410 \\
   Median [Min, Max] & 600.00 [0.00, 1200.00] & 600.00 [0.00, 1200.00] & \\ \midrule
   \textbf{\textit{Type time}} & & & \\
-  Mean (SD) & 735.36 (389.68) & 676.67 (422.26) & 0.284 \\
-  Median [Min, Max] & 788.90 [3.20, 1266.40] & 637.40 [2.70, 1536.70] & \\ \midrule
-  \textbf{\textit{Content rating}} & & & \\
-  Mean (SD) & 6.92 (2.29) & 6.44 (2.53) & 0.139 \\
-  Median [Min, Max] & 7.00 [2.00, 10.00] & 7.00 [0.00, 10.00] & \\ \midrule
-  \textbf{\textit{Nb. of task switches}} & & & \\
-  Mean (SD) & 4.00 (4.50) & 3.69 (5.03) & 0.631 \\
-  Median [Min, Max] & 2.00 [0.00, 16.00] & 2.00 [0.00, 28.00] & \\ \midrule
-  \textbf{\textit{Nb. of retyped images}} & & & \\
-  Mean (SD) & 18.01 (11.97) & 16.26 (11.59) & 0.268 \\
-  Median [Min, Max] & 17.00 [0.00, 53.00] & 14.50 [0.00, 45.00] & \\ \midrule
+  Mean (SD) & 797.43 (375.68) & 718.16 (405.81) & 0.178 \\
+  Median [Min, Max] & 883.00 [3.00, 1212.00] & 695.00 [3.00, 1314.00] & \\ \midrule
+  \textbf{\textit{Nb. of sessions}} & & & \\
+  Mean (SD) & 5.76 (4.98) & 4.89 (5.09) & 0.246 \\
+  Median [Min, Max] & 4.00 [1.00, 18.00] & 3.00 [1.00, 28.00] & \\ \midrule
+  \textbf{\textit{Session length}} & & & \\
+  Mean (SD) & 456.11 (383.22) & 546.35 (411.53) & 0.131 \\
+  Median [Min, Max] & 314.75 [68.17, 1212.00] & 418.67 [44.93, 1314.00] & \\ \midrule
+  \textbf{\textit{Nb. of retyping submissions}} & & & \\
+  Mean (SD) & 19.76 (12.11) & 17.21 (11.62) & 0.150 \\
+  Median [Min, Max] & 19.00 [0.00, 53.00] & 15.00 [0.00, 45.00] & \\ \midrule
   \textbf{\textit{Nb. of videos watched}} & & & \\
-  Mean (SD) & 35.75 (27.21) & 34.40 (26.35) & 0.707 \\
-  Median [Min, Max] & 36.00 [0.00, 80.00] & 40.50 [0.00, 77.00] & \\
+  Mean (SD) & 31.33 (26.34) & 32.72 (26.39) & 0.723 \\
+  Median [Min, Max] & 25.00 [0.00, 80.00] & 34.00 [0.00, 77.00] & \\ \midrule
+  \textbf{\textit{Content rating}} & & & \\
+  Mean (SD) & 6.96 (2.18) & 6.62 (2.45) & 0.327 \\
+  Median [Min, Max] & 7.00 [2.00, 10.00] & 7.00 [0.00, 10.00] & \\
   \bottomrule
   \end{tabular}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Allocated Type time'' refers to participants' stated preferences from the Time Choice task for typing, while ``Type time'' represents the actual time spent on typing task during the 20-minute Main Session (measured in seconds). Content rating reflects participants' evaluation of video content on a 0-10 scale. Task switches count the number of times participants switched between the Typing and Watching tasks. $p$-values are from two-sample $t$-tests comparing treatment groups.
+  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for typing on day 1, while ``Type time'' represents the actual time spent on typing task during the 20-minute Main Session on day 2. Both are measured in seconds. Nb. of sessions is the number of typing or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' evaluation of video content on a 0-10 scale.$p$-values are from two-sample $t$-tests comparing experimental conditions.
   \end{tablenotes}
   \end{threeparttable}
-%   }
+ }
   \label{table3}
 \end{table}
+
+\subsection{Time Choice}
+We begin with participant's Time Choices. These were their incentivized time allocation on how much they would like to spend on the Typing task for the 20-minute main session 24 hours before. In Figure \ref{f:time_choice} \textcolor{red}{pick up from here}.
+
+\begin{figure}[H]
+   \centering
+       \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typechoice_hist.png}
+   \caption{Distribution of Time Choice across treatments}
+   \label{f:time_choice}
+\end{figure}
 
 
 \subsection{Does Autoplay increase time spent watcing videos? (H1)}
@@ -509,16 +522,6 @@ Figure \ref{graph2} shows the distribution of the standardized time spent on wat
 
 % We turn to verifying the second hypothesis, i.e., whether participants across treatments had different initial Time Choices. Figure \ref{graph3} shows the distribution of Time Choice across treatments. We test and reject this hypothesis using the Mann-Whitney U test ($U=6713.5, p=0.323$).
 
-\subsection{Effects of Autoplay on Time Choice (H2)}
-
-We next examine \hyperref[hypotheses]{Hypothesis 2}, which posits there are no significant differences in the initial Time Choice made by participants across two treatments. For clarity, Time Choice refers to how much time participants preferred to spend on the Typing Task on day one. As depicted in Figure \ref{graph3}, the distribution of Time Choices across treatments appears roughly symmetrical for both treatments. To validate this observation, we employed the Mann-Whitney U test, where the null hypothesis suggests there is no statistically significant difference in Time Choice distributions across treatments. The outcome leads us to confirm our hypothesis ($U=6713.5, p=0.323$), suggesting that participants' initial Time Choice were statistically indistinguishable across treatments. Participants seem to have been uniformly affected by the two treatments, which is important ascertain before we delve further into the analysis of Time Choice.
-
-\begin{figure}[!htbp]
-   \centering
-       \includegraphics[scale=.5]{graph3.png}
-   \caption{Distribution of Time Choice across treatments}
-   \label{graph3}
-\end{figure}
 
 \subsection{Effects of Autoplay on deviations from Time Choice (H3)}
 

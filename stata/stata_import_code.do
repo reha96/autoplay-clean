@@ -255,7 +255,7 @@ drop if spell_length <= 3
 generate unique_id = _n
 
 // Simple survival setup
-stset spell_length, failure(failure) id(participant_id)
+stset spell_length, failure(failure) id(unique_id)
 stdescribe
 // Cox model with participant clustering
 stcox autoplay timechoice, cluster(participant_id)
