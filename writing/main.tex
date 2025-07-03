@@ -375,7 +375,7 @@ These hypotheses collectively test whether interface design features can systema
 
 The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We drew the sample from the Prolific participant pool, an online recruitment platform commonly used for academic research, targeting adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection ($>30$ Mbps on the first and $>25$ Mbps on the second day of the experiment). We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
 
-For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly. Finally, we removed 40 participants that were detected to spend more than 20 consequtive seconds away from our experimental platform and the final dataset on which we base the analysis consisted of 184 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
+For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly. Finally, we removed 40 participants \textcolor{red}{INSERT COMPARISON TABLE} that were detected to spend more than 20 consequtive seconds away from our experimental platform and the final dataset on which we base the analysis consisted of 184 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
 \begin{table}[H]
  \centering
@@ -414,11 +414,96 @@ For the first stage of data collection, that is to say excluding the MPL treatme
 
 
 
-For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 56 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 51 individuals in the final dataset.
+For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 56 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 51 individuals in the final MPL dataset.
 
 \section{Results}
+\subsection{Time Choice: Planned time allocation on day 1}
+How did participants plan to allocate their time on day 1? We look at participant's Time Choices to answer this question. These were their incentivized time allocation choices based on how much they would like to spend on the Typing task for the 20-minute main session 24 hours before. In Figure \ref{f:time_choice} illustrates how Time Choices of participants were distrubted along 5 focal points: The modal action for about a third of all participants was choosing to divide their time equally between the two tasks, then another third chose to only type or watch videos (split 15\% typing and 15\% watching, respectively). The remainder of participants were distributed around either 1/4 of the time typing, or 3/4 of the time typing.
 
-We begin summarizing variables of interest from the main 20-minute session in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. This suggests that \textbf{Autoplay} condition had no impact on the watching behavior observed in the experiment. Further, we find that participants spend more time typing when compared to their Time Choice on day 1 (206.8 seconds, $t$(183) = 8.92, $p < 0.001$), which indicates that this decision environment cannot be characterized by hyperbolic discounting and/or present biased individuals on average.
+\begin{figure}[H] 
+    \caption{Distribution of Time Choice} 
+    \centering 
+    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typechoice_hist.png} 
+    \label{f:time_choice} 
+    \begin{tablenotes} 
+    \footnotesize \item[] \textit{Note:} This figure shows the distribution of participants' Time Choices for the 20-minute Main Session, measured as the proportion of time planned for typing (0 = all watching, 1 = all typing). The histogram reveals clustering around five focal points: Approximately 20\% chose all watching (0), 12\% chose 25\% typing (0.25), 29\% chose equal time allocation (0.5), 9\% chose 75\% typing (0.75), and 14\% chose all typing (1). The box plot below shows the overall distribution with median at 0.5. 
+    \end{tablenotes} 
+\end{figure}
+
+Based on the observed distribution of the Time Choices, we categorize the day 1 intentions of participants into three distinct groups: Those who almost always planned to type, those who almost always planned to watch videos, and those who planned to mix between the two tasks in various proportions. Table \ref{tab:time_allocation_clusters} summarizes each group.
+
+\begin{table}[H]
+  \centering
+  \caption{Participant types by planned time allocation on day 1}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & \multicolumn{1}{c}{\textbf{Video-focused}} & \multicolumn{1}{c}{\textbf{Mixed}} & \multicolumn{1}{c}{\textbf{Typing-focused}} \\
+  & \multicolumn{1}{c}{N = 52} & \multicolumn{1}{c}{N = 99} & \multicolumn{1}{c}{N = 33} \\
+  \midrule
+  \textbf{\textit{Time Choice}} & & & \\
+  Mean (SD) & 0.07 (0.08) & 0.49 (0.15) & 0.95 (0.07) \\
+  Median [Min, Max] & 0.00 [0.00, 0.23] & 0.50 [0.25, 0.75] & 1.00 [0.78, 1.00] \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} This table presents the clustering of participants based on their planned time allocation choices for the 20-minute Main Session on day 1. Time Choice represents the proportion of time planned for typing (0 = all watching, 1 = all typing). Video-focused participants planned to spend 25\% or less of their time typing, Mixed participants planned to spend between 25\% and 75\% of their time typing, and Typing-focused participants planned to spend more than 75\% of their time typing. The clustering reveals that 54\% of participants preferred a mixed approach, while 28\% were video-focused and 18\% were typing-focused.
+  \end{tablenotes}
+  \end{threeparttable} \label{tab:time_allocation_clusters}
+\end{table}
+
+\subsection{Actualized typing decisions}
+How did participants allocate their time during the 20-minute main session on day 2? Because we collected second by second data on participant behavior, we can track how they allocated their time between the two tasks. Similar to the Time Choice, participants in their actualized typing decisions can be broadly categorized in the same three categories (see Figure \ref{f:cdf}).
+
+\begin{figure}[H] 
+    \caption{Time spent typing} 
+    \centering 
+    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typing_cdf.png} 
+    \label{f:cdf} 
+    \begin{tablenotes} 
+    \footnotesize \item[] \textit{Note:} This figure shows the time spent at typing for a random sample of 30 participants from the 20-minute Main Session. Each line represents the seconds spent on the typing task as a function of the total time spent at the main session for a  participant. The figure reveals three types of participants: Some spent most their time at the typing task, others at the watching task. The large majority alternated between the two tasks.
+    \end{tablenotes} 
+\end{figure}
+
+Based on the observed distribution of the actualized time spent typing, we categorize the day 2 behavior into three groups following the same rule: Those who almost always typed (more than 75\% typing), those who almost always watched videos (less than 25\% typing), and those who mixed between the two tasks in various proportions. Table \ref{tab:type_clusters} summarizes each type. We observe that 
+
+\begin{table}[H]
+  \centering
+  \caption{Participant types by actualized time allocation on day 2}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & \multicolumn{1}{c}{\textbf{Video-focused}} & \multicolumn{1}{c}{\textbf{Mixed}} & \multicolumn{1}{c}{\textbf{Typing-focused}} \\
+  & \multicolumn{1}{c}{N = 35} & \multicolumn{1}{c}{N = 72} & \multicolumn{1}{c}{N = 74} \\
+  \midrule
+  \textbf{\textit{Type Time}} & & & \\
+  Mean (SD) & 0.09 (0.08) & 0.54 (0.13) & 0.94 (0.08) \\
+  Median [Min, Max] & 0.08 [0.00, 0.24] & 0.52 [0.28, 0.74] & 0.97 [0.75, 1.00] \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} This table presents the clustering of participants based on their actualized time allocation during the 20-minute Main Session on day 2. Type Time represents the proportion of time actually spent on typing (0 = all watching, 1 = all typing). Video-focused participants spent 25\% or less of their time typing, Mixed participants spent between 25\% and 75\% of their time typing, and Typing-focused participants spent more than 75\% of their time typing. The clustering reveals that 40\% of participants (72/181) exhibited mixed behavior, while 19\% (35/181) were video-focused and 41\% (74/181) were typing-focused.
+  \end{tablenotes}
+  \end{threeparttable} \label{tab:type_clusters}
+\end{table}
+
+\subsection{Productivity over time}
+
+\begin{figure}[H] 
+    \caption{Time spent typing in each quartile} 
+    \centering 
+    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/work_allocation_quartiles.png} 
+    \label{f:bar_quartile} 
+    \begin{tablenotes} 
+    \footnotesize \item[] \textit{Note:} This figure shows the time spent at typing for a random sample of 30 participants from the 20-minute Main Session. Each line represents the seconds spent on the typing task as a function of the total time spent at the main session for a  participant. The figure reveals three types of participants: Some spent most their time at the typing task, others at the watching task. The large majority alternated between the two tasks.
+    \end{tablenotes} 
+\end{figure}
+
+\subsection{Does Autoplay increase time spent watcing videos? (H1)}
+
+We begin summarizing variables of interest from the main 20-minute session in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. This suggests that \textbf{Autoplay} condition had no impact on the watching behavior observed in the experiment. Further, we find that participants spend more time typing when compared to their Time Choice on day 1 (0.158, $t$(183) = 8.92, $p < 0.001$), which indicates that this decision environment cannot be characterized by hyperbolic discounting and/or present biased individuals on average.
 
 \begin{table}[H]
   \centering
@@ -431,11 +516,11 @@ We begin summarizing variables of interest from the main 20-minute session in Ta
   & \multicolumn{1}{c}{N = 79} & \multicolumn{1}{c}{N = 105} & [A = C] \\
   \midrule
   \textbf{\textit{Time Choice}} & & & \\
-  Mean (SD) & 572.41 (366.62) & 525.14 (396.87) & 0.410 \\
-  Median [Min, Max] & 600.00 [0.00, 1200.00] & 600.00 [0.00, 1200.00] & \\ \midrule
+  Mean (SD) & 0.48 (0.31) & 0.44 (0.33) & 0.410 \\
+  Median [Min, Max] & 0.50 [0.00, 1.00] & 0.50 [0.00, 1.00] & \\ \midrule
   \textbf{\textit{Type time}} & & & \\
-  Mean (SD) & 797.43 (375.68) & 718.16 (405.81) & 0.178 \\
-  Median [Min, Max] & 883.00 [3.00, 1212.00] & 695.00 [3.00, 1314.00] & \\ \midrule
+  Mean (SD) & 0.65 (0.31) & 0.58 (0.33) & 0.173 \\
+  Median [Min, Max] & 0.72 [0.00, 1.00] & 0.56 [0.00, 1.00] & \\ \midrule
   \textbf{\textit{Nb. of sessions}} & & & \\
   Mean (SD) & 5.76 (4.98) & 4.89 (5.09) & 0.246 \\
   Median [Min, Max] & 4.00 [1.00, 18.00] & 3.00 [1.00, 28.00] & \\ \midrule
@@ -455,25 +540,11 @@ We begin summarizing variables of interest from the main 20-minute session in Ta
   \end{tabular}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for typing on day 1, while ``Type time'' represents the actual time spent on typing task during the 20-minute Main Session on day 2. Both are measured in seconds. Nb. of sessions is the number of typing or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' evaluation of video content on a 0-10 scale.$p$-values are from two-sample $t$-tests comparing experimental conditions.
+  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for typing on day 1 (proportion), while ``Type time'' represents the actual proportion of time spent on typing task during the 20-minute Main Session on day 2. Nb. of sessions is the number of typing or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' evaluation of video content on a 0-10 scale. $p$-values are from two-sample $t$-tests comparing experimental conditions.
   \end{tablenotes}
-  \end{threeparttable}
+  \end{threeparttable} \label{table3}
  }
-  \label{table3}
 \end{table}
-
-\subsection{Time Choice}
-We begin with participant's Time Choices. These were their incentivized time allocation on how much they would like to spend on the Typing task for the 20-minute main session 24 hours before. In Figure \ref{f:time_choice} \textcolor{red}{pick up from here}.
-
-\begin{figure}[H]
-   \centering
-       \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typechoice_hist.png}
-   \caption{Distribution of Time Choice across treatments}
-   \label{f:time_choice}
-\end{figure}
-
-
-\subsection{Does Autoplay increase time spent watcing videos? (H1)}
 
 % Our initial hypothesis explores whether Autoplay leads to an increase in the time spent watching videos. We test this using two measures: First, the amount of time participants spent on the Watching Task. We collected second-by-second logs of how long participants spent on each task for 20-minute main session. However, a minor technical glitch related to the countdown timer resulted in most participants spending 30 to 60 seconds more on the main session.\footnote{Upon investigation, we noticed that the countdown timer \textit{slowed down} when there were no active clicks, typing, or movement of the cursor during the main session. In fact, the less activity there were, the slower each passing second became. We verified whether participants had noticed this technical issue during the experiment by looking at the text inputs they provided for feedback. Thankfully no participant mentioned the issue, and we take this as evidence that the glitch must have gone unnoticed.} To understand how participants were affected by the glitch, we look at the distribution of the total time spent across treatments in Figure \ref{graph1}, where the variable on the x-axis is the sum of the time spent across both tasks and y-axis is its frequency. Although visible in the histogram, we use the Mann-Whitney U test to test and reject that participants across conditions are affected differently from the glitch ($U=6331, p=0.85$).
 

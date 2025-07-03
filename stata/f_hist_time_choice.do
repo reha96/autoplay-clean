@@ -26,7 +26,6 @@ use "${dpath}cleaned_autoplay_data.dta", replace
 desc
 
 preserve
-replace typeChoice = typeChoice/1200
 
 quietly sum typeChoice, detail
 scalar mean_tc = r(mean)
@@ -55,7 +54,7 @@ sum typeChoice
 local min = r(min)
 local max = r(max)
 local n = r(N)
-local bins = 11
+local bins = 15
 local width = (`max'-`min')/`bins'
 
 twoway (histogram typeChoice, percent start(`min') width(`width') ///
@@ -67,12 +66,12 @@ twoway (histogram typeChoice, percent start(`min') width(`width') ///
        || rcap ls_tc ls_tc ypos, horiz msize(*1) lcolor(gs4) ///
        || rcap us_tc us_tc ypos, horiz msize(*1) lcolor(gs4) ///
        || scatter ypos mean_stat, msymbol(o) msize(*.5) fcolor(gs4) mcolor(gs4) ///
-       , xlabel(0(.25)1, format(%9.0g)) ///
+       , xlabel(0(.125)1, format(%9.0g)) ///
          ylabel(0(5)30, gmax angle(0)) ///
          ytitle("Percent") ///
-         xtitle("Type Choice") ///
+         xtitle("Proportion of 20 min. planned for typing") ///
          legend(off) ///
-         title("Distribution of Type Choice") ///
+         title("Distribution of Time Choice (Day 1)") ///
          graphregion(color(white)) bgcolor(white) ///
          name(typechoice_hist, replace)
 
@@ -95,3 +94,20 @@ display "IQR" _col(15) %8.2f iqr_tc
 display ""
 
 restore
+
+
+gen cluster_modal = .
+replace cluster_modal = 1 if typeChoice < 0.25      // Video-focused
+replace cluster_modal = 2 if typeChoice >= 0.25 & typeChoice <= 0.75  // Mixed
+replace cluster_modal = 3 if typeChoice > 0.75       // Typing-focused
+
+tabstat typeChoice ,by(cluster_modal) stat(mean sd min max n)
+
+gen actual_clus = .
+replace actual_clus = 1 if seconds_typing < 0.25      // Video-focused
+replace actual_clus = 2 if seconds_typing >= 0.25 & typeChoice <= 0.75  // Mixed
+replace actual_clus = 3 if seconds_typing > 0.75       // Typing-focused
+
+tabstat seconds_typing ,by(actual_clus) stat(mean sd min max n)
+
+tab actual_clus cluster_modal

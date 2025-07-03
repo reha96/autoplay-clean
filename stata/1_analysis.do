@@ -131,6 +131,14 @@ display "Marital - Previously married: " ${mar_previous_pvalue}
 // summary table
 cls
 
+clear all
+use "${dpath}cleaned_autoplay_data.dta", replace
+
+replace typeChoice = typeChoice/1200 // divide by max time 
+replace seconds_typing = seconds_typing/session_duration // divide by end time
+
+save "${dpath}cleaned_autoplay_data.dta", replace
+
 foreach v of varlist typeChoice seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
    quietly summarize `v'
    global `v'_mean = r(mean)
@@ -172,6 +180,7 @@ foreach v of varlist typeChoice seconds_typing content videos_watched_total subm
 }
 
 
+ttest typeChoice == seconds_typing
 
 // time spent as proportions
 clear all
