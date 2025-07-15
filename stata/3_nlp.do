@@ -1,0 +1,112 @@
+/*******************************************************************************
+    Project: autoplay
+    Author: Reha Tuncer
+    Date: 15.07.2025
+    Description: nlp regex matching 
+*******************************************************************************/
+//# preamble
+version 18
+clear all
+macro drop _all
+set more off
+set maxvar 32767
+global graph_opts ///
+    graphregion(fcolor(white) lcolor(white)) ///
+    bgcolor(white) ///
+    plotregion(lcolor(white))
+	
+global dpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/"
+global fpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/"
+	
+clear all
+cls
+
+import excel "${dpath}nlp-clean.xlsx", firstrow clear
+
+
+gen lower = strlower(strategy)
+
+global typing_difficult = "under pressure" + ///
+	" frustrating" + ///
+	" stressful" + ///
+	" difficult" + ///
+	" tired" + ///
+	" tiresome" + ///
+	" pain" + ///
+	" read" + ///
+	" unpleasant " + ///
+	" concentration" + ///
+	" draining" + ///
+	" demanding" + ///
+	" legible" + ///
+	" tedious" + ///
+	" see" + ///
+	" stress " + ///
+	" blurry" + ///
+	" decipher" + ///
+	" pressure" + ///
+	" hectic" + ///
+	" unreadable" + ///
+	" eyes" + ///
+	" straining" + ///
+	" monotonous" + ///
+	" mind numbing" + ///
+	" illegible" + ///
+	" concentrate"
+	
+gen type_negative = 0
+foreach phrase in $typing_difficult {
+	replace type_negative = 1 if regexm(lower, "`phrase'")
+	qui count if regexm(lower, "`phrase'")
+	local count_`phrase' = r(N)
+	di "`phrase': `count_`phrase''"
+}
+
+sum type_negative
+
+preserve
+clear
+gen name = ""
+gen value = 0
+local obs = 0
+
+foreach phrase in $typing_difficult {
+	if `count_`phrase'' > 0 {
+		local obs = `obs' + 1
+		set obs `obs'
+		replace name = "`phrase'" in `obs'
+		replace value = `count_`phrase'' in `obs'
+	}
+}
+
+list
+wordcloud, n(name) v(value) f("${fpath}typing_difficult.html")
+restore
+
+//
+global breaks_from = "break rest change relax relief unwind distraction alternate mix"
+gen breaks = 0
+foreach phrase in $breaks_from {
+	replace breaks = 1 if regexm(lower, "`phrase'")
+	qui count if regexm(lower, "`phrase'")
+	local count_`phrase' = r(N)
+	di "`phrase': `count_`phrase''"
+}
+sum breaks
+
+preserve
+clear
+gen name = ""
+gen value = 0
+local obs = 0
+foreach phrase in $breaks_from {
+	if `count_`phrase'' > 0 {
+		local obs = `obs' + 1
+		set obs `obs'
+		replace name = "`phrase'" in `obs'
+		replace value = `count_`phrase'' in `obs'
+	}
+}
+list
+wordcloud, n(name) v(value) f("${fpath}breaks_from.html")
+restore

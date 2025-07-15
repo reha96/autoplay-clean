@@ -55,6 +55,33 @@ Allcott, H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Ash%
+\ \BBA {} Hansen%
+}{%
+Ash%
+\ \BBA {} Hansen%
+}{%
+{\protect \APACyear {2023}}%
+}]{%
+ash2023are}
+\APACinsertmetastar {%
+ash2023are}%
+\begin{APACrefauthors}%
+Ash, E.%
+\BCBT {}\ \BBA {} Hansen, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Text {{Algorithms}} in {{Economics}}} {Text {{Algorithms}} in {{Economics}}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annual Review of Economics}{15}{Volume 15, 2023}{659--688}.
+\newblock
+\begin{APACrefDOI} \doi{10.1146/annurev-economics-082222-074352} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Augenblick%
 , Niederle%
 \BCBL {}\ \BBA {} Sprenger%
@@ -518,6 +545,30 @@ Thaler, R\BPBI H.%
 \APACrefbtitle {Nudge: Improving decisions about health, wealth, and happiness} {Nudge: Improving decisions about health, wealth, and happiness}.
 \newblock
 \APACaddressPublisher{}{Penguin}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zizzo%
+}{%
+Zizzo%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+zizzo2010ee}
+\APACinsertmetastar {%
+zizzo2010ee}%
+\begin{APACrefauthors}%
+Zizzo, D\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Experimenter Demand Effects in Economic Experiments} {Experimenter demand effects in economic experiments}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Experimental Economics}{13}{1}{75--98}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s10683-009-9230-z} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

@@ -105,9 +105,10 @@ tabstat typeChoice ,by(cluster_modal) stat(mean sd min max n)
 
 gen actual_clus = .
 replace actual_clus = 1 if seconds_typing < 0.25      // Video-focused
-replace actual_clus = 2 if seconds_typing >= 0.25 & typeChoice <= 0.75  // Mixed
+replace actual_clus = 2 if seconds_typing >= 0.25 & seconds_typing <= 0.75  // Mixed
 replace actual_clus = 3 if seconds_typing > 0.75       // Typing-focused
 
 tabstat seconds_typing ,by(actual_clus) stat(mean sd min max n)
 
-tab actual_clus cluster_modal
+tab cluster_modal actual_clus, chi2 row // Chi-square and transition probabilities
+

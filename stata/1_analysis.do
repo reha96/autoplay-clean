@@ -135,7 +135,12 @@ clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 
 replace typeChoice = typeChoice/1200 // divide by max time 
-replace seconds_typing = seconds_typing/session_duration // divide by end time
+replace seconds_typing = seconds_typing/session_duration // divide by end time (pr. time worked)
+
+gen day1done = (seconds_typing >= typeChoice) // did meet day 1 plan?
+xtile choice5 = typeChoice, nq(5)
+xtile choice2 = typeChoice, nq(2)
+
 
 save "${dpath}cleaned_autoplay_data.dta", replace
 
@@ -186,17 +191,29 @@ ttest typeChoice == seconds_typing
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 
-gen prop_typing_choice = typeChoice/end_time_log
-hist prop_typing_choice, percent
+gen prop_typing_choice = typeChoice/1200 // day 1 plan
+gen type_act_prop = seconds_typing/session_duration // actualized day 2
 
-xtile choice3 = prop_typing_choice, nq(3)
-gen type3 = .
-replace type3 = 1 if prop_typing_choice < .1
-replace type3 = 2 if prop_typing_choice >= .1 & prop_typing_choice <= .9
-replace type3 = 3 if prop_typing_choice > .9
+global y1 type_act_prop 
+global y2 videos_watched_total // poisson
+global x1 prop_typing_choice
 
-xtile choice5 = prop_typing_choice, nq(5)
-xtile choice10 = prop_typing_choice, nq(10)
+reg $y1 i.treatment c.$x1, vce(robust)
+est store r1
+
+poisson $y2 i.treatment c.$x1, vce(robust)
+
+poisson $y2 i.treatment##c.$x1, vce(robust)
+est store r2
+
+teffects ra ($y1 $x1) (treatment), vce(robust)
+teffects ra ($y2 $x1, poisson) (treatment), vce(robust)
+
+
+
+
+
+
 
 sum content 
 gen z_content = (content - r(mean))/r(sd)
@@ -250,3 +267,40 @@ reg z_type ib(2).choice3 i.treatment z_content
 
 // content
 twoway (kdensity content if treatment == 1) (kdensity content if treatment == 2)
+
+
+// DiD
+
+clear all
+use "${dpath}cleaned_autoplay_data.dta", replace
+
+gen prop_typing_choice = typeChoice/session_duration
+replace typeChoice = typeChoice/1200
+
+reg prop_typing_choice i.treatment c.typeChoice, vce(robust)
+est store r1
+
+reg prop_typing_choice i.treatment##c.typeChoice, vce(robust)
+est store r2
+
+teffects ra (prop_typing_choice typeChoice) (treatment), vce(robust)
+teffects ipw (prop_typing_choice) (treatment typeChoice gender_group), vce(robust)
+
+teoverlap, ptlevel(1)
+
+logit treatment typeChoice, vce(robust)
+predict that
+sum that 
+
+
+// only after ipw
+tebalance sum
+tebalance density typeChoice
+tebalance overid
+
+teffects psmatch (prop_typing_choice) (treatment typeChoice), vce(robust)
+
+teffects ipwra (prop_typing_choice) (treatment typeChoice), vce(robust)
+
+
+

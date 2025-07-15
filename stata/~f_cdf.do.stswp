@@ -97,7 +97,7 @@ twoway `lineplot', ///
 	graph export "${fpath}typing_cdf.png", replace
 
 	
-////////
+///////////////////////////////////////////////////////////////////////////
 use "${dpath}long_format_data.dta", replace
 
 * Calculate work rate for each participant
@@ -112,7 +112,7 @@ keep if second <= 1200
 * Create color categories
 gen color_category = 1 if work_rate < 0.25
 replace color_category = 2 if work_rate >= 0.25 & work_rate <= 0.75
-replace color_category = 3 if work_rate > 0.8
+replace color_category = 3 if work_rate > 0.75
 
 
 * Create time quartiles
@@ -146,14 +146,15 @@ gsort -work_in_period4
 * Create stacked bar chart
 graph bar work_in_period1 work_in_period2 work_in_period3 work_in_period4, ///
     over(category_label) stack ///
-    bar(1, fcolor("255 182 193") lcolor(white)) ///
-    bar(2, fcolor("218 165 32") lcolor(white)) ///
-    bar(3, fcolor("50 205 50") lcolor(white)) ///
-    bar(4, fcolor("64 224 208") lcolor(white)) ///
-    title("Work Allocation by Time Quartiles") ///
-    ytitle("Typing Time (seconds)") ///
+    bar(1, fcolor(dknavy%90) lcolor(white)) ///
+    bar(2, fcolor(dknavy%70) lcolor(white)) ///
+    bar(3, fcolor(dknavy%50) lcolor(white)) ///
+    bar(4, fcolor(dknavy%30) lcolor(white)) ///
+    title("Typing time by quartile") ///
+    ytitle("Typing (seconds)") ///
     ylabel(0(300)1200, angle(0)) ///
     legend(order(1 "Q1 (0-5min)" 2 "Q2 (5-10min)" 3 "Q3 (10-15min)" 4 "Q4 (15-20min)") ///
-           pos(10) rows(4) ring(0) region(lcolor(none))) $graph_opts ///
+           pos(10) rows(4) ring(0) region(lcolor(none))) $graph_opts xsize(10) ysize(10) ///
    
 graph export "${fpath}work_allocation_quartiles.png", replace
+
