@@ -1,0 +1,57 @@
+VIDEO TRANSITION ANALYSIS SUMMARY
+==================================================
+
+DATASET OVERVIEW:
+Total participants: 224
+Participants with video transitions: 182
+Participants without video transitions: 42
+
+TREATMENT COMPARISON (participants with transitions only):
+            avg_transition_time               num_transitions num_outliers
+                           mean     std count            mean         mean
+treatment                                                                 
+autoplayOff              10.439  15.704    93          44.183        1.806
+autoplayOn                0.383   1.487    89          41.753        0.056
+
+PARTICIPANT BREAKDOWN BY TREATMENT:
+             total_participants  participants_with_transitions  \
+treatment                                                        
+autoplayOff                 120                             93   
+autoplayOn                  104                             89   
+
+             participants_without_transitions  
+treatment                                      
+autoplayOff                                27  
+autoplayOn                                 15  
+
+PARTICIPANT WITH MOST VIDEOS:
+Participant ID: 164
+Max video watched: 81
+Number of video durations calculated: 80
+
+VIDEO DURATION STATISTICS:
+count    80.000000
+mean     15.562500
+std      10.849772
+min       5.000000
+25%       9.000000
+50%      12.000000
+75%      17.000000
+max      60.000000
+Name: duration, dtype: float64
+
+EDGE CASES FOUND:
+     participant_id                       issue  video1  video2  time1  time2
+0                 0  Consecutive playing events       8       8    116    174
+1                 0  Consecutive playing events      11      11    249    287
+2                 0  Consecutive playing events      15      15    340    381
+3                 0  Consecutive playing events      22      22    471    558
+4                 0  Consecutive playing events      31      31    650    695
+..              ...                         ...     ...     ...    ...    ...
+370             223  Consecutive playing events      37      37    715    723
+371             223  Consecutive playing events      50      50    938    944
+372             223  Consecutive playing events      50      50    944   1016
+373             223  Consecutive playing events      52      52   1047   1054
+374             223  Consecutive playing events      56      56   1102   1111
+
+[375 rows x 6 columns]

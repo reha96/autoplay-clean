@@ -77,7 +77,8 @@ rdplot task bin90 if -e(h_l) <= e(h_r), binselect(esmv) kernel(triangular) h(`e(
 
 
 
-//# video transition - time lost on autoplayOff
+/// video transition - time lost on autoplayO
+
 replace video_transition = 0 if task == 1
 
 bysort id: egen total_transition = sum(video_transition)
@@ -85,3 +86,6 @@ preserve
 bysort id: keep if _n == 1
 ttest total_transition, by(treatment) unequal
 restore
+
+merge 1:1 id using "cleaned_autoplay_data.dta"
+drop if _merge == 1

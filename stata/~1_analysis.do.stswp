@@ -184,32 +184,72 @@ foreach v of varlist typeChoice seconds_typing content videos_watched_total subm
    display _newline
 }
 
-
 ttest typeChoice == seconds_typing
 
 // time spent as proportions
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
+descr
+hist videos_watched_total, by(treatment) percent
+
+gen watch_time = session_duration -seconds_typing
+sum watch_time, det
+ttest watch_time, by(treatment)
+
+sum videos_watched_total, det
+ttest videos_watched_total, by(treatment)
 
 gen prop_typing_choice = typeChoice/1200 // day 1 plan
+sum prop_typing_choice
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_ptc = (prop_typing_choice-`mean1')/(`sd1')
+
 gen type_act_prop = seconds_typing/session_duration // actualized day 2
+sum type_act_prop
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_tap = (type_act_prop-`mean1')/(`sd1')
 
-global y1 type_act_prop 
-global y2 videos_watched_total // poisson
-global x1 prop_typing_choice
+sum videos_watched_total
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_vwt = (videos_watched_total-`mean1')/(`sd1')
 
+global y1 z_tap 
+global y2 z_vwt // poisson
+global x1 z_ptc
+
+reg $y1 i.treatment, vce(robust)
+est store r1_1
 reg $y1 i.treatment c.$x1, vce(robust)
-est store r1
+est store r1_2
+reg $y1 i.treatment##c.$x1, vce(robust)
+est store r1_3
 
-poisson $y2 i.treatment##c.$x1, vce(robust)
+reg $y2 i.treatment, vce(robust)
+est store r2_1
+reg $y2 i.treatment c.$x1, vce(robust)
+est store r2_2
+reg $y2 i.treatment##c.$x1, vce(robust)
+est store r2_3
 
-poisson $y2 i.treatment##c.$x1, vce(robust)
-est store r2
+esttab r1*
+esttab r2*
 
-teffects ra ($y1 $x1) (treatment), vce(robust)
-teffects ra ($y2 $x1, poisson) (treatment), vce(robust)
+power twomeans -0.053 0.066, sd(0.739) power(0.8 0.9) alpha(0.05) graph
+power twomeans -0.010 0.021, sd(0.753) power(0.8 0.9) alpha(0.05) graph
 
 
+gen dev = type_act_prop-prop_typing_choice
+sum dev
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_dev = (dev-`mean1')/(`sd1')
+
+reg z_dev i.treatment, vce(robust)
+reg z_dev i.treatment c.$x1, vce(robust)
+reg z_dev i.treatment##c.$x1, vce(robust)
 
 
 

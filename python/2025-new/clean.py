@@ -156,7 +156,77 @@ for idx, session in sessions_df.iterrows():
     sessions_df.loc[idx, 'captchas_submitted'] = len(session_events[session_events['activity'] == 'submit'])
 
 # %%%
-# create long format dataset - vectorized approach
+# VIDEO TRANSITION DETECTION FUNCTION
+def get_video_transition_seconds(p_events):
+    """Extract video transition seconds for a participant"""
+    transition_seconds = set()
+    
+    # Find video events
+    video_events = []
+    for _, row in p_events.iterrows():
+        activity = row['activity']
+        
+        # Match video ended events
+        if ': ended' in activity and 'video' in activity:
+            # autoplayOn format: "videoX: ended" (no space)
+            match = re.search(r'video(\d+): ended', activity)
+            if match:
+                video_events.append({
+                    'time': row['relative_time'],
+                    'event': 'ended',
+                    'video_num': int(match.group(1))
+                })
+            else:
+                # autoplayOff format: "video X: ended" (with space)
+                match = re.search(r'video (\d+): ended', activity)
+                if match:
+                    video_events.append({
+                        'time': row['relative_time'],
+                        'event': 'ended',
+                        'video_num': int(match.group(1))
+                    })
+        
+        # Match video playing events
+        elif 'playing' in activity and 'video' in activity:
+            # autoplayOn format: "videoX: playing:" (no space)
+            match = re.search(r'video(\d+): playing', activity)
+            if match:
+                video_events.append({
+                    'time': row['relative_time'],
+                    'event': 'playing',
+                    'video_num': int(match.group(1))
+                })
+            else:
+                # autoplayOff format: "video X: playing" (with space)
+                match = re.search(r'video (\d+): playing', activity)
+                if match:
+                    video_events.append({
+                        'time': row['relative_time'],
+                        'event': 'playing',
+                        'video_num': int(match.group(1))
+                    })
+    
+    # Sort by time
+    video_events = sorted(video_events, key=lambda x: x['time'])
+    
+    # Find transition periods: ended → playing
+    for i in range(len(video_events) - 1):
+        current = video_events[i]
+        next_event = video_events[i + 1]
+        
+        if (current['event'] == 'ended' and next_event['event'] == 'playing'):
+            # Add all seconds between end and start (inclusive of end, exclusive of start)
+            start_time = current['time']
+            end_time = next_event['time']
+            
+            # Add transition seconds (don't include the actual start of next video)
+            for second in range(start_time + 1, end_time):
+                transition_seconds.add(second)
+    
+    return transition_seconds
+
+# %%%
+# create long format dataset with video transitions
 long_data_list = []
 
 for pid in events_df['participant_id'].unique():
@@ -191,6 +261,10 @@ for pid in events_df['participant_id'].unique():
     mouseout_times = set(p_events[p_events['long_mouseout']]['relative_time'])
     timeline['mouseout'] = timeline['second'].isin(mouseout_times).astype(int)
     
+    # add video transitions
+    transition_times = get_video_transition_seconds(p_events)
+    timeline['video_transition'] = timeline['second'].isin(transition_times).astype(int)
+    
     # add event counts - vectorized
     video_times = p_events[p_events['activity'].str.contains('ended', na=False)]['relative_time'].value_counts()
     captcha_times = p_events[p_events['activity'] == 'submit']['relative_time'].value_counts()
@@ -209,17 +283,30 @@ for pid in events_df['participant_id'].unique():
     
     # select final columns
     timeline = timeline[['participant_id', 'second', 'task', 'cumulative_work', 'mouseout', 
-                        'treatment', 'timeChoice', 'session_id', 'videos_in_session', 
+                        'video_transition', 'treatment', 'timeChoice', 'session_id', 'videos_in_session', 
                         'captchas_in_session', 'total_videos_watched', 'total_captchas_submitted']]
     
     long_data_list.append(timeline)
 
 long_df = pd.concat(long_data_list, ignore_index=True)
 print(f"Created long format dataset: {len(long_df)} rows for {len(long_df['participant_id'].unique())} participants")
+
 # %%%
-# save datasets
-sessions_df.to_csv('sessions_data.csv', index=False)
+# Print transition statistics
+print(f"\nVideo transition statistics:")
+print(f"Total transition seconds: {long_df['video_transition'].sum()}")
+print(f"Participants with transitions: {len(long_df[long_df['video_transition']==1]['participant_id'].unique())}")
+
+# Transition summary by treatment
+transition_by_treatment = long_df.groupby(['participant_id', 'treatment'])['video_transition'].sum().reset_index()
+treatment_summary = transition_by_treatment.groupby('treatment')['video_transition'].agg(['count', 'mean', 'std', 'median']).round(2)
+print("\nTransition seconds by treatment:")
+print(treatment_summary)
+
+# %%%
+# save long format dataset
 long_df.to_csv('long_format_data.csv', index=False)
+sessions_df.to_csv('sessions_data.csv', index=False)
 
 print("Saved: sessions_data.csv, long_format_data.csv")
 print(f"\nLong format preview:")
@@ -227,12 +314,10 @@ print(long_df.head(10))
 print(f"\nSummary stats:")
 print(f"Total mouseout seconds: {long_df['mouseout'].sum()}")
 print(f"Total typing seconds: {long_df['task'].sum()}")
-print(f"Participants with mouseout: {len(long_df[long_df['mouseout']==1]['participant_id'].unique())}")
+print(f"Total transition seconds: {long_df['video_transition'].sum()}")
 
-
-
-# %%% PART 2
-# create wide format dataset for stata
+# %%%
+# PART 2: create wide format dataset for stata
 # calculate mouseout by task separately (only long mouseout periods)
 mouseout_by_task = long_df[long_df['mouseout'] == 1].groupby(['participant_id', 'task']).size().reset_index(name='mouseout_seconds')
 mouseout_typing = mouseout_by_task[mouseout_by_task['task'] == 1].set_index('participant_id')['mouseout_seconds']
@@ -244,7 +329,8 @@ participant_agg = long_df.groupby('participant_id').agg({
     'cumulative_work': 'max',  # total typing seconds
     'total_videos_watched': 'max',
     'total_captchas_submitted': 'max',
-    'session_id': 'max'  # number of sessions - 1
+    'session_id': 'max',  # number of sessions - 1
+    'video_transition': 'sum'  # total transition seconds
 }).reset_index()
 
 participant_agg['total_sessions'] = participant_agg['session_id'] + 1
@@ -268,7 +354,6 @@ print(f"Aggregated long data for {len(participant_agg)} participants")
 
 # %%%
 # merge with original autoplay data
-# keep variables needed for stata
 keep_original = ['participant_id', 'birthyear', 'content', 'education', 'employment', 
                 'gender', 'income', 'marital', 'timeChoice', 'treatment']
 
@@ -278,12 +363,21 @@ df_for_wide = df_clean[keep_original].copy()
 wide_df = df_for_wide.merge(participant_agg[['participant_id', 'session_duration', 'cumulative_work', 
                                            'mouseout_typing', 'mouseout_watching',
                                            'total_videos_watched', 'total_captchas_submitted',
-                                           'total_sessions', 'avg_session_length']], 
+                                           'total_sessions', 'avg_session_length', 'video_transition']], 
                            on='participant_id', how='left')
+
+# Calculate transition count and average transition time
+participant_transitions = long_df[long_df['video_transition'] == 1].groupby('participant_id').size().reset_index(name='transition_count')
+wide_df = wide_df.merge(participant_transitions, on='participant_id', how='left')
+wide_df['transition_count'] = wide_df['transition_count'].fillna(0)
+
+# Calculate average transition time (avoiding division by zero)
+wide_df['avg_transition_time'] = np.where(wide_df['transition_count'] > 0, 
+                                         wide_df['video_transition'] / wide_df['transition_count'], 0)
 
 # create stata-compatible variables
 wide_df['id'] = wide_df['participant_id']
-wide_df['typing_log'] = wide_df['cumulative_work']  # seconds spent typing (excluding mouseout)
+wide_df['typing_log'] = wide_df['cumulative_work']
 wide_df['Treatment'] = wide_df['treatment'].map({'autoplayOff': 'Control', 'autoplayOn': 'Autoplay'})
 
 # additional summary variables
@@ -300,7 +394,7 @@ stata_columns = ['id', 'birthyear', 'content', 'education', 'employment',
                 'gender', 'income', 'marital', 'timeChoice', 
                 'treatment', 'Treatment', 'typing_log', 'mouseout_typing', 'mouseout_watching',
                 'videos_watched_total', 'captchas_submitted_total', 'number_of_sessions', 
-                'average_session_length', 'session_duration']
+                'average_session_length', 'session_duration', 'video_transition', 'transition_count', 'avg_transition_time']
 
 wide_final = wide_df[stata_columns].copy()
 
@@ -309,13 +403,16 @@ wide_final = wide_df[stata_columns].copy()
 wide_final.to_excel('/Users/reha.tuncer/Documents/GitHub/autoplay/stata/clean-data.xlsx', index=False)
 long_df.to_csv('/Users/reha.tuncer/Documents/GitHub/autoplay/stata/long_format_data.csv', index=False)
 
-print("Saved: clean-data.xlsx, clean-data.csv, long_format_data.csv")
+print("Saved: clean-data.xlsx, long_format_data.csv")
 print(f"\nWide dataset preview:")
-print(wide_final[['id', 'Treatment', 'typing_log', 'videos_watched_total', 'captchas_submitted_total', 'number_of_sessions']].head())
-print(f"\nSummary:")
-print(f"Participants: {len(wide_final)}")
-print(f"Mean typing seconds: {wide_final['typing_log'].mean():.1f}")
-print(f"Mean videos watched: {wide_final['videos_watched_total'].mean():.1f}")
-print(f"Mean captchas submitted: {wide_final['captchas_submitted_total'].mean():.1f}")
-print(f"Mean sessions per participant: {wide_final['number_of_sessions'].mean():.1f}")
+print(wide_final[['id', 'Treatment', 'typing_log', 'videos_watched_total', 'captchas_submitted_total', 'number_of_sessions', 'video_transition', 'transition_count', 'avg_transition_time']].head())
+
+print(f"\nTransition summary:")
+print(f"Mean transition seconds per participant: {wide_final['video_transition'].mean():.1f}")
+print(f"Mean transition count per participant: {wide_final['transition_count'].mean():.1f}")
+print(f"Mean average transition time: {wide_final['avg_transition_time'].mean():.1f}")
+
+print(f"\nSummary by treatment:")
+treatment_stats = wide_final.groupby('Treatment')[['video_transition', 'transition_count', 'avg_transition_time']].agg(['count', 'mean', 'median', 'std']).round(2)
+print(treatment_stats)
 # %%

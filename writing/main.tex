@@ -579,7 +579,7 @@ We categorize participants in their actualized typing time on day 2 using the sa
 
 Why do participants reduce time spent typing as they advance? If they are typing without regard to their day 1 objective, their typing shouldn't be affected by attaining their day 1 goal, and reduce gradually as fatigue or frustration grows from doing the typing task. Instead, if they care about hitting their goal, we should see a sharp drop in time spent typing right after attaining it. 
 
-To examine behavioral changes as participants achieve their day 1 plans, we implement a sharp regression discontinuity design using the moment participants reach their planned typing duration as the cutoff. We aggregate binary task choices (whether typing or watching) into 30-, 60-, and 90-second bins around this threshold and estimate the discontinuous change in the probability of choosing the typing task. Results in Table \ref{tab:rd_time_windows} reveal a significant negative treatment effect immediately after plan achievement: participants are 27.4 percentage points less likely to continue typing in the 30-second window following plan completion (robust estimate: -0.274, $p=0.007$) and 25.5 percentage points less likely in the 60-second window (robust estimate: -0.255, $p=0.003$). However, this effect dissipates over longer horizons, becoming statistically insignificant in the 90-second window (robust estimate: -0.075, $p=0.487$). These findings suggest that achieving initial plans triggers an immediate behavioral shift toward leisure consumption, consistent with participants treating plan completion as a license to reduce effort temporarily.
+To examine behavioral changes as participants achieve their day 1 plans, we implement a sharp regression discontinuity design using the moment participants reach their planned typing duration as the cutoff. We aggregate binary task choices (whether typing or watching) into 30-, 60-, and 90-second bins around this threshold and estimate the discontinuous change in the probability of choosing the typing task. Results in Table \ref{tab:rd_time_windows} reveal a significant negative effect immediately after plan achievement: participants are 27.4 percentage points less likely to continue typing in the 30-second window following plan completion (robust estimate: -0.274, $p=0.007$) and 25.5 percentage points less likely in the 60-second window (robust estimate: -0.255, $p=0.003$). However, this effect dissipates over longer horizons, becoming statistically insignificant in the 90-second window (robust estimate: -0.075, $p=0.487$). These findings suggest that achieving initial plans triggers an immediate behavioral shift toward leisure consumption, consistent with participants treating plan completion as a license to reduce effort temporarily.
 
 \begin{table}[H]
   \centering
@@ -609,7 +609,7 @@ To examine behavioral changes as participants achieve their day 1 plans, we impl
   \label{tab:rd_time_windows}
 \end{table}
 
-Visual inspection suggests this discontinuity it not all there is to know about participant behavior: While there is an initial drop in typing rate after achieving day 1 plans, participants eventually ramp up the time they spend at typing (see Figure \ref{f:rd_bin30}). The positive slope on the right hand side is indicating an unexpected effect. Participants who achieve their day 1 plans earlier may in fact eventually get ``bored'' of the watching task as well - a behavior that shows how our efforts to create an addictive leisure task may have ultimately failed. These observations are coming from the about at least a third of all participants who were mostly watchers or alternaters in their day 1 types, but have increased their typing task consumption on day 2 (about respectively $(184*0.28*0.4)/184=11,2\%$ and $(184*0.54*0.4)/184 = 21,6\%$ of participants). 
+Visual inspection along with the results from 90-second window suggests this discontinuity it not all there is to know about participant behavior: While there is an initial drop in typing rate after achieving day 1 plans, participants eventually ramp up the time they spend at typing (see Figure \ref{f:rd_bin30}). The positive slope on the right hand side illustrates this effect. Participants who achieve their day 1 plans earlier may in fact eventually get ``bored'' of the watching task as well - a behavior that shows how our efforts to create an addictive leisure task may have ultimately failed. These observations are coming from the about at least a third of all participants who were mostly watchers or alternaters in their day 1 types, but have increased their typing task consumption on day 2 (about respectively $(184*0.28*0.4)/184=11,2\%$ and $(184*0.54*0.4)/184 = 21,6\%$ of participants). 
 
 \begin{figure}[H] 
     \caption{Linear fit for typing rate before and after achieving day 1 plan} 
@@ -667,10 +667,103 @@ As participants were mostly focused on typing, they did paid less attention to t
 \end{table}
 
 To formally test the effects of the \textbf{Autoplay} condition on time spent on typing, we run the following regression:
+\begin{equation}
+Y_{i} = \alpha + \beta \text{Autoplay}_{i} + \gamma \text{TimeChoice}_{i} + \delta (\text{Autoplay}_{i} \times \text{TimeChoice}_{i}) + \epsilon_{i}
+\end{equation}
+where $Y_{i}$ represents our outcome variables of interest (proportion of time spent typing or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the autoplay treatment condition, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend typing on day 1. We estimate this model with and without the interaction term to examine whether the autoplay effect varies based on initial planning preferences.
 
-{insert regression formula}
+Our regression analysis reveals that the autoplay manipulation had no statistically significant effect on actual typing behavior. Table \ref{tab:typing_regressions} presents results for typing proportion as the dependent variable. The coefficient on the autoplay treatment ranges from 0.12 to 0.20 across specifications but remains statistically insignificant in all models (p-values $>$ 0.16). However, participants' day 1 plans emerge as a powerful predictor of day 2 behavior: a one standard deviation increase in planned typing time is associated with a 0.67 standard deviation increase in actual typing time (p $<$ 0.001). Including day 1 plans increases the model's explanatory power dramatically, with R-squared rising from 1\% to 46\%.
 
+\begin{table}[H]
+  \centering
+  \caption{Effect of Autoplay Treatment on Typing Behavior}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & \multicolumn{3}{c}{Standardized Typing Proportion} \\
+  \cmidrule(lr){2-4}
+  & (1) & (2) & (3) \\
+  \midrule
+  Autoplay & 0.203 & 0.121 & 0.119 \\
+  & (0.147) & (0.109) & (0.110) \\
+  Time Choice (std.) & & 0.673*** & 0.651*** \\
+  & & (0.057) & (0.081) \\
+  Autoplay × Time Choice & & & 0.057 \\
+  & & & (0.110) \\
+  Constant & $-$0.087 & $-$0.052 & $-$0.053 \\
+  & (0.100) & (0.076) & (0.076) \\
+  \midrule
+  Obs. & 184 & 184 & 184 \\
+  R-squared & 0.010 & 0.462 & 0.463 \\
+  F-statistic & 1.91 & 77.42 & 61.52 \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time Choice represents participants' planned typing proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:typing_regressions}
+\end{table}
 
+Similarly, Table \ref{tab:videos_regressions} examines the effect on video consumption, directly testing our primary hypothesis that autoplay would increase video watching. Across all specifications, the autoplay coefficient is statistically insignificant and even negative in the baseline model ($-$0.053, $p = 0.723$). This finding contradicts our theoretical prediction and suggests that the autoplay feature did not meaningfully alter participants' video consumption patterns. Again, day 1 plans prove to be the dominant predictor: participants who planned more typing watched significantly fewer videos ($\beta = -0.66$, $p < 0.001$), explaining 44\% of the variance in video consumption.
+
+\begin{table}[H]
+  \centering
+  \caption{Effect of Autoplay Treatment on Video Watching Behavior}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & \multicolumn{3}{c}{Standardized Videos Watched} \\
+  \cmidrule(lr){2-4}
+  & (1) & (2) & (3) \\
+  \midrule
+  Autoplay & $-$0.053 & 0.029 & 0.031 \\
+  & (0.149) & (0.112) & (0.112) \\
+  Time Choice (std.) & & $-$0.664*** & $-$0.619*** \\
+  & & (0.056) & (0.079) \\
+  Autoplay × Time Choice & & & $-$0.114 \\
+  & & & (0.105) \\
+  Constant & 0.023 & $-$0.012 & $-$0.010 \\
+  & (0.098) & (0.076) & (0.076) \\
+  \midrule
+  Obs. & 184 & 184 & 184 \\
+  R-squared & 0.001 & 0.440 & 0.443 \\
+  F-statistic & 0.13 & 73.06 & 61.53 \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time Choice represents participants' planned typing proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:videos_regressions}
+\end{table}
+
+To summarize, we observe two key patterns in the data that help explain our null findings. First, given the actual effect sizes observed, our power calculations based on pretests were insufficient: The required sample size to provide a two-sided test for \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 600 per treatment, with an effect size of 0.12 and common standard deviation of 0.739.\footnote{Taken as the root MSE from the standardized proportion typing variable in the third regression.} Other solutions to this problem are design-related and involve extending the main-session duration to above 20 minutes, or coming nudging participants to mix more between tasks to avoid corner solutions (i.e., higher earnings when setting Time Choice around between .25 and .75). Second, we observe seemingly contradictory results: the autoplay condition increases time spent typing by 0.12 standard deviations (though statistically insignificant) while simultaneously increasing the number of videos watched by 0.03 standard deviations (also insignificant). If people type more, shouldn't they watch fewer videos? We identified a mechanical confound in our experimental design: the total time lost during video transitions. Participants in the \textbf{Control} condition, who had to manually click to start each new video, lost an average of 46.52 seconds due to these transition delays whereas those in the \textbf{Autoplay} condition lost only 1.08 seconds. This large difference of 45.45 seconds per session is statistically significant ($t(105) = 4.89$, $p < 0.001$). We find that this difference in time lost not watching videos plausibly explain the contradicting results and underscores the importance of looking at the unbiased outcome variable (i.e., number of videos watched) when evaluating the effects of the autoplay feature.
+
+\begin{table}[H]
+  \centering
+  \caption{Total Transition Time by Treatment Condition}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & Control & Autoplay & Difference \\
+  \midrule
+  Total time lost & 46.52 & 1.08 & 45.45*** \\
+  & (9.27) & (0.65) & (9.29) \\
+  \midrule
+  Observations & 105 & 79 & 184 \\
+  $t$-statistic & & & 4.89 \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} Standard errors are in parentheses. Time is measured in total seconds lost to video transitions per session. The difference was tested using a two-sample t-test with unequal variances. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:total_transition_time}
+\end{table}
 
 % Our initial hypothesis explores whether Autoplay leads to an increase in the time spent watching videos. We test this using two measures: First, the amount of time participants spent on the Watching Task. We collected second-by-second logs of how long participants spent on each task for 20-minute main session. However, a minor technical glitch related to the countdown timer resulted in most participants spending 30 to 60 seconds more on the main session.\footnote{Upon investigation, we noticed that the countdown timer \textit{slowed down} when there were no active clicks, typing, or movement of the cursor during the main session. In fact, the less activity there were, the slower each passing second became. We verified whether participants had noticed this technical issue during the experiment by looking at the text inputs they provided for feedback. Thankfully no participant mentioned the issue, and we take this as evidence that the glitch must have gone unnoticed.} To understand how participants were affected by the glitch, we look at the distribution of the total time spent across treatments in Figure \ref{graph1}, where the variable on the x-axis is the sum of the time spent across both tasks and y-axis is its frequency. Although visible in the histogram, we use the Mann-Whitney U test to test and reject that participants across conditions are affected differently from the glitch ($U=6331, p=0.85$).
 
@@ -757,7 +850,7 @@ In order to take into account this interplay between the content and the design,
 
 Further, when a user is actively engaged and desires to consume more content, the autoplay feature   aligns with the user's intent. This supports the preference for autoplay found in the \hyperref[mpl]{MPL condition} regarding \hyperref[hypotheses]{Hypothesis 4}, implying that participants were aware of their actual content consumption and desired to consume more content. This is entirely in accordance with the inference on the selection of videos not being tempting enough. In other words, because videos were not tempting, participants were in control of their consumption and could end sessions whenever their system 2 received negative utility from videos. In this setting, autoplay is actually helpful to participants in achieving their desired session length as it reduces decisions costs attached to it, fully aligned with previous the modelization of active decisions compared to defaults by \citet{carroll2009optimal}. Putting the dual insights of the model together builds a coherent picture in terms of the policy implications of the present study, and we present convincing evidence that autoplay itself does not promote addiction in the absence of engaging content. Our findings go contrary to the proposed legislation which implicitly assumes all autoplayed content is equally addictive and welfare decreasing. 
 
-\section{Limitations and Conclusion}
+\section{Conclusion}
 
 \textcolor{red}{EXPERIMENTAL DEMAND EFFECTS AND SOCIAL IMAGE CONCERNS. THE EXPERIMENT IS SET AS A WORKING ENVIRONMENT. PARTICIPANTS PERCEIVED THE DECISION AS ONE TO WORK AS MUCH AS POSSIBLE.}
 
