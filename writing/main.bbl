@@ -157,6 +157,33 @@ Bonein, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bongard-Blanchy%
+\ \protect \BOthers {.}}{%
+Bongard-Blanchy%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+bongard2021definitely}
+\APACinsertmetastar {%
+bongard2021definitely}%
+\begin{APACrefauthors}%
+Bongard-Blanchy, K.%
+, Rossi, A.%
+, Rivas, S.%
+, Doublet, S.%
+, Koenig, V.%
+\BCBL {}\ \BBA {} Lenzini, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {” I am Definitely Manipulated, Even When I am Aware of it. It’s Ridiculous!”-Dark Patterns from the End-User Perspective} {” i am definitely manipulated, even when i am aware of it. it’s ridiculous!”-dark patterns from the end-user perspective}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Designing Interactive Systems Conference 2021} {Designing interactive systems conference 2021}\ (\BPGS\ 763--776).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Caraban%
 , Karapanos%
 , Gon{\c{c}}alves%

@@ -130,21 +130,19 @@ display "Marital - Previously married: " ${mar_previous_pvalue}
 
 // summary table
 cls
-
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 
 replace typeChoice = typeChoice/1200 // divide by max time 
-replace seconds_typing = seconds_typing/session_duration // divide by end time (pr. time worked)
+gen p_typing = seconds_typing/session_duration // divide by end time (pr. time worked)
+replace seconds_typing = p_typing*1200
 
-gen day1done = (seconds_typing >= typeChoice) // did meet day 1 plan?
+gen day1done = (p_typing >= typeChoice) // did meet day 1 plan?
 xtile choice5 = typeChoice, nq(5)
 xtile choice2 = typeChoice, nq(2)
 
 
-save "${dpath}cleaned_autoplay_data.dta", replace
-
-foreach v of varlist typeChoice seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
+foreach v of varlist typeChoice p_typing seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
    quietly summarize `v'
    global `v'_mean = r(mean)
    global `v'_sd = r(sd)
@@ -176,7 +174,7 @@ foreach v of varlist typeChoice seconds_typing content videos_watched_total subm
 display "Variable Statistics Summary:"
 display _newline
 
-foreach v of varlist typeChoice seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
+foreach v of varlist p_typing typeChoice seconds_typing content videos_watched_total submit_type number_of_sessions average_session_length {
    display "`v' - Overall: Mean=" ${`v'_mean} " SD=" ${`v'_sd} " Median=" ${`v'_median} " Min=" ${`v'_min} " Max=" ${`v'_max}
    display "`v' - Treatment: Mean=" ${`v'_mean_t1} " SD=" ${`v'_sd_t1} " Median=" ${`v'_median_t1} " Min=" ${`v'_min_t1} " Max=" ${`v'_max_t1}
    display "`v' - Control: Mean=" ${`v'_mean_t0} " SD=" ${`v'_sd_t0} " Median=" ${`v'_median_t0} " Min=" ${`v'_min_t0} " Max=" ${`v'_max_t0}
@@ -184,9 +182,9 @@ foreach v of varlist typeChoice seconds_typing content videos_watched_total subm
    display _newline
 }
 
-ttest typeChoice == seconds_typing
+ttest typeChoice == p_typing
 
-// time spent as proportions
+//# main regressions - autoplay treatment effect
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 descr
@@ -216,15 +214,18 @@ local mean1 = r(mean)
 local sd1 = r(sd)
 gen z_vwt = (videos_watched_total-`mean1')/(`sd1')
 
+gen ever_watched = 0
+replace ever_watched = 1 if videos_watched_total > 0
+
 global y1 z_tap 
-global y2 z_vwt // poisson
-global x1 z_ptc
+global y2 z_vwt // poisson not working if z score
+global x1 z_ptc 
 
 reg $y1 i.treatment, vce(robust)
 est store r1_1
 reg $y1 i.treatment c.$x1, vce(robust)
 est store r1_2
-reg $y1 i.treatment##c.$x1, vce(robust)
+reg $y1 i.treatment##c.$x1 , vce(robust)
 est store r1_3
 
 reg $y2 i.treatment, vce(robust)
@@ -234,113 +235,76 @@ est store r2_2
 reg $y2 i.treatment##c.$x1, vce(robust)
 est store r2_3
 
+
 esttab r1*
 esttab r2*
 
 power twomeans -0.053 0.066, sd(0.739) power(0.8 0.9) alpha(0.05) graph
 power twomeans -0.010 0.021, sd(0.753) power(0.8 0.9) alpha(0.05) graph
 
-
-gen dev = type_act_prop-prop_typing_choice
-sum dev
-local mean1 = r(mean)
-local sd1 = r(sd)
-gen z_dev = (dev-`mean1')/(`sd1')
-
-reg z_dev i.treatment, vce(robust)
-reg z_dev i.treatment c.$x1, vce(robust)
-reg z_dev i.treatment##c.$x1, vce(robust)
-
-
-
-
-
-sum content 
-gen z_content = (content - r(mean))/r(sd)
-kdensity z_content
-tabstat z_content, by(treatment) stat(mean semean)
-
-twoway (kdensity prop_typing_choice if treatment == 1) (kdensity prop_typing_choice if treatment == 2)
-
-gen prop_typing = seconds_typing/end_time_log
-twoway (kdensity prop_typing if treatment == 1) (kdensity prop_typing if treatment == 2)
-
-gen prop_deviation = prop_typing - prop_typing_choice
-twoway (kdensity prop_deviation if treatment == 1) (kdensity prop_deviation if treatment == 2)
-
-sum prop*
-tabstat prop*, by(treatment) stat(mean semean)
-
-corr prop_deviation prop_typing_choice
-
-scatter prop_deviation prop_typing_choice
-scatter prop_deviation prop_typing_choice if prop_typing_choice < .25
-scatter prop_deviation prop_typing_choice if prop_typing_choice > .45 & prop_typing_choice < .55
-scatter prop_deviation prop_typing_choice if prop_typing_choice > .55
-
-reg prop_deviation ib(2).choice3 
-reg prop_deviation ib(2).choice3 treatment
-reg prop_deviation prop_typing_choice treatment
-
-// units of consumption or typing (std)
-sum watchedVideo
-gen z_vid = (watchedVideo - r(mean))/r(sd)
-kdensity z_vid
-tabstat z_vid, by(treatment) stat(mean semean)
-
-corr z_vid prop_typing_choice
-twoway lfitci z_vid prop_typing_choice || scatter z_vid prop_typing_choice
-reg prop_typing_choice z_vid
-reg z_vid ib(2).choice3 i.treatment
-reg z_vid ib(2).choice3 i.treatment z_content
-
-sum typeCount
-gen z_type = (typeCount - r(mean))/r(sd)
-kdensity z_type
-tabstat z_type, by(treatment) stat(mean semean)
-
-corr z_type prop_typing_choice
-twoway lfitci z_type prop_deviation || scatter z_type prop_deviation
-
-reg z_type ib(2).choice3 i.treatment
-reg z_type ib(2).choice3 i.treatment z_content
-
-// content
-twoway (kdensity content if treatment == 1) (kdensity content if treatment == 2)
-
-
-// DiD
-
+//# video descriptives
 clear all
-use "${dpath}cleaned_autoplay_data.dta", replace
-
-gen prop_typing_choice = typeChoice/session_duration
-replace typeChoice = typeChoice/1200
-
-reg prop_typing_choice i.treatment c.typeChoice, vce(robust)
-est store r1
-
-reg prop_typing_choice i.treatment##c.typeChoice, vce(robust)
-est store r2
-
-teffects ra (prop_typing_choice typeChoice) (treatment), vce(robust)
-teffects ipw (prop_typing_choice) (treatment typeChoice gender_group), vce(robust)
-
-teoverlap, ptlevel(1)
-
-logit treatment typeChoice, vce(robust)
-predict that
-sum that 
+import delimited "${dpath}video_duration_stats.csv", clear
+descr
+sum duration
+sum duration if vid_id <= 60, det
+sum duration if vid_id > 60, det
 
 
-// only after ipw
-tebalance sum
-tebalance density typeChoice
-tebalance overid
+//# MPL condition and WTA for autoplay
+clear all
+import excel "${dpath}clean-MPL-data.xlsx", firstrow clear
+keep if trueWatch == "watchTrue"
+gen auto_05 = 1
+replace  auto_05 = 0 if regexm(MPL1, "No" )
+gen auto_025 = 1
+replace  auto_025 = 0 if regexm(MPL2, "No" )
+gen auto_01 = 1
+replace  auto_01 = 0 if regexm(MPL3, "No" )
+gen auto_005 = 1
+replace  auto_005 = 0 if regexm(MPL4, "No" )
+gen auto_00 = 1
+replace  auto_00 = 0 if regexm(MPL5, "No" )
+gen nauto_05 = 0
+replace  nauto_05 = 1 if regexm(MPL9, "No" )
+gen nauto_025 = 0
+replace  nauto_025 = 1 if regexm(MPL8, "No" )
+gen nauto_01 = 0
+replace  nauto_01 = 1 if regexm(MPL7, "No" )
+gen nauto_005 = 0
+replace  nauto_005 = 1 if regexm(MPL6, "No" )
 
-teffects psmatch (prop_typing_choice) (treatment typeChoice), vce(robust)
+replace nauto_005 = 1- nauto_005
+replace nauto_01 = 1- nauto_01
+replace nauto_025 = 1- nauto_025
+replace nauto_05 = 1- nauto_05
 
-teffects ipwra (prop_typing_choice) (treatment typeChoice), vce(robust)
-
-
-
+rename A id
+keep id auto* nauto*
+order id auto* nauto_005 nauto_01 nauto_025 nauto_05
+expand 9
+sort id
+bysort id: gen decision = _n
+order decision
+gen bonus = 0
+bysort id: replace bonus = 0.5 if decision == 1
+bysort id: replace bonus = 0.25 if decision == 2 
+bysort id: replace bonus = 0.1 if decision == 3
+bysort id: replace bonus = 0.05 if decision == 4
+bysort id: replace bonus = -0.05 if decision == 6
+bysort id: replace bonus = -0.1 if decision == 7
+bysort id: replace bonus = -0.25 if decision == 8 
+bysort id: replace bonus = -0.5 if decision == 9 
+gen outcome = 0
+bysort id: replace outcome = 1 if auto_05 == 1 & decision == 1
+bysort id: replace outcome = 1 if auto_025 == 1 & decision == 2
+bysort id: replace outcome = 1 if auto_01 == 1 & decision == 3
+bysort id: replace outcome = 1 if auto_005 == 1 & decision == 4
+bysort id: replace outcome = 1 if auto_00 == 1 & decision == 5
+bysort id: replace outcome = 1 if nauto_005 == 1 & decision == 6
+bysort id: replace outcome = 1 if nauto_01 == 1 & decision == 7
+bysort id: replace outcome = 1 if nauto_025 == 1 & decision == 8
+bysort id: replace outcome = 1 if nauto_05 == 1 & decision == 9
+keep outcome bonus id
+tab bonus
+logit outcome bonus, vce(cluster id)

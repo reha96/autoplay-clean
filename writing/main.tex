@@ -199,9 +199,27 @@ In this task, participants watch successive short videos in a customized media p
 
 The conditions differ in their autoplay functionality. In the \textbf{Autoplay} condition, videos play automatically when the Watching tab is visible and pause with a click anywhere on the video. While the Watching task is visible, the media player keeps scrolling to the next videos and continues playing them unless interrupted. In the \textbf{Control} condition, participants need to have the Watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video, but the new video only starts playing when the participant clicks on it. Figure \ref{watching-screen} illustrates the video tab in the \textbf{Control} condition.
 
-We curated videos from YouTube and TikTok, using tags such as ``funny animal videos/short'' and ``cute animal videos/shorts''. We manually selected videos to isolate the difference in the media player design and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. We chose animal videos because of their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of.} 
+We curated videos from YouTube and TikTok, using tags such as ``funny animal videos/short'' and ``cute animal videos/shorts''. We manually selected 80 videos to isolate the difference in the media player design and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. We chose animal videos because of their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of.} We reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. We kept the first 60 videos shorter in the beginning to maximize the frequency of experiencing the autoplay feature during the watching session, with videos getting longer for the last 20 videos (see Table \ref{tab:video_duration}).
 
-We manually reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. We kept the videos short to maximize the frequency of experiencing the autoplay feature during the watching session.
+\begin{table}[H]
+  \centering
+  \caption{Video duration characteristics by sequence}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & \multicolumn{1}{c}{\textbf{First 60 videos}} & \multicolumn{1}{c}{\textbf{Last 20 videos}} \\
+  \midrule
+  \textbf{\textit{Duration (seconds)}} & & \\
+  Mean (SD) & 12.25 (7.04) & 25.50 (14.04) \\
+  Median [Min, Max] & 10 [5, 38] & 19.5 [8, 60] \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} This table presents the duration characteristics of the 80 animal videos used in the experiment. The first 60 videos were kept shorter to maximize participants' exposure to the autoplay feature during watching sessions, while the last 20 videos were longer. 
+  \end{tablenotes}
+  \end{threeparttable} \label{tab:video_duration}
+\end{table}
 
 \begin{figure}[H]
    \caption{Watching Task tab}
@@ -210,7 +228,7 @@ We manually reviewed the selected videos to ensure that they did not contain any
    \label{watching-screen}
    \begin{tablenotes}
 \footnotesize
-\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textbf{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textbf{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' button seen up on the right.   
+\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textbf{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textbf{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' button seen up on the right. Notice how top part of the following video is already visible in the bottom part of the screen.
 \end{tablenotes}
 \end{figure}
 
@@ -286,81 +304,23 @@ Payment was calculated based on actual time spent on each task, with compensatio
 
 % Once the timer runs out, participants are taken to the next page. They are asked to provide their best guess on their performance, i.e. how they actually divided their time between the two tasks. This question remains unannounced in the instructions to prevent strategic behavior. The closer participants are to their real performance, the higher their bonus. We take this measurement as an indication of how self-conscious participants are about their own behavior and the effects of Auto-(re)play features. We also collect standard demographic information (age, gender, education, socioeconomic status), whether participants recognized any of the interfaces we presented, and an open feedback question about what they thought of the interfaces and the experiment. We end the session by debriefing our participants about the true objectives of the study.
 
-\subsection{Theoretical Framework and Hypotheses}\label{hypotheses}
+\subsection{Hypotheses}\label{hypotheses}
 
-\subsubsection{Basic Work-Leisure Allocation Model}
+\citet{kleinberg2022challenge} model user consumption as driven by two competing systems: System 1 (impulsive, myopic) and System 2 (thoughtful, forward-looking). System 2 represents users' ``actual'' preferences, while System 1 drives continued consumption even when users derive little utility. Content exists within a \textit{content manifold} that can be characterized along three dimensions: how much users genuinely value the content, how long they naturally want to engage with it, and how ``sticky'' or addictive it is akin to the difference between nutritious salad and moreish potato chips.
 
-We begin with a standard time allocation framework where participants maximize utility over consumption and leisure. Each participant has a fixed time endowment $\bar{T} = 1200$ seconds that must be allocated between work (typing task) and leisure (watching task):
+Following this framework, autoplay reduces friction in content consumption by removing decision points between videos, making content more ``sticky'' and decrease the likelihood that users' thoughtful system will regain control between consumption decisions. The key assumption here is that the experimental videos have sufficient baseline appeal and stickiness to allow autoplay to meaningfully increase engagement. As \citet{kleinberg2022challenge} demonstrate, UI design choices are ``not separable from other content choices, since their effect depends on where the platform has positioned its content on the underlying content manifold.'' If content is purely ``salad-like'' with very low inherent appeal and stickiness, autoplay may have minimal effect on video consumption. This is analogous to how introducing breaks would have little impact on engagement for low-stickiness content like documentaries, but dramatically reduce engagement for high-stickiness content like celebrity gossip. With the assumption that our selection of videos have sufficient appeal and stickiness, \textbf{Autoplay} condition should lead to consumption beyond users' stated preferences, creating a measurable gap between intended (Time Choice) and actual behavior. In this case, we expect autoplay's behavioral effects might be known to participants following \citet{bongard2021definitely}, albeit underestimated as to how much they would be affected by these interfaces. Nevertheless, we expect positive demand for a comittment device driven by ``sophisticated'' participants in line with time preferences literature. 
 
-\begin{equation}
-\max_{a} U(wa/p, \bar{T} - a)
+\textbf{Hypothesis 1:} \textbf{Autoplay} condition decreases time allocated to the typing task while increasing video consumption. We test this using the reduced-form regression:
+\begin{equation}\label{eq1}
+Y_{i} = \alpha + \beta \text{Autoplay}_{i} + \gamma \text{TimeChoice}_{i} + \delta (\text{Autoplay}_{i} \times \text{TimeChoice}_{i}) + \epsilon_{i}
 \end{equation}
+where $Y_{i}$ represents our outcome variables of interest (proportion of time spent typing or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the treatment, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend typing on day 1. We estimate this model with and without the interaction term to examine whether the autoplay effect varies based on initial planning preferences. We expect $\beta < 0$ for typing and $\beta > 0$ for videos watched.
 
-\noindent where $a$ represents time spent working (typing), $\bar{T} - a$ is leisure time (watching), $w$ is the wage rate per second, and $p$ is the price of consumption goods. In our experimental context, we set $w_{typing} = 0.38$ pennies/second and $w_{watching} = 0.33$ pennies/second, creating a clear opportunity cost structure favoring productive work.
+\textbf{Hypothesis 2:} \textbf{Autoplay} condition has an effect on deviations from stated time allocation preferences (actual minus planned time spent on typing). We test this using a two-sample t-test comparing the means between the two groups.
 
-Under standard assumptions, the first-order condition yields the familiar result that the marginal rate of substitution between consumption and leisure equals the real wage. However, this framework assumes that all decisions reflect stable, consistent preferences—an assumption we relax through the introduction of dual-system decision-making.
+\textbf{Hypothesis 3:} If participants are aware of their self-control issues, they should exhibit negative WTP for autoplay features, preferring commitment devices that restrict automatic video transitions.
 
-\subsubsection{Dual-System Framework with Content Characteristics}
-
-Following \citet{kleinberg2022challenge}, we model participants as having two decision-making systems that can conflict during leisure consumption. We decompose leisure utility to account for sequential content consumption with potential self-control failures:
-
-\begin{equation}
-\max_{a} U\left(\frac{wa}{p}, E[\text{Leisure Utility}]\right)
-\end{equation}
-
-\noindent where expected leisure utility is characterized by three key parameters:
-
-\begin{equation}
-E[\text{Leisure Utility}] = \max\left(\frac{v - w}{1-q} - \frac{p \cdot w}{1-p}, 0\right)
-\end{equation}
-
-The parameters capture distinct aspects of content:
-\begin{itemize}
-    \item $v$: \textbf{Value} — System 2's intrinsic utility per unit of leisure content
-    \item $q$: \textbf{Span} — Probability that System 2 wants to continue after consuming each content item
-    \item $p$: \textbf{Moreishness} — Probability that System 1 takes automatic control, continuing consumption regardless of System 2's preferences
-\end{itemize}
-
-The opportunity cost $w$ represents forgone earnings from not engaging in the typing task. System 2 derives utility $v - w$ during intended leisure consumption, but experiences disutility $-w$ during periods when System 1 maintains control beyond System 2's desired stopping point.
-
-\subsubsection{Autoplay Treatment Effect}
-
-Our experimental manipulation targets the moreishness parameter through interface design. We implement two conditions:
-
-\begin{align}
-\text{Control condition:} \quad &p = p_{\text{base}} \\
-\text{Autoplay condition:} \quad &p = p_{\text{base}} + \Delta p
-\end{align}
-
-The curated video content in our watching task—short, entertaining animal videos from YouTube and TikTok—likely represents content with elevated baseline moreishness $p_{\text{base}}$ due to its bite-sized, immediately gratifying nature. The autoplay feature further increases moreishness by reducing opportunities for System 2 to regain control between videos, as noted by \citet{kleinberg2022challenge}: autoplay "decreases the likelihood that system 2 will regain control."
-
-\subsubsection{Two-Period Decision Structure}
-
-Our experimental design separates planning from execution across two time periods:
-
-\textbf{Day 1 (System 2 Planning):} Participants make time allocation choices based on expected utility:
-\begin{equation}
-a^*_{\text{planned}} = \arg\max U\left(\frac{wa}{p}, E[\text{Leisure Utility} | E[p], E[q], E[v]]\right)
-\end{equation}
-
-\textbf{Day 2 (System 1 Interference):} Actual allocation deviates due to realized treatment effects:
-\begin{equation}
-a_{\text{actual}} = a^*_{\text{planned}} + \text{System 1 deviation}(p_{\text{realized}})
-\end{equation}
-
-\subsubsection{Hypotheses}
-
-Building on this theoretical framework, we formulate our preregistered hypotheses:
-
-\textbf{Hypothesis 1:} The autoplay condition will lead to increased time spent watching videos compared to the control condition. This follows directly from $\frac{\partial E[\text{Leisure Time}]}{\partial p} > 0$: higher moreishness increases the expected duration of leisure sessions through more frequent System 1 takeovers.
-
-\textbf{Hypothesis 2:} No significant difference is expected in initial time allocation decisions (Time Choice) between treatment groups. Since treatment assignment occurs after the Time Choice task, System 2's planning should be unaffected by the subsequent autoplay manipulation: $E[a^*_{\text{planned}}|\text{Autoplay}] = E[a^*_{\text{planned}}|\text{Control}]$.
-
-\textbf{Hypothesis 3:} Participants in the autoplay condition will show greater deviation from their initial Time Choice toward watching videos. The increased moreishness should amplify System 1 interference, leading to larger deviations from intended allocations: $E[|a_{\text{actual}} - a^*_{\text{planned}}||\text{Autoplay}] > E[|a_{\text{actual}} - a^*_{\text{planned}}||\text{Control}]$.
-
-\textbf{Hypothesis 4:} There will be positive demand for a commitment device to disable autoplay. Sophisticated System 2 agents should recognize the utility loss from excessive moreishness and be willing to pay to avoid it: $E[U|\text{Control}] - E[U|\text{Autoplay}] > 0$, generating positive willingness-to-pay for autoplay removal.
-
-These hypotheses collectively test whether interface design features can systematically distort optimal time allocation through their effect on the psychological parameters governing content consumption, even when participants face clear monetary incentives favoring productive work.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}.} Our preregistration included hypotheses 1 and 4. We have added supporting hypotheses 2 and 3 regarding our expectations about the Time Choice section later.
+In sum, these hypotheses test whether interface design features can systematically distort optimal time allocation decisions in a setting where participants face clear monetary incentives favoring productive work.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}. Our preregistration included hypotheses 1 and 3. We have added supporting hypothesis 2 regarding our expectations about the Time Choice section later.} 
 
 
 % Although technically Auto-replay should give control to users over whether they want to see the next video or not as users still must click in order to see the next video, in practice we suspect it has the same funneling effect as autoplay: Users are expected to move to the next video shortly after the first video begins replaying.
@@ -414,7 +374,7 @@ For the first stage of data collection, that is to say excluding the MPL treatme
 
 
 
-For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 56 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 51 individuals in the final MPL dataset.
+For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 57 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 52 individuals in the final MPL dataset.
 
 \section{Results}
 \subsection{Time Choice: Planned time allocation on day 1}
@@ -587,18 +547,18 @@ To examine behavioral changes as participants achieve their day 1 plans, we impl
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
-  & \multicolumn{3}{c}{\textbf{Time Window}} \\
+  & \multicolumn{3}{c}{Time Window} \\
   \cmidrule(lr){2-4}
-   & \textbf{30-seconds} & \textbf{60-seconds} & \textbf{90-seconds} \\
+   & 30-seconds & 60-seconds & 90-seconds \\
   \midrule
-  \textbf{Proportion typing} & -0.274*** & -0.255*** & -0.075 \\
+  Proportion typing & -0.274*** & -0.255*** & -0.075 \\
   & (0.101) & (0.087) & (0.108) \\
   \midrule
-  \textbf{Obs. (left)} & 66,786 & 67,985 & 67,119 \\
-  \textbf{Obs. (right)} & 80,270 & 89,006 & 92,999 \\
-  \textbf{Clusters (left)} & 157 & 154 & 155 \\
-  \textbf{Clusters (right)} & 154 & 157 & 161 \\
-  \textbf{Bandwidth} & 339.9 & 368.3 & 422.3 \\
+  Obs. (left) & 66,786 & 67,985 & 67,119 \\
+  Obs. (right) & 80,270 & 89,006 & 92,999 \\
+  Clusters (left) & 157 & 154 & 155 \\
+  Clusters (right) & 154 & 157 & 161 \\
+  Bandwidth & 339.9 & 368.3 & 422.3 \\
   \bottomrule
   \end{tabular*}
   \begin{tablenotes}[flushleft]
@@ -622,8 +582,8 @@ Visual inspection along with the results from 90-second window suggests this dis
     \end{tablenotes} 
 \end{figure}
 
-\subsection{Does Autoplay increase time spent watcing videos?}
-As participants were mostly focused on typing, they did paid less attention to the watching task, i.e, reducing its consumption value as evidenced by day 2 behavior. Consequently, in our setting experimenter demand effects is acting as a confound, in the sense of making more difficult to show statistically significant evidence in support of the hypotheses regarding the direction of deviations from the day 1 plans and the effects of the \textbf{Autoplay} condition. A lack of evidence in support of these objectives in our setting could be due not to a genuine failure of the corresponding hypotheses but rather to experimenter demand effects \citet{zizzo2010ee}. With these in mind, we summarize variables of interest from the main 20-minute session across both conditions in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. This suggests that \textbf{Autoplay} condition had no impact on the watching behavior observed in the experiment. Further, as established before, participants spend more time typing when compared to their Time Choice on day 1 (0.158, $t$(183) = 8.92, $p < 0.001$).
+\subsection{Does Autoplay increase video consumption?}
+As participants were mostly focused on typing, they did paid less attention to the watching task, i.e, reducing its consumption value as evidenced by day 2 behavior. Consequently, in our setting experimenter demand effects is acting as a confound, in the sense of making more difficult to show statistically significant evidence in support of the hypotheses regarding the direction of deviations from the day 1 plans and the effects of the \textbf{Autoplay} condition. A lack of evidence in support of these objectives in our setting could be due not to a genuine failure of the corresponding hypotheses but rather to experimenter demand effects \citep{zizzo2010ee}. With these in mind, we summarize variables of interest from the main 20-minute session across both conditions in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. This suggests that \textbf{Autoplay} condition had no impact on the watching behavior observed in the experiment. Further, as established before, participants spend more time typing when compared to their Time Choice on day 1 (0.158, $t$(183) = 8.92, $p < 0.001$).
 
 \begin{table}[H]
   \centering
@@ -647,7 +607,7 @@ As participants were mostly focused on typing, they did paid less attention to t
   \textbf{\textit{Session length}} & & & \\
   Mean (SD) & 456.11 (383.22) & 546.35 (411.53) & 0.131 \\
   Median [Min, Max] & 314.75 [68.17, 1212.00] & 418.67 [44.93, 1314.00] & \\ \midrule
-  \textbf{\textit{Nb. of retyping submissions}} & & & \\
+  \textbf{\textit{Nb. of CAPTCHA submissions}} & & & \\
   Mean (SD) & 19.76 (12.11) & 17.21 (11.62) & 0.150 \\
   Median [Min, Max] & 19.00 [0.00, 53.00] & 15.00 [0.00, 45.00] & \\ \midrule
   \textbf{\textit{Nb. of videos watched}} & & & \\
@@ -666,13 +626,7 @@ As participants were mostly focused on typing, they did paid less attention to t
  }
 \end{table}
 
-To formally test the effects of the \textbf{Autoplay} condition on time spent on typing, we run the following regression:
-\begin{equation}
-Y_{i} = \alpha + \beta \text{Autoplay}_{i} + \gamma \text{TimeChoice}_{i} + \delta (\text{Autoplay}_{i} \times \text{TimeChoice}_{i}) + \epsilon_{i}
-\end{equation}
-where $Y_{i}$ represents our outcome variables of interest (proportion of time spent typing or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the autoplay treatment condition, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend typing on day 1. We estimate this model with and without the interaction term to examine whether the autoplay effect varies based on initial planning preferences.
-
-Our regression analysis reveals that the autoplay manipulation had no statistically significant effect on actual typing behavior. Table \ref{tab:typing_regressions} presents results for typing proportion as the dependent variable. The coefficient on the autoplay treatment ranges from 0.12 to 0.20 across specifications but remains statistically insignificant in all models (p-values $>$ 0.16). However, participants' day 1 plans emerge as a powerful predictor of day 2 behavior: a one standard deviation increase in planned typing time is associated with a 0.67 standard deviation increase in actual typing time (p $<$ 0.001). Including day 1 plans increases the model's explanatory power dramatically, with R-squared rising from 1\% to 46\%.
+To formally test \hyperref[hypotheses]{Hypothesis 1}, i.e., effects of the \textbf{Autoplay} condition on time spent on typing, we run the regression specified in Equation \ref{eq1}. Our analysis reveals that the autoplay manipulation had no statistically significant effect on actual typing behavior. Table \ref{tab:typing_regressions} presents results for typing proportion as the dependent variable. The coefficient on the autoplay treatment ranges from 0.12 to 0.20 across specifications but remains statistically insignificant in all models (p-values $>$ 0.16). However, participants' day 1 plans emerge as a powerful predictor of day 2 behavior: a one standard deviation increase in planned typing time is associated with a 0.67 standard deviation increase in actual typing time (p $<$ 0.001). Including day 1 plans increases the model's explanatory power dramatically, with R-squared rising from 1\% to 46\%.
 
 \begin{table}[H]
   \centering
@@ -680,13 +634,13 @@ Our regression analysis reveals that the autoplay manipulation had no statistica
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
-  & \multicolumn{3}{c}{Standardized Typing Proportion} \\
+  & \multicolumn{3}{c}{Proportion Typing (z-score) } \\
   \cmidrule(lr){2-4}
   & (1) & (2) & (3) \\
   \midrule
   Autoplay & 0.203 & 0.121 & 0.119 \\
   & (0.147) & (0.109) & (0.110) \\
-  Time Choice (std.) & & 0.673*** & 0.651*** \\
+  Time Choice (z-score) & & 0.673*** & 0.651*** \\
   & & (0.057) & (0.081) \\
   Autoplay × Time Choice & & & 0.057 \\
   & & & (0.110) \\
@@ -714,13 +668,13 @@ Similarly, Table \ref{tab:videos_regressions} examines the effect on video consu
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
-  & \multicolumn{3}{c}{Standardized Videos Watched} \\
+  & \multicolumn{3}{c}{Nb. of Videos Watched (z-score)} \\
   \cmidrule(lr){2-4}
   & (1) & (2) & (3) \\
   \midrule
   Autoplay & $-$0.053 & 0.029 & 0.031 \\
   & (0.149) & (0.112) & (0.112) \\
-  Time Choice (std.) & & $-$0.664*** & $-$0.619*** \\
+  Time Choice (z-score) & & $-$0.664*** & $-$0.619*** \\
   & & (0.056) & (0.079) \\
   Autoplay × Time Choice & & & $-$0.114 \\
   & & & (0.105) \\
@@ -740,7 +694,7 @@ Similarly, Table \ref{tab:videos_regressions} examines the effect on video consu
   \label{tab:videos_regressions}
 \end{table}
 
-To summarize, we observe two key patterns in the data that help explain our null findings. First, given the actual effect sizes observed, our power calculations based on pretests were insufficient: The required sample size to provide a two-sided test for \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 600 per treatment, with an effect size of 0.12 and common standard deviation of 0.739.\footnote{Taken as the root MSE from the standardized proportion typing variable in the third regression.} Other solutions to this problem are design-related and involve extending the main-session duration to above 20 minutes, or coming nudging participants to mix more between tasks to avoid corner solutions (i.e., higher earnings when setting Time Choice around between .25 and .75). Second, we observe seemingly contradictory results: the autoplay condition increases time spent typing by 0.12 standard deviations (though statistically insignificant) while simultaneously increasing the number of videos watched by 0.03 standard deviations (also insignificant). If people type more, shouldn't they watch fewer videos? We identified a mechanical confound in our experimental design: the total time lost during video transitions. Participants in the \textbf{Control} condition, who had to manually click to start each new video, lost an average of 46.52 seconds due to these transition delays whereas those in the \textbf{Autoplay} condition lost only 1.08 seconds. This large difference of 45.45 seconds per session is statistically significant ($t(105) = 4.89$, $p < 0.001$). We find that this difference in time lost not watching videos plausibly explain the contradicting results and underscores the importance of looking at the unbiased outcome variable (i.e., number of videos watched) when evaluating the effects of the autoplay feature.
+To summarize, we observe two key patterns in the data that help explain our null findings. First, given the actual effect sizes observed, our power calculations based on pretests were insufficient: The required sample size to provide a two-sided test for \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 600 per treatment, with an effect size of 0.12 and common standard deviation of 0.739.\footnote{Taken as the root MSE from the standardized proportion typing variable in the third regression.} Other solutions to this problem are design-related and involve extending the main-session duration to above 20 minutes, or coming nudging participants to mix more between tasks to avoid corner solutions (i.e., higher earnings when setting Time Choice between .25 and .75). Second, we observe  contradictory results: the \textbf{Autoplay} condition increases time spent typing by 0.12 standard deviations (though statistically insignificant) while simultaneously increasing the number of videos watched by 0.03 standard deviations (also insignificant). If people type more, shouldn't they watch fewer videos? We identified a mechanical confound in our experimental design: the total time lost during video transitions. Participants in the \textbf{Control} condition, who had to manually click to start each new video, lost an average of 46.52 seconds due to these transition delays whereas those in the \textbf{Autoplay} condition lost only 1.08 seconds. This large difference of 45.45 seconds per session is statistically significant ($t(105) = 4.89$, $p < 0.001$). We find that this difference in time lost not watching videos plausibly explain the contradicting results and underscores the importance of looking at the unbiased outcome variable (i.e., number of videos watched) when evaluating the effects of the autoplay feature.
 
 \begin{table}[H]
   \centering
@@ -811,28 +765,52 @@ To summarize, we observe two key patterns in the data that help explain our null
 % We turn to verifying the second hypothesis, i.e., whether participants across treatments had different initial Time Choices. Figure \ref{graph3} shows the distribution of Time Choice across treatments. We test and reject this hypothesis using the Mann-Whitney U test ($U=6713.5, p=0.323$).
 
 
-\subsection{Effects of Autoplay on deviations from Time Choice (H3)}
+\subsection{Effects of autoplay on deviations from Time Choice}
+Does the \textbf{Autoplay} condition have an effect on deviations from day 1 Time Choice? To assess \hyperref[hypotheses]{Hypothesis 2}, we calculated the deviation by subtracting participants' planned typing proportion from their actual typing proportion (actual minus planned). Figure \ref{f:hist_dev} shows the distribution of deviations from Time Choice across treatments, which appears right-skewed with positive values indicating participants typed more than originally planned. Both treatment groups systematically over-typed relative to their day 1 plans: Participants in the \textbf{Control} condition deviated by an average of 14.6 percentage points (SD = 27.6) while Autoplay participants deviated by 17.3 percentage points (SD = 23.6). However, a two-sample t-test reveals no statistically significant difference between means ($t = -0.694$, $p = 0.488$). The Kolmogorov-Smirnov test similarly finds no significant difference in distributions across conditions ($D = 0.085$, $p = 0.903$). These results indicate that while participants in both conditions systematically spent more time on the effortful typing task than they initially planned, the  \textbf{Autoplay} condition did not significantly alter the magnitude or pattern of these deviations. Contrary to our hypothesis, we find no evidence that autoplay led participants to deviate more toward video watching behavior.
 
-We then move on to the \hyperref[hypotheses]{Hypothesis 3}, which suggests participants in the Autoplay condition would deviate more towards watching videos from their initial Time Choice. To assess this hypothesis, we transformed the Time Choice variable by normalizing to percentages and calculated the deviation by subtracting the percentage of actual time spent on the Typing Task from it. Figure \ref{graph4} shows the distribution of deviations from Time Choice across treatments which appears left-skewed, suggesting increases in actual typing instead. Specifically, negative values in the figure represent increases in typing, whereas positive values are increases in watching. Applying the Mann-Whitney U test, our data ($U=6134, p=0.827$) did not support a significant deviation for the Autoplay condition towards watching. Further descriptive statistics reveal a mean deviation of $-11.73$, a median of $-8.46$, and a mode of $0$, emphasizing the observed left skew. To strengthen our findings, we used the Wilcoxon Signed-Rank test to compare the distribution of deviations to a $0$ median distribution, and rejected the null ($W=5152$, $p<0.001$). In summary, contrary to our hypothesis, participants generally spent more time on the Typing Task than they initially intended regardless of treatment.
-
-
-\begin{figure}[!htbp]
-   \centering
-       \includegraphics[scale=.5]{graph4.png}
-   \caption{Distribution of the deviation from initial Time Choice in percentages across treatments}
-   \label{graph4}
+\begin{figure}[H] 
+    \caption{Distribution of Deviations from Time Choice by Treatment} 
+    \centering 
+    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/deviation_hist.png} 
+    \label{f:hist_dev} 
+    \begin{tablenotes} 
+        \footnotesize 
+        \item[] \textit{Note:} This figure shows the distribution of deviations from participants' day 1 time allocation plans, calculated as actual typing proportion minus planned typing proportion. Positive values indicate participants typed more than planned, while negative values indicate less typing than planned. The distributions are similar across treatment conditions, with both groups showing systematic over-typing relative to initial plans.
+    \end{tablenotes} 
 \end{figure}
 
-\subsubsection{Demand for the commitment device (H4)}
+\subsection{WTP for the commitment device (H3)}
 
-\hyperref[hypotheses]{Hypothesis 4} suggests participants would choose to turn Autoplay off when given the possibility, meaning there is positive demand for the commitment device. We assess this demand by comparing the share of participants choosing to turn Autoplay on or off along with the associated bonus payments for each of the nine decisions in the price list. Figure \ref{graph5} shows the percentages of participants preferring Autoplay in blue and those preferring to turn Autoplay off in orange. Distributions clearly show that when given a choice, participants have a preference for Autoplay. Specifically, more than 75 percent of participants chose Autoplay without bonus, 12 percent chose Autoplay if it meant giving up £0.05, and 7 percent chose Autoplay if it meant giving up £0.1.
+\hyperref[hypotheses]{Hypothesis 3} explores whether participants would choose to turn Autoplay off when given the possibility, implying positive demand for a commitment device. We assess this demand by comparing the share of participants choosing to turn Autoplay on or off along with the associated bonus payments for each of the nine decisions in the price list. To quantify participants' willingness to pay (WTP) for Autoplay, we estimate a logistic regression where the dependent variable is the binary choice of selecting Autoplay (1) or turning it off (0), and the independent variable is the bonus amount in pounds. The model is clustered at the participant level to account for repeated decisions by the same individual.
 
-\begin{figure}[!htbp]
-   \centering
-       \includegraphics[scale=.375]{graph5.png}
-   \caption{Distribution of Autoplay preferences in percentages}
-   \label{graph5}
-\end{figure}
+Results are presented in Table \ref{tab:wtp_autoplay}. The coefficient on the bonus amount is 27.97 ($p < 0.001$), indicating that participants are highly sensitive to the financial cost of maintaining Autoplay. The WTP for Autoplay can be calculated as the negative ratio of the constant to the bonus coefficient: $-0.6263/27.9729 = -0.0224$ pounds, or approximately 2.24 pence. This suggests that participants value Autoplay at 2.24 pence on average and would be willing to forgo this amount to maintain access to the feature rather than have it turned off. In light of how participants operated in the decision-making environment, it appears that participants did not perceive a tradeoff from Autoplay in terms of increasing video consumption, but instead viewed it as facilitating leisure consumption before returning to the typing task.
+
+\begin{table}[H]
+\centering
+\caption{Willingness to Pay for Autoplay}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lc}
+\toprule
+& (1) \\
+\midrule
+Bonus (£) & 27.973*** \\
+& (6.277) \\
+Constant & 0.626** \\
+& (0.199) \\
+\midrule
+Obs. & 468 \\
+Clusters & 52 \\
+Pseudo R$^2$ & 0.658 \\
+Wald $\chi^2$(1) & 19.86 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[] \textit{Note:} Logistic regression with standard errors clustered at the participant level in parentheses. Dependent variable is binary choice of selecting Autoplay (1) or turning it off (0). Bonus amounts range from $-0.5$ to $0.5$ pounds. The pseudo R-squared (0.6584) indicates that the bonus amount explains a substantial portion of the variation in participants' choices. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+\end{tablenotes}
+\end{threeparttable}
+\label{tab:wtp_autoplay}
+\end{table}
 
 \section{Discussion}
 

@@ -63,7 +63,7 @@ gen bin90 = round(distance_from_target/90)*90 // 90 sec bins
 // bysort bin30: egen type_mean = mean(task)
 // bysort bin30: keep if _n == 1
 rdplot task bin30, p(1)
-graph export "${fpath}rd_bin30.png"
+graph export "${fpath}rd_bin30.png", replace
 
 rdplot task bin60, p(1)
 rdplot task bin90, p(1)
@@ -76,16 +76,14 @@ rdplot task bin60 if -e(h_l) <= e(h_r), binselect(esmv) kernel(triangular) h(`e(
 rdplot task bin90 if -e(h_l) <= e(h_r), binselect(esmv) kernel(triangular) h(`e(h_l)' `e(h_r)') p(1)
 
 
-
-/// video transition - time lost on autoplayO
-
+//# video transition - time lost on autoplayOff
 replace video_transition = 0 if task == 1
-
+rename participant_id id
 bysort id: egen total_transition = sum(video_transition)
 preserve 
 bysort id: keep if _n == 1
 ttest total_transition, by(treatment) unequal
 restore
+save "${dpath}long_format_data.dta", replace
 
-merge 1:1 id using "cleaned_autoplay_data.dta"
-drop if _merge == 1
+collapse ()

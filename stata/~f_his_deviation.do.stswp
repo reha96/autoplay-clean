@@ -16,7 +16,7 @@ global graph_opts ///
 	
 global dpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/"
 global fpath "/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/"
-set scheme s2mono, permanently	
+set scheme s2color, permanently	
 
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
@@ -60,7 +60,7 @@ sum deviation
 local min = r(min)
 local max = r(max)
 local n = r(N)
-local bins = 15
+local bins = 11
 local width = (`max'-`min')/`bins'
 
 // Create the dual histogram with boxplots by treatment
@@ -85,82 +85,17 @@ twoway (histogram deviation if treatment == 0, percent start(`min') width(`width
        , xlabel(-1(0.2)1, gmin gmax) ///
          ylabel(0(10)50, gmax angle(0)) ///
          ytitle("Percent") ///
-         xtitle("Deviation from Time Choice (Actual - Planned)") ///
-         legend(order(1 "Control" 2 "Autoplay") ring(0) pos(10) rows(2) region(lcolor(none))) ///
-         title("Distribution of Deviations from Time Choice by Treatment") ///
+         xtitle("Actual - Planned Typing (%)") ///
+         legend(order(1 "Control" 2 "Autoplay") ring(0) pos(12) rows(1) region(lcolor(none))) ///
+         title("Deviations from Time Choice by Treatment") ///
          graphregion(color(white)) bgcolor(white) ///
          name(deviation_hist, replace)
 
 graph export "${fpath}deviation_hist.png", replace
 
-// Statistical tests
-display ""
-display "DEVIATION ANALYSIS BY TREATMENT"
-display "================================"
-display ""
 
 // Two-sample t-test for mean differences
 ttest deviation, by(treatment)
 scalar ttest_pval = r(p)
 
-// Mann-Whitney U test for distribution differences
-ranksum deviation, by(treatment)
-scalar mw_pval = r(p)
-
-// Wilcoxon signed-rank test against zero for each treatment
-signrank deviation if treatment == 0
-scalar wilcox_control = r(p)
-signrank deviation if treatment == 1  
-scalar wilcox_autoplay = r(p)
-
-display "TREATMENT COMPARISON TESTS"
-display "========================="
-display "Two-sample t-test p-value: " %8.4f ttest_pval
-display "Mann-Whitney U test p-value: " %8.4f mw_pval
-display ""
-display "TESTS AGAINST ZERO DEVIATION"
-display "============================"
-display "Control group (Wilcoxon): " %8.4f wilcox_control
-display "Autoplay group (Wilcoxon): " %8.4f wilcox_autoplay
-display ""
-
-// Descriptive statistics by treatment
-display "DESCRIPTIVE STATISTICS BY TREATMENT"
-display "===================================="
-display ""
-sum deviation if treatment == 0, detail
-display "Control Group Summary:"
-display "Mean: " %8.3f r(mean) " | Median: " %8.3f r(p50) " | SD: " %8.3f r(sd)
-display ""
-sum deviation if treatment == 1, detail  
-display "Autoplay Group Summary:"
-display "Mean: " %8.3f r(mean) " | Median: " %8.3f r(p50) " | SD: " %8.3f r(sd)
-display ""
-
-// Effect size calculation (Cohen's d)
-quietly sum deviation if treatment == 0
-scalar mean_control = r(mean)
-scalar sd_control = r(sd)
-scalar n_control = r(N)
-
-quietly sum deviation if treatment == 1
-scalar mean_autoplay = r(mean)
-scalar sd_autoplay = r(sd)
-scalar n_autoplay = r(N)
-
-scalar pooled_sd = sqrt(((n_control-1)*sd_control^2 + (n_autoplay-1)*sd_autoplay^2)/(n_control+n_autoplay-2))
-scalar cohens_d = (mean_autoplay - mean_control) / pooled_sd
-
-display "EFFECT SIZE"
-display "==========="
-display "Cohen's d: " %8.3f cohens_d
-display ""
-
-// Create summary statistics table
-matrix deviation_stats = (mean_control, mean_autoplay, mean_autoplay - mean_control, cohens_d, ttest_pval, mw_pval)
-matrix colnames deviation_stats = "Control" "Autoplay" "Difference" "Cohen_d" "t_test_p" "MW_test_p"
-matrix rownames deviation_stats = "Deviation"
-
-display "SUMMARY TABLE"
-display "============="
-matrix list deviation_stats
+ksmirnov deviation, by(treatment)
