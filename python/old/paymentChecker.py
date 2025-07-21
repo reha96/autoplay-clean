@@ -12,14 +12,14 @@ import numpy as np
 import seaborn as sns
 
 # %% get data
-db = pd.read_csv('MPL.csv')
-db = pd.read_csv("autoplay.csv")
+db = pd.read_csv('/Users/reha.tuncer/Documents/GitHub/autoplay/python/old/MPL.csv')
+db = pd.read_csv("/Users/reha.tuncer/Documents/GitHub/autoplay/python/old/autoplay.csv")
 
 # %% get prolific data
-db2 = pd.read_csv('prolific.csv')
+db2 = pd.read_csv('/Users/reha.tuncer/Documents/GitHub/autoplay/python/old/prolific.csv')
 
 # %% get CAPTCHA's
-captchas = pd.read_excel("captchas_list.xlsx", "captchas", header=None)
+captchas = pd.read_excel("/Users/reha.tuncer/Documents/GitHub/autoplay/python/old/captchas_list.xlsx", "captchas", header=None)
 
 # %% clean data
 # db = pd.read_csv('mpl2nd.csv')
@@ -85,23 +85,24 @@ db = db.reset_index(drop=True)
 """
 Get MPL bonus if treatment is MPL
 """
-s = '+'
-e = '£'
-MPL = []
-MPLcondition = []
-MPLid = []
-for i in range(len(db)):
-    MPLid.append(db["ID"][i])
-    MPLcondition.append(db["MPLthatcounts"][i].split(s)[
-                        0])  # get autoplay condition but work on merge
-    MPL.append(float((db["MPLthatcounts"]
-                [i].split(s))[1].split(e)[0]))
+if "MPLthatcounts" in db.columns:
+    s = '+'
+    e = '£'
+    MPL = []
+    MPLcondition = []
+    MPLid = []
+    for i in range(len(db)):
+        MPLid.append(db["ID"][i])
+        MPLcondition.append(db["MPLthatcounts"][i].split(s)[
+                            0])  # get autoplay condition but work on merge
+        MPL.append(float((db["MPLthatcounts"]
+                    [i].split(s))[1].split(e)[0]))
 
 
-MPL = pd.DataFrame([MPLid, MPLcondition, MPL])
-MPL = MPL.transpose()
-MPL = MPL.rename(
-    columns={0: "ID"})
+    MPL = pd.DataFrame([MPLid, MPLcondition, MPL])
+    MPL = MPL.transpose()
+    MPL = MPL.rename(
+        columns={0: "ID"})
 
 # %% typing analysis
 text = []
@@ -123,7 +124,7 @@ t = []
 v = []
 for i in range(len(allscore.columns)):
     t.append(sum(filter(None, allscore[i])))
-    v.append(allscore[i].count(None))  # completed sentences!
+    v.append(allscore[i].count())  # completed sentences!
     t[i] = t[i]/v[i]
     t[i] = t[i].round(4)*100
 
@@ -155,19 +156,22 @@ payment = pd.concat(
 
 #### add 2 seconds because of db delay
 payment.watchTime = payment.watchTime*0.1  # 0.1 per sec bonus
-payment.typeTime = (payment.typeTime+2) * 0.05  # 0.15 per sec bonus // or 0.05 difference
+payment.typeTime = (payment.typeTime+2) * 0.15  # 0.15 per sec bonus // or 0.05 difference
 
 #### check for accuracy and permin conditions
 payment.typeTime[payment.permin<1]=0 # at least 1 submission per minute
 payment.typeTime[payment.accuracy<70]=0 # at least 70 pcent acc
 
 # get total bonuses
-# paysum = round(((payment.watchTime + payment.typeTime)/100),2)
+paysum = round(((payment.watchTime + payment.typeTime)/100),2)
 # paysum = paysum-0.63 + 2.75 # after approval for the first study and participation for second
-
-paysum = ((payment.typeTime/100)+MPL[2].values).astype(float)
+paysum = paysum + 2.75 # total bonus
+if "MPLthatcounts" in db.columns:
+    paysum = ((payment.typeTime/100)+MPL[2].values).astype(float)
+# paysum = ((payment.typeTime/100)).astype(float)
 paysum = round(paysum, 2)
 paysum = paysum.rename("bonus")
+paysum.to_csv('/Users/reha.tuncer/Documents/GitHub/autoplay/stata/payment.csv', index=False)
 
 # %% payment Output Table
 
@@ -206,3 +210,4 @@ for i in range(len(total)):
 #         total["bonus"][i] = 0
 # if total["total"][i] < 2:
 #     total["total"][i] = 2
+# %%

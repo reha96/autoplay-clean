@@ -82,53 +82,61 @@ Ash, E.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Augenblick%
-, Niederle%
-\BCBL {}\ \BBA {} Sprenger%
+Beknazar-Yuzbashev%
+, Jim{\'e}nez-Dur{\'a}n%
+, McCrosky%
+\BCBL {}\ \BBA {} Stalinski%
 }{%
-Augenblick%
+Beknazar-Yuzbashev%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2015}}%
+{\protect \APACyear {2025}}%
 }]{%
-augenblick2015working}
+beknazar2025toxic}
 \APACinsertmetastar {%
-augenblick2015working}%
+beknazar2025toxic}%
 \begin{APACrefauthors}%
-Augenblick, N.%
-, Niederle, M.%
-\BCBL {}\ \BBA {} Sprenger, C.%
+Beknazar-Yuzbashev, G.%
+, Jim{\'e}nez-Dur{\'a}n, R.%
+, McCrosky, J.%
+\BCBL {}\ \BBA {} Stalinski, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2015}{}{}.
+\APACrefYearMonthDay{2025}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Working over time: Dynamic inconsistency in real effort tasks} {Working over time: Dynamic inconsistency in real effort tasks}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Toxic content and user engagement on social media: Evidence from a field experiment} {Toxic content and user engagement on social media: Evidence from a field experiment}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{The Quarterly Journal of Economics}{130}{3}{1067--1115}.
+
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Beggs%
+Bhatia%
+, Crawford%
+, McDonald%
+, Moreno%
+\BCBL {}\ \BBA {} Read%
 }{%
-Beggs%
-}{%
-{\protect \APACyear {2016}}%
+Bhatia%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
 }]{%
-beggs2016private}
+bhatia2021}
 \APACinsertmetastar {%
-beggs2016private}%
+bhatia2021}%
 \begin{APACrefauthors}%
-Beggs, J\BPBI N.%
+Bhatia, S.%
+, Crawford, M\BPBI M.%
+, McDonald, R\BPBI L.%
+, Moreno, M\BPBI A.%
+\BCBL {}\ \BBA {} Read, D.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2016}{}{}.
+\APACrefYearMonthDay{2021}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Private-sector nudging: the good, the bad, and the uncertain} {Private-sector nudging: the good, the bad, and the uncertain}.{\BBCQ}
+\APACrefbtitle {Inconsistent {{Planning}} and the {{Allocation}} of {{Tasks Over Time}}} {Inconsistent {{Planning}} and the {{Allocation}} of {{Tasks Over Time}}}\ \APACbVolEdTR {}{{{OSF Preprints}}\ \BNUM\ b4mg7}.
 \newblock
-\BIn{} \APACrefbtitle {Nudge Theory in Action: Behavioral Design in Policy and Markets} {Nudge theory in action: Behavioral design in policy and markets}\ (\BPGS\ 125--158).
-\newblock
-\APACaddressPublisher{}{Springer}.
+\APACaddressInstitution{}{Center for Open Science}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -242,29 +250,60 @@ Carroll, G\BPBI D.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Charness%
-, Gneezy%
-\BCBL {}\ \BBA {} Henderson%
+Chen%
+, Fu%
+, Chen%
+, Radesky%
+\BCBL {}\ \BBA {} Hiniker%
 }{%
-Charness%
+Chen%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
+{\protect \APACyear {2025}}%
 }]{%
-charness2018experimental}
+chen2025}
 \APACinsertmetastar {%
-charness2018experimental}%
+chen2025}%
 \begin{APACrefauthors}%
-Charness, G.%
-, Gneezy, U.%
-\BCBL {}\ \BBA {} Henderson, A.%
+Chen, Y.%
+, Fu, Y.%
+, Chen, Z.%
+, Radesky, J.%
+\BCBL {}\ \BBA {} Hiniker, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2025}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Experimental methods: Measuring effort in economics experiments} {Experimental methods: Measuring effort in economics experiments}.{\BBCQ}
+\APACrefbtitle {The {{Engagement-Prolonging Designs Teens Encounter}} on {{Very Large Online Platforms}}} {The {{Engagement-Prolonging Designs Teens Encounter}} on {{Very Large Online Platforms}}}\ (\BNUM\ arXiv:2411.12083).
 \newblock
-\APACjournalVolNumPages{Journal of Economic Behavior \& Organization}{149}{}{74--87}.
+\APACaddressPublisher{}{arXiv}.
+\newblock
+\begin{APACrefDOI} \doi{10.48550/arXiv.2411.12083} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ek%
+\ \BBA {} Samahita%
+}{%
+Ek%
+\ \BBA {} Samahita%
+}{%
+{\protect \APACyear {2023}}%
+}]{%
+ek2023too}
+\APACinsertmetastar {%
+ek2023too}%
+\begin{APACrefauthors}%
+Ek, C.%
+\BCBT {}\ \BBA {} Samahita, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Too much commitment? An online experiment with tempting YouTube content} {Too much commitment? an online experiment with tempting youtube content}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Economic Behavior \& Organization}{208}{}{21--38}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -321,28 +360,6 @@ Hiniker, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Hoong%
-}{%
-Hoong%
-}{%
-{\protect \APACyear {2021}}%
-}]{%
-hoong2021self}
-\APACinsertmetastar {%
-hoong2021self}%
-\begin{APACrefauthors}%
-Hoong, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Self control and smartphone use: An experimental study of soft commitment devices} {Self control and smartphone use: An experimental study of soft commitment devices}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{European Economic Review}{140}{}{103924}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Ichihashi%
 \ \BBA {} Kim%
 }{%
@@ -394,28 +411,28 @@ Kleinberg, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Kool%
-\ \BBA {} Botvinick%
+Loewenstein%
+\ \BBA {} Wojtowicz%
 }{%
-Kool%
-\ \BBA {} Botvinick%
+Loewenstein%
+\ \BBA {} Wojtowicz%
 }{%
-{\protect \APACyear {2014}}%
+{\protect \APACyear {2023}}%
 }]{%
-kool2014labor}
+loewenstein2023economics}
 \APACinsertmetastar {%
-kool2014labor}%
+loewenstein2023economics}%
 \begin{APACrefauthors}%
-Kool, W.%
-\BCBT {}\ \BBA {} Botvinick, M.%
+Loewenstein, G.%
+\BCBT {}\ \BBA {} Wojtowicz, Z.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2014}{}{}.
+\APACrefYearMonthDay{2023}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {A labor/leisure tradeoff in cognitive control} {A labor/leisure tradeoff in cognitive control}.{\BBCQ}
+{\BBOQ}\APACrefatitle {The economics of attention} {The economics of attention}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Journal of experimental psychology. General}{143}{1}{131}.
+
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -474,79 +491,85 @@ Lupi{\'a}{\~n}ez-Villanueva, F.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Mertens%
-, Herberz%
-, Hahnel%
-\BCBL {}\ \BBA {} Brosch%
-}{%
-Mertens%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2022}}%
-}]{%
-mertens2022effectiveness}
-\APACinsertmetastar {%
-mertens2022effectiveness}%
-\begin{APACrefauthors}%
-Mertens, S.%
-, Herberz, M.%
-, Hahnel, U\BPBI J.%
-\BCBL {}\ \BBA {} Brosch, T.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2022}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The effectiveness of nudging: A meta-analysis of choice architecture interventions across behavioral domains} {The effectiveness of nudging: A meta-analysis of choice architecture interventions across behavioral domains}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Proceedings of the National Academy of Sciences}{119}{1}{e2107346118}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Mills%
 }{%
 Mills%
 }{%
-{\protect \APACyear {2023}}%
+{\protect \APACyear {2020}}%
 }]{%
-mills2023nudge}
+mills2020bpp}
 \APACinsertmetastar {%
-mills2023nudge}%
+mills2020bpp}%
 \begin{APACrefauthors}%
 Mills, S.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2023}{}{}.
+\APACrefYearMonthDay{2020}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Nudge/sludge symmetry: on the relationship between nudge and sludge and the resulting ontological, normative and transparency implications} {Nudge/sludge symmetry: on the relationship between nudge and sludge and the resulting ontological, normative and transparency implications}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Nudge/Sludge Symmetry: On the Relationship between Nudge and Sludge and the Resulting Ontological, Normative and Transparency Implications} {Nudge/sludge symmetry: On the relationship between nudge and sludge and the resulting ontological, normative and transparency implications}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Behavioural Public Policy}{7}{2}{309--332}.
+\APACjournalVolNumPages{Behavioural Public Policy}{}{}{1--24}.
+\newblock
+\begin{APACrefDOI} \doi{10.1017/bpp.2020.61} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Smith%
-, Goldstein%
-\BCBL {}\ \BBA {} Johnson%
-}{%
-Smith%
+Nyhan%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2013}}%
+Nyhan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
 }]{%
-smith2013choice}
+nyhan2023like}
 \APACinsertmetastar {%
-smith2013choice}%
+nyhan2023like}%
 \begin{APACrefauthors}%
-Smith, N\BPBI C.%
-, Goldstein, D\BPBI G.%
-\BCBL {}\ \BBA {} Johnson, E\BPBI J.%
+Nyhan, B.%
+, Settle, J.%
+, Thorson, E.%
+, Wojcieszak, M.%
+, Barber{\'a}, P.%
+, Chen, A\BPBI Y.%
+\BDBL {}others%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2013}{}{}.
+\APACrefYearMonthDay{2023}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Choice without awareness: Ethical and policy implications of defaults} {Choice without awareness: Ethical and policy implications of defaults}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Like-minded sources on Facebook are prevalent but not polarizing} {Like-minded sources on facebook are prevalent but not polarizing}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Journal of Public Policy \& Marketing}{32}{2}{159--172}.
+\APACjournalVolNumPages{Nature}{620}{7972}{137--144}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schaffner%
+\ \protect \BOthers {.}}{%
+Schaffner%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+schaffner2025pahi}
+\APACinsertmetastar {%
+schaffner2025pahi}%
+\begin{APACrefauthors}%
+Schaffner, B.%
+, Ulloa, Y.%
+, Sahni, R.%
+, Li, J.%
+, Cohen, A\BPBI K.%
+, Messier, N.%
+\BDBL {}Chetty, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An {{Experimental Study Of Netflix Use}} and the {{Effects}} of {{Autoplay}} on {{Watching Behaviors}}} {An {{Experimental Study Of Netflix Use}} and the {{Effects}} of {{Autoplay}} on {{Watching Behaviors}}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proc. ACM Hum.-Comput. Interact.}{9}{2}{CSCW030:1--CSCW030:22}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3710928} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

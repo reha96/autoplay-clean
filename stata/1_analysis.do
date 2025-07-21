@@ -38,7 +38,7 @@ drop Treatment
 rename captchas_submitted_total submit_type
 
 sum mouseout*, det
-keep if mouseout_typing + mouseout_watching <= 20
+gen flag = (mouseout_typing + mouseout_watching >= 20)
 drop mouseout*
 save "${dpath}cleaned_autoplay_data.dta", replace
 
@@ -84,9 +84,7 @@ gen gender_group = .
 replace gender_group = 1 if gender == "female"
 replace gender_group = 0 if gender == "male"
 
-save "${dpath}cleaned_autoplay_data.dta", replace
-
-
+cls
 display as text "=== BALANCE TABLE RESULTS ===" _newline
 
 display as text "=== Age (continuous) ===" 
@@ -128,9 +126,56 @@ display "Marital - Married: " ${mar_married_pvalue}
 display "Marital - Single: " ${mar_single_pvalue}
 display "Marital - Previously married: " ${mar_previous_pvalue}
 
+
+//# compare 40 dropped obs with sample
+cls
+display as text "=== Age (continuous) ===" 
+ttest age, by(flag) unequal
+global age_mean = r(mu_1)
+global age_sd1 = r(sd_1)
+global age_sd2 = r(sd_2)
+global age_pvalue = r(p)
+display "Overall Mean: " r(mu_1) ", P-value: " ${age_pvalue}
+
+foreach v of varlist gender_group emp_fulltime emp_partself emp_notemployed inc_low inc_middle inc_high mar_married mar_single mar_previous {
+    display _newline
+    display as text "=== Proportion test for `v' ===" 
+    
+    quietly summarize `v'
+    local mean = r(mean)
+    local sd = r(sd)
+    
+    global `v'_mean = `mean'
+    global `v'_sd = `sd'
+    
+    prtest `v', by(flag)
+    global `v'_pvalue = r(p)
+    
+    display "Proportion: " `mean' ", P-value: " ${`v'_pvalue}
+}
+
+display _newline
+display as text "=== SUMMARY OF P-VALUES ===" _newline
+display "Age: " ${age_pvalue}
+display "Gender (female): " ${gender_group_pvalue}
+display "Employment - Full time: " ${emp_fulltime_pvalue}
+display "Employment - Part time/Self: " ${emp_partself_pvalue}  
+display "Employment - Not employed: " ${emp_notemployed_pvalue}
+display "Income - Low: " ${inc_low_pvalue}
+display "Income - Middle: " ${inc_middle_pvalue}
+display "Income - High: " ${inc_high_pvalue}
+display "Marital - Married: " ${mar_married_pvalue}
+display "Marital - Single: " ${mar_single_pvalue}
+display "Marital - Previously married: " ${mar_previous_pvalue}
+
+prtest treatment, by(flag)
+
+save "${dpath}cleaned_autoplay_data.dta", replace
+
 // summary table
 cls
 clear all
+keep if !flag
 use "${dpath}cleaned_autoplay_data.dta", replace
 
 replace typeChoice = typeChoice/1200 // divide by max time 
@@ -188,7 +233,8 @@ ttest typeChoice == p_typing
 clear all
 use "${dpath}cleaned_autoplay_data.dta", replace
 descr
-hist videos_watched_total, by(treatment) percent
+
+keep if !flag
 
 gen watch_time = session_duration -seconds_typing
 sum watch_time, det
@@ -235,13 +281,65 @@ est store r2_2
 reg $y2 i.treatment##c.$x1, vce(robust)
 est store r2_3
 
-teffects ipwra (z_vwt) (treatment typeChoice) if videos_watched_total > 20, vce(robust)
+esttab r1*
+esttab r2*
+
+power twomeans -0.010 (0.03(0.02)0.132), sd(0.753) power(0.8) alpha(0.05)
+
+//# robustness with 40 flagged
+cls
+use "${dpath}cleaned_autoplay_data.dta", replace
+
+gen watch_time = session_duration -seconds_typing
+sum watch_time, det
+ttest watch_time, by(treatment)
+
+sum videos_watched_total, det
+ttest videos_watched_total, by(treatment)
+
+gen prop_typing_choice = typeChoice/1200 // day 1 plan
+sum prop_typing_choice
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_ptc = (prop_typing_choice-`mean1')/(`sd1')
+
+gen type_act_prop = seconds_typing/session_duration // actualized day 2
+sum type_act_prop
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_tap = (type_act_prop-`mean1')/(`sd1')
+
+sum videos_watched_total
+local mean1 = r(mean)
+local sd1 = r(sd)
+gen z_vwt = (videos_watched_total-`mean1')/(`sd1')
+
+gen ever_watched = 0
+replace ever_watched = 1 if videos_watched_total > 0
+
+global y1 z_tap 
+global y2 z_vwt // poisson not working if z score
+global x1 z_ptc 
+
+reg $y1 i.treatment, vce(robust)
+est store r1_1
+reg $y1 i.treatment c.$x1, vce(robust)
+est store r1_2
+reg $y1 i.treatment##c.$x1 , vce(robust)
+est store r1_3
+
+reg $y2 i.treatment, vce(robust)
+est store r2_1
+reg $y2 i.treatment c.$x1, vce(robust)
+est store r2_2
+reg $y2 i.treatment##c.$x1, vce(robust)
+est store r2_3
+
+power twomeans -0.059 (0.03(0.02)0.132), sd(0.813) power(0.8) alpha(0.05)
 
 esttab r1*
 esttab r2*
 
-power twomeans -0.053 0.066, sd(0.739) power(0.8 0.9) alpha(0.05) graph
-power twomeans -0.010 0.021, sd(0.753) power(0.8 0.9) alpha(0.05) graph
 
 //# video descriptives
 clear all
@@ -251,6 +349,15 @@ sum duration
 sum duration if vid_id <= 60, det
 sum duration if vid_id > 60, det
 
+
+//# payment and performance descriptives
+clear all
+import delimited "${dpath}payment.csv", clear
+descr
+sum bonus, det
+replace bonus = bonus-2.75
+hist bonus
+sum bonus, det
 
 //# MPL condition and WTA for autoplay
 clear all
