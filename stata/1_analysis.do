@@ -403,7 +403,7 @@ bysort id: replace bonus = -0.05 if decision == 6
 bysort id: replace bonus = -0.1 if decision == 7
 bysort id: replace bonus = -0.25 if decision == 8 
 bysort id: replace bonus = -0.5 if decision == 9 
-gen outcome = 0
+gen outcome = 0 // choosing AUTOPLAY
 bysort id: replace outcome = 1 if auto_05 == 1 & decision == 1
 bysort id: replace outcome = 1 if auto_025 == 1 & decision == 2
 bysort id: replace outcome = 1 if auto_01 == 1 & decision == 3
@@ -416,3 +416,4 @@ bysort id: replace outcome = 1 if nauto_05 == 1 & decision == 9
 keep outcome bonus id
 tab bonus
 logit outcome bonus, vce(cluster id)
+margins, dydx(*)

@@ -515,34 +515,6 @@ Mills, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Nyhan%
-\ \protect \BOthers {.}}{%
-Nyhan%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2023}}%
-}]{%
-nyhan2023like}
-\APACinsertmetastar {%
-nyhan2023like}%
-\begin{APACrefauthors}%
-Nyhan, B.%
-, Settle, J.%
-, Thorson, E.%
-, Wojcieszak, M.%
-, Barber{\'a}, P.%
-, Chen, A\BPBI Y.%
-\BDBL {}others%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2023}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Like-minded sources on Facebook are prevalent but not polarizing} {Like-minded sources on facebook are prevalent but not polarizing}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Nature}{620}{7972}{137--144}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Schaffner%
 \ \protect \BOthers {.}}{%
 Schaffner%
