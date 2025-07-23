@@ -313,6 +313,31 @@ Ericson%
 Ericson%
 \ \BBA {} Laibson%
 }{%
+{\protect \APACyear {2018}}%
+}]{%
+ericson2018}
+\APACinsertmetastar {%
+ericson2018}%
+\begin{APACrefauthors}%
+Ericson, K\BPBI M.%
+\BCBT {}\ \BBA {} Laibson, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Intertemporal {{Choice}}} {Intertemporal {{Choice}}}.{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ericson%
+\ \BBA {} Laibson%
+}{%
+Ericson%
+\ \BBA {} Laibson%
+}{%
 {\protect \APACyear {2019}}%
 }]{%
 ericson2019intertemporal}
