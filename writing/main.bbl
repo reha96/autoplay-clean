@@ -55,6 +55,34 @@ Allcott, H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Arechar%
+, G{\"a}chter%
+\BCBL {}\ \BBA {} Molleman%
+}{%
+Arechar%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+arechar2018conducting}
+\APACinsertmetastar {%
+arechar2018conducting}%
+\begin{APACrefauthors}%
+Arechar, A\BPBI A.%
+, G{\"a}chter, S.%
+\BCBL {}\ \BBA {} Molleman, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Conducting interactive experiments online} {Conducting interactive experiments online}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Experimental Economics}{21}{1}{99--131}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s10683-017-9527-2} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Ash%
 \ \BBA {} Hansen%
 }{%
@@ -79,6 +107,28 @@ Ash, E.%
 \APACjournalVolNumPages{Annual Review of Economics}{15}{Volume 15, 2023}{659--688}.
 \newblock
 \begin{APACrefDOI} \doi{10.1146/annurev-economics-082222-074352} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bao%
+}{%
+Bao%
+}{%
+{\protect \APACyear {2025}}%
+}]{%
+bao2025just}
+\APACinsertmetastar {%
+bao2025just}%
+\begin{APACrefauthors}%
+Bao, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {“Just One More Clip”: Short Videos, Big Self-Control Problems} {“just one more clip”: Short videos, big self-control problems}.{\BBCQ}
+\newblock
+
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -110,61 +160,6 @@ Beknazar-Yuzbashev, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Bhatia%
-, Crawford%
-, McDonald%
-, Moreno%
-\BCBL {}\ \BBA {} Read%
-}{%
-Bhatia%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2021}}%
-}]{%
-bhatia2021}
-\APACinsertmetastar {%
-bhatia2021}%
-\begin{APACrefauthors}%
-Bhatia, S.%
-, Crawford, M\BPBI M.%
-, McDonald, R\BPBI L.%
-, Moreno, M\BPBI A.%
-\BCBL {}\ \BBA {} Read, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{}{}.
-\newblock
-\APACrefbtitle {Inconsistent {{Planning}} and the {{Allocation}} of {{Tasks Over Time}}} {Inconsistent {{Planning}} and the {{Allocation}} of {{Tasks Over Time}}}\ \APACbVolEdTR {}{{{OSF Preprints}}\ \BNUM\ b4mg7}.
-\newblock
-\APACaddressInstitution{}{Center for Open Science}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Bonein%
-\ \BBA {} Denant-Bo{\`e}mont%
-}{%
-Bonein%
-\ \BBA {} Denant-Bo{\`e}mont%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-bonein2015self}
-\APACinsertmetastar {%
-bonein2015self}%
-\begin{APACrefauthors}%
-Bonein, A.%
-\BCBT {}\ \BBA {} Denant-Bo{\`e}mont, L.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Self-control, commitment and peer pressure: a laboratory experiment} {Self-control, commitment and peer pressure: a laboratory experiment}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Experimental Economics}{18}{}{543--568}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Bongard-Blanchy%
 \ \protect \BOthers {.}}{%
 Bongard-Blanchy%
@@ -192,61 +187,59 @@ Bongard-Blanchy, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Caraban%
-, Karapanos%
-, Gon{\c{c}}alves%
-\BCBL {}\ \BBA {} Campos%
+Braghieri%
+, Levy%
+\BCBL {}\ \BBA {} Makarin%
 }{%
-Caraban%
+Braghieri%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2019}}%
+{\protect \APACyear {2022}}%
 }]{%
-caraban201923}
+braghieri2022aer}
 \APACinsertmetastar {%
-caraban201923}%
+braghieri2022aer}%
 \begin{APACrefauthors}%
-Caraban, A.%
-, Karapanos, E.%
-, Gon{\c{c}}alves, D.%
-\BCBL {}\ \BBA {} Campos, P.%
+Braghieri, L.%
+, Levy, R.%
+\BCBL {}\ \BBA {} Makarin, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2019}{}{}.
+\APACrefYearMonthDay{2022}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {23 ways to nudge: A review of technology-mediated nudging in human-computer interaction} {23 ways to nudge: A review of technology-mediated nudging in human-computer interaction}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Social Media and Mental Health} {Social media and mental health}.{\BBCQ}
 \newblock
-\BIn{} \APACrefbtitle {Proceedings of the 2019 CHI conference on human factors in computing systems} {Proceedings of the 2019 chi conference on human factors in computing systems}\ (\BPGS\ 1--15).
+\APACjournalVolNumPages{American Economic Review}{112}{11}{3660--3693}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Carroll%
-, Choi%
-, Laibson%
-, Madrian%
-\BCBL {}\ \BBA {} Metrick%
+Bursztyn%
+, Handel%
+, Jimenez%
+\BCBL {}\ \BBA {} Roth%
 }{%
-Carroll%
+Bursztyn%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2009}}%
+{\protect \APACyear {2023}}%
 }]{%
-carroll2009optimal}
+bursztyn2023}
 \APACinsertmetastar {%
-carroll2009optimal}%
+bursztyn2023}%
 \begin{APACrefauthors}%
-Carroll, G\BPBI D.%
-, Choi, J\BPBI J.%
-, Laibson, D.%
-, Madrian, B\BPBI C.%
-\BCBL {}\ \BBA {} Metrick, A.%
+Bursztyn, L.%
+, Handel, B\BPBI R.%
+, Jimenez, R.%
+\BCBL {}\ \BBA {} Roth, C.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2009}{}{}.
+\APACrefYearMonthDay{2023}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Optimal defaults and active decisions} {Optimal defaults and active decisions}.{\BBCQ}
+\APACrefbtitle {When {{Product Markets Become Collective Traps}}: {{The Case}} of {{Social Media}}} {When {{Product Markets Become Collective Traps}}: {{The Case}} of {{Social Media}}}\ (Working {{Paper}}\ \BNUM\ 31771).
 \newblock
-\APACjournalVolNumPages{The quarterly journal of economics}{124}{4}{1639--1674}.
+\APACaddressPublisher{}{National Bureau of Economic Research}.
+\newblock
+\begin{APACrefDOI} \doi{10.3386/w31771} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -279,6 +272,31 @@ Chen, Y.%
 \APACaddressPublisher{}{arXiv}.
 \newblock
 \begin{APACrefDOI} \doi{10.48550/arXiv.2411.12083} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Collis%
+\ \BBA {} Eggers%
+}{%
+Collis%
+\ \BBA {} Eggers%
+}{%
+{\protect \APACyear {2022}}%
+}]{%
+collis2022po}
+\APACinsertmetastar {%
+collis2022po}%
+\begin{APACrefauthors}%
+Collis, A.%
+\BCBT {}\ \BBA {} Eggers, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Effects of Restricting Social Media Usage on Wellbeing and Performance: {{A}} Randomized Control Trial among Students} {Effects of restricting social media usage on wellbeing and performance: {{A}} randomized control trial among students}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{PloS one}{17}{8}{e0272416}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -332,28 +350,33 @@ Ericson, K\BPBI M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Ericson%
-\ \BBA {} Laibson%
+Groshek%
+, Krongard%
+\BCBL {}\ \BBA {} Zhang%
 }{%
-Ericson%
-\ \BBA {} Laibson%
-}{%
-{\protect \APACyear {2019}}%
+Groshek%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
 }]{%
-ericson2019intertemporal}
+groshek2018p9icsms}
 \APACinsertmetastar {%
-ericson2019intertemporal}%
+groshek2018p9icsms}%
 \begin{APACrefauthors}%
-Ericson, K\BPBI M.%
-\BCBT {}\ \BBA {} Laibson, D.%
+Groshek, J.%
+, Krongard, S.%
+\BCBL {}\ \BBA {} Zhang, Y.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2019}{}{}.
+\APACrefYearMonthDay{2018}{}{}.
 \newblock
-\APACrefbtitle {Intertemporal Choice, vol. 2, chap. 1.} {Intertemporal choice, vol. 2, chap. 1.}
+{\BBOQ}\APACrefatitle {Netflix and {{Ill}}? {{Emotional}} and {{Health Implications}} of {{Binge Watching Streaming TV}}} {Netflix and {{Ill}}? {{Emotional}} and {{Health Implications}} of {{Binge Watching Streaming TV}}}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{Elsevier}.
+\BIn{} \APACrefbtitle {Proceedings of the 9th {{International Conference}} on {{Social Media}} and {{Society}}} {Proceedings of the 9th {{International Conference}} on {{Social Media}} and {{Society}}}\ (\BPGS\ 296--300).
+\newblock
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3217804.3217932} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -385,28 +408,27 @@ Hiniker, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Ichihashi%
-\ \BBA {} Kim%
+Hoong%
 }{%
-Ichihashi%
-\ \BBA {} Kim%
+Hoong%
 }{%
-{\protect \APACyear {2023}}%
+{\protect \APACyear {2021}}%
 }]{%
-ichihashi2023addictive}
+hoong2021eer}
 \APACinsertmetastar {%
-ichihashi2023addictive}%
+hoong2021eer}%
 \begin{APACrefauthors}%
-Ichihashi, S.%
-\BCBT {}\ \BBA {} Kim, B\BHBI C.%
+Hoong, R.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2023}{}{}.
+\APACrefYearMonthDay{2021}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Addictive Platforms} {Addictive platforms}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Self Control and Smartphone Use: {{An}} Experimental Study of Soft Commitment Devices} {Self control and smartphone use: {{An}} experimental study of soft commitment devices}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Management Science}{69}{2}{1127--1145}.
+\APACjournalVolNumPages{European Economic Review}{140}{}{103924}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.euroecorev.2021.103924} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -433,31 +455,6 @@ Kleinberg, J.%
 {\BBOQ}\APACrefatitle {The challenge of understanding what users want: Inconsistent preferences and engagement optimization} {The challenge of understanding what users want: Inconsistent preferences and engagement optimization}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint arXiv:2202.11776}{}{}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Loewenstein%
-\ \BBA {} Wojtowicz%
-}{%
-Loewenstein%
-\ \BBA {} Wojtowicz%
-}{%
-{\protect \APACyear {2023}}%
-}]{%
-loewenstein2023economics}
-\APACinsertmetastar {%
-loewenstein2023economics}%
-\begin{APACrefauthors}%
-Loewenstein, G.%
-\BCBT {}\ \BBA {} Wojtowicz, Z.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2023}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The economics of attention} {The economics of attention}.{\BBCQ}
-\newblock
-
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -489,54 +486,213 @@ Lukoff, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Lupi{\'a}{\~n}ez-Villanueva%
-\ \protect \BOthers {.}}{%
-Lupi{\'a}{\~n}ez-Villanueva%
+{Lupi{\'a}{\~n}ez-Villanueva}%
+, Boluda%
+, Bogliacino%
+\BCBL {}\ \BBA {} Liva%
+}{%
+{Lupi{\'a}{\~n}ez-Villanueva}%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2022}}%
 }]{%
-lupianez2022behavioural}
+lupianez-villanueva2022}
 \APACinsertmetastar {%
-lupianez2022behavioural}%
+lupianez-villanueva2022}%
 \begin{APACrefauthors}%
-Lupi{\'a}{\~n}ez-Villanueva, F.%
+{Lupi{\'a}{\~n}ez-Villanueva}, W\BPBI F.%
 , Boluda, A.%
 , Bogliacino, F.%
-, Liva, G.%
-, Lechardoy, L.%
-\BCBL {}\ \BBA {} de~las Heras~Ballell, T\BPBI R.%
+\BCBL {}\ \BBA {} Liva, G.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2022}.
+\APACrefYearMonthDay{2022}{}{}.
 \newblock
-\APACrefbtitle {Behavioural study on unfair commercial practices in the digital environment: dark patterns and manipulative personalisation} {Behavioural study on unfair commercial practices in the digital environment: dark patterns and manipulative personalisation}.
+{\BBOQ}\APACrefatitle {Behavioural Study on Unfair Commercial Practices in the Digital Environment: Dark Patterns and Manipulative Personalisation} {Behavioural study on unfair commercial practices in the digital environment: Dark patterns and manipulative personalisation}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{Publications Office of the European Union}.
+\APACjournalVolNumPages{}{}{}{303}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Mills%
-}{%
-Mills%
-}{%
+Lyngs%
+\ \protect \BOthers {.}}{%
+Lyngs%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+lyngs2019p2cchfcs}
+\APACinsertmetastar {%
+lyngs2019p2cchfcs}%
+\begin{APACrefauthors}%
+Lyngs, U.%
+, Lukoff, K.%
+, Slovak, P.%
+, Binns, R.%
+, Slack, A.%
+, Inzlicht, M.%
+\BDBL {}Shadbolt, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Self-{{Control}} in {{Cyberspace}}: {{Applying Dual Systems Theory}} to a {{Review}} of {{Digital Self-Control Tools}}} {Self-{{Control}} in {{Cyberspace}}: {{Applying Dual Systems Theory}} to a {{Review}} of {{Digital Self-Control Tools}}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2019 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}} {Proceedings of the 2019 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}}\ (\BPGS\ 1--18).
+\newblock
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3290605.3300361} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lyngs%
+\ \protect \BOthers {.}}{%
+Lyngs%
+\ \protect \BOthers {.}}{%
 {\protect \APACyear {2020}}%
 }]{%
-mills2020bpp}
+lyngs2020p2cchfcs}
 \APACinsertmetastar {%
-mills2020bpp}%
+lyngs2020p2cchfcs}%
 \begin{APACrefauthors}%
-Mills, S.%
+Lyngs, U.%
+, Lukoff, K.%
+, Slovak, P.%
+, Seymour, W.%
+, Webb, H.%
+, Jirotka, M.%
+\BDBL {}Shadbolt, N.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2020}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Nudge/Sludge Symmetry: On the Relationship between Nudge and Sludge and the Resulting Ontological, Normative and Transparency Implications} {Nudge/sludge symmetry: On the relationship between nudge and sludge and the resulting ontological, normative and transparency implications}.{\BBCQ}
+{\BBOQ}\APACrefatitle {'{{I Just Want}} to {{Hack Myself}} to {{Not Get Distracted}}': {{Evaluating Design Interventions}} for {{Self-Control}} on {{Facebook}}} {'{{I Just Want}} to {{Hack Myself}} to {{Not Get Distracted}}': {{Evaluating Design Interventions}} for {{Self-Control}} on {{Facebook}}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Behavioural Public Policy}{}{}{1--24}.
+\BIn{} \APACrefbtitle {Proceedings of the 2020 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}} {Proceedings of the 2020 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}}\ (\BPGS\ 1--15).
 \newblock
-\begin{APACrefDOI} \doi{10.1017/bpp.2020.61} \end{APACrefDOI}
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3313831.3376672} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mathur%
+, Kshirsagar%
+\BCBL {}\ \BBA {} Mayer%
+}{%
+Mathur%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+mathur2021p2cchfcs}
+\APACinsertmetastar {%
+mathur2021p2cchfcs}%
+\begin{APACrefauthors}%
+Mathur, A.%
+, Kshirsagar, M.%
+\BCBL {}\ \BBA {} Mayer, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {What {{Makes}} a {{Dark Pattern}}... {{Dark}}?: {{Design Attributes}}, {{Normative Considerations}}, and {{Measurement Methods}}} {What {{Makes}} a {{Dark Pattern}}... {{Dark}}?: {{Design Attributes}}, {{Normative Considerations}}, and {{Measurement Methods}}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2021 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}} {Proceedings of the 2021 {{CHI Conference}} on {{Human Factors}} in {{Computing Systems}}}\ (\BPGS\ 1--18).
+\newblock
+\APACaddressPublisher{Yokohama Japan}{ACM}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3411764.3445610} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nyhan%
+\ \protect \BOthers {.}}{%
+Nyhan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+nyhan2023like}
+\APACinsertmetastar {%
+nyhan2023like}%
+\begin{APACrefauthors}%
+Nyhan, B.%
+, Settle, J.%
+, Thorson, E.%
+, Wojcieszak, M.%
+, Barber{\'a}, P.%
+, Chen, A\BPBI Y.%
+\BDBL {}others%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Like-minded sources on Facebook are prevalent but not polarizing} {Like-minded sources on facebook are prevalent but not polarizing}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature}{620}{7972}{137--144}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Purohit%
+, Bergram%
+, Barclay%
+, Bezen{\c{c}}on%
+\BCBL {}\ \BBA {} Holzer%
+}{%
+Purohit%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+purohit2023starving}
+\APACinsertmetastar {%
+purohit2023starving}%
+\begin{APACrefauthors}%
+Purohit, A\BPBI K.%
+, Bergram, K.%
+, Barclay, L.%
+, Bezen{\c{c}}on, V.%
+\BCBL {}\ \BBA {} Holzer, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Starving the Newsfeed for Social Media Detox: Effects of Strict and Self-regulated Facebook Newsfeed Diets} {Starving the newsfeed for social media detox: Effects of strict and self-regulated facebook newsfeed diets}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems} {Proceedings of the 2023 chi conference on human factors in computing systems}\ (\BPGS\ 1--16).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schaffner%
+, Stefanescu%
+, Campili%
+\BCBL {}\ \BBA {} Chetty%
+}{%
+Schaffner%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+schaffner2023pahia}
+\APACinsertmetastar {%
+schaffner2023pahia}%
+\begin{APACrefauthors}%
+Schaffner, B.%
+, Stefanescu, A.%
+, Campili, O.%
+\BCBL {}\ \BBA {} Chetty, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Don't {{Let Netflix Drive}} the {{Bus}}: {{User}}'s {{Sense}} of {{Agency Over Time}} and {{Content Choice}} on {{Netflix}}} {Don't {{Let Netflix Drive}} the {{Bus}}: {{User}}'s {{Sense}} of {{Agency Over Time}} and {{Content Choice}} on {{Netflix}}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proceedings of the ACM on Human-Computer Interaction}{7}{CSCW1}{1--32}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3579604} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -570,28 +726,59 @@ Schaffner, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Thaler%
-\ \BBA {} Sunstein%
+Silverman%
+, Srna%
+\BCBL {}\ \BBA {} Etkin%
 }{%
-Thaler%
-\ \BBA {} Sunstein%
-}{%
-{\protect \APACyear {2009}}%
+Silverman%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2024}}%
 }]{%
-thaler2009nudge}
+silverman2024}
 \APACinsertmetastar {%
-thaler2009nudge}%
+silverman2024}%
 \begin{APACrefauthors}%
-Thaler, R\BPBI H.%
-\BCBT {}\ \BBA {} Sunstein, C\BPBI R.%
+Silverman, J.%
+, Srna, S.%
+\BCBL {}\ \BBA {} Etkin, J.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2009}.
+\APACrefYearMonthDay{2024}{}{}.
 \newblock
-\APACrefbtitle {Nudge: Improving decisions about health, wealth, and happiness} {Nudge: Improving decisions about health, wealth, and happiness}.
+\APACrefbtitle {Can {{Time Limits Increase Time Spent}}?} {Can {{Time Limits Increase Time Spent}}?}\ ({{SSRN Scholarly Paper}}\ \BNUM\ 4381779).
 \newblock
-\APACaddressPublisher{}{Penguin}.
+\APACaddressPublisher{Rochester, NY}{Social Science Research Network}.
+\newblock
+\begin{APACrefDOI} \doi{10.2139/ssrn.4381779} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Walton-Pattison}%
+, Dombrowski%
+\BCBL {}\ \BBA {} Presseau%
+}{%
+{Walton-Pattison}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+walton-pattison2018jhp}
+\APACinsertmetastar {%
+walton-pattison2018jhp}%
+\begin{APACrefauthors}%
+{Walton-Pattison}, E.%
+, Dombrowski, S\BPBI U.%
+\BCBL {}\ \BBA {} Presseau, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {`{{Just}} One More Episode': {{Frequency}} and Theoretical Correlates of Television Binge Watching} {`{{Just}} one more episode': {{Frequency}} and theoretical correlates of television binge watching}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Health Psychology}{23}{1}{17--24}.
+\newblock
+\begin{APACrefDOI} \doi{10.1177/1359105316643379} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
