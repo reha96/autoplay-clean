@@ -57,7 +57,7 @@
 \title{Autoplay on Trial: An Online Experiment on the Suspect Behind Excessive Screen Time
 % Commitment and autoplay videos: An online experiment
 }
-\author{Reha Tuncer\footnote{I am grateful to Ernesto Reuben and Kerstin Bongard-Blanchy for their guidance in the design and conception of this experiment, to Sophie Doublet for her help in interface design, to Suvadeep Mukherjee for his guidance in building web experiments. I am also thankful for the invaluable comments from the Behavioral Economics Summer School at the University of Copenhagen, the doctoral workshop at UC Louvain, the Experimetrics Workshop Soleto at Sapienza University Rome, Samuel Greiff, Manuel Munoz Herrera, Hande Erkut and countless colleagues.}}
+\author{Reha Tuncer\footnote{I am grateful to Ernesto Reuben and Kerstin Bongard-Blanchy for their guidance in the design and conception of this experiment, to Sophie Doublet for her help in interface design, to Suvadeep Mukherjee for his guidance in building web experiments. I am also thankful for the invaluable comments from the Behavioral Economics Summer School at the University of Copenhagen, the doctoral workshop at UC Louvain, the Experimetrics Workshop Soleto at Sapienza University Rome, Samuel Greiff, Manuel Munoz, Hande Erkut and countless colleagues.}}
 
 \begin{document}
 
@@ -66,15 +66,15 @@
 
 \section*{Abstract}
 
-Interface design can `nudge' consumers to take certain actions and is suspected of promoting addictive online behavior. A prevalent interface element across popular social media and streaming platforms is the default autoplay feature. We present an incentivized two-day online experiment to investigate whether the autoplay feature alone can cause an increase in undesired video consumption. We recruited 184 participants who allocated time between transcription tasks and watching funny animal videos, randomly assigning them to either autoplay or click-to-play video conditions while holding content constant. We find that the autoplay feature, in isolation, does not override participants' previously indicated preferences for media consumption. Participants exhibited positive willingness-to-pay for autoplay (2.24 pence on average), viewing it as a convenience feature rather than a self-control problem. However, experimenter demand effects have hampered with the intended autoplay manipulation. These findings highlight the importance of ecological validity in studying interface design effects on user behavior.
+Interface design features can `nudge' consumers to take certain actions and are often accused of promoting addictive online behavior. A prevalent design feature across popular social media and streaming platforms is the default autoplay feature. We present an incentivized online experiment to investigate whether the autoplay feature alone can cause an increase in undesired video consumption, and elicit the willingness to pay for commitment against autoplay. In a two-day study, we recruited 236 participants to allocate 20 minutes between a transcription task and watching funny animal videos. Time allocation decisions were made hypothetically a day before and realized the next day. We randomly assigned participants to either autoplay or click-to-play media controls while keeping the video content constant. We find that the autoplay feature, in isolation, does not override participants' previously indicated preferences for media consumption. In addition, participants exhibit a positive willingness-to-pay for autoplay (6.72 pence/hour), viewing it as a convenience feature rather than a self-control problem in our setting. We also find that experimenter demand effects and lack of content appeal result in participants allocating more time to the transcription task than planned, confounding the effect of the intended autoplay manipulation. While these findings highlight the fundamental challenge that interface features cannot be studied in isolation from their embedded context, the effectiveness of autoplay seem to depend on the personalized content it delivers.
 
 \section{Introduction}
 
-Autoplay is a user interface feature which automatically transitions users to new video content without any action. It has become a familiar design element in major social media and streaming platforms over the last decade,\footnote{As of 2025 these platforms include Facebook, Instagram, Netflix, YouTube, TikTok, and Twitter (currently X). Twitter \href{https://blog.x.com/official/en_us/a/2015/introducing-a-more-seamless-video-experience-with-autoplay.html}{first introduced} autoplay in 2015, and described it as a means to reduce ``extra effort'' in the number of clicks/taps required to consume content.} and has been described as a default nudge that reduces the autonomy of users \citep{lukoff2021design,schaffner2025pahi}. Autoplay's widespread adoption and concerns about its restricting the freedom of choice has also attracted regulatory scrutiny, with the U.S. SMART Act proposing to ban platforms from serving autoplay content ``without an express, separate prompt by the user'' due to suspicions of its contribution to addictive online behavior.\footnote{\href{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text}{SMART Act of 2019}, S. 2314, 116th Congress.}
+Autoplay is a user interface feature that automatically transitions users to new video content without any action. It has become a familiar design element in major social media and streaming platforms over the last decade,\footnote{As of 2025 these platforms include Facebook, Instagram, Netflix, YouTube, TikTok, and Twitter (currently X). Twitter \href{https://blog.x.com/official/en_us/a/2015/introducing-a-more-seamless-video-experience-with-autoplay.html}{first introduced} autoplay in 2015, and described it as a means to reduce ``extra effort'' in the number of clicks/taps required to consume content.} and has been described as a default nudge that reduces the autonomy of users \citep{lukoff2021design,schaffner2025pahi}. Autoplay's widespread adoption and concerns about its restriction of users' freedom of choice have also attracted regulatory scrutiny, with the U.S. SMART Act proposing to ban platforms from serving autoplay content ``without an express, separate prompt by the user'' due to suspicions of its contribution to addictive online behavior.\footnote{\href{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text}{SMART Act of 2019}, S. 2314, 116th Congress.}
 
 While autoplay is pervasive and tends to increase viewing times \citep{chen2025,hiniker2018coco,schaffner2025pahi}, its impact on user welfare and the mechanisms driving this effect are not well understood. Does the increase in consumption go against users' wishes, or does it merely remove frictions to help them achieve their desired consumption levels? Can we attribute the increase in consumption to autoplay in isolation, or does it also depend on the supply of content? One reason for these gaps is the challenge of holding constant the video content displayed to users while eliciting their preferences related to content consumption before the actual consumption occurs.
 
-We overcome this challenge in an incentivized two-day online experiment designed to isolate the causal effect of autoplay on content consumption. We recruited 184 participants who twice allocated 1200 seconds (20 minutes) between two tasks. The tasks involved seconds of transcription of random character sequences texts at 0.15 pence/second, and seconds of watching funny animal videos at 0.1 pence/second. On the first day, participants got familiar with tasks and made hypothetical allocations using the strategy method. On the following day, participants realized their time allocation decision without constraints. This two-day structure with hypothetical and realized choices formed the foundation for testing our preregistered hypotheses regarding autoplay.
+We overcome this challenge in an incentivized two-day online experiment designed to isolate the causal effect of autoplay on content consumption. We recruited 184 participants who twice allocated 1200 seconds (20 minutes) between two tasks. The tasks involved seconds of transcription of random character sequences at 0.15 pence/second, and seconds of watching funny animal videos at 0.1 pence/second. On the first day, participants got familiar with tasks and made hypothetical allocations using the strategy method. On the following day, participants realized their time allocation decision without constraints. This two-day structure with hypothetical and realized choices formed the foundation for testing our preregistered hypotheses regarding autoplay.
 
 To isolate the causal effect of autoplay on these allocation decisions, we randomly assigned participants to either the \textit{Autoplay} or \textit{Control} condition. In the \textit{Autoplay} condition watching task videos played continuously. In the \textit{Control} condition participants explicitly clicked to play each video. We held constant the content by presenting 80 manually curated ``funny animal'' videos from YouTube and TikTok in identical sequence. This eliminated algorithmic content curation and personalization as potential confounds. We dedicated the first block of the experiment to measure the differences between planned and realized allocations across conditions.
 
@@ -82,7 +82,7 @@ In a second block of the experiment, we modified the design to elicit demand for
 
 We report three key findings. The first set of results focuses on our preregistered hypotheses regarding  autoplay. We find no evidence that autoplay in isolation increased content consumption. Participants in the \textit{Autoplay} condition watched statistically indistinguishable numbers of videos compared to the \textit{Control} condition. \textit{Autoplay} condition also had no significant effect on the proportion of time spent on either task. These results also hold for other engagement metrics (i.e., average session length, number of sessions).
 
-Second, participants viewed autoplay as beneficial rather than problematic. Contrary to our hypothesis that participants would demand commitment devices against autoplay, we find a positive WTP for the feature. Using data from the second block, we are able to estimate an average WTP of 2.24 pence (about 45 seconds of transcribing) for the 20-minute session. Autoplay is considered as a convenience feature rather than as a threat to self-control, aligning with earlier research \citep{bongard2021definitely,schaffner2025pahi}.
+Second, participants viewed autoplay as beneficial rather than problematic. Contrary to our hypothesis that participants would demand commitment devices against autoplay, we find a positive WTP for the feature. Using data from the second block, we are able to estimate an average WTP of 6.72 pence/hour. Autoplay is considered as a convenience feature rather than as a threat to self-control, aligning with earlier research \citep{bongard2021definitely,schaffner2025pahi}.
 
 Third, participants consumed less content than initially planned. Comparing hypothetical time allocations to realized ones, we find that participants consumed significantly less content than their day 1 plans implied in both conditions. The decrease amounts to 15.8 percentage points (35\%) less time spent on the watching task. This result is driven by 33\% of all participants who had planned to spend up to three quarters of their time watching videos but instead decreased their content consumption on the next day. On the other end, 88\% of those who had initially planned to spend less than a quarter of their time watching videos successfully followed their plans and did not succumb to temptation.
 
@@ -96,7 +96,9 @@ Another major challenge in isolating the effects of autoplay is the role of cont
 
 A final concern in online experiments is ensuring genuine participation equivalent to laboratory conditions. We implemented several measures to address this challenge. We used JavaScript-based attention monitoring to detect each second participants navigated away from the experimental interface following \citep{purohit2023starving}. We also required minimum internet speeds and restricted participation to desktop users with Chromium-based browsers to standardize the user experience. Participants also answered post-experiment survey questions about their engagement while watching videos and about connection interruptions. These controls ensured that our final dataset is composed of participants who were active, and  approximate the controlled conditions of laboratory experiments \citep{arechar2018conducting}.
 
-We contribute to several strands of literature. First, the literature on studying the effects of social media and streaming services on user well-being \citep{nyhan2023like,allcott2022digital,allcott2020welfare, collis2022po, groshek2018p9icsms, walton-pattison2018jhp, braghieri2022aer,bursztyn2023,beknazar2025toxic,purohit2023starving,nyhan2023like,bao2025just}. We contribute to this work by shedding light on one potential driver of the harmful effects of social media and streaming services, the autoplay, in a controlled setting.
+More broadly, our findings highlight a fundamental challenge in studying interface design features from social media and streaming platforms in controlled laboratory settings. Interface elements like autoplay may be inherently difficult to evaluate in isolation: Recent evidence suggests that the power of autoplay may lie in its coupling with recommendation algorithms that serve compelling material tailored to individual preferences \citep{hiniker2018coco,schaffner2025pahi}. Laboratory experiments that hold content constant, as ours necessarily did for experimental control, risk ultimately capturing only part of how these design elements operate in their natural environment.
+
+We contribute to several strands of literature. First, the literature on studying the effects of social media and streaming services on user well-being \citep{nyhan2023like,allcott2022digital,allcott2020welfare, collis2022po, groshek2018p9icsms, walton-pattison2018jhp, braghieri2022aer,bursztyn2023,beknazar2025toxic,purohit2023starving,bao2025just}. We contribute to this work by shedding light on one potential driver of the harmful effects of social media and streaming services, the autoplay, in a controlled setting.
 
 A subset of this literature focuses on the effects of specific interface design elements on user behavior, particularly related to user agency and overconsumption of content \citep{lukoff2021design,bongard2021definitely,schaffner2025pahi,schaffner2023pahia, mathur2021p2cchfcs, lyngs2019p2cchfcs, lyngs2020p2cchfcs, silverman2024, lupianez-villanueva2022, chen2025,hoong2021eer}. To our knowledge, our paper provides the first attempt at isolating the causal effects of autoplay on content consumption.
 
@@ -478,7 +480,7 @@ Does the \textit{Autoplay} condition have an effect on deviations from day 1 tim
 \begin{figure}[H] 
     \caption{Distribution of deviations from day 1 time allocation by condition} 
     \centering 
-    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/deviation_hist.png} 
+    \includegraphics[width=0.6\linewidth]{../stata/figures/deviation_hist.png} 
     \label{f:hist_dev} 
     \begin{tablenotes} 
         \footnotesize 
@@ -490,7 +492,7 @@ Does the \textit{Autoplay} condition have an effect on deviations from day 1 tim
 \subsection{Willingness To Pay for autoplay}
 Contrary to \hyperref[hypotheses]{Hypothesis 3}, participants exhibited positive WTP for autoplay rather than demand for commitment devices against it. We assessed the demand for commitment by comparing the share of participants choosing to turn autoplay on or off along with the associated bonus payments for each of the nine decisions in the price list. To quantify participants' WTP for autoplay, we estimate the regression specification in Equation \ref{eq2}, where the dependent variable is the binary choice of selecting autoplay (1) or turning it off (0), and the independent variable is the bonus amount in pounds from the MPL.
 
-Results are presented in Table \ref{tab:wtp_autoplay}. The coefficient on the bonus amount is 27.97 ($p < 0.001$), indicating that participants are sensitive to the financial cost of keeping autoplay on. The WTP for autoplay is the negative ratio of the constant to the bonus coefficient: $-0.6263/27.9729 = -0.0224$ pounds. On average, participants value autoplay at 2.24 pence and would be willing to forgo this amount to maintain access to the feature rather than have it turned off. Participants in our setting did not appear to perceive a tradeoff from autoplay in increasing video consumption.
+Results are presented in Table \ref{tab:wtp_autoplay}. The coefficient on the bonus amount is 27.97 ($p < 0.001$), indicating that participants are sensitive to the financial cost of keeping autoplay on. The WTP for autoplay is the negative ratio of the constant to the bonus coefficient: $-0.6263/27.9729 = -0.0224$ pounds, or 2.24 pence for the 20-minute session. On average, participants value autoplay at 6.72 pence/hour and would be willing to forgo this amount to maintain access to the feature rather than have it turned off. Participants in our setting did not appear to perceive a tradeoff from autoplay in increasing video consumption.
 
 \begin{table}[H]
 \centering
@@ -526,7 +528,7 @@ Participants allocated more time to transcription than initially planned. On ave
 \begin{figure}[H] 
    \caption{Distribution of planned vs actual time allocation} 
    \centering 
-   \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/dual_typechoice_hist.png} 
+   \includegraphics[width=0.6\linewidth]{../stata/figures/dual_typechoice_hist.png} 
    \label{f:discrepancy} 
    \begin{tablenotes} 
        \footnotesize 
@@ -573,14 +575,14 @@ We identified words related to negative perceptions of the transcription task (e
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/type.png}
+    \includegraphics[width=\linewidth]{../stata/figures/type.png}
     \caption{Typing task negative descriptions}
     \label{f:wordc1}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=.7\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/break.png}
+    \includegraphics[width=.7\linewidth]{../stata/figures/break.png}
     \caption{Changing to watching task}
     \label{f:wordc2}
 \end{subfigure}
@@ -602,14 +604,14 @@ We examine this by analyzing task switching patterns throughout the 20-minute se
 \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \caption{Individual transcribing patterns}
-    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typing_cdf.png}
+    \includegraphics[width=\linewidth]{../stata/figures/typing_cdf.png}
     \label{f:cdf}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \caption{Average transcribing by quartile}
-    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/work_allocation_quartiles.png}
+    \includegraphics[width=\linewidth]{../stata/figures/work_allocation_quartiles.png}
     \label{f:bar_quartile}
 \end{subfigure}
 \begin{tablenotes}
@@ -655,26 +657,23 @@ However, the discontinuity analysis reveals additional complexity. Figure \ref{f
 \begin{figure}[H] 
     \caption{Linear fit for transcribing rate before and after achieving day 1 plan} 
     \centering 
-    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/rd_bin30.png} 
+    \includegraphics[width=0.6\linewidth]{../stata/figures/rd_bin30.png} 
     \label{f:rd_bin30} 
     \begin{tablenotes} 
         \footnotesize 
-        \item[] \textit{Note:} This figure plots the average transcribing rate across 30-second bins for participants as they approach their day 1 goal. The negative slope on the left hand side indicates participants working less and less as they approach the cutoff. The drop showcases the discontinuity where achiving the day 1 goal causes in transcribing behavior. The positive slope on the right hand side reveals another trend: As time goes on, participants tend to go back to the transcribing task and decrease their video consumption. This demonstrates participants' tendency to spend more time on the effortful transcribing task than originally planned.
+        \item[] \textit{Note:} This figure plots the average transcribing rate across 30-second bins for participants as they approach their day 1 goal. The negative slope on the left hand side indicates participants working less and less as they approach the cutoff. The drop showcases the discontinuity where achieving the day 1 goal causes in transcribing behavior. The positive slope on the right hand side reveals another trend: As time goes on, participants tend to go back to the transcribing task and decrease their video consumption. This demonstrates participants' tendency to spend more time on the effortful transcribing task than originally planned.
     \end{tablenotes} 
 \end{figure}
 
-
 \section{Conclusion}\label{Conclusion}
 
-This study examined whether autoplay features in isolation can override users' stated preferences for media consumption. Using a controlled two-day online experiment with 184 participants, we find no evidence that autoplay increases video consumption when content is held constant. Participants viewed autoplay as beneficial rather than problematic, exhibiting positive willingness-to-pay for the feature.
+This study examined whether autoplay features in isolation can override users' stated preferences for media consumption. In a two-day online experiment with 236 participants, we find no evidence that autoplay increases video consumption when content is held constant. Participants in our setting viewed autoplay positively, exhibiting willingness-to-pay for the convenience it provides. However, systematic deviations from stated preferences suggest experimenter demand effects influenced behavior, with participants transcribing more than planned.
 
-However, our null findings appear to be driven by experimenter demand effects rather than a genuine absence of autoplay's influence. Participants systematically transcribed more than they initially planned, with qualitative evidence revealing they perceived the experiment as a work environment. This interpretation is supported by regression discontinuity analysis showing that participants reduced transcription effort immediately after achieving their day 1 plans, but quickly resumed transcribing.
+Our null findings reveal a fundamental challenge in studying social media interface features: they are hard to evaluate in isolation from their embedded context. Autoplay's effectiveness appears to depend on the personalized, engaging content it delivers. Users are not drawn to endless streams of educational documentaries, but to drama, gossip, and emotionally compelling material that algorithms curate personally for them. In our controlled setting with identical and manually curated videos, we may have stripped away the very element that makes autoplay change behavior: its coupling with personalized, addictive content.
 
-These findings have important implications for research on interface design and digital well-being. First, they highlight the challenge of creating ecologically valid experimental environments that capture real-world media consumption behaviors. The monetary incentives and task framing that are necessary for controlled experimentation may inadvertently create demand effects that mask the very phenomena researchers seek to study.
+These findings have important implications for research on interface design and digital well-being. Laboratory studies like ours that attempt to isolate the behavioral effects of interface features may misrepresent their real-world impacts. The monetary incentives and task framing necessary for internal validity may inadvertently create demand effects that confound the very phenomena researchers seek to study. While autoplay shows no effect in our experimental setting, it seems to have stronger impacts in leisure contexts \citep{hiniker2018coco,schaffner2025pahi}.
 
-Second, our results suggest that the effects of interface design elements like autoplay may be highly context-dependent. While autoplay shows no effect in our work-like experimental setting, it may have stronger impacts in leisure contexts where users are not constrained by productivity concerns or experimenter expectations.
-
-For policymakers considering regulations on autoplay features, our findings suggest caution in drawing strong conclusions from any single experimental study. The effectiveness of interface interventions likely depends critically on the broader context in which users encounter them. Future research should prioritize developing experimental methods that better approximate genuine media consumption environments while maintaining the control necessary for causal inference.
+For policymakers considering regulations on autoplay features, our findings suggest that regulating interface features alone may be insufficient if the underlying content and algorithmic curation remain unchanged. Effective digital well-being interventions may need to address the entire ecosystem of personalized, engaging content delivery rather than focusing solely on individual design elements. Future research should prioritize developing experimental methods that better approximate genuine media consumption environments in the field (see e.g., \citet{beknazar2025toxic,purohit2023starving}) while maintaining the control necessary for causal inference.
 
 \bibliographystyle{apacite}
 \bibliography{ref} 
