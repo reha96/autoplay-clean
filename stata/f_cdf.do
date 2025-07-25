@@ -58,9 +58,9 @@ bysort participant_id: egen final_work = max(cumulative_work)
 gen work_rate = final_work / max_second
 
 * Create color categories
-gen color_category = 1 if work_rate < 0.2
-replace color_category = 2 if work_rate >= 0.2 & work_rate <= 0.8
-replace color_category = 3 if work_rate > 0.8
+gen color_category = 1 if work_rate < 0.25
+replace color_category = 2 if work_rate >= 0.25 & work_rate <= 0.75
+replace color_category = 3 if work_rate > 0.75
 
 xtile type3 = work_rate, nq(3)
 tab type3 color_category
@@ -88,12 +88,12 @@ foreach pid of local participants {
 }
 
 twoway `lineplot', ///
-    title("Typing patterns") ///
+    title("Task switching patterns") ///
     xtitle("Total time (seconds)") ///
-    ytitle("Typing (seconds)") ///
+    ytitle("Transcribe (seconds)") ///
 	xlabel(0(200)1200, gmax grid) ///
     ylabel(0(200)1200, gmax angle(0)) ///
-    legend(ring(0) pos(10) rows(3) region(lcolor(none)) order(1 "Mostly type" 2 "Alternate" 5 "Mostly watch")) $graph_opts xsize(10) ysize(10)
+    legend(ring(0) pos(10) rows(3) region(lcolor(none)) order(1 "Transcribe (> 75%)" 2 "Alternate" 5 "Transcribe (< 25%)")) $graph_opts xsize(10) ysize(10)
 	graph export "${fpath}typing_cdf.png", replace
 
 	
@@ -157,3 +157,4 @@ graph bar work_in_period1 work_in_period2 work_in_period3 work_in_period4, ///
            pos(10) rows(4) ring(0) region(lcolor(none))) $graph_opts xsize(10) ysize(10) ///
    
 graph export "${fpath}work_allocation_quartiles.png", replace
+

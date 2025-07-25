@@ -160,6 +160,63 @@ Beknazar-Yuzbashev, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bhatia%
+, Crawford%
+, McDonald%
+, Moreno%
+\BCBL {}\ \BBA {} Read%
+}{%
+Bhatia%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+bhatia2021}
+\APACinsertmetastar {%
+bhatia2021}%
+\begin{APACrefauthors}%
+Bhatia, S.%
+, Crawford, M\BPBI M.%
+, McDonald, R\BPBI L.%
+, Moreno, M\BPBI A.%
+\BCBL {}\ \BBA {} Read, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {Inconsistent {{Planning}} and the {{Allocation}} of {{Tasks Over Time}}} {Inconsistent {{Planning}} and the {{Allocation}} of {{Tasks Over Time}}}\ \APACbVolEdTR {}{{{OSF Preprints}}\ \BNUM\ b4mg7}.
+\newblock
+\APACaddressInstitution{}{Center for Open Science}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bonein%
+\ \BBA {} {Denant-Bo{\`e}mont}%
+}{%
+Bonein%
+\ \BBA {} {Denant-Bo{\`e}mont}%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+bonein2015ee}
+\APACinsertmetastar {%
+bonein2015ee}%
+\begin{APACrefauthors}%
+Bonein, A.%
+\BCBT {}\ \BBA {} {Denant-Bo{\`e}mont}, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Self-Control, Commitment and Peer Pressure: A Laboratory Experiment} {Self-control, commitment and peer pressure: A laboratory experiment}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Experimental Economics}{18}{4}{543--568}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s10683-014-9419-7} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Bongard-Blanchy%
 \ \protect \BOthers {.}}{%
 Bongard-Blanchy%
@@ -432,6 +489,36 @@ Hoong, R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Houser%
+, Schunk%
+, Winter%
+\BCBL {}\ \BBA {} Xiao%
+}{%
+Houser%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+houser2018gaeb}
+\APACinsertmetastar {%
+houser2018gaeb}%
+\begin{APACrefauthors}%
+Houser, D.%
+, Schunk, D.%
+, Winter, J.%
+\BCBL {}\ \BBA {} Xiao, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Temptation and Commitment in the Laboratory} {Temptation and commitment in the laboratory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Games and Economic Behavior}{107}{}{329--344}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.geb.2017.10.025} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kleinberg%
 , Mullainathan%
 \BCBL {}\ \BBA {} Raghavan%
@@ -455,6 +542,31 @@ Kleinberg, J.%
 {\BBOQ}\APACrefatitle {The challenge of understanding what users want: Inconsistent preferences and engagement optimization} {The challenge of understanding what users want: Inconsistent preferences and engagement optimization}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint arXiv:2202.11776}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kool%
+\ \BBA {} Botvinick%
+}{%
+Kool%
+\ \BBA {} Botvinick%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+kool2014labor}
+\APACinsertmetastar {%
+kool2014labor}%
+\begin{APACrefauthors}%
+Kool, W.%
+\BCBT {}\ \BBA {} Botvinick, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A labor/leisure tradeoff in cognitive control} {A labor/leisure tradeoff in cognitive control}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of experimental psychology. General}{143}{1}{131}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

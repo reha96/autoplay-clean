@@ -63,152 +63,53 @@
 
 \maketitle
 
-% \exercise
-% The exercises are automatically numbered, starting from one. Packages such as \texttt{amsmath} and \texttt{hyperref} are included by default.
-
-% Paragraphs are not indented, but are instead separated by some vertical space.
-
-% As an example: the \emph{standard inner product} on $\R^n$ is defined as
-% \[\vec a * \vec b \coloneqq x_1 y_1 + \dots + x_n y_n\qquad\text{for }\vec a,\vec b \in \R^n.\]
-% Note that \texttt{*} can be used instead of \verb|\cdot|, and \verb|\R| instead of \verb|\mathbb{R}|. (For a normal asterisk, use \verb|\ast|.) Of course, there are macros for the natural numbers etc.\ too. Commands such as \verb|\abs{}| and \verb|\Set{}| can be used to easily create (scaled) delimiters. For example,
-% \[\abs{\frac{1}{1 - \lambda h}} \le 1\qquad\text{and}\qquad\Set{ x \in \R \mid 1 < \sqrt{x^3 + 2} < \frac{3}{2} }.\]
-% The starred version of these commands disables the auto-scaling.
-
-% \exercise*
-% Each exercise (except the first) starts on a new page. You can disable this behavior using the starred version of the command.
-
-% \exercise[10]
-% Optionally, you can specify the number of points for an exercise.
-
-% For more information, refer to \url{https://github.com/gijs-pennings/latex-homework}.
-
-% give the current design with all the details
 
 \section*{Abstract}
-% Interface design can be instrumentalized to `nudge' consumers and is suspected to promote addictive online behavior. One prevalent interface element is the default autoplay feature present across the most popular social media and streaming platforms. We present an online experiment to test whether autoplay feature alone could cause an unwarranted increase in desired viewing times. Controlling for the content, we show that autoplay feature alone does not override participants’ previously indicated preferences for media consumption. We discuss the relevancy of our findings on what actually makes online platforms `addictive'. Our results have direct policy implications for the proposed blanket ban on autoplay by US Congress (SMART Act).
 
-Interface design can be strategically employed to `nudge' consumers to take certain actions and is suspected of promoting addictive online behavior. A prevalent interface element across numerous popular social media and streaming platforms is the default autoplay feature. In this study, we present an incentivized online experiment to investigate whether the autoplay feature alone can cause an unwarranted increase in  desired viewing times. While controlling for content, we demonstrate that the autoplay feature, in isolation, does not override participants’ previously indicated preferences for media consumption. We discuss the our findings in terms of what actually renders online platforms addictive. Our results have direct policy implications for the proposed blanket ban on autoplay by the US Congress (SMART Act).
+Interface design can `nudge' consumers to take certain actions and is suspected of promoting addictive online behavior. A prevalent interface element across popular social media and streaming platforms is the default autoplay feature. We present an incentivized two-day online experiment to investigate whether the autoplay feature alone can cause an increase in undesired video consumption. We recruited 184 participants who allocated time between transcription tasks and watching funny animal videos, randomly assigning them to either autoplay or click-to-play video conditions while holding content constant. We find that the autoplay feature, in isolation, does not override participants' previously indicated preferences for media consumption. Participants exhibited positive willingness-to-pay for autoplay (2.24 pence on average), viewing it as a convenience feature rather than a self-control problem. However, experimenter demand effects have hampered with the intended autoplay manipulation. These findings highlight the importance of ecological validity in studying interface design effects on user behavior.
 
 \section{Introduction}
 
-Autoplay is a user interface feature which automatically transitions users to new video content without any action. It has become a familiar design element in major social media and streaming platforms over the last decade,\footnote{As of 2025 these platforms include Facebook, Instagram, Netflix, YouTube, TikTok, and Twitter (currently X). Twitter first introduced autoplay in 2015, and described it as a means to reduce ``extra effort'' in the number of clicks/taps required to consume content: \url{https://blog.x.com/official/en_us/a/2015/introducing-a-more-seamless-video-experience-with-autoplay.html}.} and has been described as a default nudge that reduces the autonomy of users \citep{lukoff2021design,schaffner2025pahi} Autoplay's widespread adoption and concerns about its restricting the freedom of choice has also attracted regulatory scrutiny, with the U.S. SMART Act proposing to ban platforms from serving autoplay content ``without an express, separate prompt by the user'' due to suspicions of its contribution to addictive online behavior.\footnote{SMART Act of 2019, S. 2314, 116th Congress: \url{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text}}
+Autoplay is a user interface feature which automatically transitions users to new video content without any action. It has become a familiar design element in major social media and streaming platforms over the last decade,\footnote{As of 2025 these platforms include Facebook, Instagram, Netflix, YouTube, TikTok, and Twitter (currently X). Twitter \href{https://blog.x.com/official/en_us/a/2015/introducing-a-more-seamless-video-experience-with-autoplay.html}{first introduced} autoplay in 2015, and described it as a means to reduce ``extra effort'' in the number of clicks/taps required to consume content.} and has been described as a default nudge that reduces the autonomy of users \citep{lukoff2021design,schaffner2025pahi}. Autoplay's widespread adoption and concerns about its restricting the freedom of choice has also attracted regulatory scrutiny, with the U.S. SMART Act proposing to ban platforms from serving autoplay content ``without an express, separate prompt by the user'' due to suspicions of its contribution to addictive online behavior.\footnote{\href{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text}{SMART Act of 2019}, S. 2314, 116th Congress.}
 
-While autoplay is pervasive and tends increase viewing times \citep{chen2025,hiniker2018coco,schaffner2025pahi}, its impact on user welfare and the mechanisms driving this effect are not well understood. Does the increase in consumption go against users' wishes, or does it merely remove frictions to help them achieve their desired consumption levels? Can we attribute the increase in consumption to autoplay in isolation, or does it also depend on the supply of content? One reason for these gaps is the challenge of holding constant the video content displayed to users while eliciting their preferences related to content consumption before the actual consumption occurs.
+While autoplay is pervasive and tends to increase viewing times \citep{chen2025,hiniker2018coco,schaffner2025pahi}, its impact on user welfare and the mechanisms driving this effect are not well understood. Does the increase in consumption go against users' wishes, or does it merely remove frictions to help them achieve their desired consumption levels? Can we attribute the increase in consumption to autoplay in isolation, or does it also depend on the supply of content? One reason for these gaps is the challenge of holding constant the video content displayed to users while eliciting their preferences related to content consumption before the actual consumption occurs.
 
-% Both answers matter for policy: if autoplay merely facilitates desired consumption rather than creating unwanted overconsumption, or has no effects on consumption in the absence of algorithmically curated content, then a blanket interface-level ban against autoplay may be misguided and instead reduce user welfare without addressing genuine self-control problems. 
-% The rise of social media and streaming platforms have generated discussion around potential societal benefits and concerns about harms such as addiction and self-control issues. A number of recent economic studies have found convincing evidence that people spend significantly more time than they would like to on their smartphones in general \citep{hoong2021self} and on social media \citep{allcott2022digital}, and social media use was associated with decreased subjective well being \citep{allcott2020welfare}. The reason behind such findings need not be elusive. Online content serving platforms, like Facebook or Netflix, monetize consumer attention and have the ability to control the setting in which consumption decisions occur (e.g., format of information, presentation of choices). Such firms are potentially incentivized to increase the `addictiveness' of their platforms by altering the content and design provided to users, as occupying more of consumers' free time can lead to higher revenues \citep{ichihashi2023addictive, kleinberg2022challenge}. Designing for addiction, in turn, would lead to increased content consumption but decreased utility from consumption, as implied by the extensive literature on present bias (see \citet{ericson2019intertemporal} for a review). Wary policymakers across both sides of the Atlantic have already made efforts to restrain the negative effects such incentives could have on consumer welfare (see \url{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text} by US Congress and \hyperlink{https://digital-strategy.ec.europa.eu/en/policies/digital-services-act-package}{Digital Services Act} by EU). Both acts are attempts to regulate the increasingly relevant digital environments which contain effective ways to solicit consumers' attention and influence them to make transactional decisions that may go against their best interests \citep{lupianez2022behavioural}. Although both regulators and scientists alike successfully identify the problem, it remains to be seen what specific aspects of such online platforms are problematic, as a blanket regulation over the entire landscape of digital services could offset the many benefits users derive from them. Our study constitutes the first such attempt to our knowledge in disentangling the many interrelated features online platforms have and pinpoints to what specifically requires the attention of the regulators. Relevant to our experimental setting is the proposed ban on defaults regarding media player controls, where the platform serves content ``without an express, separate prompt by the user (such as pushing a button or clicking an icon)''. 
+We overcome this challenge in an incentivized two-day online experiment designed to isolate the causal effect of autoplay on content consumption. We recruited 184 participants who twice allocated 1200 seconds (20 minutes) between two tasks. The tasks involved seconds of transcription of random character sequences texts at 0.15 pence/second, and seconds of watching funny animal videos at 0.1 pence/second. On the first day, participants got familiar with tasks and made hypothetical allocations using the strategy method. On the following day, participants realized their time allocation decision without constraints. This two-day structure with hypothetical and realized choices formed the foundation for testing our preregistered hypotheses regarding autoplay.
 
+To isolate the causal effect of autoplay on these allocation decisions, we randomly assigned participants to either the \textit{Autoplay} or \textit{Control} condition. In the \textit{Autoplay} condition watching task videos played continuously. In the \textit{Control} condition participants explicitly clicked to play each video. We held constant the content by presenting 80 manually curated ``funny animal'' videos from YouTube and TikTok in identical sequence. This eliminated algorithmic content curation and personalization as potential confounds. We dedicated the first block of the experiment to measure the differences between planned and realized allocations across conditions.
 
-We overcome this challenge in an incentivized two-day online experiment designed to isolate the causal effect of autoplay on content consumption. We recruited 184 participants who twice allocated 1200 seconds (20 minutes) between two tasks. Allocations were first made hypothetically using the strategy method, one day before the work date, and then realized on the work date. The tasks involved seconds of transcription of meaningless CAPTCHA texts at 0.38 pence/second, and seconds of watching funny animal videos at 0.33 pence/second. On the first day, participants familiarized themselves with both tasks in a practice session and made their preferred time allocation for the next day. We incentivized these allocations by randomly implementing 5\% of their choices on the work date. On the next day, remaining participants allocated their time without constraints. Differences between planned and realized allocations allowed for the measurement of dynamic inconsistency, standard in intertemporal choice experiments \citep{ericson2018}. This two-day structure with hypothetical and realized choices formed the foundation for testing our preregistered hypotheses regarding autoplay.
+In a second block of the experiment, we modified the design to elicit demand for a commitment device. We recruited 52 additional participants who made nine binary choices: they could either keep their preferred autoplay setting (on or off) or switch to the opposite setting in exchange for bonus payments ranging from £0.05 to £0.50. We implemented one of these decisions at random, determining both the autoplay setting for the next day and the associated bonus payment. This allowed us to measure participants' Willingness To Pay (WTP) for autoplay in advance, providing insight into whether participants viewed the feature as beneficial (positive WTP) or as a self-control problem requiring a commitment device (negative WTP).
 
-To isolate the causal effect of autoplay on these allocation decisions, we randomly assigned participants to either the \textbf{Autoplay} condition where videos played continuously during the watching task or to the \textbf{Control} condition requiring manual clicks to play each video. Across conditions, we held constant the content by presenting 80 manually curated ``funny animal'' videos from YouTube and TikTok in identical sequence. This eliminated algorithmic content curation and personalization as potential confounds. We dedicated the first block of the experiment to measure the differences between planned and realized allocations across conditions.
+We report three key findings. The first set of results focuses on our preregistered hypotheses regarding  autoplay. We find no evidence that autoplay in isolation increased content consumption. Participants in the \textit{Autoplay} condition watched statistically indistinguishable numbers of videos compared to the \textit{Control} condition. \textit{Autoplay} condition also had no significant effect on the proportion of time spent on either task. These results also hold for other engagement metrics (i.e., average session length, number of sessions).
 
-In a second block of the experiment, we modified the design to elicit demand for a commitment device. The commitment allowed participants to probabilistically favor their autoplay preference during 20 minutes on the main session. We recruited 52 additional participants who made nine binary choices between the autoplay setting (on or off) for the 20-minute main session and receiving bonus payments ranging from £0.05 to £0.50. One decision was randomly selected for implementation, determining both the autoplay setting for the main session and the associated bonus payment. This allowed us to measure participants' Willingness To Pay (WTP) for autoplay in advance, providing insight into whether participants viewed the feature as beneficial (positive WTP) or as a self-control problem requiring a commitment device (negative WTP).
+Second, participants viewed autoplay as beneficial rather than problematic. Contrary to our hypothesis that participants would demand commitment devices against autoplay, we find a positive WTP for the feature. Using data from the second block, we are able to estimate an average WTP of 2.24 pence (about 45 seconds of transcribing) for the 20-minute session. Autoplay is considered as a convenience feature rather than as a threat to self-control, aligning with earlier research \citep{bongard2021definitely,schaffner2025pahi}.
 
-We proceed with reporting our main findings. The first set of results focuses on our preregistered hypotheses regarding the increase in content consumption that we attribute to autoplay. In the main session, participants in the \textbf{Autoplay} condition watched statistically indistinguishable numbers of videos compared to the \textbf{Control} condition, and the \textbf{Autoplay} condition had no significant effect on the proportion of time spent on either task. Results also hold for other engagement metrics (i.e., average session length, number of sessions). To sum, we find no evidence that autoplay alone increased content consumption in our setting.
+Third, participants consumed less content than initially planned. Comparing hypothetical time allocations to realized ones, we find that participants consumed significantly less content than their day 1 plans implied in both conditions. The decrease amounts to 15.8 percentage points (35\%) less time spent on the watching task. This result is driven by 33\% of all participants who had planned to spend up to three quarters of their time watching videos but instead decreased their content consumption on the next day. On the other end, 88\% of those who had initially planned to spend less than a quarter of their time watching videos successfully followed their plans and did not succumb to temptation.
 
-Second, contrary to our hypothesis that participants would demand commitment devices against autoplay, we find a positive WTP for the feature. Using data from the second block, we are able to estimate an average WTP of 2.24 pence (about 45 seconds of typing) per 20-minute session. This implies participants viewed autoplay as a convenience feature rather than as a threat to their self-control which would have required a costly commitment device.
+Evidence from a regression discontinuity analysis shows that participants monitored their day 1 plans despite ultimately exceeding them. When participants reached their planned transcribing duration, they immediately reduced transcribing probability by 25.5 percentage points in the next 60-second window. However, this effect dissipated quickly and became statistically insignificant within 90 seconds as participants resumed transcribing. 
 
-Third, comparing hypothetical time allocations to realized ones, we find that participants consumed significantly less content than their day 1 plans implied in both conditions. The decrease amounts to 15.8 percentage points (35\%) less time spent on the watching task with day 1 plans as the baseline. This result is driven by 33\% of all participants who had planned to spend up to three quarters of their time watching videos but instead decreased their content consumption on the next day. On the other end, 88\% of those who had initially planned to spend less than a quarter of their time watching videos successfully followed their plans and did not succumb to temptation.
+Taken together, these findings cast doubt on whether the watching task was actually perceived as tempting. A mixed-methods analysis of open-ended responses reveals that participants perceived the experimental environment as a work setting rather than a choice between independent tasks. While 29\% spontaneously described transcribing using negative terms, another 23\% characterized video-watching as ``taking breaks'' from work. This suggests that experimenter demand effects may have interfered with the intended effects of the autoplay manipulation, with implications for both the interpretation of our null results and the broader generalizability of our study.
 
-Evidence from a regression discontinuity analysis supports that participants monitored their day 1 plans despite ultimately exceeding them. When participants reached their planned typing duration, they immediately reduced typing probability by 25.5 percentage points in the next 60-second window. However, this effect dissipated quickly, becoming insignificant within 90 seconds, as participants returned to the typing task once again. 
+A primary internal validity concern is that experimenter demand effects favored allocating more time to the transcribing task than planned. These can emerge through contextual cues even without explicit behavioral instructions, as participants interpret the unfamiliar experimental environment by drawing inferences from the information provided. They may alter behavior simply by having attention drawn to variables of interest \citep{zizzo2010ee}. In our experiment, these could be (i) the small earnings difference favoring the transcribing task,\footnote{This difference is 60 pence over 20 minutes, equivalent to a 1.8 pound hourly wage difference (15\% above our 12 pound minimum wage baseline).} (ii) multiple mentions of the quality criteria for the transcribing task to receive earnings, (iii) placement of the transcribing task as the first activity upon starting a session. Alternative designs could have addressed these concerns by rewarding balanced time allocations more, or by eliminating earning differences altogether.
 
-Taken together, these findings cast doubt on whether the watching task was actually perceived as tempting. A mixed-method analysis of open-ended responses reveals that participants perceived the experimental environment as a work setting rather than a choice between independent tasks. While 29\% spontaneously described typing using negative terms, another 23\% characterized video-watching as ``taking breaks'' from work. This suggests that experimenter demand effects may have interfered with the intended effects of the autoplay manipulation, with implications for both the interpretation of our null results and the broader generalizability of our study.
-
-A primary internal validity concern is that experimenter demand effects favored allocating more time on the typing task than planned. These can emerge through contextual cues even without explicit behavioral instructions, as participants interpret the unfamiliar experimental environment by drawing inferences from the information provided, and may alter their behavior simply by having attention drawn to variables of interest \citep{zizzo2010ee}. In our experiment, these could be (i) the small earnings difference favoring the typing task,\footnote{This difference is 60 pence over 20 minutes, equivalent to a 1.8 pound hourly wage difference (15\% above our 12 pound minimum wage baseline).} (ii) multiple mentions of the quality criteria for the typing task to receive earnings, (iii) placement of the typing task as the first activity upon starting a session. Alternative designs could have addressed these concerns by rewarding balanced time allocations more, or by eliminating earning differences altogether.
-
-Another major challenge in isolating the effects of autoplay is the role of content appeal. Higher content appeal would make the watching task more tempting, and create a stronger tradeoff between the two tasks. To adress this while keeping the content identical across conditions, we conducted pretests from the same participant pool where the funny animal videos came out as the modal theme. In addition, participants rated the curated videos positively (median 7/10) in the post experiment survey. Regardless, the watching task lacked what participants could afford in terms of leisure - they could work harder for maximum earnings and wait 20 minutes to access personalized content privately. Allowing participants to select among a list of themes with manually curated videos could have adressed this issue \citep{ek2023too}.
+Another major challenge in isolating the effects of autoplay is the role of content appeal. Higher content appeal would make the watching task more tempting, and create a stronger tradeoff between the two tasks. To address this while keeping the content identical across conditions, we conducted pretests from the same participant pool where the funny animal videos came out as the most popular theme. Participants also rated the curated videos positively (median 7/10) in a post experiment survey. Regardless, the watching task content may not have been sufficiently appealing. Allowing participants to select among a list of themes with manually curated videos could have addressed this issue \citep{ek2023too}.
 
 A final concern in online experiments is ensuring genuine participation equivalent to laboratory conditions. We implemented several measures to address this challenge. We used JavaScript-based attention monitoring to detect each second participants navigated away from the experimental interface following \citep{purohit2023starving}. We also required minimum internet speeds and restricted participation to desktop users with Chromium-based browsers to standardize the user experience. Participants also answered post-experiment survey questions about their engagement while watching videos and about connection interruptions. These controls ensured that our final dataset is composed of participants who were active, and  approximate the controlled conditions of laboratory experiments \citep{arechar2018conducting}.
 
+We contribute to several strands of literature. First, the literature on studying the effects of social media and streaming services on user well-being \citep{nyhan2023like,allcott2022digital,allcott2020welfare, collis2022po, groshek2018p9icsms, walton-pattison2018jhp, braghieri2022aer,bursztyn2023,beknazar2025toxic,purohit2023starving,nyhan2023like,bao2025just}. We contribute to this work by shedding light on one potential driver of the harmful effects of social media and streaming services, the autoplay, in a controlled setting.
 
+A subset of this literature focuses on the effects of specific interface design elements on user behavior, particularly related to user agency and overconsumption of content \citep{lukoff2021design,bongard2021definitely,schaffner2025pahi,schaffner2023pahia, mathur2021p2cchfcs, lyngs2019p2cchfcs, lyngs2020p2cchfcs, silverman2024, lupianez-villanueva2022, chen2025,hoong2021eer}. To our knowledge, our paper provides the first attempt at isolating the causal effects of autoplay on content consumption.
 
+Methodologically, this paper contributes to the literature on laboratory experiments that observe behavior in real time while participants trade cognitive effort with leisure \citep{kool2014labor,bhatia2021,ek2023too,bonein2015ee,houser2018gaeb}. We also add to a burgeoning literature manipulating design elements within the user interface to reduce overconsumption of content \citep{hiniker2018coco,lyngs2020p2cchfcs,purohit2023starving,schaffner2025pahi}.
 
-% This finding characterizes autoplay in isolation as a interface default that facilitates desired content consumption instead of a threat to autonomy.
+The remainder of this paper is organized as follows. Section \ref{Design} describes the experimental design. Section \ref{SandP} details the experimental sample and procedures. Section \ref{Results} presents our results and Section \ref{Conclusion} concludes.
 
-% We find no evidence that autoplay increases video consumption in our setting. Participants in both conditions watched similar numbers of videos and spent comparable amount of time tasks during the main session. Participants also had a positive WTP for having autoplay enabled, amounting to 45 seconds of typing task, or 2.24 pence. While day 1 plans of time allocation between tasks were identical between conditions, participants spent a significant 35\% more time on the effortful typing task than they had planned regardless of the conditions. This finding is driven by a third of our sample who had planned to spend up to three quarters of their time watching videos but instead decreased their content consumption on the next day. Second by second logs support this finding: Participants significantly reduced typing around the time window when they accomplished their day 1 plans, but eventually switched back to the typing task after some time. On the other end, 88\% of those who had initially planned to spend less than a quarter of their time watching videos successfully followed their plans and did not succumb to temptation. Analyzing free text input from participants revealed that while the typing task was unanimously connotated with negative emotions, video-watching task was perceived as ``taking breaks'' from the typing task. These help us conclude that participant perceptions of the decision-making environment altered their time allocation between the two tasks and confounded our findings regarding video watching behavior.
-
-% The theoretical mechanism through which autoplay might increase consumption draws on models of dual-system decision-making \citep{kleinberg2022challenge}. In this framework, consumption continues as long as the impulsive System 1 derives positive utility, with the reflective System 2 only able to intervene during natural breaks between content. Autoplay removes these decision points, preventing System 2 from regaining control and potentially trapping users in extended viewing sessions. Crucially, the success of the mechanism depends on content characteristics: if the content lacks sufficient appeal or ``stickiness,'' System 1 receives negative utility and consumption stops regardless of autoplay. Our curated animal videos—while rated positively by participants (median 7/10)—may not have provided the personalized, algorithmically-optimized engagement found on actual platforms. This raises a fundamental question about policy interventions: if autoplay's effects depend critically on content characteristics, can interface-level regulations effectively address overconsumption without considering the broader ecosystem of recommendation algorithms, social features, and content curation?    
-
-% Our experimental design addresses a key challenge in studying effects of user interfaces and separates the impact of design features from content characteristics. Previous studies either allow participants to choose their preferred content, conflating content preferences with interface effects, or conduct field experiments where users can easily circumvent restrictions by switching devices. We created a controlled environment where all participants viewed the same curated sequence of 80 short animal videos from YouTube and TikTok, eliminating algorithmic personalization and content variation. Participants faced real opportunity costs, earning 0.38 pence per second for typing tasks versus 0.33 pence per second for watching videos. This payment structure, combined with a cognitively demanding typing task (retyping distorted CAPTCHAs), ensured that time allocation decisions involved meaningful trade-offs between effort and entertainment.
-
-% Our study makes several contributions to understanding interface design effects on user behavior. First, we provide the cleanest test to date of autoplay's isolated impact by holding content constant across conditions—addressing a critical confound in prior work where treatment effects could stem from differences in either interface design or content exposure. Second, we document an important methodological insight: experimenter demand effects can reverse expected behavior in online experiments like ours. Participants viewed our experimental environment as a workplace setting where they should maximize productivity, leading them to type more than planned rather than giving in to tempting videos. This finding suggests that laboratory studies of digital ``addiction'' may systematically underestimate real-world effects when the experimental context signals that effort is valued. Third, our multiple price list treatment reveals that users have positive willingness to pay for autoplay, averaging 2.24 pence for a 20-minute session. This preference for autoplay as a convenience feature contradicts its characterization as a manipulative dark pattern that users would pay to avoid.
-
-% We contribute to several strands of literature. First, the literature on effects of social media and streaming services on well-being \citep{allcott2022digital,allcott2020welfare, collis2022po, groshek2018p9icsms, walton-pattison2018jhp, braghieri2022aer,bursztyn2023,beknazar2025toxic,purohit2023starving,nyhan2023like}, and user agency \citep{lukoff2021design,bongard2021definitely,schaffner2025pahi,schaffner2023pahia, kleinberg2022challenge, mathur2021p2cchfcs, ichihashi2023addictive,chen2025, lyngs2019p2cchfcs, lyngs2020p2cchfcs, silverman2024, collis2019, hoong2021eer, lupianez-villanueva2022, bao2025just}. We contribute to this work by shedding light on one a potential driver of the harmful effects of social media and streaming services: the autoplay.
-
-We contribute to several strands of literature. First, the literature on studying the effects of social media and streaming services on user well-being \citep{allcott2022digital,allcott2020welfare, collis2022po, groshek2018p9icsms, walton-pattison2018jhp, braghieri2022aer,bursztyn2023,beknazar2025toxic,purohit2023starving,nyhan2023like,bao2025just}. We contribute to this work by shedding light on one potential driver of the harmful effects of social media and streaming services: the autoplay.
-
-A subset of this literature focuses on the effects of specific interface design elements on user behavior, particularly related to user agency and overconsumption of content \citep{lukoff2021design,bongard2021definitely,schaffner2025pahi,schaffner2023pahia, mathur2021p2cchfcs, lyngs2019p2cchfcs, lyngs2020p2cchfcs, silverman2024, lupianez-villanueva2022, chen2025,hoong2021eer}. To our knowledge, our paper provides the first attempt isolating the causal effects of autoplay on content consumption.
-
-Methodologically, this paper contributes to the literature by introducing an experimental platform that directly records participant behavior and manipulates interface in an online setting. Similar approaches using browser extensions XX 
-
-% We contribute to several strands of literature examining digital consumption and self-control. Our null findings contrast with observational studies documenting excessive social media use and associated welfare losses \citep{allcott2020welfare, allcott2022digital}, suggesting that interface features alone may not drive these patterns. We extend the experimental literature on digital interventions in two important ways. Unlike field experiments that find large effects of usage restrictions \citep{beknazar2025toxic}, we can rule out substitution to other devices or platforms as an explanation for our results. Our design also improves upon laboratory studies that allow content choice \citep{ek2023too}, which cannot distinguish whether effects stem from interfaces or from participants selecting more engaging content when barriers are lower. By holding content fixed, we show that when content lacks the ``stickiness'' of personalized feeds, autoplay has minimal impact—supporting theoretical models where interface effects depend critically on content characteristics \citep{kleinberg2022challenge}. Our findings align more closely with the literature on benevolent defaults \citep{carroll2009optimal}, where reducing decision costs improves user experience without distorting choices, than with concerns about manipulative design patterns that override user preferences.
-
-% Recent theoretical and empirical work has established that digital platforms can systematically exploit psychological vulnerabilities to increase user engagement. \citet{allcott2022digital} develop an economic model of digital addiction and find that self-control problems account for 31\% of social media use, with temporary incentives to reduce usage having persistent effects that suggest habit formation. This aligns with \citet{ichihashi2023addictive}, who show that platforms strategically choose service ``addictiveness''—features that yield lower overall utility but higher marginal utility of continued attention—especially when competing for scarce user attention. As \citet{loewenstein2023economics} argue, attention has become a primary factor of production in the digital economy, making its capture economically valuable even when socially harmful. These models build on established evidence that individuals exhibit present-focused preferences in intertemporal choices \citep{ericson2019intertemporal}, suggesting mechanisms like autoplay could trap users by exploiting the gap between immediate impulses and long-term preferences. Our experiment tests this specific mechanism in isolation, finding that autoplay alone fails to increase consumption when content lacks the algorithmic personalization and social features that make platforms genuinely ``sticky.'' This null result suggests that while the theoretical models correctly identify vulnerability to digital addiction, the binding constraint may be engaging content rather than interface frictions.
-
-% Our two-day design, with participants stating preferences 24 hours before implementation, builds on a rich literature examining planning and self-control in laboratory settings. The experimental evidence on inconsistent planning presents a puzzle for standard models. \citet{bhatia2021} find that when allocating time between work and leisure tasks in a laboratory setting, participants tend to plan improving sequences (delaying gratification) and prefer commitment devices, yet few actually deviate from their plans when given flexibility—and those who do tend to postpone leisure further rather than succumb to temptation. This contrasts sharply with field evidence of present bias and suggests that laboratory contexts may fundamentally alter behavior. \citet{bonein2015self} demonstrate that self-control in experimental settings is influenced by social considerations: participants who commit to effortful tasks in the presence of peers maintain higher performance, suggesting that perceived social pressure can substitute for commitment devices. Our results extend these findings in an unexpected direction. Not only did participants fail to succumb to video temptation as models of present bias would predict, they systematically exceeded their planned typing time by 16 percentage points. This ``reverse present bias'' reveals how strongly experimental framing shapes behavior: participants interpreted our online laboratory as a workplace where effort signals virtue, overwhelming any temptation from our leisure task.
-
-% The question of whether interface features like autoplay represent benevolent choice architecture or manipulative ``dark patterns'' depends critically on alignment between designer and user interests. Traditional nudging, as conceptualized by \citet{thaler2009nudge}, aims to help people make better decisions for themselves while preserving freedom of choice. When applied by private firms, however, nudges may prioritize corporate rather than consumer welfare. \citet{mills2020bpp} reintroduces the concept of ``sludge''—frictions that make desirable behaviors harder—and argues that nudges and sludges exist symmetrically: reducing friction for one option necessarily increases relative friction for alternatives. Digital interfaces exemplify this tension. \citet{caraban201923} identify 23 distinct nudging mechanisms in technology design, many of which can serve either user goals or platform profits. The evidence on autoplay specifically reveals this duality. While \citet{lukoff2021design} find that YouTube's autoplay undermines users' sense of agency and leads to ``mindless'' consumption they later regret, the effect appears strongest among vulnerable populations: \citet{hiniker2018coco} show that autoplay (``post-play'') significantly reduces preschoolers' ability to self-regulate screen time. Our results complicate this narrative. Adult participants not only resisted autoplay's supposed manipulation but expressed willingness to pay for it, averaging 2.24 pence per session. This suggests autoplay may function more like the optimal defaults studied by \citet{carroll2009optimal}—reducing decision costs without distorting choices—at least when content lacks the algorithmic personalization that makes platforms genuinely addictive.
-
-% Our findings underscore crucial methodological considerations for studying digital consumption behaviors. \citet{zizzo2010ee} identifies experimenter demand effects as a critical threat to validity in economic experiments, particularly when the experimental objectives align with socially desirable behaviors. This problem appears especially acute in digital consumption studies: participants may view reducing screen time as virtuous, leading them to behave differently in experimental settings than in their natural environments. The contrast between our null results and evidence from field studies illustrates this challenge. \citet{beknazar2025toxic} find substantial engagement increases when platforms reduce content moderation in a browser extension field experiment—but their design allows users to circumvent restrictions by switching to mobile devices, conflating treatment effects with platform substitution. Conversely, \citet{ek2023too} allow participants to choose their preferred YouTube content in a laboratory setting, finding evidence of self-control problems, but cannot distinguish whether effects stem from interface features or from participants selecting more tempting content when barriers are lower. The regulatory landscape further complicates empirical research. As \citet{lupianez2022behavioural} document in their study for the European Commission, dark patterns rarely operate in isolation, often combining multiple manipulative elements within single interfaces. This clustering makes it difficult to isolate causal effects of specific features like autoplay. Moving forward, research designs must account for three key factors: the artificial virtue signaling inherent in laboratory studies of digital consumption, the need to separate interface effects from content effects, and the complex interplay between multiple design elements. Only through careful triangulation of laboratory experiments (which provide causal identification but may lack external validity) and field studies (which capture real behavior but face identification challenges) can we develop evidence-based policy for the digital economy.
-
-% There are two ways to interpret our findings. We begin our discussion first with a simplistic understanding of the results and build up for a more nuanced explanation. The straightforward conclusion based on the lack of support for \hyperref[hypotheses]{Hypothesis 1} is that Autoplay does not have a distinct impact on  participants' actualized decisions when contrasted to active decisions. Combined with the lack of support for \hyperref[hypotheses]{Hypothesis 3} on deviations from how long participants wanted to watch videos initially and the actual preference for Autoplay in \hyperref[hypotheses]{Hypothesis 4} further supports the idea that Autoplay is a `harmless' default when it comes to media control settings and does not provoke increased consumption. Our findings allow for this conclusion, and show instead that users actually prefer autoplay to active decisions when there is money at stake. This would contradict the presumed welfare benefits of the proposed ban in the \hyperlink{https://www.congress.gov/bill/116th-congress/senate-bill/2314/text}{SMART Act} by the US Congress.  However, this `simple' interpretation of results does not consider the complexity of the issue at hand and leaves out a crucial design choice: The content of videos. To reassure, how the content was perceived by participants in our experiment was controlled by a survey question which asked them to rate the content of the videos. The median response was a 7 out of 10 rating across conditions for the content (see Table \ref{table3} for sample statistics).\footnote{Using Shapiro-Wilk tests we cannot reject the null that distributions are significantly different from a normal distribution for both autoplay ($W=0.932$, $p<0.001$) and control ($W=0.933$, $p<0.001$) treatments. A Mann-Whitney U test between treatments cannot reject the null that distributions are significantly different from one another ($U = 6894$, $p=0.173$), although there is some indication (see Figure \ref{graph6} for the density distribution) that participants in autoplay condition gave higher ratings to the content.}      
-% Yet, the selection (manual) and the presentation (randomized order) of the content are clearly different from the algorithmically curated personalized experience participants are accustomed to have on daily basis. To have a clear understanding of the implications of the experiment, it is preferable to look at the larger context in which content and design together shape the digital  environment where decisions are made.  
-
-% \begin{figure}[!htbp]
-%    \centering
-%        \includegraphics[scale=.375]{graph6.png}
-%    \caption{Density distribution of content ratings across treatments}
-%    \label{graph6}
-% \end{figure}
-
-% In order to take into account this interplay between the content and the design, we rely on the insights from a recent model on media consumption \citep{kleinberg2022challenge} where firms optimize over a large set of potential content and interface designs parametrized by their underlying features. Consumers optimize utility for their two selves: The impulsive and myopic one (self 1) and the forward-looking and thoughtful one (self 2). Content is consumed so long as self 1 derives some positive utility, and only after self 1 receives negative utility can system 2 make the decision to stop consuming content in case system 2 was already receiving negative utility. In this model, autoplay, a feature that facilitates seamless content consumption, has heterogeneous effects over different types of content. The intuition is as follows: If the existing content already is such that it has a low probability that utility for impulsive self 1 is larger than zero, autoplay has little impact on the user behavior. In other words, on a content landscape with low addictiveness, autoplay would have minimal impact on engagement. Applying this to our setting implies that the content provided for the experiment, although itself curated from social media, is much less interesting for the impulsive self 1 of participants.
-
-% Further, when a user is actively engaged and desires to consume more content, the autoplay feature   aligns with the user's intent. This supports the preference for autoplay found in the \hyperref[mpl]{MPL condition} regarding \hyperref[hypotheses]{Hypothesis 4}, implying that participants were aware of their actual content consumption and desired to consume more content. This is entirely in accordance with the inference on the selection of videos not being tempting enough. In other words, because videos were not tempting, participants were in control of their consumption and could end sessions whenever their system 2 received negative utility from videos. In this setting, autoplay is actually helpful to participants in achieving their desired session length as it reduces decisions costs attached to it, fully aligned with previous the modelization of active decisions compared to defaults by \citet{carroll2009optimal}. Putting the dual insights of the model together builds a coherent picture in terms of the policy implications of the present study, and we present convincing evidence that autoplay itself does not promote addiction in the absence of engaging content. Our findings go contrary to the proposed legislation which implicitly assumes all autoplayed content is equally addictive and welfare decreasing. 
-
-The remainder of this paper is organized as follows. Section 2 describes the experimental design. Section 3 details our sample and procedures. Section 4 presents our results and Section 5 concludes.
-
-
-
-
-% Interface designers and computer scientists have already documented the many ways in which interface design can be instrumentalized to  `nudge' users in practice (see \citet{caraban201923} for a review). Nudge theory suggests knowledge about systematic biases in decision-making can be leveraged to support people in making better decisions for themselves \citep{thaler2009nudge}. Much of the existing literature is dedicated to improving decision-making in the context of benevolent government-sponsored nudges (see \citet{mertens2022effectiveness} for a review). More recently, however, discussions also extended to private sector interventions. This branch of the literature addresses the implications of changing behavior for `better' decisions from the firm’s point of view \citep{smith2013choice,beggs2016private, mills2023nudge}. When firms nudge, there should be a distinction between whether the firm or the recipient of the nudge benefits from it. In other words, nudges can become problematic if the objective of the intervention is to maximize the benefit received by the firm instead of the decision-maker. Media player defaults, such as autoplay, are potentially one such example that could be driving the concerning results attested by literature. If these defaults are conceived to increase welfare of consumers instead, they should be preferred to active decisions or other alternatives. \citet{carroll2009optimal} make a similar comparison between defaults and active decisions in the context of saving decisions, with a focus on modelling  decision cost attached to making explicit choices.
-
-% Increasing the "addictiveness" of a platform is a complex task because behavioral interventions employed by firms largely depend on the context. Extensive data collection and  A/B tests help private sector choice architects find the most lucrative interventions for their platforms while complying with legislation. Studies from human-computer interaction (HCI) have found that interface design can be effectively used to interfere with user control and promote media consumption \citep{ lukoff2021design}.  Boosted with the advances in the behavioral sciences, persuasive  interventions are commonly applied in digital contexts to nudge users behave in ways designers intended 
-
-
-% The understudied `autoplay' feature, is an interface nudge prevalent across social media and streaming platforms that automatically transitions users to the next video content without providing an explicit opportunity to discontinue consumption. Unless opted-out by users, platforms including Facebook, Netflix, YouTube and TikTok provide autoplay as the \textit{default} media player configuration as of mid-2023. Defaults are effective because they (i) reduce effort, (ii) imply endorsement, and (iii) work hand in hand with cognitive biases such as loss aversion \citep{smith2013choice}. In case of autoplay, the default makes watching successive videos more salient as it removes the opportunity from users to decide whether or not to continue watching. Studies have shown that media player design promotes ``mindless'' content consumption and reduces user agency \citep{lukoff2021design}. Removing the opportunity to decide whether or not to continue watching leads to increased watching times in children \citep{hiniker2018coco}, known to exhibit less self-control than adults. If indeed autoplay promotes  digital addiction as suggested by the proposed legislation and the literature, we would expect it to alter the decisions of viewers with self control issues even when proposed content is kept same. We therefore hypothesize that holding content constant, autoplay should result in increased viewing times compared to the control group making active decisions. Further, the concerns of addiction could be verified by contrasting actual watching choices to participants' previous commitment choices regarding how much they initially wanted to watch videos across conditions. In sum, we conceptualize autoplay as facilitating continuous watching, and compare it in an incentivized experiment to a `neutral' setting  where users must actively select videos to watch them.
-
-
-% Yet, benefits of these technologies are so evident that it would be impossible to argue for a world without without them.
-
-% To determine whether autoplay is alters viewers' past commitment choices, we designed an  online experiment where participants spent 20 minutes on a higher-paying real effort task (retyping CAPTCHAs) or a lower-paying leisure task (watching videos). In the treatment condition, videos played automatically, while in the control condition, participants clicked to watch each video. To investigate the effects of autoplay on users with heterogeneous self-control issues, we included an additional task to elicit self control issues in our sample. In this task, participants visited the experiment website one day before the 20 minute session and practiced both the real effort task and the leisure task for 2 minutes in a so-called "practice session". \footnote{Participants were already randomly assigned to the treatment here so they either saw the autoplay or the control treatment.} After the practice session, participants decided how long they would like to spend on the next day for each task with the help of a slider indicating their payoffs. In a separate data collection with a smaller sample, we also measured the demand for a commitment device using a multiple price list to see if participants would pay to turn off the autoplay feature. Our experimental setup with 2 tasks was inspired by \citet{kool2014labor} \citet{augenblick2015working}, with the addition of the leisure task like in \citet{bonein2015self}, where both setups used real effort tasks to elicit self control issues.
-
-% To determine whether autoplay alters viewers' past commitment choices, we designed an online experiment where participants spent 20 minutes on a higher-paying real effort task (retyping CAPTCHAs)\footnote{\citet{charness2018experimental} categorize CAPTCHAs as a decoding task similar to \citet{augenblick2015working} with the following useful properties: Low difficulty of implementation, small differences regarding the skill required to accomplish the task, and limited learning opportunities to improve at accomplishing the task.} or a lower-paying leisure task (watching videos). In the treatment condition, videos played automatically, while in the control condition, participants had to click to watch each video. To investigate the effects of autoplay on viewers with heterogeneous self-control issues, we included an additional task to elicit self control issues in our sample. In this task, participants visited the experiment website one day before the 20 minute session and practiced both the real effort task and the leisure task for 2 minutes in a so-called ``practice session''. Participants were already randomly assigned to the treatment during the practice session and were able to familiarize themselves with the tasks and the media player treatment. After the practice session, participants decided how long they would like to spend on the next day for each task with the help of a slider indicating their payoffs. This decision was reminded to the participants on the second day, but it was not binding for most.\footnote{5\% of participants who are excluded from the main analysis were bound by the choice they made on the first day to add weight to the decision.} In a separate data collection with a smaller sample, we also measured the demand for a commitment device using a multiple price list to see if participants would pay to turn off the autoplay feature. Our two task experimental setup was inspired by \citet{kool2014labor}, while the real effort task is akin to \citet{augenblick2015working}, and the leisure task resembles  \citet{bonein2015self}. The contribution of our study is on its novel experimental design which allows testing both established and recent theories on societally relevant topics such as digital addiction. The entire task interface is constructed from scratch with the help of professional designers, and it aims to mimic the user experience on a social media platform. The design brings together extensive possibilities of data collection on behavior with the ease of scaling, while holding internal validity at a high standard. In sum, our design welcomes a plethora of new research questions that can be studied through economic experiments.
-
-% \section{Literature Review}
-
-
-
-% In an incentivized online experiment, we take the autoplay default and compare its welfare effects on consumers to active decisions. More specifically, we look at how autoplay causes an unwarranted increase in users’ viewing time. The experimental setup consists of a labor/leisure task similar to \citet{kool2014labor} where effort is costly but rewarded. We elicit participant preferences before performance and measure dynamic inconsistency as in \citet{augenblick2015working}. We then use the model of \citet{carroll2009optimal} to estimate the welfare effects of the autoplay default in the leisure task.
-
-% We investigate the question of how social media and streaming platforms increase the media consumption on their platforms by means of the default Autoplay setting (i.e., media player's default action at the end of videos). % In an incentivized online experiment, we investigate the welfare effects of the default Autoplay setting on consumers. 
-
-% When it comes to nudging, it is known that defaults have the strongest effects in changing people's behavior across many domains \citep{jachimowicz2019and,mertens2022effectiveness}. When it comes to excessive media consumption, however, researchers have yet to look at the effects of default Auto-(re)play features. Therefore, in this study we investigate:
-
-% How do default Auto-(re)play features override participants’ previously indicated preferences for media consumption? 
-
-
-\section{Design}
-
-\subsection{Overview}
-To explore the relationship between default video player settings and self-control, we designed a choice environment that captures the tension between productive effort and immediate gratification. Our experimental setup is centered around two competing tasks: A primary typing task that is tedious and offers limited learning opportunities, and a secondary video-watching task that provides immediate entertainment value. This design mirrors real-world situations where individuals must allocate time between effortful productive activities and readily available leisure alternatives.
-
-The key feature in our design is the manipulation of autoplay setting in the video interface. Participants can switch between tasks at any time, but the ease of continuing with the leisure activity varies systematically across treatment conditions. This allows us to isolate the causal effect of interface design on time allocation decisions while holding constant individual time preferences and other task characteristics.
+\section{Design}\label{Design}
 
 \subsection{Timeline and Session Structure}
-We conducted a two-day online experiment to examine how autoplay features affect time allocation between productive and leisure tasks. The multi-day structure allowed us to measure the gap between stated preferences and actual behavior under two different video interface conditions. Participants completed two separate data collection sessions with a cooling-off period of 24 hours (up to 48 hours) between sessions.
+We conducted a two-day online experiment to examine how autoplay feature affects time allocation between transcription of random character sequences and watching funny animal videos. The multi-day structure allowed us to measure the gap between stated preferences and actual behavior under two different video interface conditions. Participants completed two separate data collection sessions with a cooling-off period of 24 hours (up to 48 hours) between sessions.
 
-Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by preference elicitation measures. Day 2 featured the main 20-minute work session where participants made actual time allocation decisions. We conducted two waves of data collection during May 2023, as described in Table \ref{summary_table}.
+Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by preference elicitation measures. Day 2 featured the main 20-minute session where participants made actual time allocation decisions. We conducted two waves of data collection during May 2023, as described in Table \ref{summary_table}.
 
 \begin{table}[H]
 \centering
@@ -226,65 +127,54 @@ Day 2 (May 19) &  &  & \checkmark &  & immediate \\
 \end{tabular*}
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves, with columns ordered chronologically within each day. The first block (May 10-11 2023) established baseline treatment effects, while the second block (May 18-19 2023) incorporated the Multiple Price List treatment to measure demand for commitment devices. Decision horizon refers to the time between hypothetical preference elicitation and the main experimental session.
+\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves, with columns ordered chronologically within each day. The first block (May 10-11 2023) established baseline effects, while the second block (May 18-19 2023) incorporated the Multiple Price List to measure demand for a commitment device. Decision horizon refers to the time between hypothetical preference elicitation and the main experimental session.
 \end{tablenotes}
 \label{summary_table}
 \end{threeparttable}
 \end{table}
 
-\subsection{Payment Structure and Incentives}
-
-We implemented a performance-based payment system to ensure participants faced meaningful trade-offs between tasks. We based payment directly on the seconds participants actively spent on each task, with different compensation rates for the typing and video-watching activities. This created clear opportunity costs for time allocation decisions while avoiding any completion bonuses that might distort behavior.
-
-Participants who completed all required elements of the experiment received payment within seven days after the second session.\footnote{Prolific policy gives researchers 21 days to transfer funds to participants. The typical delay between study completion and payment is however only a couple of days on average, as indicated on the Prolific website (\href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{link}).} To maintain data quality, participants who failed to meet specified quality criteria for the typing task were not compensated for time spent on that task.
-
 \subsection{Technical Implementation and Interface Design}
+We designed the experimental platform to provide precise control over the testing environment while maintaining ecological validity. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between activities seamlessly while preserving progress. Sessions began with the transcription task as the default, requiring an active choice to switch to the watching task.
 
-We designed the experimental platform to provide precise control over the testing environment while maintaining ecological validity. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between activities seamlessly while preserving progress. The typing task always served as the default upon session initiation, requiring an active choice to switch to the video-watching alternative.
-
-Our interface incorporated several key features to track behavior precisely. A progress bar and timer provided real-time feedback on session duration. We logged all critical interactions including tab switches, keystrokes during typing, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
+The interface incorporated several key features to track behavior. A progress bar and timer provided real-time feedback on session duration. We logged all critical interactions including tab switches, keystrokes during transcription, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
 
 \subsection{Internal Validity Controls}\label{int-val}
-
 Online experiments present unique challenges for maintaining experimental control, including participant multitasking, technical disruptions, and environmental variation. We implemented comprehensive measures to address these concerns and ensure data quality.
 
 \textbf{Participant and Technology Screening:} We selectively admitted participants using multiple screening criteria to ensure stable experimental conditions. Internet speed requirements filtered out participants with unstable connections (minimum 30 Mbps on day 1, 25 Mbps on day 2). We restricted participation to users with Windows, Linux, or Mac operating systems using Chromium-based browsers exclusively. We excluded Safari and Mozilla Firefox due to restrictive autoplay configurations. Mobile devices and tablets were prohibited to standardize the user experience.
 
 \textbf{Platform Controls:} The experimental website enforced linear navigation, preventing participants from moving backward through the experiment. We disabled right-click functions and keyboard shortcuts. Any attempt to navigate backward reset progress to the landing page. We clearly communicated these restrictions to participants at the experiment's outset.
 
-\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using JavaScript packages to detect interface visibility disruptions.\footnote{For more information about the package, see \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{here}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications. The tracking provided second-by-second accountability of participant engagement.
+\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using a JavaScript library to detect interface visibility disruptions.\footnote{See more information about the \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{Intersection Observer API}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications. The tracking provided second-by-second accountability of participant engagement.
 
-\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the video-watching task. We combined these self-reports with our objective tracking measures to identify and filter data potentially compromised by distractions or divided attention.
+\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the watching task. We combined these self-reports with our objective tracking measures to identify and filter data potentially compromised by distractions or divided attention.
 
 \subsection{Tasks}
-The experiment centers on participants' time allocation decisions between two distinct activities that differ substantially in their cognitive demands and entertainment value. Both the Typing and Watching Tasks were presented to participants twice: First during the Practice Session to familiarize participants with the interface and task mechanics, and second during the Main Session where performance determined compensation. In both sessions, depending on the randomized assignment to conditions, the key experimental manipulation occurs in the Watching Task.
+\subsubsection{Transcription Task}\label{transcription-task}
+The transcription task requires transcribing successive CAPTCHAs. CAPTCHAs are computer-generated images that contain random letters, numbers and randomly placed white spaces.\footnote{We added white spaces to improve readability after pretests. The number of white spaces was limited to a maximum of 5 instances per CAPTCHA to control the transcribing time per image.} Each CAPTCHA has a total length of 35 characters, including the white spaces. Participants spent on average 41 seconds per CAPTCHA.
 
-\subsubsection{Typing Task} \label{typing-task}
-The Typing Task requires retyping successive CAPTCHAs. CAPTCHAs are computer-generated images that contain random uppercase and lowercase letters as well as randomly placed white spaces.\footnote{White spaces were added to improve readability after pretests. The number of white spaces was limited to a maximum of 5 instances per CAPTCHA to control the typing time per image.} Each CAPTCHA has a total length of 35 characters, including the white spaces.
+We designed the images to be blurred and distorted by lines and dots added on top to increase comprehension difficulty.\footnote{The \href{https://osf.io/2vqwf/?view_only=1ef589ec2e544db4ad9b6ab9c45ff849}{randomization procedure} to generate CAPTCHAs.} The interface always presents these CAPTCHA images with a text box and a submit button. When the submit button is clicked, the next CAPTCHA image appears and the text input for the previous one is stored. The task is identical across conditions, as illustrated in Figure \ref{transcription-screen}.
 
-We designed the images to be blurred and distorted by lines and dots added on top to increase comprehension difficulty.\footnote{The randomization procedure to generate CAPTCHAs is available \href{https://osf.io/2vqwf/?view_only=1ef589ec2e544db4ad9b6ab9c45ff849}{here}.} The interface always presents these CAPTCHA images with a text box and a submit button. When the submit button is clicked, the next CAPTCHA image appears and the text input for the previous one is stored. The task is identical across all conditions, as illustrated in Figure \ref{typing-screen}.
+We established easy-to-meet quality requirements to ensure participants remained active. These requirements include an overall transcription accuracy of at least 70 percent in submitted CAPTCHAs\footnote{We use Python's \href{https://docs.python.org/3/library/difflib.html}{\texttt{difflib}} string-matching algorithm to measure accuracy. It consists of finding the longest common substring and then finding recursively the number of matching characters in the non-matching regions on both sides of the longest common substring. Overall accuracy of 70 percent implies an average of 10.5 ($0.3*35$) mistakes across all submitted CAPTCHAs.} and a minimum of one CAPTCHA submission per minute spent on the task. Participants had to meet these quality requirements to receive compensation for the transcription task.
 
-We established easy-to-meet quality requirements to ensure participants remained active. These requirements include an overall typing accuracy of at least 70 percent in submitted CAPTCHAs\footnote{We use Python's \href{https://docs.python.org/3/library/difflib.html}{\texttt{difflib}} string-matching algorithm to measure accuracy. It consists of finding the longest common substring and then finding recursively the number of matching characters in the non-matching regions on both sides of the longest common substring. Overall accuracy of 70 percent implies an average of 10.5 ($0.3*35$) mistakes across all submitted CAPTCHAs.} and a minimum of one CAPTCHA submission per minute spent on the task. 
-
-Participants must meet these quality requirements to receive compensation for the Typing Task. We remunerated the Typing Task at 0.38 pennies per second participants worked on it. A hidden timer recorded each second participants kept the Typing Task in the visible part of their screen. Participants in both conditions spent on average 41 seconds per CAPTCHA.
 
 \begin{figure}[H]
-   \caption{Typing Task tab}
+   \caption{Transcription task tab}
     \centering
-       \includegraphics[scale=.4]{typing.png}
-   \label{typing-screen}
+       \includegraphics[width=0.6\linewidth]{typing.png}
+   \label{transcription-screen}
    \begin{tablenotes}
    \footnotesize
-\item[] \textit{Note:} This figure describes the typing interface tab. As participants always begin in the ``Type'' tab by default, there is a banner that reminds participants to click the tab buttons to switch tasks. This banner disappeared as soon as participants switched tasks once.
+\item[] \textit{Note:} This figure describes the transcription interface tab. As participants always begin in the transcription tab by default, there is a banner that reminds participants to click the tab buttons to switch tasks. This banner disappeared as soon as participants switched tasks once.
 \end{tablenotes}
 \end{figure}
 
-\subsubsection{Watching Task} \label{watching-task}
-In this task, participants watch successive short videos in a customized media player. Since we are interested in isolating the media player's default settings, the video content and the order in which videos appear to participants are identical across conditions. We completely disabled the media player controls: Participants cannot skip videos (user scrolling is disabled) or use the media player's slider to advance or go back in a particular video. We remunerated the Watching Task at 0.33 pennies per second participants worked on it.
+\subsubsection{Watching Task}\label{watching-task}
+In this task, participants watch successive short videos in a customized media player. Since we are interested in isolating the media player's default settings, the video content and the order in which videos appear to participants are identical across conditions. We completely disabled the media player controls: Participants cannot skip videos (user scrolling is disabled) or use the media player's slider to advance or go back in a particular video.
 
-The conditions differ in their autoplay functionality. In the \textbf{Autoplay} condition, videos play automatically when the Watching tab is visible and pause with a click anywhere on the video. While the Watching task is visible, the media player keeps scrolling to the next videos and continues playing them unless interrupted. In the \textbf{Control} condition, participants need to have the Watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video, but the new video only starts playing when the participant clicks on it. Figure \ref{watching-screen} illustrates the video tab in the \textbf{Control} condition.
+The conditions differ in their autoplay functionality. In the \textit{Autoplay} condition, videos play automatically when the watching tab is visible and pause with a click anywhere on the video. While the watching task is visible, the media player keeps scrolling to the next videos and continues playing them unless interrupted. In the \textit{Control} condition, participants need to have the watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video, but the new video only starts playing when the participant clicks on it. Figure \ref{watching-screen} illustrates the video tab in the \textit{Control} condition.
 
-We curated videos from YouTube and TikTok, using tags such as ``funny animal videos/short'' and ``cute animal videos/shorts''. We manually selected 80 videos to isolate the difference in the media player design and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. We chose animal videos because of their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of.} We reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. We kept the first 60 videos shorter in the beginning to maximize the frequency of experiencing the autoplay feature during the watching session, with videos getting longer for the last 20 videos (see Table \ref{tab:video_duration}).
+We manually selected 80 videos to isolate the difference in the media player design and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. We curated videos from YouTube and TikTok, using the tags ``funny animal'' and ``cute animal''.  We chose animal videos because of their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of.} We reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. We kept the first 60 videos shorter in the beginning to maximize the frequency of experiencing the autoplay feature during the watching session, with videos getting longer for the last 20 videos (see Table \ref{tab:video_duration}).
 
 \begin{table}[H]
   \centering
@@ -309,40 +199,34 @@ We curated videos from YouTube and TikTok, using tags such as ``funny animal vid
 \begin{figure}[H]
    \caption{Watching Task tab}
     \centering
-       \includegraphics[scale=.4]{watching.png}
+       \includegraphics[width=0.6\linewidth]{watching.png}
    \label{watching-screen}
    \begin{tablenotes}
 \footnotesize
-\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textbf{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textbf{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' button seen up on the right. Notice how top part of the following video is already visible in the bottom part of the screen.
+\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textit{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textit{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' button seen up on the right. Notice that the top part of the following video is already visible in the bottom part of the screen.
 \end{tablenotes}
 \end{figure}
 
-
-
-% Of the three interfaces, the first one is the autoplay - at the end of each video, the next video automatically begins. The second interface is the click-to-play condition - at the end of each video, participants must click the "next video" button in order to view the next video. The third interface is Tiktok's auto-replay - at the end of each video, the same video automatically replays. The randomization in terms of the user interface for the leisure task is announced to participants in advance, i.e. participants are presented with dummy videos in all the interfaces to understand how they work (in case they did not know already). The content of the videos is exactly the same, and their length is tailored to the study: Videos are at most 15 seconds long and they have been manually scraped from TikTok to avoid algorithmic biases arising from interactions with the API, as implementing Tiktok API would mean losing control over the content participants see.
-
 \subsection{Practice Session}\label{practice}
-
-The experiment consists of two sessions during which participants interact with the tasks described above. The first session is the Practice Session on day one. It comes right after the written descriptions of each task and serves to familiarize participants with the tasks and the interface. Participants are assigned to either \textbf{Autoplay} or \textbf{Control} condition before the Practice Session, so that they experience the same video interace on both the Practice and Main Sessions.
+The experiment consists of two sessions during which participants interact with the tasks described above. The first session is the practice session on day one. It comes right after the written descriptions of each task and serves to familiarize participants with the tasks and the interface. Participants are assigned to either \textit{Autoplay} or \textit{Control} condition before the practice session, so that they experience the same video interface on both the Practice and Main Sessions.
 
 During the practice session, each task was available for only 60 seconds and participants were not allowed to switch between tasks. On the first tab, participants were required to retype CAPTCHAs. The 60-second period was enough to submit one CAPTCHA and see the second CAPTCHA image. After 60 seconds, a pop-up appeared on the screen blocking any other interaction and taking participants to the second page.
 
-Participants were required to close this pop-up to advance to the second task. The rationale behind the pop-up was to ensure participants spent equal time on both tasks. Whether or not this pop-up was closed was verified to check participant activity and served as an additional attention check.\footnote{All participants closed this pop-up and switched to the Watching Task.} Once closed, the Watching Task began for 60 seconds, enabling participants to watch 4 to 5 short videos depending on whether they were assigned to the \textbf{Autoplay} or the \textbf{Control} condition. In the \textbf{Autoplay} condition, videos played continuously, while in the \textbf{Control} condition, videos required manual start.
+Participants were required to close this pop-up to advance to the second task. The rationale behind the pop-up was to ensure participants spent equal time on both tasks. Whether or not this pop-up was closed was verified to check participant activity and served as an additional attention check.\footnote{All participants closed this pop-up and switched to the watching task.} Once closed, the watching task began for 60 seconds, enabling participants to watch 4 to 5 short videos depending on whether they were assigned to the \textit{Autoplay} or the \textit{Control} condition. In the \textit{Autoplay} condition, videos played continuously, while in the \textit{Control} condition, videos required a click to start.
 
 We did not remunerate participants for the time they spent here because the purpose of the practice session was to understand the difficulty and pacing of the tasks, as well as navigation within the interface.
 
 \subsection{Multiple Price List}\label{mpl}
+In the second block of the experiment, participants made 9 binary decisions (see Figure \ref{mpl-screen}). These decisions were made after the practice session on day one. Participants chose between their preferred media player setting (autoplay off or on) and a bonus payment. We determined bonuses by the per-second earning differences across tasks, multiplied by the expected differences in time spent between the conditions in the first block of the experiment. 
 
-After the Practice Session on day one, participants in the Multiple Price List (\textbf{MPL}) condition made 9 binary decisions (see Figure \ref{mpl-screen}). They chose between their preferred media player setting (Autoplay off or on) and a bonus payment. We introduced the MPL condition after the initial data collection phase. We determined its bonuses by the per-second earning differences across tasks, multiplied by the observed time differences between the Autoplay and control groups. 
+Specifically, we expected the average difference between the \textit{Autoplay} and \textit{Control} conditions, in terms of time spent across tasks, to be in the magnitude of 60 seconds (it was 79.5 seconds, from Table \ref{table3}). This resulted in an average earning difference of $60*(0.15-0.1)=3$ pence. To capture this in the MPL choices offered, we set the symmetric bonuses accordingly: £[0.05, 0.1, 0.25, 0.5].
 
-Specifically, the average difference between the Autoplay and control treatments, in terms of time spent across tasks, was approximately 60 seconds (as shown in Table \ref{table3}). This resulted in an average earning difference of $60*(0.38-0.33)=3$ pennies. To capture this in the MPL choices offered, we set the symmetric bonuses accordingly: \textsterling $[0.05, 0.1, 0.25, 0.5]$.
-
-Once these decisions were completed, participants received information on the media player setting for day two—specifically whether Autoplay would be on or off—and the associated bonus. This information was displayed on the next page. With this knowledge, they then decided on their Time Choice. Participants who were not in the MPL condition proceeded directly to the Time Choice page after their Practice Session. More details on the Time Choice can be found in the subsequent section.
+Once these decisions were completed, we randomly implemented one of their 9 choices and informed participants whether autoplay would be on or off, and of their associated bonus earnings. With this knowledge, participants then made their hypothetical time allocation for day 2.
 
 \begin{figure}[H]
     \caption{Multiple Price List page}
    \centering
-       \includegraphics[scale=.4]{mpl.png}
+       \includegraphics[width=0.6\linewidth]{mpl.png}
    \label{mpl-screen}
       \begin{tablenotes}
 \footnotesize
@@ -350,81 +234,64 @@ Once these decisions were completed, participants received information on the me
 \end{tablenotes}
 \end{figure}
 
-\subsection{Time Choice} \label{time-choice}
-
-Following the Practice Session, participants transitioned to the Time Choice section. This section required them to specify their preferred time allocation between the two tasks for the main 20-minute session scheduled for the following day. Participants knew the main session would be 20 minutes long and they were free to choose corner solutions, even if that meant focusing solely on one task.
+\subsection{Time Choice}\label{time-choice}
+Following the practice session, participants transitioned to the time choice section. This section required them to specify their preferred time allocation between the two tasks for the following day. Participants were informed the main session would be 20 minutes long and they were free to choose corner solutions, even if that meant focusing solely on one task.
 
 We designed a slider tool with 20-second steps for participants to indicate their time allocation preferences. Initially, the slider appeared grayed out and required a click to activate. This design aimed to ensure participants considered their choices in an active manner. The click-to-activate design had two benefits: It guaranteed participants interacted with the slider and helped participants understand the task-related payoff structure.
 
-To emphasize the importance of this decision, we made the choices of 5 percent of participants binding in the main session. Binding choices led to payments based on the initial Time Choice, but only if participants met the quality standards described under Section \ref{typing-task}. We excluded data from these participants from the final dataset accordingly. We informed participants whether their allocation was binding with their Time Choice reminder on day two, right before the start of the main session.
+To incentivize this decision, we randomly made 5\% of the day 1 choices binding in the main session. Binding choices led to payments based on the initial time choice, but only if participants met the quality standards described under Section \ref{transcription-task} during day 2. We excluded data from these participants from the final dataset accordingly. We informed participants whether their allocation was binding with their time choice reminder on day two, right before the start of the main session.
 
-The Time Choice served as a benchmark for participants, and participants accordingly received a textual reminder of it on day two. The Time Choice section offers insights into participants' informed time preferences allows gauging their commitment to these choices after the 24-hour cooling period.
+The time choice served as a benchmark for participants, and participants accordingly received a reminder of it on day two. The time choice section offers insights into participants' informed time preferences and allows verifying their commitment to these choices after a 24-hour period.
 
 \begin{figure}[H]
     \caption{Time Choice page}
    \centering
-       \includegraphics[scale=.4]{time-choice.png}
+       \includegraphics[width=0.6\linewidth]{time-choice.png}
    \label{time-choice-screen}
    \begin{tablenotes}
 \footnotesize
-\item[] \textit{Note:} This figure shows the Time Choice interface with a slider tool allowing participants to allocate time between the two experimental tasks for the following day's 20-minute Main Session. The slider initially appears grayed out and requires a click to activate. Real-time feedback shows the selected allocation (here, 10 minutes each) and expected earnings (£4.25). The interface informs participants that 1 out of 20 (5 percent) will be bound by their choice and that they will learn whether their choice is binding on day two.
+\item[] \textit{Note:} This figure shows the time choice interface with a slider tool allowing participants to allocate time between the two experimental tasks for the following day's 20-minute main session. The slider initially appears grayed out and requires a click to activate. Real-time feedback shows the selected allocation (here, 10 minutes each) and expected earnings (£4.25). The interface informs participants that 1 out of 20 (5 percent) will be bound by their choice and that they will learn whether their choice is binding on day two.
 \end{tablenotes}
 \end{figure}
 
 \subsection{Main Session} \label{main-session}
 
-The Main Session took place on day two, approximately 24 hours after the Time Choice. We began by reminding participants of their previous day's allocation and informing them whether their choice was binding or whether they were free to allocate their time as they preferred.
+The main session took place on day two, approximately 24 hours after the time choice. We began by reminding participants of their previous day's time allocation and informing them whether their time choice was binding. 95\% of participants were free to allocate their time on day 2 as they preferred.
 
-The session lasted exactly 20 minutes. Participants could freely switch between the Typing and Watching Tasks at any time using the tab interface. Unlike the Practice Session, there were no time restrictions on individual tasks, and participants had complete autonomy over their time allocation decisions. The interface maintained real-time tracking of time spent on each task, and participants could monitor their progress and potential earnings through the progress bar and timer.
+The main session lasted 20 minutes. Participants could freely switch between the transcription and watching tasks at any time using the tab interface. Unlike the practice session, there were no time restrictions on individual tasks. Participants had complete autonomy over their time allocation decisions. The interface maintained real-time tracking of time spent on each task, and participants could monitor their time allocation through the progress bar and a timer.
 
-We implemented the experimental treatment during this session through the media player's autoplay functionality. Participants assigned to the \textbf{Autoplay} condition experienced automatic video playback when the Watching tab was visible, while those in the \textbf{Control} condition required manual clicks to start each video. All other task mechanics remained identical to the Practice Session.
+We implemented the experimental treatment during this session through the media player's autoplay functionality. Participants assigned to the \textit{Autoplay} condition experienced continuous video playback when the watching tab was visible, while those in the \textit{Control} condition required a click to start each video.
 
-Payment was calculated based on actual time spent on each task, with compensation rates of 0.15 pence per second for Typing and 0.1 pence per second for Watching. Participants needed to meet the established quality requirements for the Typing Task to receive compensation for time spent on that activity. The session concluded automatically after 20 minutes, and participants received their final payment calculation before completing the experiment. Participants received a fixed completion fee of £2.75. Average earning per participant was £4.08, amounting to an average payment of £1.33 (median £1.49) for the main session.
-
-
-
-% \subsection{Procedure}
-
-% On the first page, subjects give informed consent to participate in a decision-making experiment where they can earn money depending on their choices. After reading the instructions for the experiment, participants are presented with a question about the task they were asked to complete. This constitutes a preliminary attention check. On the next page, participants use a percentage slider to indicate how they would divide their time budget of 5 minutes between the labor and leisure task for each of the 5 possible wages per second. Participants are informed that consistent behavior with their stated preferences will result in a predetermined bonus. We calculate the consistency by contrasting how much time was actually spent during the task against the participant's initial indicated division. One out of 3 possible wages is randomly selected and the participant is asked to provide their division for that budget, which constitutes another attention check. The same wage is also what the participant will face during the experimental labor task. On the next page, the experiment begins: Participants are randomly allocated to the labor task or the leisure task for 5 minutes. On their screen, participants see their remaining time, one of the tasks, and a button to switch to the other task. The screen layout does not allow seeing both tasks at the same time.
-
-% Once the timer runs out, participants are taken to the next page. They are asked to provide their best guess on their performance, i.e. how they actually divided their time between the two tasks. This question remains unannounced in the instructions to prevent strategic behavior. The closer participants are to their real performance, the higher their bonus. We take this measurement as an indication of how self-conscious participants are about their own behavior and the effects of Auto-(re)play features. We also collect standard demographic information (age, gender, education, socioeconomic status), whether participants recognized any of the interfaces we presented, and an open feedback question about what they thought of the interfaces and the experiment. We end the session by debriefing our participants about the true objectives of the study.
 
 \subsection{Hypotheses}\label{hypotheses}
+User interface design choices are ``not separable from other content choices, since their effect depends on where the platform has positioned its content on the underlying content manifold.'' \citep{kleinberg2022challenge}. If content has very low inherent appeal and stickiness, autoplay may have minimal effect on video consumption. An analogy is how introducing breaks would have little impact on engagement for low-stickiness content like documentaries, but dramatically reduce engagement for high-stickiness content like celebrity gossip.\footnote{See \citet{bao2025just} for recent work on addictive short drama series.} 
 
-\citet{kleinberg2022challenge} model user consumption as driven by two competing systems: System 1 (impulsive, myopic) and System 2 (thoughtful, forward-looking). System 2 represents users' ``actual'' preferences, while System 1 drives continued consumption even when users derive little utility. Content exists within a \textit{content manifold} that can be characterized along three dimensions: how much users genuinely value the content, how long they naturally want to engage with it, and how ``sticky'' or addictive it is akin to the difference between nutritious salad and moreish potato chips.
+Assuming that our selection of videos have sufficient appeal and stickiness, \textit{Autoplay} condition should lead to consumption beyond users' stated preferences, creating a measurable gap between hypothetical time choice and actual behavior. In this case, we expect autoplay's behavioral effects to be known by participants, albeit underestimated as to how much they would be affected by these interfaces \citep{bongard2021definitely}. We thus expect positive demand for a commitment device driven by ``sophisticated'' participants in line with time preference literature \citep{ericson2018}. 
 
-Following this framework, autoplay reduces friction in content consumption by removing decision points between videos, making content more ``sticky'' and decrease the likelihood that users' thoughtful system will regain control between consumption decisions. The key assumption here is that the experimental videos have sufficient baseline appeal and stickiness to allow autoplay to meaningfully increase engagement. As \citet{kleinberg2022challenge} demonstrate, UI design choices are ``not separable from other content choices, since their effect depends on where the platform has positioned its content on the underlying content manifold.'' If content is purely ``salad-like'' with very low inherent appeal and stickiness, autoplay may have minimal effect on video consumption. This is analogous to how introducing breaks would have little impact on engagement for low-stickiness content like documentaries, but dramatically reduce engagement for high-stickiness content like celebrity gossip. With the assumption that our selection of videos have sufficient appeal and stickiness, \textbf{Autoplay} condition should lead to consumption beyond users' stated preferences, creating a measurable gap between intended (Time Choice) and actual behavior. In this case, we expect autoplay's behavioral effects to be known by participants, albeit underestimated as to how much they would be affected by these interfaces \citep{bongard2021definitely}. We thus expect positive demand for a comittment device driven by ``sophisticated'' participants in line with time preference literature. 
-
-\textbf{Hypothesis 1:} \textbf{Autoplay} condition decreases time allocated to the typing task while increasing video consumption. We test this using a linear regression:
+\textbf{Hypothesis 1:} \textit{Autoplay} condition decreases time allocated to the transcription task while increasing video consumption. We test this using a linear regression:
 \begin{equation}\label{eq1}
-Y_{i} = \alpha + \beta \text{Autoplay}_{i} + \gamma \text{TimeChoice}_{i} + \delta (\text{Autoplay}_{i} \times \text{TimeChoice}_{i}) + \epsilon_{i}
+Y_{i} = \alpha + \gamma \text{Autoplay}_{i} + \beta \text{TimeChoice}_{i} + \delta (\text{Autoplay}_{i} \times \text{TimeChoice}_{i}) + \epsilon_{i}
 \end{equation}
-where $Y_{i}$ represents our outcome variables of interest (proportion of time spent typing or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the treatment, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend typing on day 1. We estimate this model with and without the interaction term to examine whether the autoplay effect varies based on initial planning preferences. We expect $\beta < 0$ for typing and $\beta > 0$ for videos watched.
+where $Y_{i}$ represents our outcome variables of interest (proportion of time spent on transcription or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the condition, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend on transcription on day 1. We estimate this model with and without the interaction term to examine whether the autoplay effect varies based on initial planning preferences. We expect $\gamma < 0$ for transcription and $\gamma > 0$ for videos watched.
 
-\textbf{Hypothesis 2:} \textbf{Autoplay} condition has an effect on deviations from stated time allocation preferences (actual minus planned time spent on typing). We test this using a two-sample $t$-test comparing the means between the two groups.
+\textbf{Hypothesis 2:} \textit{Autoplay} condition has an effect on deviations from stated time allocation preferences (actual minus planned time spent on transcription). We test this using a two-sample $t$-test comparing the means between the two conditions.
 
-\textbf{Hypothesis 3:} If participants are aware of their self-control issues, they should exhibit positive Willingness To Pay (WTP) for removing autoplay, preferring the commitment devices that restricts automatic video transitions. We test this using a logistic regression:
+\textbf{Hypothesis 3:} If participants are aware of their self-control issues, they should exhibit negative Willingness To Pay (WTP) for autoplay, preferring the commitment devices that restrict automatic video transitions. We test this using a logistic regression:
     \begin{equation}\label{eq2}
-        \text{Pr}(\frac{\text{Autoplay}_{ij}}{1-\text{Autoplay}_{ij}}|\text{Bonus}_{ij}) = \Lambda(\alpha + \beta \text{Bonus}_{ij})
+        {Y}_{ij} = \alpha + \beta \text{Bonus}_{ij} + \epsilon_{ij}
     \end{equation}
-where Autoplay is the binary choice of taking autoplay given the bonus $j$ from the MPL for individual $i$. We calculate the WTP for autoplay as $-\alpha/\beta$, and expect a positive sign indicating preference for commitment against autoplay.
+where ${Y}_{ij}$ is the binary choice of taking autoplay given the bonus $j$ from the MPL for individual $i$. We calculate the WTP for autoplay as the population-averaged effect of bonus $-\alpha/\beta$, and expect a negative sign indicating preference for commitment against autoplay.
 
-In sum, these hypotheses test whether interface design features can systematically distort optimal time allocation decisions in a setting where participants face clear monetary incentives favoring productive work.\footnote{To access the preregistered hypotheses, click \href{https://doi.org/10.17605/OSF.IO/MFKBC}{here}. Our preregistration included hypotheses 1 and 3. We have added supporting hypothesis 2 regarding our expectations about the Time Choice section later.} 
+In sum, these hypotheses test whether interface design features can systematically distort optimal time allocation decisions in a setting where participants face clear monetary incentives favoring the transcription task.\footnote{\href{https://doi.org/10.17605/OSF.IO/MFKBC}{Access} the preregistered hypotheses. Our preregistration included hypotheses 1 and 3. We have added supporting hypothesis 2 regarding our expectations about the time choice section later.}
 
 
-% Although technically Auto-replay should give control to users over whether they want to see the next video or not as users still must click in order to see the next video, in practice we suspect it has the same funneling effect as autoplay: Users are expected to move to the next video shortly after the first video begins replaying.
+\section{Sample and Procedures}\label{SandP}
+The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We sampled from the Prolific participant pool, an online recruitment platform commonly used for academic research, and targeted adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection ($>30$ Mbps on the first and $>25$ Mbps on the second day of the experiment). We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
 
-% \item Increasing the countdown timer between videos in both conditions decreases the time spent on the leisure task.
+Payment was calculated based on actual time spent on each task during the main session on day 2, with compensation rates of 0.15 pence per second for transcription and 0.1 pence per second for watching. Participants needed to meet the established quality requirements for the transcription task to receive compensation for time spent on that activity. The session concluded automatically after 20 minutes, and participants received their final payment calculation before completing the experiment. Participants received a fixed participation fee of £2.75. Average earning per participant was £4.08, amounting to an average payment of £1.33 (median £1.49) for the main session. Participants who completed all required elements of the experiment received payment within seven days after the second session.\footnote{\href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{Prolific payment policy} gives researchers 21 days to transfer funds to participants. The typical delay between study completion and payment is however only 3 to 4 days on average.} 
 
-% \item  There are no statistically significant differences between participants' guesses about their actual task performance (i.e. time division) for both autoplay and Auto-replay conditions when compared to Click-to-play. It was previously shown \citep{bongard2021definitely} that even though Auto-(re)play features' behavioral effects might be known to them, people usually underestimate how much they would be affected by these interfaces.
+For the first block of the experiment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across conditions. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per condition, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses (91\% response rate). No participants failed the attention checks more than twice.\footnote{Minimum requirement by \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific attention check policy}.} We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their time choice enforced randomly. Finally, we removed 40 participants that were detected to spend more than 20 consecutive seconds away from our experimental platform who disproportionately come from the \textit{Autoplay} condition. These 40 participants all reported engaging with videos but had their mouse detected outside the experiment window, making it impossible to distinguish whether they genuinely watched videos or browsed other tabs/windows during the study (see Appendix Table \ref{table_flagged_comparison}). The final dataset on which we base the analysis consisted of 184 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
-% \item Click-to-play condition does not violate the initial division of time between the two tasks in a statistically significant way. In their survey of the literature, \citet{brandts2011strategy} do not find any systematic differences between strategy and direct-response methods. We argue that Click-to-play is the closest to what one can call a "neutral" choice architecture (or neutral direct-response method) in the case of media consumption in our experimental leisure task. For this reason, the Click-to-play condition should not violate the initial time division of the participants.
-
-\section{Sample and Procedures}
-
-The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We drew the sample from the Prolific participant pool, an online recruitment platform commonly used for academic research, targeting adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection ($>30$ Mbps on the first and $>25$ Mbps on the second day of the experiment). We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
-
-For the first stage of data collection, that is to say excluding the MPL treatment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across treatments. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per treatment, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses. No participants failed the attention checks more than twice, and therefore were not removed from the dataset as per \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific policy}. We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their Time Choice enforced randomly. Finally, we removed 40 participants that were detected to spend more than 20 consequtive seconds away from our experimental platform who disproportionately come from the autoplay condition. These 40 participants all reported engaging with videos but had their mouse detected outside the experiment window, making it impossible to distinguish whether they genuinely watched videos or browsed other tabs/windows during the study (see Appendix Table \ref{table_flagged_comparison}). The final dataset on which we base the analysis consisted of 184 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
 \begin{table}[H]
  \centering
@@ -432,7 +299,7 @@ For the first stage of data collection, that is to say excluding the MPL treatme
  \caption{Balance table for the sample}
  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc c@{}}
  \toprule
- & \multicolumn{1}{c}{\textbf{Autoplay}} & \multicolumn{1}{c}{\textbf{Control}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
+ & \multicolumn{1}{c}{Autoplay} & \multicolumn{1}{c}{Control} & \multicolumn{1}{c}{\textit{p}} \\
  & \multicolumn{1}{c}{N = 79} & \multicolumn{1}{c}{N = 105} & [A = C]\\
  \midrule
  \textit{\textbf{Gender}} & & & \\
@@ -455,224 +322,17 @@ For the first stage of data collection, that is to say excluding the MPL treatme
  \end{tabular*}
  \begin{tablenotes}[flushleft]
  \footnotesize
- \item[] \textit{Note:} This table presents demographic characteristics for the sample of 184 participants across treatment conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
+ \item[] \textit{Note:} This table presents demographic characteristics for the sample of 184 participants across conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
  \end{tablenotes}
  \label{table2}
  \end{threeparttable}
 \end{table}
 
+For the second block of the experiment, we applied the same selection criteria as before and invited 60 participants on day one. On day two, we received 57 complete answers (95\% response rate). Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 52 individuals in the final MPL dataset.
 
-
-For the MPL treatment, applying the same selection criteria as before, we invited 60 participants on day one. On day two, we received 57 complete answers. Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 52 individuals in the final MPL dataset.
-
-\section{Results}
-\subsection{Time Choice: Planned time allocation on day 1}
-How did participants plan to allocate their time on day 1? We look at the participants' Time Choices to answer this question. These were their incentivized time allocation choices based on how much they would like to spend on the Typing task for the 20-minute main session 24 hours before. Figure \ref{f:time_choice} illustrates how the Time Choices of participants were distributed along 5 focal points: The modal action for about a third of all participants, was choosing to divide their time equally between the two tasks, then another third chose to only type or watch videos, with 15\% choosing typing only and 15\% choosing watching only. The remainder of participants were distributed around either 1/4 of the time typing, or 3/4 of the time typing. Overall, the day 1 decisions can be characterized as symmetrical around dividing time across either task.
-
-\begin{figure}[H] 
-    \caption{Distribution of Time Choice} 
-    \centering 
-    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typechoice_hist.png} 
-    \label{f:time_choice} 
-    \begin{tablenotes} 
-    \footnotesize \item[] \textit{Note:} This figure shows the distribution of participants' Time Choices for the 20-minute Main Session, measured as the proportion of time planned for typing. The histogram reveals clustering around five focal points: Approximately 20\% chose all watching, 12\% chose 25\% typing, 29\% chose equal time allocation, 9\% chose 75\% typing, and 14\% chose all typing. The box plot below shows the overall distribution with median at 0.5. 
-    \end{tablenotes} 
-\end{figure}
-
-Based on the observed distribution of the Time Choices, we categorize the day 1 intentions of participants into three distinct groups: Those who almost always planned to type, those who almost always planned to watch videos, and those who planned to mix between the two tasks in various proportions. Table \ref{tab:time_allocation_clusters} summarizes each group.
-
-\begin{table}[H]
-  \centering
-  \caption{Participant types by planned time allocation on day 1}
-  \begin{threeparttable}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
-  \toprule
-  & \multicolumn{1}{c}{\textbf{Mostly watching}} & \multicolumn{1}{c}{\textbf{Alternate}} & \multicolumn{1}{c}{\textbf{Mostly typing}} \\
-  \midrule
-  \textbf{\textit{Time Choice}} & & & \\
-  Share & 28.3\% & 53.8\% & 17.9\% \\
-  Mean (SD) & 0.07 (0.08) & 0.49 (0.15) & 0.95 (0.07) \\
-  Median [Min, Max] & 0.00 [0.00, 0.23] & 0.50 [0.25, 0.75] & 1.00 [0.78, 1.00] \\
-  \bottomrule
-  \end{tabular*}
-  \begin{tablenotes}[flushleft]
-  \footnotesize
-  \item[] \textit{Note:} This table presents the clustering of participants based on their planned time allocation choices for the 20-minute Main Session on day 1. Watching-focused participants planned to spend 25\% or less of their time typing, alternating participants planned to spend between 25\% and 75\% of their time typing, and typing-focused participants planned to spend more than 75\% of their time typing.
-  \end{tablenotes}
-  \end{threeparttable} \label{tab:time_allocation_clusters}
-\end{table}
-
-\subsection{Main Session: Actualized typing decisions on day 2}
-How did participants allocate their time during the 20-minute main session on day 2? Because we collected second-by-second data on participant behavior, we can track how they allocated their time between the two tasks. Based on the observed distribution of the actualized time spent typing, we categorize the day 2 behavior into three groups following the same rule: Those who almost always typed (more than 75\% typing), those who almost always watched videos (less than 25\% typing), and those who mixed between the two tasks in various proportions. Table \ref{tab:type_clusters} summarizes each type. We observe that the largest share of participants are now either alternating or mostly typing.
-
-\begin{table}[H]
-\centering
-\caption{Participant types by actualized time allocation on day 2}
-\begin{threeparttable}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
-\toprule
-& \multicolumn{1}{c}{\textbf{Mostly watching}} & \multicolumn{1}{c}{\textbf{Alternate}} & \multicolumn{1}{c}{\textbf{Mostly typing}} \\
-\midrule
-\textbf{\textit{Type Time}} & & & \\
-Share & 19.3\% & 39.8\% & 40.9\% \\
-Mean (SD) & 0.09 (0.08) & 0.54 (0.13) & 0.94 (0.08) \\
-Median [Min, Max] & 0.08 [0.00, 0.24] & 0.52 [0.28, 0.74] & 0.97 [0.75, 1.00] \\
-\bottomrule
-\end{tabular*}
-\begin{tablenotes}[flushleft]
-\footnotesize
-\item[] \textit{Note:} This table presents the clustering of participants based on their actualized time allocation during the 20-minute Main Session on day 2. Type Time represents the proportion of time actually spent typing. Mostly watching participants spent 25\% or less of their time typing, alternating participants spent between 25\% and 75\% of their time typing, and mostly typing participants spent more than 75\% of their time typing.
-\end{tablenotes}
-\end{threeparttable} \label{tab:type_clusters}
-\end{table}
-
-\subsection{Discrepancy between planned (day 1) and actualized (day 2) time spent on typing}
-
-How do participants' day 1 time allocation compare to their actualized time spent on day 2? Participants spent more time on typing than they anticipated, even though we reminded participants of their day 1 plan, and the entire earnings difference between typing for 20 minutes versus watching videos was set to be 60 pence (£0.60). On average, participants planned to allocate 45.5\% of their time to typing but actually spent 61.2\% of their time on this task, representing an increase of 15.8 percentage points ($t = -8.24$, $p < 0.001$). This extends beyond central tendencies and the entire distribution shifted rightward, with median actual typing time (64.3\%) substantially exceeding median planned time (50.0\%). The Kolmogorov-Smirnov test confirms that planned and actual distributions differ ($D = 0.86$, $p < 0.001$), indicating systematic deviations from day 1 intentions.
-
-\begin{figure}[H] 
-    \caption{Distribution of Planned vs Actual Time Allocation} 
-    \centering 
-    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/dual_typechoice_hist.png} 
-    \label{f:discrepancy} 
-    \begin{tablenotes} 
-        \footnotesize 
-        \item[] \textit{Note:} This figure compares the distribution of participants' planned time allocation (Day 1) with their actual time spent typing (Day 2), measured as the proportion of the 20-minute session. The rightward shift in the actual distribution demonstrates participants' tendency to spend more time on the effortful typing task than originally planned.
-    \end{tablenotes} 
-\end{figure}
-
-To account for the substantial heterogeneity in both day 1 and day 2 decisions, we compare transitions from participants' day 1 type to their day 2 type in Table \ref{tab:transition_matrix}. We categorize participants into three behavioral types based on their time allocation: mostly watching ($< 25$\% typing), alternate (25-75\% typing), and mostly typing ($> 75$\% typing). Overall, 63.0\% of participants remained in the same behavioral category between planning and implementation, indicating moderate consistency in behavioral types despite the shift in continuous measures.
-
-Mostly watching and alternate types showed the least adherence to their day 1 plans (59.6\% vs 56.6\% respectively), with both groups showing upward shifts toward more typing. Among mostly watching planners, 40.4\% moved to higher typing categories (30.8\% to alternate, 9.6\% to mostly typing). Similarly, 40.4\% of alternate planners shifted to mostly typing, while only 3.0\% moved down to mostly watching. In contrast, mostly typing planners exhibited the highest stability at 87.9\%. A chi-square test confirms that deviation rates differ significantly across initial behavioral types ($\chi^2 = 109.00$, $p < 0.001$), indicating that initial behavioral intentions are strong but heterogeneous predictors of subsequent implementation patterns.
-
-\begin{table}[H]
-\centering
-\begin{threeparttable}
-\caption{Transition matrix: Planned vs actual behavior types}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
-\toprule
-& \multicolumn{3}{c}{\textbf{Planned (Day 1)}} \\
-\cmidrule(lr){2-4}
-\textbf{Actual (Day 2)} & Mostly watching & Alternate & Mostly typing \\
-\midrule
-Mostly watching & 59.6\% & 3.0\% & 3.0\% \\
-Alternate & 30.8\% & 56.6\% & 9.1\% \\
-Mostly typing & 9.6\% & 40.4\% & 87.9\% \\
-\bottomrule
-\end{tabular*}
-\begin{tablenotes}[flushleft]
-\footnotesize
-\item[] \textit{Note:} This table shows transitions between planned behavior types (Day 1) and actual behavior types (Day 2). Mostly watching ($< 25$\% typing time), Alternate (25-75\% typing time), Mostly typing ($> 75$\% typing time). Diagonal entries show participants who remained consistent (63.0\% overall). Off-diagonal entries show deviations: mostly watching planners (40.4\% deviated), alternate planners (43.4\% deviated), and mostly typing planners (12.1\% deviated).
-\end{tablenotes}
-\label{tab:transition_matrix}
-\end{threeparttable}
-\end{table}
-
-This represents a departure from traditional models of time inconsistency and present bias, which typically predict that individuals will succumb to immediate temptation rather than adhere to effortful plans. Instead, participants demonstrated what might be characterized as `reverse present bias' and systematically allocated more time to the cognitively demanding task than originally intended. The robustness of this finding across the distribution suggests that factors beyond self-control failures govern planning and its implementation in our setting, and potentially include how both tasks and the decision environment were perceived in the experiment. 
-
-\subsection{Experimenter demand effects}
-
-Why did participants end up typing more than their day 1 plans? To bridge the gap between our theoretical view of the experimental setup and how participants perceived it, we asked how participants decided to allocate their time during the 20-minute main session once the session was concluded. We explore these by analyzing participants' qualitative answers to an open-ended question on how they decided to divide their time between the two tasks using dictionary-based concept detection methods reviewed by \citet{ash2023are}. 
-
-We employ dictionary-based concept detection methods within a bag-of-words framework to analyze participants' qualitative responses. Following standard approaches in computational text analysis, we preprocess the text data by converting to lowercase and apply pattern matching to identify specific term sets that relate to negative perceptions of the typing task and breaks towards the watching task. Using regex pattern matching, we create binary indicators for documents containing predetermined words associated with task difficulty (e.g., ``tiresome'',``frustrating'',``difficult'') and break-taking behavior (e.g., ``break'',``rest'',``relax'') - with the exception of ``switch'' which typically described simple task changing behavior without the implication of taking a break from typing. This approach allows quantifying the prevalence of common conceptual themes across participants' obligatory open-ended responses. We match algorithmic output with a manual review to confirm our results about participant perceptions. Figures \ref{f:wordc1} and \ref{f:wordc2} summarize these words by their frequency.
-
-\begin{figure}[H]
-\caption{Word clouds for participant perceptions}
-\centering
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/type.png}
-    \caption{Typing task negative descriptions}
-    \label{f:wordc1}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=.7\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/break.png}
-    \caption{Changing to watching task}
-    \label{f:wordc2}
-\end{subfigure}
-\begin{tablenotes}
-\footnotesize \item[] \textit{Note:} Panel (a) shows words describing negative perceptions of the typing task. Panel (b) shows words describing switching to the watching task as break-taking behavior. Word size corresponds to frequency of mention across responses.
-\end{tablenotes}
-\end{figure}
-
-Our mixed methods analysis reveals that when asked to describe how they decided to switch between the tasks, 29\% of participants described the typing task negatively at their own will, i.e., without being asked to comment on the typing task itself, while 23\% specifically described watching videos as a break from the typing task. These findings suggest that the decision environment was perceived by many as a work environment, where one should type as much as possible while taking as few breaks as possible. The observed increases across all but always typing types, along with the qualitative perceptions suggest that experimenter demand effects have effected participant behavior.
-
-\subsection{Effect of achieving day 1 typing objective}
-
-One test for this hypothesis is looking at what participants do around the window of achieving their day 1 goals. If their behavior changes, i.e., they start typing less after achieving their goal, this would indicate adherence to day 1 goals and limited distortion due to experimenter demand effects. Should they continue typing as if nothing happened, we should be worried of severe problems in the desing of the experiment. We test this exploratory hypothesis in the next section.
-
-We categorize participants in their actualized typing time on day 2 using the same three categories from day 1 (see Figure \ref{f:cdf}). For participants who are ``alternating'', typing periods are interrupted by watching periods, following with the ``taking breaks'' analogy made by participants. We observe substantial individual heterogeneity in lengths of typing and watching periods, and divide the main session across 5-minute periods to understand typing to watching proportions of participants. We find that typing periods get shorter and shorter, suggesting changing between tasks may be strategic as participants get tired of typing or achieve their day 1 goals (see Figure \ref{f:bar_quartile}).
-
-\begin{figure}[H]
-\caption{Time spent typing}
-\centering
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \caption{Individual typing patterns}
-    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typing_cdf.png}
-    \label{f:cdf}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \caption{Average typing by quartile}
-    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/work_allocation_quartiles.png}
-    \label{f:bar_quartile}
-\end{subfigure}
-\begin{tablenotes}
-\footnotesize \item[] \textit{Note:} Panel (a) shows typing time for 30 random participants across the 20-minute session. Panel (b) shows average typing time by 5-minute periods, revealing declining typing duration over time.
-\end{tablenotes}
-\end{figure}
-
-Why do participants reduce time spent typing as they advance? If they are typing without regard to their day 1 objective, their typing shouldn't be affected by attaining their day 1 goal, and reduce gradually as fatigue or frustration grows from doing the typing task. Instead, if they care about hitting their goal, we should see a sharp drop in time spent typing right after attaining it. 
-
-To examine behavioral changes as participants achieve their day 1 plans, we implement a sharp regression discontinuity design using the moment participants reach their planned typing duration as the cutoff. We aggregate binary task choices (whether typing or watching) into 30-, 60-, and 90-second bins around this threshold and estimate the discontinuous change in the probability of choosing the typing task. Results in Table \ref{tab:rd_time_windows} reveal a significant negative effect immediately after plan achievement: participants are 27.4 percentage points less likely to continue typing in the 30-second window following plan completion (robust estimate: -0.274, $p=0.007$) and 25.5 percentage points less likely in the 60-second window (robust estimate: -0.255, $p=0.003$). However, this effect dissipates over longer horizons, becoming statistically insignificant in the 90-second window (robust estimate: -0.075, $p=0.487$). These findings suggest that achieving initial plans triggers an immediate behavioral shift toward leisure consumption, consistent with participants treating plan completion as a license to reduce effort temporarily.
-
-\begin{table}[H]
-  \centering
-  \caption{Regression Discontinuity estimates on typing after achieving day 1 plans}
-  \begin{threeparttable}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
-  \toprule
-  & \multicolumn{3}{c}{Time Window} \\
-  \cmidrule(lr){2-4}
-   & 30-seconds & 60-seconds & 90-seconds \\
-  \midrule
-  Proportion typing & -0.274*** & -0.255*** & -0.075 \\
-  & (0.101) & (0.087) & (0.108) \\
-  \midrule
-  Obs. (left) & 66,786 & 67,985 & 67,119 \\
-  Obs. (right) & 80,270 & 89,006 & 92,999 \\
-  Clusters (left) & 157 & 154 & 155 \\
-  Clusters (right) & 154 & 157 & 161 \\
-  Bandwidth & 339.9 & 368.3 & 422.3 \\
-  \bottomrule
-  \end{tabular*}
-  \begin{tablenotes}[flushleft]
-  \footnotesize
-  \item[] \textit{Note:} This table presents robust regression discontinuity estimates of the treatment effect on task choice at the moment participants achieve their day 1 planned typing duration. Standard errors clustered by participant in parentheses. The outcome variable is a binary indicator for choosing the typing task. Running variables are binned at 30-, 60-, and 90-second intervals around the achievement threshold. All estimates use triangular kernel with MSE-optimal bandwidth selection. *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
-  \end{tablenotes}
-  \end{threeparttable}
-  \label{tab:rd_time_windows}
-\end{table}
-
-Visual inspection along with the results from 90-second window suggests this discontinuity it not all there is to know about participant behavior: While there is an initial drop in typing rate after achieving day 1 plans, participants eventually ramp up the time they spend at typing (see Figure \ref{f:rd_bin30}). The positive slope on the right hand side illustrates this effect. Participants who achieve their day 1 plans earlier may in fact eventually get ``bored'' of the watching task as well - a behavior that shows how our efforts to create an addictive leisure task may have ultimately failed. These observations are coming from the about at least a third of all participants who were mostly watchers or alternaters in their day 1 types, but have increased their typing task consumption on day 2 (about respectively $(184*0.28*0.4)/184=11,2\%$ and $(184*0.54*0.4)/184 = 21,6\%$ of participants). 
-
-\begin{figure}[H] 
-    \caption{Linear fit for typing rate before and after achieving day 1 plan} 
-    \centering 
-    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/rd_bin30.png} 
-    \label{f:rd_bin30} 
-    \begin{tablenotes} 
-        \footnotesize 
-        \item[] \textit{Note:} This figure plots the average typing rate across 30-second bins for participants as they approach their day 1 goal. The negative slope on the left hand side indicates participants working less and less as they approach the cutoff. The drop showcases the discontinuity where achiving the day 1 goal causes in typing behavior. The positive slope on the right hand side reveals another trend: As time goes on, participants tend to go back to the typing task and decrease their video consumption. This demonstrates participants' tendency to spend more time on the effortful typing task than originally planned.
-    \end{tablenotes} 
-\end{figure}
-
+\section{Results}\label{Results}
 \subsection{Does Autoplay increase video consumption?}
-As participants were mostly focused on typing, they did paid less attention to the watching task, i.e, reducing its consumption value as evidenced by day 2 behavior. Consequently, in our setting experimenter demand effects is acting as a confound, in the sense of making more difficult to show statistically significant evidence in support of the hypotheses regarding the direction of deviations from the day 1 plans and the effects of the \textbf{Autoplay} condition. A lack of evidence in support of these objectives in our setting could be due not to a genuine failure of the corresponding hypotheses but rather to experimenter demand effects \citep{zizzo2010ee}. With these in mind, we summarize variables of interest from the main 20-minute session across both conditions in Table \ref{table3}. Two sample $t$-tests show no significant differences in any of the outcome variables. This suggests that \textbf{Autoplay} condition had no impact on the watching behavior observed in the experiment. Further, as established before, participants spend more time typing when compared to their Time Choice on day 1 (0.158, $t$(183) = 8.92, $p < 0.001$).
+We test our primary hypothesis that autoplay increases video consumption by comparing behavior across conditions. Table \ref{table3} presents summary statistics for key outcome variables from the 20-minute main session. Two-sample $t$-tests reveal no significant differences in any outcome measures between the \textit{Autoplay} and \textit{Control} conditions.
 
 \begin{table}[H]
   \centering
@@ -681,13 +341,13 @@ As participants were mostly focused on typing, they did paid less attention to t
   \begin{threeparttable}
   \begin{tabular}{@{}lcc c@{}}
   \toprule
-  & \multicolumn{1}{c}{\textbf{Autoplay}} & \multicolumn{1}{c}{\textbf{Control}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
+  & \multicolumn{1}{c}{Autoplay} & \multicolumn{1}{c}{Control} & \multicolumn{1}{c}{\textit{p}} \\
   & \multicolumn{1}{c}{N = 79} & \multicolumn{1}{c}{N = 105} & [A = C] \\
   \midrule
   \textbf{\textit{Time Choice}} & & & \\
   Mean (SD) & 0.48 (0.31) & 0.44 (0.33) & 0.410 \\
   Median [Min, Max] & 0.50 [0.00, 1.00] & 0.50 [0.00, 1.00] & \\ \midrule
-  \textbf{\textit{Proportion Typing}} & & & \\
+  \textbf{\textit{Transcription Proportion}} & & & \\
   Mean (SD) & 0.65 (0.31) & 0.58 (0.33) & 0.173 \\
   Median [Min, Max] & 0.72 [0.00, 1.00] & 0.56 [0.00, 1.00] & \\ \midrule
   \textbf{\textit{Nb. of sessions}} & & & \\
@@ -709,21 +369,21 @@ As participants were mostly focused on typing, they did paid less attention to t
   \end{tabular}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for typing on day 1 (proportion), while ``Proportion Typing'' represents the actual proportion of time spent on typing task during the 20-minute Main Session on day 2. Nb. of sessions is the number of typing or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' evaluation of video content on a 0-10 scale. $p$-values are from two-sample $t$-tests comparing experimental conditions.
+  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for transcribing on day 1 (proportion), while ``Transcription Proportion'' represents the actual proportion of time spent on transcription task during the 20-minute Main Session on day 2. Nb. of sessions is the number of transcription or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' evaluation of video content on a 0-10 scale. $p$-values are from two-sample $t$-tests comparing experimental conditions.
   \end{tablenotes}
   \end{threeparttable} \label{table3}
  }
 \end{table}
 
-To formally test \hyperref[hypotheses]{Hypothesis 1}, i.e., effects of the \textbf{Autoplay} condition on time spent on typing, we run the regression specified in Equation \ref{eq1}. Our analysis reveals that the autoplay manipulation had no statistically significant effect on actual typing behavior. Table \ref{tab:typing_regressions} presents results for typing proportion as the dependent variable. The coefficient on the autoplay treatment ranges from 0.12 to 0.20 across specifications but remains statistically insignificant in all models (p-values $>$ 0.16). However, participants' day 1 plans emerge as a powerful predictor of day 2 behavior: a one standard deviation increase in planned typing time is associated with a 0.67 standard deviation increase in actual typing time (p $<$ 0.001). Including day 1 plans increases the model's explanatory power dramatically, with R-squared rising from 1\% to 46\%.
+To formally test \hyperref[hypotheses]{Hypothesis 1}, the effects of the \textit{Autoplay} condition on time spent on transcription, we run the regression specified in Equation \ref{eq1}. Our analysis reveals that the autoplay manipulation had no statistically significant effect on actual transcription behavior. Table \ref{tab:typing_regressions} presents results for transcription proportion as the dependent variable. The coefficient on the autoplay ranges from 0.12 to 0.20 across specifications but remains statistically insignificant in all models ($p$-values $>$ 0.16). Participants' day 1 time allocations emerge as a powerful predictor of day 2 behavior: a one standard deviation increase in planned transcription time is associated with a 0.67 standard deviation increase in actual transcription time ($p < 0.001$). Including day 1 time allocations increases the variance explained by the model, rising from 1\% to 46\%.
 
 \begin{table}[H]
   \centering
-  \caption{Effect of Autoplay Treatment on Typing Behavior}
+  \caption{\textit{Autoplay} condition and time spent transcribing}
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
-  & \multicolumn{3}{c}{Proportion Typing (z-score) } \\
+  & \multicolumn{3}{c}{Transcription proportion (z-score) } \\
   \cmidrule(lr){2-4}
   & (1) & (2) & (3) \\
   \midrule
@@ -737,23 +397,23 @@ To formally test \hyperref[hypotheses]{Hypothesis 1}, i.e., effects of the \text
   & (0.100) & (0.076) & (0.076) \\
   \midrule
   Obs. & 184 & 184 & 184 \\
-  R-squared & 0.010 & 0.462 & 0.463 \\
-  F-statistic & 1.91 & 77.42 & 61.52 \\
+  $R^2$ & 0.010 & 0.462 & 0.463 \\
+  $F$-statistic & 1.91 & 77.42 & 61.52 \\
   \bottomrule
   \end{tabular*}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time Choice represents participants' planned typing proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time choice represents participants' planned transcription proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
   \end{tablenotes}
   \end{threeparttable}
   \label{tab:typing_regressions}
 \end{table}
 
-Similarly, Table \ref{tab:videos_regressions} examines the effect on video consumption, directly testing our primary hypothesis that autoplay would increase video watching. Across all specifications, the autoplay coefficient is statistically insignificant and even negative in the baseline model ($-$0.053, $p = 0.723$). This finding contradicts our theoretical prediction and suggests that the autoplay feature did not meaningfully alter participants' video consumption patterns. Again, day 1 plans prove to be the dominant predictor: participants who planned more typing watched significantly fewer videos ($\beta = -0.66$, $p < 0.001$), explaining 44\% of the variance in video consumption.
+Similarly, Table \ref{tab:videos_regressions} examines the effect on video consumption, a direct test of our primary hypothesis that autoplay would increase video consumption. Across all specifications, the autoplay coefficient is statistically insignificant. This suggests that the autoplay feature did not meaningfully alter participants' video consumption behavior. Again, day 1 plans prove to be the dominant predictor: participants who planned more transcribing watched $-0.66$ standard deviation fewer videos ($p < 0.001$).
 
 \begin{table}[H]
   \centering
-  \caption{Effect of Autoplay Treatment on Video Watching Behavior}
+  \caption{\textit{Autoplay} condition and the number of videos watched}
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
@@ -771,33 +431,33 @@ Similarly, Table \ref{tab:videos_regressions} examines the effect on video consu
   & (0.098) & (0.076) & (0.076) \\
   \midrule
   Obs. & 184 & 184 & 184 \\
-  R-squared & 0.001 & 0.440 & 0.443 \\
-  F-statistic & 0.13 & 73.06 & 61.53 \\
+  $R^2$ & 0.001 & 0.440 & 0.443 \\
+  $F$-statistic & 0.13 & 73.06 & 61.53 \\
   \bottomrule
   \end{tabular*}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time Choice represents participants' planned typing proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time choice represents participants' planned transcription proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
   \end{tablenotes}
   \end{threeparttable}
   \label{tab:videos_regressions}
 \end{table}
 
-For robustness, we provide the regression outputs from the unrestricted dataset in Appendix Table \ref{tab:typing_regressions_full} and \ref{tab:videos_regressions_full}. Comparing the interaction models (column 3), we observe that the autoplay treatment effect on typing behavior decreases from 0.119 in the restricted sample to 0.055 in the unrestricted sample, while the autoplay treatment effect on video watching increases from 0.031 in the restricted sample to 0.132 in the unrestricted sample. However, the null results remain unchanged across both specifications. Because we cannot be sure these 40 participants actually engaged in watching videos, we base our conclusions on the restricted sample of 184.
+For completeness, we provide the regression outputs from the unrestricted dataset in Appendix Table \ref{tab:typing_regressions_full} and \ref{tab:videos_regressions_full}. These include 40 participants who spent at least 20 consecutive seconds outside either task. Comparing the interaction models (column 3), we observe that the effect of the \textit{Autoplay} condition on transcribing behavior decreases from 0.119 in the restricted sample to 0.055 in the unrestricted sample. The effect of the \textit{Autoplay} condition on the number of videos watched increases from 0.031 in the restricted sample to 0.132 in the unrestricted sample. However, the null results remain unchanged across both specifications. Because we cannot ascertain the data quality for the unrestricted sample, we base our conclusions on the restricted sample of 184.
 
-To summarize, we observe two key patterns in the data that help explain our null findings.  First, we observe  contradictory results: the \textbf{Autoplay} condition increases time spent typing by 0.12 standard deviations (though statistically insignificant) while simultaneously increasing the number of videos watched by 0.03 standard deviations (also insignificant). If people type more, shouldn't they watch fewer videos? We identified a mechanical confound in our experimental design: the total time lost during video transitions. Participants in the \textbf{Control} condition, who had to manually click to start each new video, lost an average of 46.52 seconds due to these transition delays whereas those in the \textbf{Autoplay} condition lost only 1.08 seconds. This large difference of 45.45 seconds per session is statistically significant ($t(105) = 4.89$, $p < 0.001$). We find that this difference in time lost not watching videos plausibly explain the contradicting results and underscores the importance of looking at the unbiased outcome variable (i.e., number of videos watched) when evaluating the effects of the autoplay feature.
+We observe two key patterns in the data that help explain the null findings. First, we observe contradicting results: the \textit{Autoplay} condition increases time spent transcribing by 0.12 standard deviations (though statistically insignificant) while simultaneously increasing the number of videos watched by 0.03 standard deviations (also insignificant). If people type more, shouldn't they watch fewer videos? We identified a mechanical confound in our experimental design: the time lost during video transitions. Participants in the \textit{Control} condition, who had to manually click to start each new video, lost an average of 46.52 seconds due to these transition delays whereas those in the \textit{Autoplay} condition lost only 1.08 seconds. This large difference of 45.45 seconds per session is statistically significant ($t(105) = 4.89$, $p < 0.001$). This difference in time lost not watching videos explains the contradicting results and underscores the importance of looking at the unbiased outcome variable (i.e., number of videos watched) when evaluating the effects of the autoplay feature.
 
-Second, assuming the actual effect size for the number of videos watched lie somewhere between the restricted and unrestricted samples, our power calculations based on pretests were insufficient: The required sample size to provide a two-sided test for \hyperref[hypotheses]{Hypothesis 1b} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be between 300 to 5000 per treatment, with common standard deviation as the root MSE from the standardized number of videos watched variable in the third regression. Other solutions to this power problem are design-related and involve extending the main-session duration to above 20 minutes, or nudging participants to mix more between tasks to avoid corner solutions (i.e., higher earnings when setting Time Choice between .25 and .75).
+Second, assuming the actual effect size for the number of videos watched lies somewhere between the restricted and unrestricted samples, our power calculations based on pretests were insufficient: The required sample size to provide a two-sided test for \hyperref[hypotheses]{Hypothesis 1b} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be between 300 to 5000 per treatment, with common standard deviation as the root MSE from the standardized number of videos watched variable in the third regression. Other solutions to this power problem are design-related and involve extending the main-session duration to above 20 minutes, or nudging participants to mix more between tasks to avoid corner solutions (e.g., higher earnings for time allocations between .25 and .75 of either task).
 
 \begin{table}[H]
   \centering
-  \caption{Total Transition Time by Treatment Condition}
+  \caption{Seconds lost by condition}
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
   & Control & Autoplay & Difference \\
   \midrule
-  Total time lost & 46.52 & 1.08 & 45.45*** \\
+  Total seconds lost & 46.52 & 1.08 & 45.45*** \\
   & (9.27) & (0.65) & (9.29) \\
   \midrule
   Observations & 105 & 79 & 184 \\
@@ -806,81 +466,35 @@ Second, assuming the actual effect size for the number of videos watched lie som
   \end{tabular*}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} Standard errors are in parentheses. Time is measured in total seconds lost to video transitions per session. The difference was tested using a two-sample t-test with unequal variances. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \item[] \textit{Note:} Standard errors are in parentheses. Time is measured as the average of seconds lost to video transitions per session. The difference was tested using a two-sample t-test with unequal variances. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
   \end{tablenotes}
   \end{threeparttable}
   \label{tab:total_transition_time}
 \end{table}
 
-% Our initial hypothesis explores whether Autoplay leads to an increase in the time spent watching videos. We test this using two measures: First, the amount of time participants spent on the Watching Task. We collected second-by-second logs of how long participants spent on each task for 20-minute main session. However, a minor technical glitch related to the countdown timer resulted in most participants spending 30 to 60 seconds more on the main session.\footnote{Upon investigation, we noticed that the countdown timer \textit{slowed down} when there were no active clicks, typing, or movement of the cursor during the main session. In fact, the less activity there were, the slower each passing second became. We verified whether participants had noticed this technical issue during the experiment by looking at the text inputs they provided for feedback. Thankfully no participant mentioned the issue, and we take this as evidence that the glitch must have gone unnoticed.} To understand how participants were affected by the glitch, we look at the distribution of the total time spent across treatments in Figure \ref{graph1}, where the variable on the x-axis is the sum of the time spent across both tasks and y-axis is its frequency. Although visible in the histogram, we use the Mann-Whitney U test to test and reject that participants across conditions are affected differently from the glitch ($U=6331, p=0.85$).
-
-% Our primary hypothesis was investigating whether the Autoplay feature influences the time participants spend on watching videos. We scrutinized this using two distinct measures. 
-
-% The first one considered the time span participants allocated to the Watching Task, captured through second-by-second logs during the 20-minute main session: A technical glitch with the countdown timer inadvertently caused most participants to spend an additional 30 to 60 seconds on the session. A deeper dive into this issue unveiled that the timer \textit{slowed down} in the absence of user interactions, such as clicks, cursor movements or typing. To understand the overall implications of this glitch on our experiment, we analyzed the distribution of the total time spent across the two treatments, visualized in Figure \ref{graph1}. Herein, the x-axis delineates the total time allocated to both tasks, while the y-axis depicts its frequency.  The distribution of ending times appears roughly symmetrical for both treatments on the histogram, and a Mann-Whitney U test confirms that the glitch affected both conditions uniformly ($U=6331, p=0.85$). Finally, post-experiment feedback reassures us that participants remained unaware of this anomaly.
-
-% \begin{figure}[!htbp]
-%    \centering
-%        \includegraphics[scale=.5]{graph1.png}
-%    \caption{Distribution of main session ending time across treatments}
-%    \label{graph1}
-% \end{figure}
-
-% To remedy for the differences in time spent across tasks resulting from the glitch and standardize our data, we calculated the observed time spent at task data using the logged ending time. We calculate first the proportion of time spent Typing and then standardize it for our sample:
-
-% \begin{align}
-% x = \frac{type_time}{end_time}, z_{type} = (x - \bar{X}_{i}) / \sigma_{i}
-% \end{align}
-
-% where $\bar{X}_{i}$ and $\sigma_{i}$ are the average of network means and standard deviations for the sample.
-
-% Figure \ref{graph2} shows the distribution of the standardized time spent on watching videos across treatments. We test and reject \hyperref[hypotheses]{ Hypothesis 1.1} using the Mann-Whitney U test ($U=5825, p=0.39$), meaning Autoplay treatment did not result in an increased time spent watching videos. We then proceed with \hyperref[hypotheses]{ Hypothesis 1.2}, focusing on the number of videos each participant watched across treatments.  Figure \ref{graph2b} shows the distribution of the number of videos watched per condition. Using a Mann-Whitney U test again, we reject that Autoplay treatment increased the number of videos watched ($U=6494, p=0.599$).
-
-
-
-% \begin{figure}[!htbp]
-%      \centering
-%      \begin{subfigure}{0.5\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{graph2}
-%          \caption{Watching time in seconds}
-%          \label{graph2}
-%      \end{subfigure}%
-%      \hfill
-%      \begin{subfigure}{0.5\textwidth}
-%          \centering
-%          \includegraphics[width=\textwidth]{graph2b}
-%          \caption{Number of videos watched}
-%          \label{graph2b}
-%      \end{subfigure}
-%         \caption{Distributions of variables relating to watching time across treatments}
-% \end{figure}
-
-% We turn to verifying the second hypothesis, i.e., whether participants across treatments had different initial Time Choices. Figure \ref{graph3} shows the distribution of Time Choice across treatments. We test and reject this hypothesis using the Mann-Whitney U test ($U=6713.5, p=0.323$).
-
-
-\subsection{Effects of autoplay on deviations from Time Choice}
-Does the \textbf{Autoplay} condition have an effect on deviations from day 1 Time Choice? To assess \hyperref[hypotheses]{Hypothesis 2}, we calculated the deviation by subtracting participants' planned typing proportion from their actual typing proportion (actual minus planned). Figure \ref{f:hist_dev} shows the distribution of deviations from Time Choice across treatments, which appears right-skewed with positive values indicating participants typed more than originally planned. Both treatment groups systematically over-typed relative to their day 1 plans: Participants in the \textbf{Control} condition deviated by an average of 14.6 percentage points (SD = 27.6) while Autoplay participants deviated by 17.3 percentage points (SD = 23.6). However, a two-sample t-test reveals no statistically significant difference between means ($t = -0.694$, $p = 0.488$). The Kolmogorov-Smirnov test similarly finds no significant difference in distributions across conditions ($D = 0.085$, $p = 0.903$). These results indicate that while participants in both conditions systematically spent more time on the effortful typing task than they initially planned, the  \textbf{Autoplay} condition did not significantly alter the magnitude or pattern of these deviations. Contrary to our hypothesis, we find no evidence that autoplay led participants to deviate more toward video watching behavior.
+\subsection{Autoplay and deviations from day 1 time allocation}
+Does the \textit{Autoplay} condition have an effect on deviations from day 1 time choice? To assess \hyperref[hypotheses]{Hypothesis 2}, we calculated the deviation by subtracting participants' planned transcribing proportion from their actual transcribing proportion (actual minus planned). Figure \ref{f:hist_dev} shows the distribution of deviations from time choice across conditions, which appears right-skewed with positive values indicating that participants transcribed more than their day 1 allocation. Participants in the \textit{Control} condition deviated by an average of 14.6 percentage points, while those in the \textit{Autoplay} condition deviated by 17.3 percentage points. A two-sample $t$-test reveals no statistically significant difference between means ($t = -0.694$, $p = 0.488$). The Kolmogorov-Smirnov test similarly finds no significant difference in distributions across conditions ($D = 0.085$, $p = 0.903$). These results indicate that participants in both conditions  spent more time on the transcription task than they initially planned. However, the \textit{Autoplay} condition did not significantly alter the magnitude or pattern of these deviations. Contrary to our hypothesis, we find no evidence that \textit{Autoplay} condition led participants to deviate toward consuming more videos.
 
 \begin{figure}[H] 
-    \caption{Distribution of Deviations from Time Choice by Treatment} 
+    \caption{Distribution of deviations from day 1 time allocation by condition} 
     \centering 
     \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/deviation_hist.png} 
     \label{f:hist_dev} 
     \begin{tablenotes} 
         \footnotesize 
-        \item[] \textit{Note:} This figure shows the distribution of deviations from participants' day 1 time allocation plans, calculated as actual typing proportion minus planned typing proportion. Positive values indicate participants typed more than planned, while negative values indicate less typing than planned. The distributions are similar across treatment conditions, with both groups showing systematic over-typing relative to initial plans.
+        \item[] \textit{Note:} This figure shows the distribution of deviations from day 1 time allocation plans, calculated as actual transcribing proportion minus planned transcribing proportion. Positive values indicate participants transcribed more than they planned. The distributions are similar across conditions, and show over-transcribing relative to initial plans.
     \end{tablenotes} 
 \end{figure}
 
-\subsection{WTP for the commitment device (H3)}
 
-\hyperref[hypotheses]{Hypothesis 3} explores whether participants would choose to turn Autoplay off when given the possibility, implying positive demand for a commitment device. We assess this demand by comparing the share of participants choosing to turn Autoplay on or off along with the associated bonus payments for each of the nine decisions in the price list. To quantify participants' willingness to pay (WTP) for Autoplay, we estimate the regression specification in Equation \ref{eq2}, where the dependent variable is the binary choice of selecting Autoplay (1) or turning it off (0), and the independent variable is the bonus amount in pounds from the MPL. The model is clustered at the participant level to account for 9 repeated decisions by the same individual.
+\subsection{Willingness To Pay for autoplay}
+Contrary to \hyperref[hypotheses]{Hypothesis 3}, participants exhibited positive WTP for autoplay rather than demand for commitment devices against it. We assessed the demand for commitment by comparing the share of participants choosing to turn autoplay on or off along with the associated bonus payments for each of the nine decisions in the price list. To quantify participants' WTP for autoplay, we estimate the regression specification in Equation \ref{eq2}, where the dependent variable is the binary choice of selecting autoplay (1) or turning it off (0), and the independent variable is the bonus amount in pounds from the MPL.
 
-Results are presented in Table \ref{tab:wtp_autoplay}. The coefficient on the bonus amount is 27.97 ($p < 0.001$), indicating that participants are highly sensitive to the financial cost of maintaining Autoplay. The WTP for Autoplay can be calculated as the negative ratio of the constant to the bonus coefficient: $-0.6263/27.9729 = -0.0224$ pounds, or approximately 2.24 pence. This suggests that participants value Autoplay at 2.24 pence on average and would be willing to forgo this amount to maintain access to the feature rather than have it turned off. In light of how participants operated in the decision-making environment, it appears that participants did not perceive a tradeoff from Autoplay in terms of increasing video consumption, but instead viewed it as facilitating leisure consumption before returning to the typing task.
+Results are presented in Table \ref{tab:wtp_autoplay}. The coefficient on the bonus amount is 27.97 ($p < 0.001$), indicating that participants are sensitive to the financial cost of keeping autoplay on. The WTP for autoplay is the negative ratio of the constant to the bonus coefficient: $-0.6263/27.9729 = -0.0224$ pounds. On average, participants value autoplay at 2.24 pence and would be willing to forgo this amount to maintain access to the feature rather than have it turned off. Participants in our setting did not appear to perceive a tradeoff from autoplay in increasing video consumption.
 
 \begin{table}[H]
 \centering
-\caption{Willingness to Pay for Autoplay}
+\caption{Willingness to Pay for autoplay}
 \begin{threeparttable}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lc}
 \toprule
@@ -893,46 +507,174 @@ Constant & 0.626** \\
 \midrule
 Obs. & 468 \\
 Clusters & 52 \\
-Pseudo R$^2$ & 0.658 \\
+Pseudo $R^2$ & 0.658 \\
 Wald $\chi^2$(1) & 19.86 \\
 \bottomrule
 \end{tabular*}
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item[] \textit{Note:} Logistic regression with standard errors clustered at the participant level in parentheses. Dependent variable is binary choice of selecting Autoplay (1) or turning it off (0). Bonus amounts range from $-0.5$ to $0.5$ pounds. The pseudo R-squared (0.6584) indicates that the bonus amount explains a substantial portion of the variation in participants' choices. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+\item[] \textit{Note:} Logistic regression with standard errors clustered at the participant level in parentheses. Dependent variable is binary choice of selecting autoplay (1) or turning it off (0). Bonus amounts range from £$-0.5$ to £$0.5$. The pseudo $R^2$ indicates good fit. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
 \end{tablenotes}
 \end{threeparttable}
 \label{tab:wtp_autoplay}
 \end{table}
 
-\section{Discussion - \textcolor{red}{integrate to introduction, redo and send}}
+\subsection{Understanding the Null Results}
+\subsubsection{Planned versus Actual Time Allocation}
+Participants allocated more time to transcription than initially planned. On average, participants planned to spend 45.5\% of their time transcribing but actually spent 61.2\%, representing an increase of 15.8 percentage points ($t = 8.24$, $p < 0.001$). The entire distribution shifted rightward (see Figure \ref{f:discrepancy}), with median actual transcription time (64.3\%) substantially exceeding median planned time (50.0\%).
+
+\begin{figure}[H] 
+   \caption{Distribution of planned vs actual time allocation} 
+   \centering 
+   \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/dual_typechoice_hist.png} 
+   \label{f:discrepancy} 
+   \begin{tablenotes} 
+       \footnotesize 
+       \item[] \textit{Note:} This figure compares the distribution of participants' planned time allocation (Day 1) with their actual time spent transcribing (Day 2). The rightward shift demonstrates participants' systematic tendency to transcribe more than originally planned.
+   \end{tablenotes} 
+\end{figure}
+
+The pattern is more pronounced when examining individual transitions. Among 151 participants who planned to spend less than three-quarters of their time transcribing, 106 (70\%) actually transcribed for three-quarters or more of the session. In contrast, among 33 participants who planned to spend three-quarters or more of their time transcribing, only 4 (12\%) reduced below 75\%. This asymmetric upward shift contradicts traditional models of time inconsistency, which predict succumbing to immediate temptation rather than increasing effortful work.
+
+\begin{table}[H]
+\centering
+\begin{threeparttable}
+\caption{Transition matrix: Planned vs actual time allocation}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc}
+\toprule
+& \multicolumn{2}{c}{Planned (Day 1)} \\
+\cmidrule(lr){2-3}
+Actual (Day 2) & $<$75\% transcription & $\geq$75\% transcription \\
+\midrule
+$<$75\% transcription & 45 (30\%) & 29 (88\%) \\
+$\geq$75\% transcription & 106 (70\%) & 4 (12\%) \\
+\midrule
+Total & 151 & 33 \\
+\bottomrule
+\end{tabular*}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[] \textit{Note:} This table shows transitions between planned and actual time allocation patterns. The asymmetric pattern demonstrates systematic shift toward transcription, with 106 participants increasing transcription time versus only 4 decreasing it.
+\end{tablenotes}
+\label{tab:transition_matrix}
+\end{threeparttable}
+\end{table}
+
+The deviation toward the more effortful transcription task is rather unexpected, and participant perceptions of the decision-making environment may have influenced their behavior. This result goes against our hypothesis that participants would deviate toward the tempting video content, and points to the need to examine it more closely. 
+
+\subsubsection{Experimenter demand effects}
+
+Why did participants end up transcribing more than their day 1 plans? To understand how participants perceived the decision-making environment, we asked how they decided to allocate their time during the main session. We analyzed participants' qualitative responses to this open-ended question using dictionary-based concept detection methods \citep{ash2023are}.
+
+We identified words related to negative perceptions of the transcription task (e.g., ``tiresome'', ``frustrating'', ``difficult'') and break-taking behavior when switching to watching (e.g., ``break'', ``rest'', ``relax''). Figures \ref{f:wordc1} and \ref{f:wordc2} show the frequency of these concepts in participants' responses.
+
+\begin{figure}[H]
+\caption{Word clouds for participant perceptions}
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/type.png}
+    \caption{Typing task negative descriptions}
+    \label{f:wordc1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/break.png}
+    \caption{Changing to watching task}
+    \label{f:wordc2}
+\end{subfigure}
+\begin{tablenotes}
+\footnotesize \item[] \textit{Note:} Panel (a) shows words describing negative perceptions of the transcription task. Panel (b) shows words describing switching to the watching task as break-taking behavior. Word size corresponds to frequency of mention across responses.
+\end{tablenotes}
+\end{figure}
+
+When asked to describe their allocation decisions, 29\% of participants spontaneously described the transcription task negatively, while 23\% specifically described watching videos as taking breaks from transcription. These findings suggest that participants perceived the experiment as a work environment where they should transcribe as much as possible while taking breaks to watch the videos. Combined with the systematic increases in transcription time, this perception suggests that experimenter demand effects influenced participant behavior as suspected.
+
+\subsubsection{Effect of achieving day 1 time allocation}
+If experimenter demand effects are driving participants to transcribe more than planned, participants may ignore their day 1 goals entirely and continue transcribing regardless of achieving their stated preferences. Alternatively, if participants genuinely care about their day 1 plans, we should observe behavioral changes when they reach their planned transcribing duration—specifically, a reduction in transcribing effort after achieving their goal.
+
+We examine this by analyzing task switching patterns throughout the 20-minute session. Figure \ref{f:cdf} shows substantial heterogeneity in individual transcribing patterns, with transcribing periods interrupted by watching periods for participants who alternate between tasks. Dividing the session into 5-minute quarters reveals that transcribing periods become progressively shorter over time (Figure \ref{f:bar_quartile}), suggesting that task switching may be strategic as participants either achieve their day 1 goals or experience fatigue.
+
+\begin{figure}[H]
+\caption{Time spent transcribing}
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \caption{Individual transcribing patterns}
+    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/typing_cdf.png}
+    \label{f:cdf}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \caption{Average transcribing by quartile}
+    \includegraphics[width=\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/work_allocation_quartiles.png}
+    \label{f:bar_quartile}
+\end{subfigure}
+\begin{tablenotes}
+\footnotesize \item[] \textit{Note:} Panel (a) shows transcribing time for 30 random participants across the 20-minute session. Panel (b) shows average transcribing time by 5-minute periods, revealing declining transcribing duration over time.
+\end{tablenotes}
+\end{figure}
+
+To test whether participants use their day 1 plans as behavioral reference points, we implement a sharp regression discontinuity design using the moment participants reach their planned transcribing duration as the cutoff. We estimate the discontinuous change in the probability of choosing the transcribing task at this threshold.
+
+Results in Table \ref{tab:rd_time_windows} show a significant immediate effect: participants are 27.4 percentage points less likely to continue transcribing in the 30-second window after achieving their plan ($p=0.007$) and 25.5 percentage points less likely in the 60-second window ($p=0.003$). This effect dissipates by the 90-second window, becoming statistically insignificant. These findings indicate that participants do treat plan completion as a behavioral milestone, suggesting that experimenter demand effects were not so strong as to completely override their day 1 preferences.
 
 
+\begin{table}[H]
+  \centering
+  \caption{Regression Discontinuity estimates on transcribing after achieving day 1 plans}
+  \begin{threeparttable}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+  \toprule
+  & \multicolumn{3}{c}{Time Window} \\
+  \cmidrule(lr){2-4}
+   & 30-seconds & 60-seconds & 90-seconds \\
+  \midrule
+  Proportion transcribing & -0.274*** & -0.255*** & -0.075 \\
+  & (0.101) & (0.087) & (0.108) \\
+  \midrule
+  Obs. (left) & 66,786 & 67,985 & 67,119 \\
+  Obs. (right) & 80,270 & 89,006 & 92,999 \\
+  Clusters (left) & 157 & 154 & 155 \\
+  Clusters (right) & 154 & 157 & 161 \\
+  Bandwidth & 339.9 & 368.3 & 422.3 \\
+  \bottomrule
+  \end{tabular*}
+  \begin{tablenotes}[flushleft]
+  \footnotesize
+  \item[] \textit{Note:} This table presents robust regression discontinuity estimates of the treatment effect on task choice at the moment participants achieve their day 1 planned transcribing duration. Standard errors clustered by participant in parentheses. The outcome variable is a binary indicator for choosing the transcribing task. Running variables are binned at 30-, 60-, and 90-second intervals around the achievement threshold. All estimates use triangular kernel with MSE-optimal bandwidth selection. *** $p<0.01$, ** $p<0.05$, * $p<0.1$.
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:rd_time_windows}
+\end{table}
 
-\section{Conclusion}
+However, the discontinuity analysis reveals additional complexity. Figure \ref{f:rd_bin30} shows that while participants initially reduce transcribing after achieving their day 1 plans, they subsequently increase transcribing effort again. This pattern suggests that participants have indeed found the watching task less engaging than anticipated, leading them to return to transcribing despite having already met their stated preferences.
 
-\textcolor{red}{EXPERIMENTAL DEMAND EFFECTS AND SOCIAL IMAGE CONCERNS. THE EXPERIMENT IS SET AS A WORKING ENVIRONMENT. PARTICIPANTS PERCEIVED THE DECISION AS ONE TO WORK AS MUCH AS POSSIBLE.}
+\begin{figure}[H] 
+    \caption{Linear fit for transcribing rate before and after achieving day 1 plan} 
+    \centering 
+    \includegraphics[width=0.6\linewidth]{/Users/reha.tuncer/Documents/GitHub/autoplay/stata/figures/rd_bin30.png} 
+    \label{f:rd_bin30} 
+    \begin{tablenotes} 
+        \footnotesize 
+        \item[] \textit{Note:} This figure plots the average transcribing rate across 30-second bins for participants as they approach their day 1 goal. The negative slope on the left hand side indicates participants working less and less as they approach the cutoff. The drop showcases the discontinuity where achiving the day 1 goal causes in transcribing behavior. The positive slope on the right hand side reveals another trend: As time goes on, participants tend to go back to the transcribing task and decrease their video consumption. This demonstrates participants' tendency to spend more time on the effortful transcribing task than originally planned.
+    \end{tablenotes} 
+\end{figure}
 
-% Autoplay without engaging content is likely to feels  at first, but its addictivity quickly fades after one bite.
 
-% Additionally, if the platform observes that users frequently exit the platform when the opportunity arises—such as during a break between autoplayed videos—this would be compelling evidence that the platform's content is exceptionally addictive. \textcolor{red}{TO DEVELOP}
+\section{Conclusion}\label{Conclusion}
 
+This study examined whether autoplay features in isolation can override users' stated preferences for media consumption. Using a controlled two-day online experiment with 184 participants, we find no evidence that autoplay increases video consumption when content is held constant. Participants viewed autoplay as beneficial rather than problematic, exhibiting positive willingness-to-pay for the feature.
 
+However, our null findings appear to be driven by experimenter demand effects rather than a genuine absence of autoplay's influence. Participants systematically transcribed more than they initially planned, with qualitative evidence revealing they perceived the experiment as a work environment. This interpretation is supported by regression discontinuity analysis showing that participants reduced transcription effort immediately after achieving their day 1 plans, but quickly resumed transcribing.
 
+These findings have important implications for research on interface design and digital well-being. First, they highlight the challenge of creating ecologically valid experimental environments that capture real-world media consumption behaviors. The monetary incentives and task framing that are necessary for controlled experimentation may inadvertently create demand effects that mask the very phenomena researchers seek to study.
 
+Second, our results suggest that the effects of interface design elements like autoplay may be highly context-dependent. While autoplay shows no effect in our work-like experimental setting, it may have stronger impacts in leisure contexts where users are not constrained by productivity concerns or experimenter expectations.
 
-% \section{Outcomes}
-
-% If we confirm our first hypothesis, i.e. Click-to-play condition respects participants' ex-ante time division between the labor and leisure tasks, it would show that the default Click-to-play feature is a good interface design alternative to other Auto(re)-play features found across social media and streaming platforms. Based on this result, we argue that Click-to-play feature should be forced as the default interface by regulators to prevent self-control issues and excessive media consumption.
-
-% If we confirm our second hypothesis, i.e. autoplay and Auto-replay conditions are equivalent in their increase in the time spent at the leisure task, this would benchmark the effects of both features on behavior (i) and show that interface designs pretending to give control to users are not necessarily preventing excessive use and addictive behaviors (ii). Further, it would also shed light on the habit-building effect of Auto-replay conditions where people are trained to move to the next video once replay starts.
-
-% If we confirm our third hypothesis, i.e. we find no statistically significant differences between participants’ ex-post guesses about their actual task performance when compared to their ex-ante time division between the labor and leisure tasks, it would show that people are unaware of the effects of autoplay and Auto-replay conditions have on their own behavior. This would bring further strength to the argument that Auto-(re)play features should be opt-in only, as their effects on media consumption are unrecognized by people.  
- 
-
-% \section{Ethical considerations}
-
-% Participants should receive a minimum participation fee because of the time they spent on the experiment. This fee cannot be lower than the hourly minimum wage from the sampled country. The wage for the labor task should be in addition to this initial participation fee. If participants fail attention checks or provide a lower-than-minimum amount of required effort in the labor task, they should still part with the minimum participation fee for the experiment.
+For policymakers considering regulations on autoplay features, our findings suggest caution in drawing strong conclusions from any single experimental study. The effectiveness of interface interventions likely depends critically on the broader context in which users encounter them. Future research should prioritize developing experimental methods that better approximate genuine media consumption environments while maintaining the control necessary for causal inference.
 
 \bibliographystyle{apacite}
 \bibliography{ref} 
@@ -958,7 +700,7 @@ Wald $\chi^2$(1) & 19.86 \\
  \caption{Comparison of main sample vs flagged participants}
  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc c@{}}
  \toprule
- & \multicolumn{1}{c}{\textbf{Main Sample}} & \multicolumn{1}{c}{\textbf{Flagged Sample}} & \multicolumn{1}{c}{\textit{\textbf{p}}} \\
+ & \multicolumn{1}{c}{Main Sample} & \multicolumn{1}{c}{Flagged Sample} & \multicolumn{1}{c}{\textit{p}} \\
  & \multicolumn{1}{c}{N = 184} & \multicolumn{1}{c}{N = 40} & [M = F]\\
  \midrule
  \textit{\textbf{Gender}} & & & \\
@@ -992,11 +734,11 @@ Wald $\chi^2$(1) & 19.86 \\
 
 \begin{table}[H]
   \centering
-  \caption{Effect of Autoplay Treatment on Typing Behavior}
+  \caption{\textit{Autoplay} condition and time spent transcribing}
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
-  & \multicolumn{3}{c}{Proportion Typing (z-score) } \\
+  & \multicolumn{3}{c}{Transcription proportion (z-score) } \\
   \cmidrule(lr){2-4}
   & (1) & (2) & (3) \\
   \midrule
@@ -1010,13 +752,13 @@ Wald $\chi^2$(1) & 19.86 \\
   & (0.094) & (0.078) & (0.079) \\
   \midrule
   Obs. & 224 & 224 & 224 \\
-  R-squared & 0.005 & 0.357 & 0.357 \\
-  F-statistic & 1.04 & 50.28 & 35.00 \\
+  $R^2$ & 0.005 & 0.357 & 0.357 \\
+  $F$-statistic & 1.04 & 50.28 & 35.00 \\
   \bottomrule
   \end{tabular*}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time Choice represents participants' planned typing proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
+  \item[] \textit{Note:} Robust standard errors in parentheses. All variables are standardized. Time choice represents participants' planned transcription proportion from day 1. *** $p<0.001$, ** $p<0.01$, * $p<0.05$.
   \end{tablenotes}
   \end{threeparttable}
   \label{tab:typing_regressions_full}
@@ -1024,7 +766,7 @@ Wald $\chi^2$(1) & 19.86 \\
 
 \begin{table}[H]
   \centering
-  \caption{Effect of Autoplay Treatment on Video Watching Behavior}
+  \caption{\textit{Autoplay} condition and number of videos watched}
   \begin{threeparttable}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
   \toprule
@@ -1042,8 +784,8 @@ Wald $\chi^2$(1) & 19.86 \\
   & (0.090) & (0.075) & (0.075) \\
   \midrule
   Obs. & 224 & 224 & 224 \\
-  R-squared & 0.001 & 0.347 & 0.348 \\
-  F-statistic & 0.14 & 48.91 & 34.21 \\
+  $R^2$ & 0.001 & 0.347 & 0.348 \\
+  $F$-statistic & 0.14 & 48.91 & 34.21 \\
   \bottomrule
   \end{tabular*}
   \begin{tablenotes}[flushleft]

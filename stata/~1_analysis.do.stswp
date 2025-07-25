@@ -416,4 +416,5 @@ bysort id: replace outcome = 1 if nauto_05 == 1 & decision == 9
 keep outcome bonus id
 tab bonus
 logit outcome bonus, vce(cluster id)
+clogitfe outcome bonus, group(id) vce(cluster id)
 margins, dydx(*)
