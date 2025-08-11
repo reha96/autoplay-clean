@@ -106,9 +106,9 @@ The remainder of this paper is organized as follows. Section \ref{Design} descri
 \section{Design}\label{Design}
 
 \subsection{Timeline and Session Structure}
-We conducted a two-day online lab experiment to examine how autoplay feature affects time allocation between transcription of random characters and watching funny animal videos. The multi-day structure allowed us to measure the gap between planned and actual behavior, . Participants completed two separate data collection sessions with a cooling-off period of 24 hours (up to 48 hours) between sessions.
+We conducted a two-day online lab experiment to examine how autoplay feature affects time allocation between transcription of random characters and watching funny animal videos. The multi-day structure allowed us to measure the gap between planned and actual behavior, a key feature in research on present-focused preferences \citep{ericsonIntertemporalChoice2019}. Participants completed two separate data collection sessions with a cooling-off period of 24 hours between sessions.
 
-Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by preference elicitation measures. Day 2 featured the main 20-minute session where participants made actual time allocation decisions. We conducted two waves of data collection during May 2023, as described in Table \ref{summary_table}.
+Day 1 sessions included a practice session to familiarize participants with the experimental interface, followed by planned time allocation decisions. Day 2 featured the main session where participants made actual time allocation decisions. We conducted two waves of data collection during May 2023, as described in Table \ref{summary_table}.
 
 \begin{table}[H]
 \centering
@@ -126,27 +126,27 @@ Day 2 (Block 2) &  &  &  & \checkmark & immediate \\
 \end{tabular*}
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves, with columns ordered chronologically within each day. The first block established baseline effects, while the second block incorporated the Multiple Price List to measure demand for a commitment device. Decision horizon refers to the time between planned time allocation and the main session.
+\item[] \textit{Note:} This table shows the experimental components administered across two data collection waves, with columns ordered chronologically within each day. The first block established differences in planned and actual time allocations across conditions, while the second block incorporated the Multiple Price List to measure demand for commitment against autoplay. Decision horizon refers to the period between planned time allocation and the main session.
 \end{tablenotes}
 \label{summary_table}
 \end{threeparttable}
 \end{table}
 
 \subsection{Technical Implementation and Interface Design}
-We designed the experimental platform to provide precise control over the testing environment while maintaining ecological validity. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between activities seamlessly while preserving progress. Sessions began with the transcription task as the default, requiring an active choice to switch to the watching task.
+We designed the experimental platform to provide precise control over the testing environment. We presented both tasks within a single web page using distinct tabs, allowing participants to switch between transcribing and watching videos seamlessly while preserving progress. A progress bar and timer provided feedback for remaining time. Sessions began with the transcription task as the default, requiring an active choice to switch to the watching task.
 
-The interface incorporated several key features to track behavior. A progress bar and timer provided real-time feedback on session duration. We logged all critical interactions including tab switches, keystrokes during transcription, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
+The interface incorporated several key features to track behavior.  We logged all critical interactions including tab switches, keystrokes during transcription, video controls, and cursor movements outside the experimental window. This granular tracking enabled us to construct detailed measures of attention and engagement across tasks.
 
 \subsection{Internal Validity Controls}\label{int-val}
-Online experiments present unique challenges for maintaining experimental control, including participant multitasking, technical disruptions, and environmental variation. We implemented comprehensive measures to address these concerns and ensure data quality.
+Online experiments present unique challenges for maintaining experimental control, including participant multitasking, technical disruptions, and environmental variation. We implemented comprehensive measures to address these concerns and ensure data quality. We clearly communicated these restrictions to participants at the experiment's outset.
 
-\textbf{Participant and Technology Screening:} We selectively admitted participants using multiple screening criteria to ensure stable experimental conditions. Internet speed requirements filtered out participants with unstable connections (minimum 30 Mbps on day 1, 25 Mbps on day 2). We restricted participation to users with Windows, Linux, or Mac operating systems using Chromium-based browsers exclusively. We excluded Safari and Mozilla Firefox due to restrictive autoplay configurations. Mobile devices and tablets were prohibited to standardize the user experience.
+\textbf{Participant and Technology Screening:} We selectively admitted participants using multiple screening criteria to ensure a stable experience. Internet speed requirements filtered out participants with unstable connections (minimum 30 Mbps for block 1, 40 for block 2). We restricted participation to users with Windows, Linux, or Mac operating systems using Chromium-based browsers exclusively. We excluded Safari and Mozilla Firefox due to restrictive autoplay configurations. Mobile devices and tablets were prohibited to standardize the user experience.
 
-\textbf{Platform Controls:} The experimental website enforced linear navigation, preventing participants from moving backward through the experiment. We disabled right-click functions and keyboard shortcuts. Any attempt to navigate backward reset progress to the landing page. We clearly communicated these restrictions to participants at the experiment's outset.
+\textbf{Platform Controls:} The experimental website enforced linear navigation, preventing participants from moving backward through the experiment. We disabled right-click functions and keyboard shortcuts. Any attempt to navigate backward reset progress to the landing page.
 
-\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using a JavaScript library to detect interface visibility disruptions.\footnote{See more information about the \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{Intersection Observer API}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications. The tracking provided second-by-second accountability of participant engagement.
+\textbf{Attention and Engagement Monitoring:} We implemented real-time tracking of participant attention using a JavaScript library to detect interface visibility disruptions.\footnote{See more information about the \href{https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API}{Intersection Observer API}.} This system captured actions such as minimizing the browser, switching between web pages, or launching other applications. The tracking provided second-by-second measures of participant engagement.
 
-\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the watching task. We combined these self-reports with our objective tracking measures to identify and filter data potentially compromised by distractions or divided attention.
+\textbf{Post-Experiment Validation:} After completing the experiment, participants reported any connectivity disruptions and confirmed their genuine engagement with the watching task. We combined these self-reports with our tracking measures to identify and filter data potentially compromised by distractions or divided attention.
 
 \subsection{Tasks}
 \subsubsection{Transcription Task}\label{transcription-task}
@@ -169,31 +169,31 @@ We established easy-to-meet quality requirements to ensure participants remained
 \end{figure}
 
 \subsubsection{Watching Task}\label{watching-task}
-In this task, participants watch successive short videos in a customized media player. Since we are interested in isolating the media player's default settings, the video content and the order in which videos appear to participants are identical across conditions. We completely disabled the media player controls: Participants cannot skip videos (user scrolling is disabled) or use the media player's slider to advance or go back in a particular video.
+In this task, participants watch successive short videos in a customized media player. The video content and the order in which videos appear to participants are identical across conditions. We completely disabled the media player controls: participants cannot skip videos (user scrolling is disabled) or use the media player's slider to advance or go back in a particular video.
 
-The conditions differ in their autoplay functionality. In the \textit{Autoplay} condition, videos play automatically when the watching tab is visible and pause with a click anywhere on the video. While the watching task is visible, the media player keeps scrolling to the next videos and continues playing them unless interrupted. In the \textit{Control} condition, participants need to have the watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video, but the new video only starts playing when the participant clicks on it. Figure \ref{watching-screen} illustrates the video tab in the \textit{Control} condition.
+The conditions differ in their autoplay functionality. In the \textit{Autoplay} condition, videos play automatically when the watching tab is visible and pause with a click anywhere on the video. The media player keeps scrolling to the next videos and continues playing them unless interrupted. In the \textit{Control} condition, participants need to have the watching tab visible and click on each consecutive video to play them. At the end of each video, the scrolling animation brings the next video that only starts playing when the participant clicks on it. Figure \ref{watching-screen} illustrates the video tab in the \textit{Control} condition.
 
-We manually selected 80 videos to isolate the difference in the media player design and help avoid algorithmic biases resulting from the recommender system's personalized suggestions. We curated videos from YouTube and TikTok, using the tags ``funny animal'' and ``cute animal''.  We chose animal videos because of their popularity during pilot studies.\footnote{During the pilots, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of.} We reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. We kept the first 60 videos shorter in the beginning to maximize the frequency of experiencing the autoplay feature during the watching session, with videos getting longer for the last 20 videos (see Table \ref{tab:video_duration}).
+We manually selected 80 videos to avoid algorithmic biases resulting from the recommender system's personalized suggestions. We curated videos from YouTube and TikTok, using the tags ``funny animal'' and ``cute animal''.  We chose animal videos because of their popularity during pretests.\footnote{During the pretests, the experiment was followed by a separate questionnaire asking participants to rate the videos they had seen and suggest what types of videos they would have liked to see more of, with options including sports, news, or trending content.} We reviewed the selected videos to ensure that they did not contain any harmful or violent actions toward the animals involved. To maximize the frequency of experiencing the autoplay feature during the watching task, we kept the first 60 videos shorter (mean 12.25 seconds, SD 7.04 seconds), with the last 20 videos longer than the rest (mean 25.50 seconds, SD 14.04 seconds).
 
-\begin{table}[H]
-  \centering
-  \caption{Video durations in the watching task}
-  \begin{threeparttable}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
-  \toprule
-  & \multicolumn{1}{c}{\textbf{First 60 videos}} & \multicolumn{1}{c}{\textbf{Last 20 videos}} \\
-  \midrule
-  \textbf{\textit{Duration (seconds)}} & & \\
-  Mean (SD) & 12.25 (7.04) & 25.50 (14.04) \\
-  Median [Min, Max] & 10 [5, 38] & 19.5 [8, 60] \\
-  \bottomrule
-  \end{tabular*}
-  \begin{tablenotes}[flushleft]
-  \footnotesize
-  \item[] \textit{Note:} This table presents the duration characteristics of the 80 animal videos used in the experiment. The first 60 videos were kept shorter to maximize participants' exposure to the autoplay feature during watching sessions, while the last 20 videos were longer. 
-  \end{tablenotes}
-  \end{threeparttable} \label{tab:video_duration}
-\end{table}
+% \begin{table}[H]
+%   \centering
+%   \caption{Video durations in the watching task}
+%   \begin{threeparttable}
+%   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+%   \toprule
+%   & \multicolumn{1}{c}{\textbf{First 60 videos}} & \multicolumn{1}{c}{\textbf{Last 20 videos}} \\
+%   \midrule
+%   \textbf{\textit{Duration (seconds)}} & & \\
+%   Mean (SD) & 12.25 (7.04) & 25.50 (14.04) \\
+%   Median [Min, Max] & 10 [5, 38] & 19.5 [8, 60] \\
+%   \bottomrule
+%   \end{tabular*}
+%   \begin{tablenotes}[flushleft]
+%   \footnotesize
+%   \item[] \textit{Note:} This table presents the duration characteristics of the 80 animal videos used in the experiment. The first 60 videos were kept shorter to maximize participants' exposure to the autoplay feature during watching sessions, while the last 20 videos were longer. 
+%   \end{tablenotes}
+%   \end{threeparttable} \label{tab:video_duration}
+% \end{table}
 
 \begin{figure}[H]
    \caption{Watching Task tab}
@@ -202,25 +202,24 @@ We manually selected 80 videos to isolate the difference in the media player des
    \label{watching-screen}
    \begin{tablenotes}
 \footnotesize
-\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textit{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textit{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' button seen up on the right. Notice that the top part of the following video is already visible in the bottom part of the screen.
+\item[] \textit{Note:} This figure describes the ``Watch'' tab in the \textit{Control} condition. Before the first video is clicked upon to be played, there is a banner that reminds participants that the video won't play without clicking. This banner was not present in the \textit{Autoplay} condition and videos started playing as soon as participants clicked on the ``Watch'' tab seen on the top right side. Notice that the top part of the following video is already visible in the bottom part of the screen.
 \end{tablenotes}
 \end{figure}
 
 \subsection{Practice Session}\label{practice}
-The experiment consists of two sessions during which participants interact with the tasks described above. The first session is the practice session on day one. It comes right after the written descriptions of each task and serves to familiarize participants with the tasks and the interface. Participants are assigned to either \textit{Autoplay} or \textit{Control} condition before the practice session, so that they experience the same video interface on both the Practice and Main Sessions.
+The experiment consists of two sessions during which participants interact with the tasks described above. The first session is the practice session on day one. It comes right after the written descriptions of each task and serves to familiarize participants with the tasks and the interface. Participants are assigned to either \textit{Autoplay} or \textit{Control} condition before the practice session, so that they experience the same video interface on both the practice and main sessions.
 
-During the practice session, each task was available for only 60 seconds and participants were not allowed to switch between tasks. On the first tab, participants were required to retype CAPTCHAs. The 60-second period was enough to submit one CAPTCHA and see the second CAPTCHA image. After 60 seconds, a pop-up appeared on the screen blocking any other interaction and taking participants to the second page.
+Practice session was 2 minutes long. Each task was available for only 60 seconds and participants were not allowed to switch between tasks. On the first tab, participants were required to retype CAPTCHAs. The 60-second period was enough to submit one CAPTCHA and see the second CAPTCHA image. After 60 seconds, a pop-up appeared on the screen blocking any other interaction and taking participants to the second page.
 
-Participants were required to close this pop-up to advance to the second task. The rationale behind the pop-up was to ensure participants spent equal time on both tasks. Whether or not this pop-up was closed was verified to check participant activity and served as an additional attention check.\footnote{All participants closed this pop-up and switched to the watching task.} Once closed, the watching task began for 60 seconds, enabling participants to watch 4 to 5 short videos depending on whether they were assigned to the \textit{Autoplay} or the \textit{Control} condition. In the \textit{Autoplay} condition, videos played continuously, while in the \textit{Control} condition, videos required a click to start.
-
-We did not remunerate participants for the time they spent here because the purpose of the practice session was to understand the difficulty and pacing of the tasks, as well as navigation within the interface.
+Participants were required to close this pop-up to advance to the second task. The rationale behind the pop-up was to ensure participants spent equal time on both tasks. Whether or not this pop-up was closed was verified and served as an additional attention check.\footnote{All participants closed this pop-up and switched to the watching task.} Once closed, the watching task began for 60 seconds, enabling participants to watch 4 to 5 short videos depending on whether they were assigned to the \textit{Autoplay} or the \textit{Control} condition.
 
 \subsection{Multiple Price List}\label{mpl}
-In the second block of the experiment, participants made 9 binary decisions (see Figure \ref{mpl-screen}). These decisions were made after the practice session on day one. Participants chose between their preferred media player setting (autoplay off or on) and a bonus payment. We determined bonuses by the per-second earning differences across tasks, multiplied by the expected differences in time spent between the conditions in the first block of the experiment. 
+In the second block of the experiment, we used a Multiple Price List to elicit the Willingness to Pay for commitment against autoplay, commonplace method in the literature \citep{andersenElicitationUsingMultiple2006,jackMultiplePriceLists2022}. After the practice session on day one, participants made 9 binary decisions, choosing between their preferred media player setting (autoplay off or on) and a bonus payment (see Figure \ref{mpl-screen}). We determined bonuses by the per-second earning differences across tasks, multiplied by the expected differences in time spent between the conditions in the first block of the experiment.
 
 Specifically, we expected the average difference between the \textit{Autoplay} and \textit{Control} conditions, in terms of time spent across tasks, to be in the magnitude of 60 seconds (it was 79.5 seconds, from Table \ref{table3}). This resulted in an average earning difference of $60*(0.15-0.1)=3$ pence. To capture this in the MPL choices offered, we set the symmetric bonuses accordingly: £[0.05, 0.1, 0.25, 0.5].
 
-Once these decisions were completed, we randomly implemented one of their 9 choices and informed participants whether autoplay would be on or off, and of their associated bonus earnings. With this knowledge, participants then made their hypothetical time allocation for day 2.
+We used the Becker-deGroot-Marschak \citep{beckerMeasuringUtilitySingleresponse1964} random price mechanism for incentivization. 
+Once the binary decisions were completed, we randomly implemented one of their 9 choices and informed participants whether autoplay would be on or off, and of their associated bonus earnings. With this knowledge, participants then made their planned time allocation for day 2.
 
 \begin{figure}[H]
     \caption{Multiple Price List page}
@@ -229,16 +228,16 @@ Once these decisions were completed, we randomly implemented one of their 9 choi
    \label{mpl-screen}
       \begin{tablenotes}
 \footnotesize
-\item[] \textit{Note:} This figure describes the MPL page where participants made 9 binary choices between their preferred autoplay setting and bonus payments. Each row presents a choice between ``Autoplay'' (left) and ``No Autoplay'' (right) with associated bonus amounts ranging from £0.05 to £0.5. The interface required participants to select one option in each row before proceeding. One of these 9 decisions was randomly selected for implementation in the Main Session, determining both the autoplay setting and any bonus payment for day two.
+\item[] \textit{Note:} This figure describes the MPL page where participants made 9 binary choices between their preferred autoplay setting and bonus payments. Each row presents a choice between ``Autoplay'' (left) and ``No Autoplay'' (right) with associated bonus amounts ranging from £0.05 to £0.5. Note that participants in this block only saw autoplay videos in the practice session, and stated their preferences accordingly. The interface required participants to select one option in each row before proceeding. One of these 9 decisions was randomly selected for implementation in the main session, determining both the autoplay setting and any bonus payment for day two.
 \end{tablenotes}
 \end{figure}
 
 \subsection{Time Choice}\label{time-choice}
-Following the practice session, participants transitioned to the time choice section. This section required them to specify their preferred time allocation between the two tasks for the following day. Participants were informed the main session would be 20 minutes long and they were free to choose corner solutions, even if that meant focusing solely on one task.
+Following the practice session, participants proceeded with the time choice section. This section required them to specify their preferred time allocation between the two tasks for the day 2. Participants were informed the main session would be 20 minutes long and they were free to choose corner solutions, even if that meant focusing solely on one task.
 
 We designed a slider tool with 20-second steps for participants to indicate their time allocation preferences. Initially, the slider appeared grayed out and required a click to activate. This design aimed to ensure participants considered their choices in an active manner. The click-to-activate design had two benefits: It guaranteed participants interacted with the slider and helped participants understand the task-related payoff structure.
 
-To incentivize this decision, we randomly made 5\% of the day 1 choices binding in the main session. Binding choices led to payments based on the initial time choice, but only if participants met the quality standards described under Section \ref{transcription-task} during day 2. We excluded data from these participants from the final dataset accordingly. We informed participants whether their allocation was binding with their time choice reminder on day two, right before the start of the main session.
+To incentivize this decision, we randomly made 5\% of the day 1 choices binding in the main session. Binding choices led to payments based on the initial time choice, but only if participants met the quality standards described under Section \ref{transcription-task} during day 2. We excluded data from these participants from the final dataset accordingly.
 
 The time choice served as a benchmark for participants, and participants accordingly received a reminder of it on day two. The time choice section offers insights into participants' informed time preferences and allows verifying their commitment to these choices after a 24-hour period.
 
@@ -249,7 +248,7 @@ The time choice served as a benchmark for participants, and participants accordi
    \label{time-choice-screen}
    \begin{tablenotes}
 \footnotesize
-\item[] \textit{Note:} This figure shows the time choice interface with a slider tool allowing participants to allocate time between the two experimental tasks for the following day's 20-minute main session. The slider initially appears grayed out and requires a click to activate. Real-time feedback shows the selected allocation (here, 10 minutes each) and expected earnings (£4.25). The interface informs participants that 1 out of 20 (5 percent) will be bound by their choice and that they will learn whether their choice is binding on day two.
+\item[] \textit{Note:} This figure shows the time choice interface with a slider tool with 20-second steps allowing participants to allocate time between the two experimental tasks for the following day's main session. The slider initially appears grayed out and requires a click to activate. Real-time feedback shows the selected allocation (here, 10 minutes each) and expected earnings (£4.25). The interface informs participants that 1 out of 20 (5 percent) will be bound by their choice and that they will learn whether their choice is binding on day two.
 \end{tablenotes}
 \end{figure}
 
@@ -257,37 +256,37 @@ The time choice served as a benchmark for participants, and participants accordi
 
 The main session took place on day two, approximately 24 hours after the time choice. We began by reminding participants of their previous day's time allocation and informing them whether their time choice was binding. 95\% of participants were free to allocate their time on day 2 as they preferred.
 
-The main session lasted 20 minutes. Participants could freely switch between the transcription and watching tasks at any time using the tab interface. Unlike the practice session, there were no time restrictions on individual tasks. Participants had complete autonomy over their time allocation decisions. The interface maintained real-time tracking of time spent on each task, and participants could monitor their time allocation through the progress bar and a timer.
+The main session lasted 20 minutes. Participants could switch between the transcription and watching tasks at any time using the tab interface. Unlike the practice session, there were no time restrictions on individual tasks. Participants had complete autonomy over their time allocation decisions, and could monitor remaining time through the progress bar and the timer. Throughout the main session, we monitored writing and transcribing actions in real-time. 
 
-We implemented the experimental treatment during this session through the media player's autoplay functionality. Participants assigned to the \textit{Autoplay} condition experienced continuous video playback when the watching tab was visible, while those in the \textit{Control} condition required a click to start each video.
+The treatment was implemented through the media player's autoplay functionality as previously described in Section \ref{watching-task}.
 
 
 \subsection{Hypotheses}\label{hypotheses}
-User interface design choices are ``not separable from other content choices, since their effect depends on where the platform has positioned its content on the underlying content manifold.'' \citep{kleinberg2022challenge}. If content has very low inherent appeal and stickiness, autoplay may have minimal effect on video consumption. An analogy is how introducing breaks would have little impact on engagement for low-stickiness content like documentaries, but dramatically reduce engagement for high-stickiness content like celebrity gossip.\footnote{See \citet{bao2025just} for recent work on addictive short drama series.} 
-
-Assuming that our selection of videos have sufficient appeal and stickiness, \textit{Autoplay} condition should lead to consumption beyond users' stated preferences, creating a measurable gap between hypothetical time choice and actual behavior. In this case, we expect autoplay's behavioral effects to be known by participants, albeit underestimated as to how much they would be affected by these interfaces \citep{bongard2021definitely}. We thus expect positive demand for a commitment device driven by ``sophisticated'' participants in line with time preference literature \citep{ericson2018}. 
+User interface design choices are ``not separable from other content choices, since their effect depends on where the platform has positioned its content on the underlying content manifold.'' \citep{kleinberg2022challenge}. If content has very low inherent appeal and stickiness, autoplay may have minimal effect on video consumption. An analogy is how introducing breaks would have little impact on engagement for low-stickiness content like documentaries, but dramatically reduce engagement for high-stickiness content like celebrity gossip.\footnote{See \citet{bao2025just} for recent work on addictive short drama series.} Assuming that our selection of videos have sufficient appeal and stickiness, \textit{Autoplay} condition leads to consumption beyond users' stated preferences, creating a measurable gap between planned the time allocation and actual behavior.
 
 \textbf{Hypothesis 1:} \textit{Autoplay} condition decreases the realized time allocated to the transcription task while increasing video consumption. We test this using a linear regression:
 \begin{equation}\label{eq1}
 Y_{i} = \alpha + \gamma \text{Autoplay}_{i} + \beta \text{TimeChoice}_{i} + \delta (\text{Autoplay}_{i} \times \text{TimeChoice}_{i}) + \epsilon_{i}
 \end{equation}
-where $Y_{i}$ represents our outcome variables of interest (proportion of time spent on transcription or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the condition, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend on transcription on day 1. We estimate this model with and without the interaction term to examine whether the autoplay effect varies based on initial planning preferences. We expect $\gamma < 0$ for transcription and $\gamma > 0$ for videos watched.
+where $Y_{i}$ represents our outcome variables of interest (proportion of time spent on transcription or number of videos watched), $\text{Autoplay}_{i}$ is a binary indicator for the condition, and $\text{TimeChoice}_{i}$ is the standardized proportion of time participants planned to spend on transcription on day 1. We estimate this model with and without the interaction term to examine whether the effect of autoplay varies based on initial time allocation plans. We expect $\gamma < 0$ for transcription and $\gamma > 0$ for videos watched.
 
 \textbf{Hypothesis 2:} \textit{Autoplay} condition has an effect on deviations from stated time allocation preferences (actual minus planned time spent on transcription). We test this using a two-sample $t$-test comparing the means between the two conditions.
 
+We expect the effect of autoplay on content consumption is known by participants, although they will underestimate how much they would be affected on average \citep{bongard2021definitely}. We will estimate a demand for a commitment device driven by ``sophisticated'' participants, i.e., a subset of participants who are aware of the effect of autoplay, in line with the literature \citep{ericsonIntertemporalChoice2019}. 
+
 \textbf{Hypothesis 3:} If participants are aware of their self-control issues, they should exhibit negative Willingness To Pay (WTP) for autoplay, preferring the commitment devices that restrict automatic video transitions. We test this using a logistic regression:
     \begin{equation}\label{eq2}
-        {Y}_{ij} = \alpha + \beta \text{Bonus}_{ij} + \epsilon_{ij}
+        {Y}_{ij} = \beta_{0} + \beta_{1} \text{Bonus}_{ij} + \epsilon_{ij}
     \end{equation}
-where ${Y}_{ij}$ is the binary choice of taking autoplay given the bonus $j$ from the MPL for individual $i$. We calculate the WTP for autoplay as the population-averaged effect of bonus $-\alpha/\beta$, and expect a negative sign indicating preference for commitment against autoplay.
+where ${Y}_{ij}$ is the binary choice of taking autoplay given the bonus $j$ from the MPL for individual $i$. We calculate the WTP for autoplay as the sample-averaged effect of bonus $-\beta_{0}/\beta_{1}$, and expect a negative sign indicating preference for commitment against autoplay.
 
 In sum, these hypotheses test whether interface design features can systematically distort optimal time allocation decisions in a setting where participants face clear monetary incentives favoring the transcription task.\footnote{\href{https://doi.org/10.17605/OSF.IO/MFKBC}{Access} the preregistered hypotheses. Our preregistration included hypotheses 1 and 3. We have added supporting hypothesis 2 regarding our expectations about the time choice section later.}
 
 
 \section{Sample and Procedures}\label{SandP}
-The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We sampled from the Prolific participant pool, an online recruitment platform commonly used for academic research, and targeted adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection ($>30$ Mbps on the first and $>25$ Mbps on the second day of the experiment). We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity of the experiment as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
+The experiment was run entirely online, using widely available open-source tools.\footnote{We used the \href{https://www.mongodb.com/languages/mern-stack-tutorial}{MERN stack} to develop and host the website in an entirely free way.} We sampled from the Prolific participant pool, an online recruitment platform commonly used for academic research, and targeted adult British residents. We further imposed the following criteria: Fluency in English, balanced gender representation, and having a stable internet connection. We did not allow mobile devices and restricted access to the experiment to Chromium-based browsers to enhance the internal validity as previously discussed in Section \ref{int-val}. Only participants who succeeded on both attention checks, reported not having engaged in other activities, and did not have connection issues during the experiment were included in the final dataset.
 
-Payment was calculated based on actual time spent on each task during the main session on day 2, with compensation rates of 0.15 pence per second for transcription and 0.1 pence per second for watching. Participants needed to meet the established quality requirements for the transcription task to receive compensation for time spent on that activity. The session concluded automatically after 20 minutes, and participants received their final payment calculation before completing the experiment. Participants received a fixed participation fee of £2.75. Average earning per participant was £4.08, amounting to an average payment of £1.33 (median £1.49) for the main session. Participants who completed all required elements of the experiment received payment within seven days after the second session.\footnote{\href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{Prolific payment policy} gives researchers 21 days to transfer funds to participants. The typical delay between study completion and payment is however only 3 to 4 days on average.} 
+Payment was calculated based on actual time spent on each task during the main session on day 2, with compensation rates of 0.15 pence per second for transcription and 0.1 pence per second for watching. Participants needed to meet the established quality requirements for the transcription task to receive compensation for time spent on that activity. The session concluded automatically after 20 minutes, and participants received their final payment calculation before completing the experiment. Participants received a fixed participation fee of £2.75. The study took less than 30 minutes in total across 2 days, with average earning per participant at £4.08. This amounted to an average payment of £1.33 (median £1.49) for the main session. Participants who completed all required elements received payment within seven days after the second session.\footnote{\href{https://participant-help.prolific.co/hc/en-gb/articles/360021786314-When-will-I-be-paid-for-a-study-}{Prolific payment policy} gives researchers 21 days to transfer funds to participants. The typical delay between study completion and payment is however only 3 to 4 days on average.} 
 
 For the first block of the experiment, we preregistered a two-sample parallel design using our prototype data and tested for equality of means across conditions. We found that the required sample size to test \hyperref[hypotheses]{Hypothesis 1} with the usual parameter values ($\alpha = .05$, $\beta = .2$) would be 114 per condition, with an effect size of 65 seconds calculated by the difference in the average time spent between conditions ($\mu_{Autoplay}-\mu_{Control}$) and population standard deviation of 165 seconds. Since attrition in longitudinal experiments is commonplace, we invited 301 participants on the first day. On day two, we invited the same 301 participants and received 276 complete responses (91\% response rate). No participants failed the attention checks more than twice.\footnote{Minimum requirement by \href{https://researcher-help.prolific.co/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy}{Prolific attention check policy}.} We dropped 17 participants who self-reported having connection issues and 24 additional participants who stated having engaged in other activities. We also removed 11 participants who had their time choice enforced randomly. Finally, we removed 40 participants that were detected to spend more than 20 consecutive seconds away from our experimental platform who disproportionately come from the \textit{Autoplay} condition. These 40 participants all reported engaging with videos but had their mouse detected outside the experiment window, making it impossible to distinguish whether they genuinely watched videos or browsed other tabs/windows during the study (see Appendix Table \ref{table_flagged_comparison}). The final dataset on which we base the analysis consisted of 184 individuals. Table \ref{table2} shows the demographic characteristics of the observed individuals.
 
@@ -302,36 +301,36 @@ For the first block of the experiment, we preregistered a two-sample parallel de
  & \multicolumn{1}{c}{N = 79} & \multicolumn{1}{c}{N = 105} & [A = C]\\
  \midrule
  \textit{\textbf{Gender}} & & & \\
- Female & 48 (46.15\%) & 54 (45.00\%) & 0.510 \\ \midrule
+ Female & 36 (45.57\%) & 53 (50.48\%) & 0.510 \\ \midrule
  \textit{\textbf{Age}} & & & \\
- Mean (SD) & 40.56 (11.66) & 40.24 (10.98) & 0.725 \\ \midrule
+ Mean (SD) & 42.63 (11.70) & 42.03 (11.24) & 0.725 \\ \midrule
  \textit{\textbf{Employment}} & & & \\
- Employed (full time) & 62 (59.62\%) & 67 (55.83\%) & 0.718 \\
- Employed (part time/self) & 28 (26.92\%) & 28 (23.33\%) & 0.417 \\
- Not employed & 11 (10.58\%) & 18 (15.00\%) & 0.167 \\ \midrule
+ Employed (full time) & 45 (56.96\%) & 57 (54.29\%) & 0.718 \\
+ Employed (part time/self) & 23 (29.11\%) & 25 (23.81\%) & 0.417 \\
+ Not employed & 11 (13.92\%) & 23 (21.90\%) & 0.167 \\ \midrule
  \textit{\textbf{Income}} & & & \\
- Low (0-15) & 28 (26.92\%) & 34 (28.33\%) & 0.989 \\
- Middle (15-30) & 30 (28.85\%) & 36 (30.00\%) & 0.505 \\
- High (50+) & 15 (14.42\%) & 13 (10.83\%) & 0.325 \\ \midrule
+ Low (0-15) & 24 (30.38\%) & 32 (30.48\%) & 0.989 \\
+ Middle (15-50) & 42 (53.16\%) & 61 (58.10\%) & 0.505 \\
+ High (50+) & 13 (16.46\%) & 12 (11.43\%) & 0.325 \\ \midrule
  \textit{\textbf{Marital Status}} & & & \\ 
- Married/Partnership & 56 (53.85\%) & 60 (50.00\%) & 0.510 \\
- Single & 42 (40.38\%) & 52 (43.33\%) & 0.534 \\
- Previously married & 6 (5.77\%) & 8 (6.67\%) & 0.927 \\
+ Married/Partnership & 43 (54.43\%) & 52 (49.52\%) & 0.510 \\
+ Single & 31 (39.24\%) & 46 (43.81\%) & 0.534 \\
+ Previously married & 5 (6.33\%) & 7 (6.67\%) & 0.927 \\
  \bottomrule
  \end{tabular*}
  \begin{tablenotes}[flushleft]
  \footnotesize
- \item[] \textit{Note:} This table presents demographic characteristics for the sample of 184 participants across conditions. Income categories are presented in thousands of British pounds (£). Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
+ \item[] \textit{Note:} This table presents demographic characteristics for the sample of 184 participants across conditions. Income categories are presented in thousands of British pounds. Employment categories: ``Not employed'' includes unemployed (looking and not looking) and homemaker. ``Previously married'' includes divorced, widowed, and separated. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. For employment, part-time and self-employed are together as one category. The sample demonstrates successful randomization with balanced participant characteristics across the conditions.
  \end{tablenotes}
  \label{table2}
  \end{threeparttable}
 \end{table}
 
-For the second block of the experiment, we applied the same selection criteria as before and invited 60 participants on day one. On day two, we received 57 complete answers (95\% response rate). Once again, no participant failed the attention checks. No participant reported having connection issues. This improvement is likely because we had implemented higher network speed requirements ($>$ 35 Mbps on the first and $>$ 30 Mbps on the second day). We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 52 individuals in the final MPL dataset.
+For the second block of the experiment, we applied the same selection criteria as before and invited 60 participants on day one. On day two, we received 57 complete answers (95\% response rate). Once again, no participant failed the attention checks. No participant reported having connection issues. We dropped 5 participants who reported having engaged in other activities. As we were interested in the demand for a commitment device, participants did not have their Time Choice enforced in this treatment. We therefore ended up with 52 individuals in the final MPL dataset (see Appendix Table \ref{tableMPL} for a comparison with the main sample).
 
 \section{Results}\label{Results}
 \subsection{Does Autoplay increase video consumption?}
-We test our primary hypothesis that autoplay increases video consumption by comparing behavior across conditions. Table \ref{table3} presents summary statistics for key outcome variables from the 20-minute main session. Two-sample $t$-tests reveal no significant differences in any outcome measures between the \textit{Autoplay} and \textit{Control} conditions.
+We test our primary hypothesis that autoplay increases video consumption by comparing behavior across conditions. Table \ref{table3} presents summary statistics for key outcome variables from the 20-minute main session. Two-sample $t$-tests reveal no significant differences between the \textit{Autoplay} and \textit{Control} conditions.
 
 \begin{table}[H]
   \centering
@@ -368,7 +367,7 @@ We test our primary hypothesis that autoplay increases video consumption by comp
   \end{tabular}
   \begin{tablenotes}[flushleft]
   \footnotesize
-  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for transcribing on day 1 (proportion), while ``Transcription Proportion'' represents the actual proportion of time spent on transcription task during the 20-minute Main Session on day 2. Nb. of sessions is the number of transcription or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' evaluation of video content on a 0-10 scale. $p$-values are from two-sample $t$-tests comparing experimental conditions.
+  \item[] \textit{Note:} This table presents key outcome variables from the Main Session. ``Time Choice'' refers to participants' stated preferences for transcribing on day 1 (proportion), while ``Transcription Proportion'' represents the actual proportion of time spent on transcription task during the 20-minute Main Session on day 2. Nb. of sessions is the number of transcription or watching sessions participants completed and Session length represents the mean duration of individual sessions in seconds. Content rating reflects participants' appreciation of video content on a 0-10 scale. $p$-values are from two-sample $t$-tests comparing experimental conditions.
   \end{tablenotes}
   \end{threeparttable} \label{table3}
  }
@@ -520,7 +519,7 @@ Wald $\chi^2$(1) & 19.86 \\
 
 \subsection{Understanding the Null Results}
 \subsubsection{Planned versus Actual Time Allocation}
-Participants allocated more time to transcription than initially planned. On average, participants planned to spend 45.5\% of their time transcribing but actually spent 61.2\%, representing an increase of 15.8 percentage points ($t = 8.24$, $p < 0.001$). The entire distribution shifted rightward (see Figure \ref{f:discrepancy}), with median actual transcription time (64.3\%) substantially exceeding median planned time (50.0\%).
+Participants allocated more time to transcription than initially planned. On average, participants planned to spend 45.5\% of their time transcribing but actually spent 61.2\%, representing an increase of 15.7 percentage points ($t = 8.24$, $p < 0.001$). The entire distribution shifted rightward (see Figure \ref{f:discrepancy}), with median actual transcription time (64.3\%) substantially exceeding median planned time (50.0\%).
 
 \begin{figure}[H] 
    \caption{Distribution of planned vs actual time allocation} 
@@ -664,13 +663,11 @@ However, the discontinuity analysis reveals additional complexity. Figure \ref{f
 
 \section{Conclusion}\label{Conclusion}
 
-This study examined whether autoplay features in isolation can override users' stated preferences for media consumption. In a two-day online experiment with 236 participants, we find no evidence that autoplay increases video consumption when content is held constant. Participants in our setting viewed autoplay positively, exhibiting willingness-to-pay for the convenience it provides. However, systematic deviations from stated preferences suggest experimenter demand effects influenced behavior, with participants transcribing more than planned.
+This study examined whether autoplay features in isolation can override users' stated preferences for media consumption. In a two-day online experiment with 236 participants, we find no evidence that autoplay increases video consumption when content is held constant. Participants viewed autoplay favorably, exhibiting positive willingness-to-pay for the convenience it provides rather than perceiving it as a self-control problem. However, experimenter demand effects resulted in participants allocating more time to transcription than planned, confounding the intended autoplay treatment.
 
-Our null findings reveal a fundamental challenge in studying social media interface features: they are hard to evaluate in isolation from their embedded context. Autoplay's effectiveness appears to depend on the personalized, engaging content it delivers. Users are not drawn to endless streams of educational documentaries, but to drama, gossip, and emotionally compelling material that algorithms curate personally for them. In our controlled setting with identical and manually curated videos, we may have stripped away the very element that makes autoplay change behavior: its coupling with personalized, addictive content.
+Our findings highlight a fundamental challenge of studying potentially addictive design features in controlled laboratory settings. Design features like autoplay appear to derive their persuasive power from personalized content streams and algorithmic curation. In our controlled setting with identical, manually curated videos, we likely stripped away the very elements that make autoplay compelling in practice.
 
-These findings have important implications for research on interface design and digital well-being. Laboratory studies like ours that attempt to isolate the behavioral effects of interface features may misrepresent their real-world impacts. The monetary incentives and task framing necessary for internal validity may inadvertently create demand effects that confound the very phenomena researchers seek to study. While autoplay shows no effect in our experimental setting, it seems to have stronger impacts in leisure contexts \citep{hiniker2018coco,schaffner2025pahi}.
-
-For policymakers considering regulations on autoplay features, our findings suggest that regulating interface features alone may be insufficient if the underlying content and algorithmic curation remain unchanged. Effective digital well-being interventions may need to address the entire ecosystem of personalized, engaging content delivery rather than focusing solely on individual design elements. Future research should prioritize developing experimental methods that better approximate genuine media consumption environments in the field (see e.g., \citet{beknazar2025toxic,purohit2023starving}) while maintaining the control necessary for causal inference.
+These results have implications for both research methodology and policy. Laboratory studies that isolate interface features from their natural digital ecosystem may fail to capture their real-world behavioral consequences. The controlled conditions necessary for internal validity inadvertently eliminate the personalized content that drives engagement on actual platforms. While autoplay shows no effect in our experimental setting, field studies suggest stronger impacts in natural usage contexts \citep{hiniker2018coco,schaffner2025pahi}. Future research should prioritize better approximating genuine media consumption environments in the field (see e.g., \citet{beknazar2025toxic,purohit2023starving}) while maintaining the control necessary for causal inference.
 
 \bibliographystyle{apacite}
 \bibliography{ref} 
@@ -696,11 +693,11 @@ For policymakers considering regulations on autoplay features, our findings sugg
  \caption{Comparison of main sample vs flagged participants}
  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc c@{}}
  \toprule
- & \multicolumn{1}{c}{Main Sample} & \multicolumn{1}{c}{Flagged Sample} & \multicolumn{1}{c}{\textit{p}} \\
+ & \multicolumn{1}{c}{Main Sample} & \multicolumn{1}{c}{Flagged} & \multicolumn{1}{c}{\textit{p}} \\
  & \multicolumn{1}{c}{N = 184} & \multicolumn{1}{c}{N = 40} & [M = F]\\
  \midrule
  \textit{\textbf{Gender}} & & & \\
- Female & 89 (48.37\%) & 13 (32.50\%) & 0.068 \\ \midrule
+ Female & 89 (48.37\%) & 13 (32.50\%) & 0.068* \\ \midrule
  \textit{\textbf{Age}} & & & \\
  Mean (SD) & 42.29 (11.41) & 42.85 (10.75) & 0.768 \\ \midrule
  \textit{\textbf{Employment}} & & & \\
@@ -708,25 +705,60 @@ For policymakers considering regulations on autoplay features, our findings sugg
  Employed (part time/self) & 48 (26.09\%) & 8 (20.00\%) & 0.420 \\
  Not employed & 34 (18.48\%) & 5 (12.50\%) & 0.366 \\ \midrule
  \textit{\textbf{Income}} & & & \\
- Low (0-15) & 56 (30.43\%) & 6 (15.00\%) & 0.048* \\
- Middle (15-50) & 103 (55.98\%) & 31 (77.50\%) & 0.012* \\
+ Low (0-15) & 56 (30.43\%) & 6 (15.00\%) & 0.048** \\
+ Middle (15-50) & 103 (55.98\%) & 31 (77.50\%) & 0.012** \\
  High (50+) & 25 (13.59\%) & 3 (7.50\%) & 0.291 \\ \midrule
  \textit{\textbf{Marital Status}} & & & \\ 
  Married/Partnership & 95 (51.63\%) & 21 (52.50\%) & 0.921 \\
  Single & 77 (41.85\%) & 17 (42.50\%) & 0.940 \\
  Previously married & 12 (6.52\%) & 2 (5.00\%) & 0.719 \\ \midrule
  \textit{\textbf{Treatment Assignment}} & & & \\
- Autoplay condition & 79 (42.93\%) & 25 (62.50\%) & 0.025* \\
+ Autoplay condition & 79 (42.93\%) & 25 (62.50\%) & 0.025** \\
  \bottomrule
  \end{tabular*}
  \begin{tablenotes}[flushleft]
  \footnotesize
- \item[] \textit{Note:} This table compares demographic characteristics between the main sample (N=184) and participants flagged for potential inattention. Flagged participants reported engaging with videos but had mouse activity detected outside the experiment window, making it impossible to verify genuine engagement. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. * $p < 0.05$, ** $p < 0.01$, *** $p < 0.001$
+ \item[] \textit{Note:} This table compares demographic characteristics between the main sample (N=184) and participants flagged for potential inattention. Flagged participants reported engaging with videos but had mouse activity detected outside the experiment window, making it impossible to verify genuine engagement. $p$-values for binary outcomes are from two-sample tests of proportions; for continuous variables, from two-sample $t$-tests. * $p < 0.1$, ** $p < 0.05$, *** $p < 0.01$
  \end{tablenotes}
  \label{table_flagged_comparison}
  \end{threeparttable}
 \end{table}
 
+
+\begin{table}[H]
+ \centering
+ \begin{threeparttable}
+ \caption{Comparison of MPL sample vs main sample}
+ \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc c@{}}
+ \toprule
+ & \multicolumn{1}{c}{Main Sample} & \multicolumn{1}{c}{MPL} & \multicolumn{1}{c}{\textit{p}} \\
+ & \multicolumn{1}{c}{N = 184} & \multicolumn{1}{c}{N = 52} & [M = MPL]\\
+ \midrule
+ \textit{\textbf{Gender}} & & & \\
+ Female & 89 (48.37\%) & 26 (50.00\%) & 0.835 \\ \midrule
+ \textit{\textbf{Age}} & & & \\
+ Mean (SD) & 42.29 (11.41) & 41.90 (14.14) & 0.858 \\ \midrule
+ \textit{\textbf{Employment}} & & & \\
+ Employed (full time) & 102 (55.43\%) & 32 (61.54\%) & 0.433 \\
+ Employed (part time/self) & 48 (26.09\%) & 10 (19.23\%) & 0.311 \\
+ Not employed & 34 (18.48\%) & 10 (19.23\%) & 0.902 \\ \midrule
+ \textit{\textbf{Income}} & & & \\
+ Low (0-15) & 56 (30.43\%) & 15 (28.85\%) & 0.825 \\
+ Middle (15-50) & 103 (55.98\%) & 30 (57.69\%) & 0.826 \\
+ High (50+) & 25 (13.59\%) & 7 (13.46\%) & 0.981 \\ \midrule
+ \textit{\textbf{Marital Status}} & & & \\ 
+ Married/Partnership & 95 (51.63\%) & 28 (53.85\%) & 0.778 \\
+ Single & 77 (41.85\%) & 19 (36.54\%) & 0.491 \\
+ Previously married & 12 (6.52\%) & 5 (9.62\%) & 0.446 \\
+ \bottomrule
+ \end{tabular*}
+ \begin{tablenotes}[flushleft]
+ \footnotesize
+ \item[] \textit{Note:} This table compares the demographic characteristics for the main sample (N=184) and the final MPL sample in block 2 (N=52). We observe no significant differences across the two samples.
+ \end{tablenotes}
+ \label{tableMPL}
+ \end{threeparttable}
+\end{table}
 
 \begin{table}[H]
   \centering

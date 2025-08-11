@@ -56,6 +56,37 @@ Allcott, H.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Andersen%
+, Harrison%
+, Lau%
+\BCBL {}\ \BBA {} Rutstr{\"o}m%
+}{%
+Andersen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+andersenElicitationUsingMultiple2006}
+\APACinsertmetastar {%
+andersenElicitationUsingMultiple2006}%
+\begin{APACrefauthors}%
+Andersen, S.%
+, Harrison, G\BPBI W.%
+, Lau, M\BPBI I.%
+\BCBL {}\ \BBA {} Rutstr{\"o}m, E\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{{\APACmonth{12}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Elicitation Using Multiple Price List Formats}
+  {Elicitation using multiple price list formats}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Experimental Economics}{9}{4}{383--405}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s10683-006-7055-6} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Arechar%
 , G{\"a}chter%
 \BCBL {}\ \BBA {} Molleman%
@@ -136,6 +167,35 @@ Bao, R.%
   problems}.{\BBCQ}
 \newblock
 
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Becker%
+, Degroot%
+\BCBL {}\ \BBA {} Marschak%
+}{%
+Becker%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1964}}%
+}]{%
+beckerMeasuringUtilitySingleresponse1964}
+\APACinsertmetastar {%
+beckerMeasuringUtilitySingleresponse1964}%
+\begin{APACrefauthors}%
+Becker, G\BPBI M.%
+, Degroot, M\BPBI H.%
+\BCBL {}\ \BBA {} Marschak, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1964}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Measuring Utility by a Single-Response Sequential
+  Method} {Measuring utility by a single-response sequential method}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Behavioral Science}{9}{3}{226--232}.
+\newblock
+\begin{APACrefDOI} \doi{10.1002/bs.3830090304} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -416,23 +476,28 @@ Ericson%
 Ericson%
 \ \BBA {} Laibson%
 }{%
-{\protect \APACyear {2018}}%
+{\protect \APACyear {2019}}%
 }]{%
-ericson2018}
+ericsonIntertemporalChoice2019}
 \APACinsertmetastar {%
-ericson2018}%
+ericsonIntertemporalChoice2019}%
 \begin{APACrefauthors}%
 Ericson, K\BPBI M.%
 \BCBT {}\ \BBA {} Laibson, D.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2019}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Intertemporal {{Choice}}} {Intertemporal
-  {{Choice}}}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Intertemporal Choice} {Intertemporal choice}.{\BBCQ}
 \newblock
-
+\BIn{} \APACrefbtitle {Handbook of {{Behavioral Economics}}: {{Applications}}
+  and {{Foundations}} 1} {Handbook of {{Behavioral Economics}}:
+  {{Applications}} and {{Foundations}} 1}\ (\BVOL~2, \BPGS\ 1--67).
+\newblock
+\APACaddressPublisher{}{Elsevier}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/bs.hesbe.2018.12.001} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -558,6 +623,35 @@ Houser, D.%
 \APACjournalVolNumPages{Games and Economic Behavior}{107}{}{329--344}.
 \newblock
 \begin{APACrefDOI} \doi{10.1016/j.geb.2017.10.025} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jack%
+, McDermott%
+\BCBL {}\ \BBA {} Sautmann%
+}{%
+Jack%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2022}}%
+}]{%
+jackMultiplePriceLists2022}
+\APACinsertmetastar {%
+jackMultiplePriceLists2022}%
+\begin{APACrefauthors}%
+Jack, B\BPBI K.%
+, McDermott, K.%
+\BCBL {}\ \BBA {} Sautmann, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{{\APACmonth{11}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multiple Price Lists for Willingness to Pay Elicitation}
+  {Multiple price lists for willingness to pay elicitation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Development Economics}{159}{}{102977}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jdeveco.2022.102977} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
