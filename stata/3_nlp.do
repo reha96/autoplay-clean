@@ -26,8 +26,7 @@ import excel "${dpath}nlp-clean.xlsx", firstrow clear
 
 gen lower = strlower(strategy)
 
-global typing_difficult = "under pressure" + ///
-	" frustrating" + ///
+global typing_difficult = " frustrating" + ///
 	" stressful" + ///
 	" difficult" + ///
 	" tired" + ///

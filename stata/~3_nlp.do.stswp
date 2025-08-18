@@ -9,7 +9,6 @@ version 18
 clear all
 macro drop _all
 set more off
-set scheme s2color, permanently
 set maxvar 32767
 global graph_opts ///
     graphregion(fcolor(white) lcolor(white)) ///
@@ -27,8 +26,7 @@ import excel "${dpath}nlp-clean.xlsx", firstrow clear
 
 gen lower = strlower(strategy)
 
-global typing_difficult = "under pressure" + ///
-	" frustrating" + ///
+global typing_difficult = " frustrating" + ///
 	" stressful" + ///
 	" difficult" + ///
 	" tired" + ///
