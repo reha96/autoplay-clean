@@ -256,16 +256,15 @@ If you use this code or data, please cite:
 
 ## License
 
-[Specify your license]
+This project is licensed under the terms of the MIT license.
 
 ## Contact
 
 Reha Tuncer  
-[Contact information]
 
 ## Acknowledgments
 
-This study is supported by the Luxembourg National Research Fund (FNR) PRIDE 19/14302992. See paper acknowledgments for full list of contributors.
+This study is supported by the Luxembourg National Research Fund (FNR) PRIDE 19/14302992. See paper acknowledgments for more.
 
 ---
 
