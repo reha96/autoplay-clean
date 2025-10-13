@@ -2,4 +2,4 @@
 *.dta
 *.xlsx
 *.json
-old/
+python/old/
