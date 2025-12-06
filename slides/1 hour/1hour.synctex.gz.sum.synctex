@@ -1,0 +1,1526 @@
+SyncTeX Version:1
+Input:1:c:/Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\1hour.tex
+Input:2:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamer.cls
+Input:3:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasemodes.sty
+Input:4:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+Input:5:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasedecode.sty
+Input:6:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\iftex\iftex.sty
+Input:7:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseoptions.sty
+Input:8:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+Input:9:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+Input:10:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
+Input:11:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+Input:12:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\math\pgfmath.sty
+Input:13:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfrcs.sty
+Input:14:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-common.tex
+Input:15:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfutil-latex.def
+Input:16:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfrcs.code.tex
+Input:17:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\pgf.revision.tex
+Input:18:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfkeys.sty
+Input:19:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeys.code.tex
+Input:20:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgfkeyslibraryfiltered.code.tex
+Input:21:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmath.code.tex
+Input:22:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathutil.code.tex
+Input:23:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathparser.code.tex
+Input:24:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.code.tex
+Input:25:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+Input:26:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+Input:27:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+Input:28:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+Input:29:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+Input:30:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+Input:31:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+Input:32:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+Input:33:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathcalc.code.tex
+Input:34:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfmathfloat.code.tex
+Input:35:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\base\size11.clo
+Input:36:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgfcore.sty
+Input:37:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+Input:38:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+Input:39:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
+Input:40:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
+Input:41:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+Input:42:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\systemlayer\pgfsys.sty
+Input:43:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys.code.tex
+Input:44:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgf.cfg
+Input:45:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+Input:46:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+Input:47:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+Input:48:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+Input:49:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+Input:50:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+Input:51:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+Input:52:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+Input:53:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcore.code.tex
+Input:54:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\math\pgfint.code.tex
+Input:55:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+Input:56:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+Input:57:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+Input:58:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+Input:59:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+Input:60:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+Input:61:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+Input:62:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+Input:63:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+Input:64:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+Input:65:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+Input:66:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+Input:67:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+Input:68:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+Input:69:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+Input:70:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+Input:71:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\basiclayer\pgfcorerdf.code.tex
+Input:72:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\xxcolor.sty
+Input:73:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\base\atbegshi-ltx.sty
+Input:74:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
+Input:75:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\kvsetkeys\kvsetkeys.sty
+Input:76:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+Input:77:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pdfescape\pdfescape.sty
+Input:78:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
+Input:79:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+Input:80:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
+Input:81:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\hycolor\hycolor.sty
+Input:82:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\nameref.sty
+Input:83:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\refcount\refcount.sty
+Input:84:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
+Input:85:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+Input:86:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\stringenc\stringenc.sty
+Input:87:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
+Input:88:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\intcalc\intcalc.sty
+Input:89:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\puenc.def
+Input:90:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+Input:91:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\bitset\bitset.sty
+Input:92:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\bigintcalc\bigintcalc.sty
+Input:93:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.def
+Input:94:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\base\atveryend-ltx.sty
+Input:95:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+Input:96:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+Input:97:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaserequires.sty
+Input:98:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasecompatibility.sty
+Input:99:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasefont.sty
+Input:100:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Input:101:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Input:102:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\sansmathaccent\sansmathaccent.sty
+Input:103:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlfile.sty
+Input:104:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlfile-hook.sty
+Input:105:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\koma-script\scrlogo.sty
+Input:106:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasetranslator.sty
+Input:107:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator.sty
+Input:108:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasemisc.sty
+Input:109:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasetwoscreens.sty
+Input:110:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseoverlay.sty
+Input:111:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasetitle.sty
+Input:112:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasesection.sty
+Input:113:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseframe.sty
+Input:114:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseverbatim.sty
+Input:115:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseframesize.sty
+Input:116:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseframecomponents.sty
+Input:117:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasecolor.sty
+Input:118:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasenotes.sty
+Input:119:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasetoc.sty
+Input:120:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasetemplates.sty
+Input:121:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseauxtemplates.sty
+Input:122:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaseboxes.sty
+Input:123:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbaselocalstructure.sty
+Input:124:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
+Input:125:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasenavigation.sty
+Input:126:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasenavigationsymbols.tex
+Input:127:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasetheorems.sty
+Input:128:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+Input:129:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+Input:130:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+Input:131:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+Input:132:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+Input:133:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+Input:134:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerbasethemes.sty
+Input:135:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerthemedefault.sty
+Input:136:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerfontthemedefault.sty
+Input:137:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamercolorthemedefault.sty
+Input:138:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerinnerthemedefault.sty
+Input:139:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerouterthemedefault.sty
+Input:140:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\beamerthemeSimplePlus.sty
+Input:141:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerthemeMadrid.sty
+Input:142:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamercolorthemewhale.sty
+Input:143:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamercolorthemeorchid.sty
+Input:144:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerinnerthemerounded.sty
+Input:145:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerouterthemeinfolines.sty
+Input:146:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamerinnerthemecircles.sty
+Input:147:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\beamerfontthemeSimplePlus.sty
+Input:148:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\beamercolorthemeSimplePlus.sty
+Input:149:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\beamer\beamercolorthemestructure.sty
+Input:150:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\beamerinnerthemeSimplePlus.sty
+Input:151:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\threeparttable\threeparttable.sty
+Input:152:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\subfig\subfig.sty
+Input:153:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
+Input:154:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+Input:155:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption-beamer.sto
+Input:156:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\bbm\bbm.sty
+Input:157:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+Input:158:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
+Input:159:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
+Input:160:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+Input:161:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+Input:162:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+Input:163:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+Input:164:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgffor.sty
+Input:165:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\utilities\pgffor.code.tex
+Input:166:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+Input:167:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+Input:168:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+Input:169:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+Input:170:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\appendixnumberbeamer\appendixnumberbeamer.sty
+Input:171:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\animate\animate.sty
+Input:172:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+Input:173:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\oberdiek\ifdraft.sty
+Input:174:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
+Input:175:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\media9\pdfbase.sty
+Input:176:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+Input:177:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.sty
+Input:178:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-base.sty
+Input:179:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+Input:180:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
+Input:181:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\ocgx2\ocgbase.sty
+Input:182:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
+Input:183:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\lm\lmodern.sty
+Input:184:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\apacite\apacite.sty
+Input:185:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
+Input:186:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmss.fd
+Input:187:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\1hour.aux
+Input:188:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
+Input:189:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+Input:190:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\grfext\grfext.sty
+Input:191:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+Input:192:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\1hour.out
+Input:193:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\1hour.out
+Input:194:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator-basic-dictionary-English.dict
+Input:195:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator-bibliography-dictionary-English.dict
+Input:196:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator-environment-dictionary-English.dict
+Input:197:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator-months-dictionary-English.dict
+Input:198:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator-numbers-dictionary-English.dict
+Input:199:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\translator\translator-theorem-dictionary-English.dict
+Input:200:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\apacite\english.apc
+Input:201:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\1hour.nav
+Input:202:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\lm\ot1lmss.fd
+Input:203:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\lm\omllmm.fd
+Input:204:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\lm\omslmsy.fd
+Input:205:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\lm\omxlmex.fd
+Input:206:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+Input:207:C:\Users\LetzPC Gaming\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+Output:pdf
+Magnification:1000
+Unit:1
+X Offset:0
+Y Offset:0
+Content:
+!21160
+!7
+{1
+[1,93:4736286,16782118:23663348,12045832,0
+h1,93:4736286,4736286:0,0,0
+(1,93:4736286,4736286:0,0,0
+[1,93:0,4736286:0,0,0
+(1,93:0,0:0,0,0
+(1,93:0,4736286:0,0,0
+k1,93:0,4736286:4736286
+)
+(1,93:0,65536:0,0,0
+k1,93:0,65536:-65536
+)
+g1,93:0,0
+)
+]
+)
+[1,93:4736286,4736286:0,0,0
+(1,93:4736286,-65781:0,0,0
+k1,93:4736286,-65781:3366825
+)
+]
+[1,93:4736286,16782118:23663348,12045832,0
+[1,93:1435242,16782118:26964392,16782118,0
+[1,93:1435242,0:26964392,0,0
+(1,93:1435242,0:26964392,0,0
+(1,93:1435242,0:26964392,0,0
+[1,93:1435242,0:26964392,0,0
+(1,93:1435242,0:-1435242,0,0
+g1,93:0,0
+(1,93:0,0:0,0,0
+(1,93:0,16782118:29834876,16782118,0
+(1,93:0,16782118:29834876,16782118,0
+r1,93:29834876,16782118:29834876,16782118,0
+)
+)
+)
+(1,93:0,0:0,0,0
+(1,93:0,0:0,0,0
+(1,93:0,0:0,0,0
+)
+)
+)
+)
+(1,93:1435242,0:-2870484,0,0
+(1,93:1435242,0:0,0,0
+(1,93:1435242,16595651:-1435242,16595651,0
+(1,93:1435242,16595651:-1435242,16595651,0
+g1,93:0,16595651
+(1,93:0,16595651:0,0,0
+[1,93:0,16595651:26964392,16595651,0
+(1,93:0,16595651:26964392,16595651,0
+h1,93:0,16595651:0,0,0
+r1,93:0,16595651:0,16595651,0
+k1,93:26964392,16595651:26964392
+g1,93:26964392,16595651
+)
+]
+)
+[1,93:0,16595651:0,16595651,0
+]
+)
+)
+)
+(1,93:1435242,0:0,0,0
+(1,93:1435242,16595651:28399634,16595651,0
+(1,93:1435242,16595651:28399634,16595651,0
+g1,93:28399634,16595651
+g1,93:29834876,16595651
+(1,93:29834876,16595651:0,0,0
+[1,93:29834876,16595651:26964392,16595651,0
+(1,93:29834876,16595651:26964392,16595651,0
+h1,93:29834876,16595651:0,0,0
+r1,93:29834876,16595651:0,16595651,0
+k1,93:56799268,16595651:26964392
+g1,93:56799268,16595651
+)
+]
+)
+[1,93:29834876,16595651:0,16595651,0
+(1,93:29834876,16005827:0,0,0
+k1,93:29648397,16005827:-186479
+g1,93:29834876,16005827
+)
+(1,93:29834876,16464579:0,0,0
+k1,93:29648397,16464579:-186479
+g1,93:29834876,16464579
+)
+]
+)
+)
+)
+(1,93:1435242,0:-2870484,0,0
+g1,93:0,0
+(1,93:0,0:0,0,0
+[1,93:0,0:0,0,0
+]
+)
+g1,93:-1435242,0
+)
+g1,93:-1435242,0
+)
+(1,93:1435242,0:26964392,0,0
+h1,93:1435242,0:0,0,0
+k1,93:28399634,0:26964392
+g1,93:28399634,0
+)
+]
+)
+)
+]
+[1,93:1435242,16333507:26964392,16333507,0
+[1,93:1435242,16333507:26964392,16333507,0
+[1,93:1435242,16333507:26964392,16333507,0
+v1,93:1435242,0:0,0,0
+v1,93:1435242,928233:0,0,0
+(1,93:1435242,9102900:26964392,6673893,0
+[1,93:1435242,9102900:26964392,6673893,0
+(1,93:1435242,3897203:26964392,943908,264289
+k1,93:2994350,3897203:1559108
+h1,93:2994350,3897203:0,0,0
+x1,93:4821749,3897203
+x1,93:6131109,3897203
+g1,93:6629488,3897203
+x1,93:7626200,3897203
+x1,93:11467832,3897203
+x1,93:12105908,3897203
+g1,93:12604287,3897203
+x1,93:15911700,3897203
+g1,93:16410079,3897203
+x1,93:22189032,3897203
+g1,93:22687411,3897203
+x1,93:26840526,3897203
+k1,93:28399634,3897203:1559108
+)
+(1,93:1435242,5535603:26964392,943908,0
+k1,93:4957438,5535603:3522196
+x1,93:8880270,5535603
+g1,93:9544776,5535603
+x1,93:15023161,5535603
+g1,93:15521540,5535603
+x1,93:18409909,5535603
+g1,93:18908288,5535603
+x1,93:20384531,5535603
+g1,93:20882910,5535603
+x1,93:24877438,5535603
+k1,93:28399634,5535603:3522196
+)
+(1,93:1435242,7174003:26964392,943908,264289
+k1,93:11461840,7174003:10026598
+x1,93:13598797,7174003
+x1,93:18373036,7174003
+g1,93:18373036,7174003
+k1,93:28399634,7174003:10026598
+)
+(1,93:1435242,8439077:26964392,498350,139535
+k1,93:11711310,8439077:10276068
+h1,93:11711310,8439077:0,0,0
+x1,93:12369127,8439077
+x1,93:13836242,8439077
+g1,93:14099369,8439077
+x1,93:14502024,8439077
+x1,93:18123566,8439077
+g1,93:18123566,8439077
+k1,93:28399634,8439077:10276068
+)
+]
+)
+(1,93:1435242,11205275:26964392,1678030,0
+[1,93:1435242,11205275:26964392,1678030,0
+(1,93:1435242,10680987:26964392,629454,0
+k1,93:12734044,10680987:11298802
+h1,93:12734044,10680987:0,0,0
+x1,93:14335578,10680987
+g1,93:14592257,10680987
+x1,93:15117463,10680987
+x1,93:16789535,10680987
+$1,93:16789535,10680987
+(1,93:16789535,10395597:311296,344064,0
+x1,93:17068063,10395597
+)
+$1,93:17100831,10680987
+g1,93:17100831,10680987
+k1,93:28399633,10680987:11298802
+)
+]
+)
+(1,93:1435242,12175918:26964392,1622726,0
+[1,93:1435242,12175918:26964392,1622726,0
+(1,93:1435242,11520558:26964392,443078,131072
+k1,93:5939925,11520558:4504683
+h1,93:5939925,11520558:0,0,0
+$1,93:5939925,11520558
+(1,93:5939925,11335528:241664,258048,0
+x1,93:6148821,11335528
+)
+$1,93:6181589,11520558
+x1,93:8226541,11520558
+x1,93:8467750,11520558
+g1,93:8653438,11520558
+x1,93:9102179,11520558
+g1,93:9287867,11520558
+x1,93:11112893,11520558
+x1,93:12318040,11520558
+g1,93:12503728,11520558
+x1,93:12822298,11520558
+x1,93:13943719,11520558
+x1,93:14184928,11520558
+g1,93:14370616,11520558
+x1,93:14819357,11520558
+g1,93:15005045,11520558
+x1,93:15575754,11520558
+x1,93:16095490,11520558
+g1,93:16281178,11520558
+x1,93:18898667,11520558
+g1,93:19084355,11520558
+x1,93:19927236,11520558
+g1,93:20112924,11520558
+x1,93:21902459,11520558
+g1,93:22088147,11520558
+x1,93:23894952,11520558
+g1,93:23894952,11520558
+k1,93:28399634,11520558:4504682
+)
+]
+)
+(1,93:1435242,13654115:26964392,1412661,0
+[1,93:1435242,13654115:26964392,1412661,0
+(1,93:1435242,13129827:26964392,364085,0
+k1,93:12716498,13129827:11281256
+h1,93:12716498,13129827:0,0,0
+x1,93:13273554,13129827
+g1,93:13459242,13129827
+x1,93:15365270,13129827
+x1,93:15818577,13129827
+g1,93:16004265,13129827
+x1,93:17118377,13129827
+g1,93:17118377,13129827
+k1,93:28399633,13129827:11281256
+)
+]
+)
+]
+]
+]
+(1,93:1435242,16782118:26964392,0,0
+(1,93:1435242,16782118:26964392,0,0
+[1,93:1435242,16782118:0,0,0
+(1,93:1435242,16782118:-2870484,0,0
+(1,93:1435242,16782118:-2870484,0,0
+g1,93:0,16782118
+(1,93:0,16782118:0,0,0
+[1,93:0,16782118:0,0,0
+]
+)
+g1,93:-1435242,16782118
+)
+g1,93:-1435242,16782118
+g1,93:-1435242,16782118
+)
+h1,93:1435242,16782118:0,0,0
+]
+k1,93:28399634,16782118:26964392
+)
+)
+]
+]
+(1,93:4736286,4736286:0,0,0
+[1,93:0,4736286:0,0,0
+(1,93:0,0:0,0,0
+(1,93:0,0:0,0,0
+g1,93:0,0
+)
+g1,93:0,0
+)
+]
+)
+]
+!5755
+}1
+k1,113:0,5432088:-39469056
+g1,113:39469056,5432088
+k1,113:-1,5432088:-39468960
+g1,113:7458245,5432088
+!111
+k1,113:0,5432136:-13222134
+g1,113:13222134,5432136
+k1,113:0,5432136:-13222101
+g1,113:7458212,5432136
+!106
+k1,113:0,5431950:-18682020
+g1,113:18682020,5431950
+k1,113:0,5431950:-18681974
+g1,113:7458137,5431950
+!106
+k1,113:-1,5432085:-18484676
+g1,113:18484675,5432085
+k1,113:1,5432085:-18484628
+g1,113:7458328,5432085
+!107
+k1,113:0,5432022:-15392932
+g1,113:15392932,5432022
+k1,113:0,5432022:-15392894
+g1,113:7458281,5432022
+!106
+k1,113:0,5432043:-16248095
+g1,113:16248095,5432043
+k1,113:0,5432043:-16248055
+g1,113:7458347,5432043
+!106
+k1,113:0,5431970:-30588518
+g1,113:30588518,5431970
+k1,113:-1,5431970:-30588444
+g1,113:7458079,5431970
+!107
+k1,113:1,5431959:-18287328
+g1,113:18287329,5431959
+k1,113:0,5431959:-18287284
+g1,113:7458229,5431959
+!106
+k1,113:1,5432004:-32035716
+g1,113:32035717,5432004
+k1,113:0,5432004:-32035638
+g1,113:7458003,5432004
+!106
+k1,113:1,5432181:-20523908
+g1,113:20523909,5432181
+k1,113:0,5432181:-20523858
+g1,113:7458124,5432181
+!106
+k1,113:-1,5431763:-35259024
+g1,113:35259023,5431763
+k1,113:1,5431763:-35258936
+g1,113:7457876,5431763
+!107
+k1,113:0,5432066:-21971108
+g1,113:21971108,5432066
+k1,113:0,5432066:-21971054
+g1,113:7458008,5432066
+!106
+k1,113:-1,5431763:-36574660
+g1,113:36574659,5431763
+k1,113:2,5431763:-36574568
+g1,113:7458229,5431763
+!107
+k1,113:0,5431870:-34403860
+g1,113:34403860,5431870
+k1,113:0,5431870:-34403776
+g1,113:7458106,5431870
+!106
+k1,113:0,5431769:-31904154
+g1,113:31904154,5431769
+k1,113:0,5431769:-31904076
+g1,113:7458045,5431769
+!106
+k1,113:-1,5432111:-36574660
+g1,113:36574659,5432111
+k1,113:2,5432111:-36574568
+g1,113:7458229,5432111
+!107
+k1,113:1,5431844:-33088224
+g1,113:33088225,5431844
+k1,113:-1,5431844:-33088144
+g1,113:7458161,5431844
+!107
+k1,113:1,5432106:-33088224
+g1,113:33088225,5432106
+k1,113:-1,5432106:-33088144
+g1,113:7458161,5432106
+!107
+k1,113:1,5432007:-33680260
+g1,113:33680261,5432007
+k1,113:2,5432007:-33680176
+g1,113:7457988,5432007
+!106
+k1,113:0,5431859:-34074952
+g1,113:34074952,5431859
+k1,113:1,5431859:-34074868
+g1,113:7458037,5431859
+!106
+k1,113:-1,5432111:-36574660
+g1,113:36574659,5432111
+k1,113:2,5432111:-36574568
+g1,113:7458229,5432111
+!107
+k1,113:0,5431880:-35587932
+g1,113:35587932,5431880
+k1,113:0,5431880:-35587844
+g1,113:7457938,5431880
+!106
+k1,113:2,5431870:-35653712
+g1,113:35653714,5431870
+k1,113:-1,5431870:-35653628
+g1,113:7458123,5431870
+!107
+k1,113:-1,5432135:-35390588
+g1,113:35390587,5432135
+k1,113:0,5432135:-35390500
+g1,113:7458163,5432135
+!107
+k1,113:-2,5432028:-36245752
+g1,113:36245750,5432028
+k1,113:1,5432028:-36245660
+g1,113:7458080,5432028
+!107
+k1,113:0,5431980:-36311532
+g1,113:36311532,5431980
+k1,113:-1,5431980:-36311444
+g1,113:7458318,5431980
+!107
+k1,113:-2,5432265:-36706224
+g1,113:36706222,5432265
+k1,113:0,5432265:-36706132
+g1,113:7458173,5432265
+!107
+k1,113:-1,5432402:-37035132
+g1,113:37035131,5432402
+k1,113:0,5432402:-37035040
+g1,113:7457754,5432402
+!107
+k1,113:-1,5432209:-37627168
+g1,113:37627167,5432209
+k1,113:-1,5432209:-37627076
+g1,113:7458125,5432209
+!108
+k1,113:1,5432209:-37561384
+g1,113:37561385,5432209
+k1,113:1,5432209:-37561292
+g1,113:7458268,5432209
+!106
+k1,113:1,5432441:-37561384
+g1,113:37561385,5432441
+k1,113:1,5432441:-37561292
+g1,113:7458268,5432441
+!106
+k1,113:0,5432074:-37364040
+g1,113:37364040,5432074
+k1,113:1,5432074:-37363948
+g1,113:7457852,5432074
+!106
+k1,113:-1,5432076:-37035132
+g1,113:37035131,5432076
+k1,113:0,5432076:-37035040
+g1,113:7457754,5432076
+!107
+k1,113:2,5431998:-37298256
+g1,113:37298258,5431998
+k1,113:-1,5431998:-37298168
+g1,113:7457812,5431998
+!107
+k1,113:0,5432164:-37692948
+g1,113:37692948,5432164
+k1,113:0,5432164:-37692856
+g1,113:7457935,5432164
+!106
+k1,113:-1,5431870:-37495604
+g1,113:37495603,5431870
+k1,113:-1,5431870:-37495512
+g1,113:7457793,5431870
+!108
+k1,113:1,5431950:-37429820
+g1,113:37429821,5431950
+k1,113:2,5431950:-37429728
+g1,113:7457846,5431950
+!106
+k1,113:-1,5432121:-36903568
+g1,113:36903567,5432121
+k1,113:1,5432121:-36903476
+g1,113:7457727,5432121
+!107
+k1,113:-1,5431890:-36903568
+g1,113:36903567,5431890
+k1,113:1,5431890:-36903476
+g1,113:7457727,5431890
+!107
+k1,113:2,5432088:-36837784
+g1,113:36837786,5432088
+k1,113:0,5432088:-36837696
+g1,113:7457924,5432088
+!106
+k1,113:1,5432050:-36969348
+g1,113:36969349,5432050
+k1,113:2,5432050:-36969256
+g1,113:7458046,5432050
+!106
+k1,113:0,5432085:-36640440
+g1,113:36640440,5432085
+k1,113:-2,5432085:-36640352
+g1,113:7458225,5432085
+!107
+k1,113:0,5431924:-36640440
+g1,113:36640440,5431924
+k1,113:-2,5431924:-36640352
+g1,113:7458225,5431924
+!107
+k1,113:0,5432197:-36640440
+g1,113:36640440,5432197
+k1,113:-2,5432197:-36640352
+g1,113:7458225,5432197
+!107
+k1,113:-2,5432197:-36245752
+g1,113:36245750,5432197
+k1,113:1,5432197:-36245660
+g1,113:7458080,5432197
+!107
+k1,113:0,5432197:-36640440
+g1,113:36640440,5432197
+k1,113:-2,5432197:-36640352
+g1,113:7458225,5432197
+!107
+k1,113:0,5431883:-36640440
+g1,113:36640440,5431883
+k1,113:-2,5431883:-36640352
+g1,113:7458225,5431883
+!107
+k1,113:0,5432040:-36640440
+g1,113:36640440,5432040
+k1,113:-2,5432040:-36640352
+g1,113:7458225,5432040
+!107
+k1,113:-1,5431883:-35982624
+g1,113:35982623,5431883
+k1,113:-1,5431883:-35982536
+g1,113:7457744,5431883
+!108
+k1,113:-1,5432177:-35982624
+g1,113:35982623,5432177
+k1,113:-1,5432177:-35982536
+g1,113:7457744,5432177
+!108
+k1,113:-1,5432085:-35982624
+g1,113:35982623,5432085
+k1,113:-1,5432085:-35982536
+g1,113:7457744,5432085
+!108
+k1,113:-1,5432022:-35982624
+g1,113:35982623,5432022
+k1,113:-1,5432022:-35982536
+g1,113:7457744,5432022
+!108
+k1,113:-1,5432088:-35982624
+g1,113:35982623,5432088
+k1,113:-1,5432088:-35982536
+g1,113:7457744,5432088
+!108
+k1,113:1,5431890:-35916840
+g1,113:35916841,5431890
+k1,113:1,5431890:-35916752
+g1,113:7457812,5431890
+!106
+k1,113:-1,5432121:-35982624
+g1,113:35982623,5432121
+k1,113:-1,5432121:-35982536
+g1,113:7457744,5432121
+!108
+k1,113:-1,5431952:-35982624
+g1,113:35982623,5431952
+k1,113:-1,5431952:-35982536
+g1,113:7457744,5431952
+!108
+k1,113:-1,5432082:-35982624
+g1,113:35982623,5432082
+k1,113:-1,5432082:-35982536
+g1,113:7457744,5432082
+!108
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:1,5432076:-35916840
+g1,113:35916841,5432076
+k1,113:1,5432076:-35916752
+g1,113:7457812,5432076
+!106
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:-1,5431992:-35982624
+g1,113:35982623,5431992
+k1,113:-1,5431992:-35982536
+g1,113:7457744,5431992
+!108
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:-1,5431998:-35982624
+g1,113:35982623,5431998
+k1,113:-1,5431998:-35982536
+g1,113:7457744,5431998
+!108
+k1,113:-1,5432164:-35982624
+g1,113:35982623,5432164
+k1,113:-1,5432164:-35982536
+g1,113:7457744,5432164
+!108
+k1,113:-1,5431870:-35982624
+g1,113:35982623,5431870
+k1,113:-1,5431870:-35982536
+g1,113:7457744,5431870
+!108
+k1,113:-1,5431950:-35982624
+g1,113:35982623,5431950
+k1,113:-1,5431950:-35982536
+g1,113:7457744,5431950
+!108
+k1,113:-1,5432121:-35982624
+g1,113:35982623,5432121
+k1,113:-1,5432121:-35982536
+g1,113:7457744,5432121
+!108
+k1,113:-1,5431890:-35982624
+g1,113:35982623,5431890
+k1,113:-1,5431890:-35982536
+g1,113:7457744,5431890
+!108
+k1,113:-1,5432088:-35982624
+g1,113:35982623,5432088
+k1,113:-1,5432088:-35982536
+g1,113:7457744,5432088
+!108
+k1,113:0,5432050:-36640440
+g1,113:36640440,5432050
+k1,113:-2,5432050:-36640352
+g1,113:7458225,5432050
+!107
+k1,113:1,5432136:-36377312
+g1,113:36377313,5432136
+k1,113:-1,5432136:-36377224
+g1,113:7457952,5432136
+!107
+k1,113:0,5432136:-36640440
+g1,113:36640440,5432136
+k1,113:-2,5432136:-36640352
+g1,113:7458225,5432136
+!107
+k1,113:0,5432085:-36640440
+g1,113:36640440,5432085
+k1,113:-2,5432085:-36640352
+g1,113:7458225,5432085
+!107
+k1,113:1,5432085:-36377312
+g1,113:36377313,5432085
+k1,113:-1,5432085:-36377224
+g1,113:7457952,5432085
+!107
+k1,113:0,5432197:-36640440
+g1,113:36640440,5432197
+k1,113:-2,5432197:-36640352
+g1,113:7458225,5432197
+!107
+k1,113:0,5431883:-36640440
+g1,113:36640440,5431883
+k1,113:-2,5431883:-36640352
+g1,113:7458225,5431883
+!107
+k1,113:-2,5432133:-36245752
+g1,113:36245750,5432133
+k1,113:1,5432133:-36245660
+g1,113:7458080,5432133
+!107
+k1,113:-1,5432085:-36903568
+g1,113:36903567,5432085
+k1,113:1,5432085:-36903476
+g1,113:7457727,5432085
+!107
+k1,113:-1,5432085:-36903568
+g1,113:36903567,5432085
+k1,113:1,5432085:-36903476
+g1,113:7457727,5432085
+!107
+k1,113:0,5432085:-36640440
+g1,113:36640440,5432085
+k1,113:-2,5432085:-36640352
+g1,113:7458225,5432085
+!107
+k1,113:0,5432022:-37232476
+g1,113:37232476,5432022
+k1,113:0,5432022:-37232384
+g1,113:7458293,5432022
+!106
+k1,113:-2,5432088:-37166696
+g1,113:37166694,5432088
+k1,113:-1,5432088:-37166604
+g1,113:7458160,5432088
+!108
+k1,113:2,5431890:-37298256
+g1,113:37298258,5431890
+k1,113:-1,5431890:-37298168
+g1,113:7457812,5431890
+!107
+k1,113:0,5432121:-37232476
+g1,113:37232476,5432121
+k1,113:0,5432121:-37232384
+g1,113:7458293,5432121
+!106
+k1,113:0,5431952:-37364040
+g1,113:37364040,5431952
+k1,113:1,5431952:-37363948
+g1,113:7457852,5431952
+!106
+k1,113:0,5432082:-37364040
+g1,113:37364040,5432082
+k1,113:1,5432082:-37363948
+g1,113:7457852,5432082
+!106
+k1,113:0,5432076:-37364040
+g1,113:37364040,5432076
+k1,113:1,5432076:-37363948
+g1,113:7457852,5432076
+!106
+k1,113:1,5432076:-37561384
+g1,113:37561385,5432076
+k1,113:1,5432076:-37561292
+g1,113:7458268,5432076
+!106
+k1,113:0,5432076:-37364040
+g1,113:37364040,5432076
+k1,113:1,5432076:-37363948
+g1,113:7457852,5432076
+!106
+k1,113:2,5431998:-37298256
+g1,113:37298258,5431998
+k1,113:-1,5431998:-37298168
+g1,113:7457812,5431998
+!107
+k1,113:1,5432076:-37429820
+g1,113:37429821,5432076
+k1,113:2,5432076:-37429728
+g1,113:7457846,5432076
+!106
+k1,113:-2,5432076:-37166696
+g1,113:37166694,5432076
+k1,113:-1,5432076:-37166604
+g1,113:7458160,5432076
+!108
+k1,113:2,5431998:-36837784
+g1,113:36837786,5431998
+k1,113:0,5431998:-36837696
+g1,113:7457924,5431998
+!106
+k1,113:-1,5432164:-36443096
+g1,113:36443095,5432164
+k1,113:-2,5432164:-36443008
+g1,113:7458093,5432164
+!108
+k1,113:0,5431870:-36179968
+g1,113:36179968,5431870
+k1,113:-1,5431870:-36179880
+g1,113:7457793,5431870
+!107
+k1,113:-1,5431950:-35982624
+g1,113:35982623,5431950
+k1,113:-1,5431950:-35982536
+g1,113:7457744,5431950
+!108
+k1,113:-1,5432121:-35982624
+g1,113:35982623,5432121
+k1,113:-1,5432121:-35982536
+g1,113:7457744,5432121
+!108
+k1,113:-1,5431890:-35982624
+g1,113:35982623,5431890
+k1,113:-1,5431890:-35982536
+g1,113:7457744,5431890
+!108
+k1,113:-1,5432088:-35982624
+g1,113:35982623,5432088
+k1,113:-1,5432088:-35982536
+g1,113:7457744,5432088
+!108
+k1,113:-1,5432050:-35982624
+g1,113:35982623,5432050
+k1,113:-1,5432050:-35982536
+g1,113:7457744,5432050
+!108
+k1,113:-1,5432085:-35982624
+g1,113:35982623,5432085
+k1,113:-1,5432085:-35982536
+g1,113:7457744,5432085
+!108
+k1,113:-1,5431883:-35982624
+g1,113:35982623,5431883
+k1,113:-1,5431883:-35982536
+g1,113:7457744,5431883
+!108
+k1,113:-1,5432175:-35982624
+g1,113:35982623,5432175
+k1,113:-1,5432175:-35982536
+g1,113:7457744,5432175
+!108
+k1,113:-1,5432238:-35982624
+g1,113:35982623,5432238
+k1,113:-1,5432238:-35982536
+g1,113:7457744,5432238
+!108
+k1,113:-1,5432106:-35982624
+g1,113:35982623,5432106
+k1,113:-1,5432106:-35982536
+g1,113:7457744,5432106
+!108
+k1,113:1,5432050:-35916840
+g1,113:35916841,5432050
+k1,113:1,5432050:-35916752
+g1,113:7457812,5432050
+!106
+k1,113:-1,5432050:-35982624
+g1,113:35982623,5432050
+k1,113:-1,5432050:-35982536
+g1,113:7457744,5432050
+!108
+k1,113:-1,5432085:-35982624
+g1,113:35982623,5432085
+k1,113:-1,5432085:-35982536
+g1,113:7457744,5432085
+!108
+k1,113:-1,5432085:-35982624
+g1,113:35982623,5432085
+k1,113:-1,5432085:-35982536
+g1,113:7457744,5432085
+!108
+k1,113:1,5432050:-35916840
+g1,113:35916841,5432050
+k1,113:1,5432050:-35916752
+g1,113:7457812,5432050
+!106
+k1,113:-1,5432022:-35982624
+g1,113:35982623,5432022
+k1,113:-1,5432022:-35982536
+g1,113:7457744,5432022
+!108
+k1,113:1,5432088:-35916840
+g1,113:35916841,5432088
+k1,113:1,5432088:-35916752
+g1,113:7457812,5432088
+!106
+k1,113:-1,5431890:-35982624
+g1,113:35982623,5431890
+k1,113:-1,5431890:-35982536
+g1,113:7457744,5431890
+!108
+k1,113:-1,5432121:-35982624
+g1,113:35982623,5432121
+k1,113:-1,5432121:-35982536
+g1,113:7457744,5432121
+!108
+k1,113:-1,5431952:-35982624
+g1,113:35982623,5431952
+k1,113:-1,5431952:-35982536
+g1,113:7457744,5431952
+!108
+k1,113:-1,5432082:-35982624
+g1,113:35982623,5432082
+k1,113:-1,5432082:-35982536
+g1,113:7457744,5432082
+!108
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:-1,5432076:-35982624
+g1,113:35982623,5432076
+k1,113:-1,5432076:-35982536
+g1,113:7457744,5432076
+!108
+k1,113:-1,5431998:-35982624
+g1,113:35982623,5431998
+k1,113:-1,5431998:-35982536
+g1,113:7457744,5431998
+!108
+k1,113:0,5431956:-24536596
+g1,113:24536596,5431956
+k1,113:0,5431956:-24536536
+g1,113:7458379,5431956
+!106
+k1,113:0,5431870:-34403860
+g1,113:34403860,5431870
+k1,113:0,5431870:-34403776
+g1,113:7458106,5431870
+!106
+k1,113:-1,5432062:-24470816
+g1,113:24470815,5432062
+k1,113:-1,5432062:-24470756
+g1,113:7458173,5432062
+!108
+k1,113:0,5432062:-24733942
+g1,113:24733942,5432062
+k1,113:1,5432062:-24733880
+g1,113:7457980,5432062
+!106
+k1,113:0,5432062:-24536596
+g1,113:24536596,5432062
+k1,113:0,5432062:-24536536
+g1,113:7458379,5432062
+!106
+k1,113:-1,5431763:-36574660
+g1,113:36574659,5431763
+k1,113:2,5431763:-36574568
+g1,113:7458229,5431763
+!107
+k1,113:0,5432062:-24733942
+g1,113:24733942,5432062
+k1,113:1,5432062:-24733880
+g1,113:7457980,5432062
+!106
+k1,113:-1,5432062:-23878780
+g1,113:23878779,5432062
+k1,113:0,5432062:-23878720
+g1,113:7458092,5432062
+!107
+k1,113:-1,5431763:-35259024
+g1,113:35259023,5431763
+k1,113:1,5431763:-35258936
+g1,113:7457876,5431763
+!107
+k1,113:-1,5431956:-23878780
+g1,113:23878779,5431956
+k1,113:0,5431956:-23878720
+g1,113:7458092,5431956
+!107
+k1,113:0,5432062:-23681434
+g1,113:23681434,5432062
+k1,113:0,5432062:-23681376
+g1,113:7458245,5432062
+!106
+k1,113:1,5432004:-30851644
+g1,113:30851645,5432004
+k1,113:0,5432004:-30851570
+g1,113:7458212,5432004
+!106
+k1,113:0,5431956:-24536596
+g1,113:24536596,5431956
+k1,113:0,5431956:-24536536
+g1,113:7458379,5431956
+!106
+k1,113:0,5431956:-30588518
+g1,113:30588518,5431956
+k1,113:-1,5431956:-30588444
+g1,113:7458079,5431956
+!107
+!5
+!3
+{2
+[1,113:4736286,16782118:23663348,12045832,0
+(1,113:4736286,4736286:0,0,0
+[1,113:0,4736286:0,0,0
+(1,113:0,0:0,0,0
+(1,113:0,4736286:0,0,0
+k1,113:0,4736286:4736286
+)
+(1,113:0,65536:0,0,0
+k1,113:0,65536:-65536
+)
+g1,113:0,0
+)
+]
+)
+[1,113:4736286,4736286:0,0,0
+(1,113:4736286,-65781:0,0,0
+k1,113:4736286,-65781:3366825
+)
+]
+[1,113:4736286,16782118:23663348,12045832,0
+[1,113:1435242,16782118:26964392,16782118,0
+[1,113:1435242,0:26964392,0,0
+(1,113:1435242,0:26964392,0,0
+(1,113:1435242,0:26964392,0,0
+[1,113:1435242,0:26964392,0,0
+(1,113:1435242,0:-1435242,0,0
+g1,113:0,0
+(1,113:0,0:0,0,0
+(1,113:0,16782118:29834876,16782118,0
+(1,113:0,16782118:29834876,16782118,0
+r1,113:29834876,16782118:29834876,16782118,0
+)
+)
+)
+(1,113:0,0:0,0,0
+(1,113:0,0:0,0,0
+(1,113:0,0:0,0,0
+)
+)
+)
+)
+(1,113:1435242,0:-2870484,0,0
+(1,113:1435242,0:0,0,0
+(1,113:1435242,16782118:-1435242,16782118,0
+(1,113:1435242,16782118:-1435242,16782118,0
+g1,113:0,16782118
+(1,113:0,16782118:0,0,0
+[1,113:0,16782118:26964392,16782118,0
+(1,113:0,16782118:26964392,16782118,0
+h1,113:0,16782118:0,0,0
+r1,113:0,16782118:0,16782118,0
+k1,113:26964392,16782118:26964392
+g1,113:26964392,16782118
+)
+]
+)
+[1,113:0,16782118:0,16782118,0
+]
+)
+)
+)
+(1,113:1435242,0:0,0,0
+(1,113:1435242,16782118:28399634,16782118,0
+(1,113:1435242,16782118:28399634,16782118,0
+g1,113:28399634,16782118
+g1,113:29834876,16782118
+(1,113:29834876,16782118:0,0,0
+[1,113:29834876,16782118:26964392,16782118,0
+(1,113:29834876,16782118:26964392,16782118,0
+h1,113:29834876,16782118:0,0,0
+r1,113:29834876,16782118:0,16782118,0
+k1,113:56799268,16782118:26964392
+g1,113:56799268,16782118
+)
+]
+)
+[1,113:29834876,16782118:0,16782118,0
+(1,113:29834876,16192294:0,0,0
+k1,113:29648397,16192294:-186479
+g1,113:29834876,16192294
+)
+(1,113:29834876,16651046:0,0,0
+k1,113:29648397,16651046:-186479
+g1,113:29834876,16651046
+)
+]
+)
+)
+)
+(1,113:1435242,0:-2870484,0,0
+g1,113:0,0
+(1,113:0,0:0,0,0
+[1,113:0,0:0,0,0
+]
+)
+g1,113:-1435242,0
+)
+g1,113:-1435242,0
+)
+(1,113:1435242,0:26964392,0,0
+h1,113:1435242,0:0,0,0
+k1,113:28399634,0:26964392
+g1,113:28399634,0
+)
+]
+)
+)
+]
+[1,113:1435242,16519974:26964392,16519974,0
+[1,113:1435242,16519974:26964392,16519974,0
+[1,113:1435242,16519974:26964392,16519974,0
+v1,113:1435242,0:0,0,0
+v1,113:1435242,0:0,0,0
+(1,113:1435242,2064646:26964392,786438,0
+h1,113:1435242,2064646:0,0,0
+x1,113:7078673,2064646
+k1,113:17739153,2064646:10660480
+k1,113:28399633,2064646:10660480
+)
+(1,113:1435242,2562720:26964392,26214,0
+h1,113:1435242,2562720:0,0,0
+g1,113:28399634,2562720
+g1,113:28399634,2562720
+g1,113:28399634,2562720
+)
+v1,113:1435242,4530466:0,0,0
+(1,113:1435242,10028090:26964392,5432088,0
+k1,113:11068712,10028090:9633470
+h1,113:11068712,10028090:0,0,0
+[1,113:11068712,10028090:7458245,5432088,0
+(1,113:11068712,10028090:7458245,5432088,0
+(1,113:11068712,10028090:7458245,5432088,0
+r1,113:11068712,10028090:0,5432088,0
+k1,113:18526957,10028090:7458245
+)
+)
+]
+g1,113:18766163,10028090
+g1,113:18766163,10028090
+g1,113:18766163,10028090
+k1,113:28399633,10028090:9633470
+)
+(1,113:2870484,11474797:25529150,498350,139535
+(1,113:2870484,11474797:0,321310,0
+g1,113:2870484,11474797
+g1,113:1794052,11474797
+g1,113:1435242,11474797
+(1,113:1435242,11474797:1076432,321310,0
+k1,113:2511674,11474797:1076432
+(1,113:2511674,11474797:0,321310,0
+k1,113:2233142,11474797:-278532
+(1,113:2233142,11392877:278532,239390,0
+$1,113:2233142,11392877
+x1,113:2511674,11392877
+$1,113:2511674,11392877
+)
+)
+)
+g1,113:2870484,11474797
+)
+x1,113:6290128,11474797
+g1,113:6529334,11474797
+x1,113:6900104,11474797
+x1,113:9413761,11474797
+g1,113:9652967,11474797
+x1,113:11038377,11474797
+g1,113:11277583,11474797
+x1,113:11819792,11474797
+x1,113:14405205,11474797
+g1,113:14644411,11474797
+x1,113:15186620,11474797
+g1,113:15425826,11474797
+x1,113:16312886,11474797
+x1,113:16691629,11474797
+x1,113:16916880,11474797
+g1,113:17156086,11474797
+x1,113:18104933,11474797
+g1,113:18344139,11474797
+x1,113:19259102,11474797
+x1,113:19835197,11474797
+x1,113:20592676,11474797
+g1,113:20831882,11474797
+x1,113:21525604,11474797
+x1,113:21824615,11474797
+g1,113:22063821,11474797
+x1,113:23012668,11474797
+k1,113:28399634,11474797:5386966
+)
+(1,113:2870484,12366087:25529150,498350,139535
+x1,113:5481828,12366087
+x1,113:8754959,12366087
+g1,113:8994165,12366087
+x1,113:9572242,12366087
+g1,113:9811448,12366087
+x1,113:10558967,12366087
+x1,113:11268586,12366087
+x1,113:12494492,12366087
+g1,113:12733698,12366087
+x1,113:14236714,12366087
+x1,113:15990900,12366087
+g1,113:16230106,12366087
+x1,113:16772315,12366087
+g1,113:17011521,12366087
+x1,113:18251422,12366087
+g1,113:18490628,12366087
+x1,113:21249489,12366087
+g1,113:21488695,12366087
+x1,113:24801698,12366087
+g1,113:25040904,12366087
+x1,113:25746525,12366087
+k1,113:27073080,12366087:1326555
+k1,113:28399634,12366087:1326554
+)
+(1,113:2870484,13453985:25529150,498350,0
+(1,113:2870484,13453985:0,321310,0
+g1,113:2870484,13453985
+g1,113:1794052,13453985
+g1,113:1435242,13453985
+(1,113:1435242,13453985:1076432,321310,0
+k1,113:2511674,13453985:1076432
+(1,113:2511674,13453985:0,321310,0
+k1,113:2233142,13453985:-278532
+(1,113:2233142,13372065:278532,239390,0
+$1,113:2233142,13372065
+x1,113:2511674,13372065
+$1,113:2511674,13372065
+)
+)
+)
+g1,113:2870484,13453985
+)
+x1,113:3279132,13453985
+x1,113:3618006,13453985
+x1,113:4602743,13453985
+g1,113:4841949,13453985
+x1,113:5571528,13453985
+g1,113:5810734,13453985
+x1,113:6759581,13453985
+g1,113:6998787,13453985
+x1,113:8093167,13453985
+g1,113:8332373,13453985
+x1,113:8910450,13453985
+g1,113:9149656,13453985
+x1,113:10535066,13453985
+g1,113:10774272,13453985
+x1,113:12530452,13453985
+g1,113:12769658,13453985
+x1,113:13311867,13453985
+g1,113:13551073,13453985
+x1,113:14248358,13453985
+x1,113:15364652,13453985
+g1,113:15627779,13453985
+x1,113:16687246,13453985
+x1,113:17199549,13453985
+x1,113:17572311,13453985
+x1,113:18500825,13453985
+g1,113:18741546,13453985
+x1,113:19827937,13453985
+g1,113:20067143,13453985
+x1,113:20609352,13453985
+g1,113:20848558,13453985
+x1,113:23487373,13453985
+k1,113:25944261,13453985:2455373
+k1,113:28399634,13453985:2455373
+)
+]
+]
+]
+(1,113:1435242,16782118:26964392,186467,0
+(1,113:1435242,16782118:26964392,186467,0
+[1,113:1435242,16782118:26964392,186467,0
+(1,113:1435242,16782118:26964392,186467,0
+(1,113:1435242,16782118:26964392,186467,0
+g1,113:0,16782118
+(1,113:0,16782118:29834876,186467,0
+[1,113:0,16782118:29834876,186467,0
+(1,113:0,16782118:29834876,186467,0
+[1,113:0,16782118:29834876,917504,0
+(1,113:0,15864614:29834876,0,0
+h1,113:0,15864614:0,0,0
+k1,113:14917438,15864614:14917438
+k1,113:29834876,15864614:14917438
+)
+(1,113:0,16323366:29834876,349518,174759
+[1,113:0,16323366:29834876,294912,98304
+(1,113:0,16323366:29834876,294912,98304
+k1,113:28651104,16323366:28651104
+h1,113:28651104,16323366:0,0,0
+x1,113:28860000,16323366
+x1,113:29138542,16323366
+x1,113:29417084,16323366
+g1,113:29834876,16323366
+g1,113:29834876,16323366
+g1,113:29834876,16323366
+)
+]
+)
+(1,113:0,16782118:29834876,186467,0
+h1,113:0,16782118:0,0,0
+(1,113:0,16782118:29834876,186467,0
+g1,113:0,16782118
+(1,113:0,16782118:0,0,0
+(1,113:0,16782118:0,0,0
+g1,113:0,16782118
+g1,113:0,16782118
+g1,113:0,16782118
+g1,113:0,16782118
+g1,113:0,16782118
+g1,113:0,16782118
+g1,113:0,16782118
+)
+g1,113:0,16782118
+)
+)
+g1,113:29834876,16782118
+g1,113:29834876,16782118
+)
+]
+)
+]
+)
+g1,113:28399634,16782118
+)
+g1,113:28399634,16782118
+g1,113:28399634,16782118
+)
+h1,113:1435242,16782118:0,0,0
+]
+g1,113:28399634,16782118
+)
+)
+]
+]
+(1,113:4736286,4736286:0,0,0
+[1,113:0,4736286:0,0,0
+(1,113:0,0:0,0,0
+(1,113:0,0:0,0,0
+g1,113:0,0
+)
+g1,113:0,0
+)
+]
+)
+h1,113:4736286,4736286:0,0,0
+]
+!7521
+}2
+Input:208:c:\Users\LetzPC Gaming\Documents\GitHub\autoplay\slides\1 hour\1hour.aux
+!92
+Postamble:
+Count:1209
+!26
+Post scriptum:

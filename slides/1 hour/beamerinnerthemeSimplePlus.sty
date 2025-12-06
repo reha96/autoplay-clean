@@ -1,0 +1,105 @@
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
+
+\setbeamersize{text margin left=2em,text margin right=2em} 
+
+% Progress bar with your color theme
+\definecolor{progressbar}{RGB}{0.05, 0.15, 0.35}
+\definecolor{progressbarbg}{RGB}{224,224,224}
+
+\makeatletter
+% Control switches
+\newif\ifshowprogressbar
+\showprogressbartrue
+\newcount\progressbar@conclusion
+\progressbar@conclusion=0
+
+% Progress bar dimensions
+\newdimen\progressbar@height
+\setlength{\progressbar@height}{1mm}
+
+% User commands
+\newcommand{\hideprogressbar}{\global\showprogressbarfalse}
+\newcommand{\showprogressbar}{\global\showprogressbartrue}
+\newcommand{\markconclusion}{\global\progressbar@conclusion=\insertframenumber}
+
+% Define the progress bar footline template
+\setbeamertemplate{footline}{%
+  % First add the progress bar
+  \ifshowprogressbar%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=\progressbar@height,dp=0ex]{footline}%
+      % Calculate progress value
+      \pgfmathsetmacro{\progressbar@value}{%
+        \ifnum\progressbar@conclusion>0%
+          \ifnum\insertframenumber>\progressbar@conclusion 1%
+          \else \insertframenumber/\progressbar@conclusion\fi%
+        \else%
+          \insertframenumber/\inserttotalframenumber%
+        \fi%
+      }%
+  
+  % Then add the frame numbers
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2ex,dp=1ex,right]{footline}%
+    \usebeamerfont{page number in head/foot}%
+    \insertframenumber\,/\,\inserttotalframenumber\hspace{1em}
+  \end{beamercolorbox}%
+      
+      % Draw the progress bar using TikZ
+      \begin{tikzpicture}[baseline=0pt]
+        % Background bar
+        \fill[progressbarbg] (0,0) rectangle (\paperwidth, \progressbar@height);
+        % Progress indicator
+        \fill[progressbar] (0,0) rectangle (\progressbar@value\paperwidth, \progressbar@height);
+      \end{tikzpicture}%
+    \end{beamercolorbox}%
+  \fi%
+  
+}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\makeatother
+
+% table of contents (overview)
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3.2em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+
+% \setbeamertemplate{footline}[page number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamertemplate{frametitle}{\vspace*{0.5em}\bfseries\insertframetitle\par\vskip-6pt\hrulefill\vspace{-0.1em}}
+
+\setbeamertemplate{title page}{
+    \vspace{2em}
+    \begingroup
+        \centering
+        % ------------------------
+        \begin{beamercolorbox}[sep=8pt,center]{title}
+        \usebeamerfont{title}\inserttitle\par%
+        \ifx\insertsubtitle\@empty%
+        \else%
+            \vskip0.25em%
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        \fi%     
+        \end{beamercolorbox}%
+        \vskip0.5em\par
+        % ------------------------
+        \begin{beamercolorbox}[sep=8pt,center]{author}
+        \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+        \vskip-1em
+        % ------------------------
+        \begin{beamercolorbox}[sep=8pt,center]{institute}
+        \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}
+        % ------------------------
+        \begin{beamercolorbox}[sep=8pt,center]{date}
+        \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}\vskip0.5em
+        % ------------------------
+        {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \endgroup
+    \vfill
+}
